@@ -28,11 +28,12 @@ d:/ANNAM/strategy-intel/
 │       └── cleanroom-handoff/             # Kỹ năng đóng gói catalog & làm sạch holdout
 ├── AGENTS.md                              # Hướng dẫn chi tiết quy trình tác nhân
 ├── catalog/                               # Danh mục quản lý tập trung toàn repo
-│   ├── master_leads.json                  # 50 ý tưởng tiềm năng (15 CHẤT từ Nguồn 1 + 35 Clean từ Nguồn 2)
-│   └── rejected_log.json                  # 240 chiến lược bị loại bỏ (42 trường phái + 188 OOS sập + 10 Grid/Martingale)
+│   ├── indicator_reference.json           # 27 công cụ Indicators & Utilities từ Nguồn 2
+│   ├── master_leads.json                  # 15 ý tưởng CHẤT đạt chuẩn định lượng (Source 1)
+│   └── rejected_log.json                  # 224 chiến lược bị loại bỏ (18 cảm tính + 188 OOS sập + 4 Grid + 14 Blackbox)
 ├── handoff/                               # Vùng đệm bàn giao cho team Quant nội bộ (Holdout Sanitized)
 │   ├── README.md                          # Tiêu chuẩn bàn giao phòng sạch
-│   └── sanitized_master_leads.json        # 50 leads đã làm sạch hoàn toàn số liệu 2025-2026
+│   └── sanitized_master_leads.json        # 15 leads đã làm sạch hoàn toàn số liệu 2025-2026
 ├── scripts/common/                        # Bộ 3 script kiểm định dùng chung
 │   ├── repo_hygiene_check.py              # Kiểm tra 0 binary files (.ex4/.ex5/.dll/.exe/.zip) & 0 file nháp
 │   ├── verify_verbatim.py                 # Kiểm tra tính toàn vẹn và nguyên văn dữ liệu trích xuất
@@ -76,11 +77,12 @@ Mọi tệp tin trong `extracted/`, `catalog/` và `handoff/` được kiểm ch
 | **Nguồn 1** | `sources/stategy-netlify-app/extracted/05_replicability_audit.md` | 42,263 | `FB12B2B864B6D61A3C08686B318806E5489685B59346AF90854640657683ABBB` |
 | **Nguồn 1** | `sources/stategy-netlify-app/extracted/06_technical_methods_and_code.md` | 33,817 | `DBC775275EA8976782B9B0BC8CCEA02EBFF31AB23304EB0C58BE9EE6D8C02A80` |
 | **Nguồn 1** | `sources/stategy-netlify-app/extracted/07_missing_58_items.json` | 23,963 | `CE1C9A8459C3D0536ED118AF36E921B33A5E7BEC13EBA265C1415273AF1942BD` |
-| **Nguồn 2** | `sources/ea-directory-2026/extracted/01_ea_catalog.csv` | 17,300 | `0E57891592571E4D72D9F6D78301286CE09D4558D3ECEA8F45D6A32A16260AC4` |
-| **Nguồn 2** | `sources/ea-directory-2026/extracted/01_ea_catalog.json` | 34,238 | `AE9E0418F3E659033E0A5315D4643704D452A9410F62DA3AD0C407D41C3C6BF3` |
-| **Catalog** | `catalog/master_leads.json` | 34,775 | `FD19CFDD0673E621AAC2FFAAB3A4329D98CDA4529319B36F51E363A3CB1DCAAB` |
-| **Catalog** | `catalog/rejected_log.json` | 5,853 | `2F60EDD20B98F9F5DECAA908DC5897BB63D6864BCE9F6CE1693B12457EEECE25` |
-| **Handoff** | `handoff/sanitized_master_leads.json` | 34,685 | `D4AF50D17FB2595E0E2273A803AACC13E367370433C0C4FC0D3B5EB21EC45748` |
+| **Nguồn 2** | `sources/ea-directory-2026/extracted/01_ea_catalog.csv` | 13,685 | `056411D5CF8BD492DC444AB09CB8BF4B1227CC301A7E21F390CC603D0674D5BC` |
+| **Nguồn 2** | `sources/ea-directory-2026/extracted/01_ea_catalog.json` | 33,221 | `8CFA15BF118114CE5F1DFB0AEB5DEA8FB2479D4CCBEBD03051FC06C25DD10601` |
+| **Catalog** | `catalog/indicator_reference.json` | 17,386 | `9D6FDF756C83BA55C07DAC5D0F1CCC4FF9DF1A8D9C39123BFCBFEB9CE95E08FF` |
+| **Catalog** | `catalog/master_leads.json` | 9,957 | `7CA3924A0DDEF1B7CBC36C50B0FE2E258F9D011DFDB73740CF83ACE5A919EA82` |
+| **Catalog** | `catalog/rejected_log.json` | 66,425 | `9A290B91E8EEB0EC03248B1378AF885FA916A899F250F6543CBEF0C2F4289248` |
+| **Handoff** | `handoff/sanitized_master_leads.json` | 10,013 | `AB44A0F7F9C4DFED9AA578A223FE914366DBDBC3F4CA43BA97F4531BF8CC4A00` |
 
 ---
 

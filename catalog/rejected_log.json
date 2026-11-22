@@ -1,84 +1,1592 @@
 {
-  "updated_at": "2026-11-23T01:00:00+07:00",
-  "description": "Log of Rejected Strategies and Toxic Risk Patterns (Grid, Martingale, Curve-Fitted Indicators)",
-  "total_rejected": 240,
+  "generated_at": "2026-11-23T01:47:27.763090",
+  "total_rejected": 224,
   "rejection_categories": {
     "curve_fitted_retail_schools": {
-      "count": 42,
-      "description": "42 chiến lược nguyên bản thuộc 4 trường phái mạng xã hội qua 22.938 lệnh kiểm định độc lập thất bại 100% (SMC/ICT: 18, Breakout đầu phiên: 7, RSI: 12, MACD: 5)",
-      "reason": "CURVE_FITTING_AND_PARAMETER_OVERFITTING"
+      "description": "Các trường phái bán lẻ vẽ tay cảm tính, không kiểm định được bằng máy",
+      "count": 18
     },
     "chat_failed_oos": {
-      "count": 188,
-      "description": "188 chiến lược bị loại bỏ trong thư viện 242 do hiệu suất OOS1 sụp đổ (PF < 1.0 hoặc sụt giảm tài khoản > 35%)",
-      "reason": "OOS_PERFORMANCE_COLLAPSE"
+      "description": "Các chiến lược sụp đổ ở giai đoạn Out-of-Sample",
+      "count": 188
     },
     "toxic_money_management": {
-      "count": 10,
-      "description": "Các EA sử dụng thuật toán Grid (lưới lệnh không SL) hoặc Martingale (gấp thếp khi thua)",
-      "reason": "TAIL_RISK_CERTAIN_RUIN"
+      "description": "Hệ thống sử dụng bẫy Grid, Martingale, nhồi lệnh rủi ro cao",
+      "count": 4
+    },
+    "blackbox_no_live_real_proof": {
+      "description": "EA thương mại hộp đen không có tài khoản thật Live Real kiểm chứng",
+      "count": 14
     }
   },
-  "sample_rejected_rules": [
+  "rejected_items": [
+    {
+      "id": "BRK025",
+      "source": "stategy-netlify-app",
+      "name": "Phá trendline nội bộ 20 nến",
+      "category": "curve_fitted_retail_schools",
+      "reason": "Chiến lược vẽ tay cảm tính (trendlines, mô hình giá chủ quan), không đủ điều kiện định lượng bằng máy."
+    },
+    {
+      "id": "BRK027",
+      "source": "stategy-netlify-app",
+      "name": "Rounding breakout (vượt cổ chén)",
+      "category": "curve_fitted_retail_schools",
+      "reason": "Chiến lược vẽ tay cảm tính (trendlines, mô hình giá chủ quan), không đủ điều kiện định lượng bằng máy."
+    },
+    {
+      "id": "BRK028",
+      "source": "stategy-netlify-app",
+      "name": "Phá sau tin (news breakout 15p)",
+      "category": "curve_fitted_retail_schools",
+      "reason": "Chiến lược vẽ tay cảm tính (trendlines, mô hình giá chủ quan), không đủ điều kiện định lượng bằng máy."
+    },
+    {
+      "id": "BRK036",
+      "source": "stategy-netlify-app",
+      "name": "Break kênh song song",
+      "category": "curve_fitted_retail_schools",
+      "reason": "Chiến lược vẽ tay cảm tính (trendlines, mô hình giá chủ quan), không đủ điều kiện định lượng bằng máy."
+    },
+    {
+      "id": "REV012",
+      "source": "stategy-netlify-app",
+      "name": "Fade nến tin (news spike fade)",
+      "category": "curve_fitted_retail_schools",
+      "reason": "Chiến lược vẽ tay cảm tính (trendlines, mô hình giá chủ quan), không đủ điều kiện định lượng bằng máy."
+    },
+    {
+      "id": "REV032",
+      "source": "stategy-netlify-app",
+      "name": "Fade phá vỡ trước tin lớn 2h",
+      "category": "curve_fitted_retail_schools",
+      "reason": "Chiến lược vẽ tay cảm tính (trendlines, mô hình giá chủ quan), không đủ điều kiện định lượng bằng máy."
+    },
+    {
+      "id": "REV038",
+      "source": "stategy-netlify-app",
+      "name": "Fade cú đẩy thứ 3 cùng hướng trong ngày",
+      "category": "curve_fitted_retail_schools",
+      "reason": "Chiến lược vẽ tay cảm tính (trendlines, mô hình giá chủ quan), không đủ điều kiện định lượng bằng máy."
+    },
+    {
+      "id": "SEA008",
+      "source": "stategy-netlify-app",
+      "name": "Tránh trưa Á (11-14h VN)",
+      "category": "curve_fitted_retail_schools",
+      "reason": "Chiến lược vẽ tay cảm tính (trendlines, mô hình giá chủ quan), không đủ điều kiện định lượng bằng máy."
+    },
+    {
+      "id": "SEA010",
+      "source": "stategy-netlify-app",
+      "name": "FOMC drift trước công bố",
+      "category": "curve_fitted_retail_schools",
+      "reason": "Chiến lược vẽ tay cảm tính (trendlines, mô hình giá chủ quan), không đủ điều kiện định lượng bằng máy."
+    },
+    {
+      "id": "SEA018",
+      "source": "stategy-netlify-app",
+      "name": "Rollover futures — nhiễu",
+      "category": "curve_fitted_retail_schools",
+      "reason": "Chiến lược vẽ tay cảm tính (trendlines, mô hình giá chủ quan), không đủ điều kiện định lượng bằng máy."
+    },
+    {
+      "id": "SEA024",
+      "source": "stategy-netlify-app",
+      "name": "Tuần lễ Fed — co cụm trước, nổ sau",
+      "category": "curve_fitted_retail_schools",
+      "reason": "Chiến lược vẽ tay cảm tính (trendlines, mô hình giá chủ quan), không đủ điều kiện định lượng bằng máy."
+    },
+    {
+      "id": "SEA026",
+      "source": "stategy-netlify-app",
+      "name": "CPI day — theo nến tin",
+      "category": "curve_fitted_retail_schools",
+      "reason": "Chiến lược vẽ tay cảm tính (trendlines, mô hình giá chủ quan), không đủ điều kiện định lượng bằng máy."
+    },
+    {
+      "id": "SEA027",
+      "source": "stategy-netlify-app",
+      "name": "Đêm rạng sáng VN (0-5h) — nghỉ",
+      "category": "curve_fitted_retail_schools",
+      "reason": "Chiến lược vẽ tay cảm tính (trendlines, mô hình giá chủ quan), không đủ điều kiện định lượng bằng máy."
+    },
+    {
+      "id": "SEA030",
+      "source": "stategy-netlify-app",
+      "name": "Mở tuần gap kèm tin cuối tuần",
+      "category": "curve_fitted_retail_schools",
+      "reason": "Chiến lược vẽ tay cảm tính (trendlines, mô hình giá chủ quan), không đủ điều kiện định lượng bằng máy."
+    },
+    {
+      "id": "VIR016",
+      "source": "stategy-netlify-app",
+      "name": "ICT Kill Zones lọc giờ",
+      "category": "curve_fitted_retail_schools",
+      "reason": "Chiến lược vẽ tay cảm tính (trendlines, mô hình giá chủ quan), không đủ điều kiện định lượng bằng máy."
+    },
+    {
+      "id": "VIR021",
+      "source": "stategy-netlify-app",
+      "name": "SMT divergence (vàng vs bạc/DXY)",
+      "category": "curve_fitted_retail_schools",
+      "reason": "Chiến lược vẽ tay cảm tính (trendlines, mô hình giá chủ quan), không đủ điều kiện định lượng bằng máy."
+    },
+    {
+      "id": "VIR023",
+      "source": "stategy-netlify-app",
+      "name": "Chiến lược 5-3-1",
+      "category": "curve_fitted_retail_schools",
+      "reason": "Chiến lược vẽ tay cảm tính (trendlines, mô hình giá chủ quan), không đủ điều kiện định lượng bằng máy."
+    },
+    {
+      "id": "VIR028",
+      "source": "stategy-netlify-app",
+      "name": "Bali strategy (KAMA+BB)",
+      "category": "curve_fitted_retail_schools",
+      "reason": "Chiến lược vẽ tay cảm tính (trendlines, mô hình giá chủ quan), không đủ điều kiện định lượng bằng máy."
+    },
     {
       "id": "BRK001",
+      "source": "stategy-netlify-app",
       "name": "London ORB — range 3h Á cuối",
-      "reason": "0/5 năm dương ở kỳ OOS1 (2019-2023), winrate 24.8% sau phí sàn."
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "BRK002",
+      "source": "stategy-netlify-app",
+      "name": "London ORB — range 1h đầu London",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "BRK003",
+      "source": "stategy-netlify-app",
+      "name": "NY ORB — range 30p đầu phiên Mỹ",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "BRK004",
+      "source": "stategy-netlify-app",
+      "name": "NY ORB — range 1h đầu",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "BRK005",
+      "source": "stategy-netlify-app",
+      "name": "Asian range breakout",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "BRK006",
+      "source": "stategy-netlify-app",
+      "name": "Phá đỉnh/đáy ngày hôm trước",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "BRK008",
+      "source": "stategy-netlify-app",
+      "name": "Pivot point cổ điển — phá R1/S1",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "BRK009",
+      "source": "stategy-netlify-app",
+      "name": "Pivot point — bounce tại PP",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "BRK010",
+      "source": "stategy-netlify-app",
+      "name": "Camarilla R3/S3 revert",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "BRK014",
+      "source": "stategy-netlify-app",
+      "name": "Darvas box cổ điển",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "BRK015",
+      "source": "stategy-netlify-app",
+      "name": "First hour range London",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "BRK016",
+      "source": "stategy-netlify-app",
+      "name": "Breakout + retest biên",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "BRK018",
+      "source": "stategy-netlify-app",
+      "name": "Weekly open breakout",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "BRK021",
+      "source": "stategy-netlify-app",
+      "name": "52-tuần cao mới (momentum đỉnh)",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "BRK022",
+      "source": "stategy-netlify-app",
+      "name": "Phá đỉnh tháng trước",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "BRK023",
+      "source": "stategy-netlify-app",
+      "name": "NR7 + inside day combo",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "BRK024",
+      "source": "stategy-netlify-app",
+      "name": "Range co thắt 3 phiên (contraction)",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "BRK026",
+      "source": "stategy-netlify-app",
+      "name": "Break of structure (BOS) đơn giản",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "BRK030",
+      "source": "stategy-netlify-app",
+      "name": "Breakout thất bại — fade (failed break)",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "BRK031",
+      "source": "stategy-netlify-app",
+      "name": "Phiên Á tĩnh → London nổ",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "BRK032",
+      "source": "stategy-netlify-app",
+      "name": "Mốc số tròn (00) breakout",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "BRK034",
+      "source": "stategy-netlify-app",
+      "name": "Đỉnh/đáy phiên Mỹ hôm trước",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "BRK038",
+      "source": "stategy-netlify-app",
+      "name": "ORB London chỉ chiều thuận D1",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "BRK040",
+      "source": "stategy-netlify-app",
+      "name": "Volatility breakout ×ATR từ open",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
     },
     {
       "id": "IND001",
-      "name": "EMA 20/50 Golden Cross H1",
-      "reason": "Bào mòn vốn bởi chi phí giao dịch và whipsaw trong giai đoạn thị trường đi ngang."
+      "source": "stategy-netlify-app",
+      "name": "RSI-2 quá bán cực đoan",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
     },
     {
-      "id": "eafree-dashboard-v13",
-      "name": "EAFree Dashboard Version 1.3",
-      "reason": "Phát hiện rủi ro Grid/Martingale: Cảnh báo Grid/Martingale: \"That is a typical sign of grid or martingale trading mindsets\""
+      "id": "IND002",
+      "source": "stategy-netlify-app",
+      "name": "RSI-14 quá mua/quá bán cổ điển",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
     },
     {
-      "id": "fib-cluster-indicator-mt5",
-      "name": "FIB CLUSTER Indicator MT5 | Free Download",
-      "reason": "Phát hiện rủi ro Grid/Martingale: Cảnh báo Grid/Martingale: \"Weighted Scoring Matrix: All levels feed into a localized price grid\""
+      "id": "IND004",
+      "source": "stategy-netlify-app",
+      "name": "RSI phân kỳ ẩn (hidden divergence)",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
     },
     {
-      "id": "gann-full-suite",
-      "name": "GANN FULL SUITE V1.12 | Free Download",
-      "reason": "Phát hiện rủi ro Grid/Martingale: Cảnh báo Grid/Martingale: \"Pivot Realignment Risk (Shift) While closed-candle events never repaint, a break to fresh highs/lows forces the anchor to shift, causing the future grid to recalculate [B]\""
+      "id": "IND005",
+      "source": "stategy-netlify-app",
+      "name": "RSI 50-cross momentum",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "IND006",
+      "source": "stategy-netlify-app",
+      "name": "MACD cắt signal cổ điển",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "IND008",
+      "source": "stategy-netlify-app",
+      "name": "MACD histogram đảo chiều",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "IND009",
+      "source": "stategy-netlify-app",
+      "name": "MACD phân kỳ",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "IND010",
+      "source": "stategy-netlify-app",
+      "name": "Bollinger tag & revert",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "IND011",
+      "source": "stategy-netlify-app",
+      "name": "Bollinger squeeze breakout",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "IND013",
+      "source": "stategy-netlify-app",
+      "name": "Bollinger %B cực trị",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "IND014",
+      "source": "stategy-netlify-app",
+      "name": "Stochastic cắt nhau vùng cực trị",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "IND015",
+      "source": "stategy-netlify-app",
+      "name": "Stochastic thoát vùng 20/80",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "IND016",
+      "source": "stategy-netlify-app",
+      "name": "Williams %R đảo chiều",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "IND018",
+      "source": "stategy-netlify-app",
+      "name": "CCI quay về từ ±200",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "IND019",
+      "source": "stategy-netlify-app",
+      "name": "ADX + DI cross",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "IND020",
+      "source": "stategy-netlify-app",
+      "name": "ADX lọc trend cho EMA cross",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "IND021",
+      "source": "stategy-netlify-app",
+      "name": "Parabolic SAR flip",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "IND022",
+      "source": "stategy-netlify-app",
+      "name": "SuperTrend flip",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "IND023",
+      "source": "stategy-netlify-app",
+      "name": "SuperTrend + EMA200 lọc",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "IND024",
+      "source": "stategy-netlify-app",
+      "name": "Ichimoku TK cross",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "IND028",
+      "source": "stategy-netlify-app",
+      "name": "EMA 20/50 cross",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "IND029",
+      "source": "stategy-netlify-app",
+      "name": "Golden cross / Death cross 50/200",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "IND030",
+      "source": "stategy-netlify-app",
+      "name": "Triple EMA xếp tầng",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "IND032",
+      "source": "stategy-netlify-app",
+      "name": "Donchian 20 breakout (Turtle)",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "IND033",
+      "source": "stategy-netlify-app",
+      "name": "Donchian 55 breakout (Turtle dài)",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "IND035",
+      "source": "stategy-netlify-app",
+      "name": "Keltner revert",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "IND037",
+      "source": "stategy-netlify-app",
+      "name": "MFI quá mua/bán (RSI có volume)",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "IND039",
+      "source": "stategy-netlify-app",
+      "name": "VWAP bounce (phiên)",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "IND040",
+      "source": "stategy-netlify-app",
+      "name": "VWAP revert (kéo giãn)",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "IND044",
+      "source": "stategy-netlify-app",
+      "name": "HMA đổi hướng (Hull MA)",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "IND046",
+      "source": "stategy-netlify-app",
+      "name": "QQE cross (viral TradingView)",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "IND047",
+      "source": "stategy-netlify-app",
+      "name": "Awesome Oscillator saucer",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "IND048",
+      "source": "stategy-netlify-app",
+      "name": "AO twin peaks",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "IND051",
+      "source": "stategy-netlify-app",
+      "name": "ATR channel breakout",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "IND052",
+      "source": "stategy-netlify-app",
+      "name": "Envelope % cố định",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "IND054",
+      "source": "stategy-netlify-app",
+      "name": "Stochastic RSI cực trị",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "IND055",
+      "source": "stategy-netlify-app",
+      "name": "DPO chu kỳ (detrended)",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "IND056",
+      "source": "stategy-netlify-app",
+      "name": "CMF (Chaikin Money Flow) đổi dấu",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "IND057",
+      "source": "stategy-netlify-app",
+      "name": "Coppock curve quay đầu",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "IND059",
+      "source": "stategy-netlify-app",
+      "name": "Elder Impulse đổi màu",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "IND060",
+      "source": "stategy-netlify-app",
+      "name": "RVI cross (Relative Vigor)",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "MTF001",
+      "source": "stategy-netlify-app",
+      "name": "Elder Triple Screen",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "MTF002",
+      "source": "stategy-netlify-app",
+      "name": "D1 bias + H1 pullback EMA20",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "MTF003",
+      "source": "stategy-netlify-app",
+      "name": "H4 trend + M15 breakout",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "MTF004",
+      "source": "stategy-netlify-app",
+      "name": "D1 engulfing + H1 xác nhận cấu trúc",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "MTF006",
+      "source": "stategy-netlify-app",
+      "name": "EMA200 H4 + RSI M15 cực trị",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "MTF007",
+      "source": "stategy-netlify-app",
+      "name": "Ichimoku D1 + TK cross H1",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "MTF008",
+      "source": "stategy-netlify-app",
+      "name": "SuperTrend H4 + ORB M15",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "MTF009",
+      "source": "stategy-netlify-app",
+      "name": "3 khung stochastic đồng thuận",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "MTF010",
+      "source": "stategy-netlify-app",
+      "name": "MACD D1 + MACD H1 cùng cắt",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "MTF011",
+      "source": "stategy-netlify-app",
+      "name": "Đáy H4 + phân kỳ RSI M15",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "MTF012",
+      "source": "stategy-netlify-app",
+      "name": "Trend D1 + fade ngược H1 cấm",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "MTF013",
+      "source": "stategy-netlify-app",
+      "name": "Khung tuần định biên — khung ngày trade biên",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "MTF014",
+      "source": "stategy-netlify-app",
+      "name": "H4 FVG + M5 CHoCH entry",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "MTF015",
+      "source": "stategy-netlify-app",
+      "name": "D1 OB + H1 sweep entry",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "MTF017",
+      "source": "stategy-netlify-app",
+      "name": "ADX D1 lọc chợ — hệ H1 đổi mode",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "MTF018",
+      "source": "stategy-netlify-app",
+      "name": "ATR regime lọc",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "MTF019",
+      "source": "stategy-netlify-app",
+      "name": "Bollinger W1 + tag H4",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "MTF022",
+      "source": "stategy-netlify-app",
+      "name": "Nến tuần làm CRT — ngày trade biên",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "MTF023",
+      "source": "stategy-netlify-app",
+      "name": "Đồng thuận 2/3 hệ con",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "MTF024",
+      "source": "stategy-netlify-app",
+      "name": "D1 inside day + H1 breakout hướng mẹ",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "MTF025",
+      "source": "stategy-netlify-app",
+      "name": "Khung H4 đếm sóng đẩy — M15 vào sóng 3",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "MTF026",
+      "source": "stategy-netlify-app",
+      "name": "Tuần mở gap + ngày theo gap có lọc H4",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "MTF028",
+      "source": "stategy-netlify-app",
+      "name": "Cấu trúc HH-HL D1 + entry H1 tại HL",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "MTF029",
+      "source": "stategy-netlify-app",
+      "name": "VWAP tháng + phản ứng ngày",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "MTF030",
+      "source": "stategy-netlify-app",
+      "name": "Hệ kép trend-revert luân phiên theo giờ",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "NEN001",
+      "source": "stategy-netlify-app",
+      "name": "Pin bar đảo chiều tại đáy/đỉnh",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "NEN003",
+      "source": "stategy-netlify-app",
+      "name": "Bullish engulfing sau ≥3 nến giảm",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "NEN007",
+      "source": "stategy-netlify-app",
+      "name": "Outside bar (nến bao trùm) đảo chiều",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "NEN008",
+      "source": "stategy-netlify-app",
+      "name": "Doji tại vùng cực trị",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "NEN009",
+      "source": "stategy-netlify-app",
+      "name": "Morning star (sao mai)",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "NEN011",
+      "source": "stategy-netlify-app",
+      "name": "Hammer tại đáy tuần",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "NEN015",
+      "source": "stategy-netlify-app",
+      "name": "Harami + xác nhận",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "NEN016",
+      "source": "stategy-netlify-app",
+      "name": "Tweezer bottom (đáy nhíp)",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "NEN018",
+      "source": "stategy-netlify-app",
+      "name": "Marubozu momentum",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "NEN019",
+      "source": "stategy-netlify-app",
+      "name": "3-bar reversal",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "NEN020",
+      "source": "stategy-netlify-app",
+      "name": "NR7 breakout",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "NEN021",
+      "source": "stategy-netlify-app",
+      "name": "NR4 breakout",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "NEN023",
+      "source": "stategy-netlify-app",
+      "name": "Nến rejection kép (double rejection)",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "NEN026",
+      "source": "stategy-netlify-app",
+      "name": "Ba nến tăng dần thân (accelerating)",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "NEN027",
+      "source": "stategy-netlify-app",
+      "name": "Nến khối lượng đột biến (climax bar)",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "NEN030",
+      "source": "stategy-netlify-app",
+      "name": "Nến đóng cửa cực trị (close ở 10% range)",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "NEN031",
+      "source": "stategy-netlify-app",
+      "name": "IBS thấp — mua (Internal Bar Strength)",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "NEN033",
+      "source": "stategy-netlify-app",
+      "name": "Nến cô đơn tiếp diễn (họ Lonely Candle)",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "NEN034",
+      "source": "stategy-netlify-app",
+      "name": "Hai nến ngược liền nhau rồi tiếp diễn",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "NEN035",
+      "source": "stategy-netlify-app",
+      "name": "Ba đáy nến bằng nhau (triple bottom nến)",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "NEN039",
+      "source": "stategy-netlify-app",
+      "name": "3 nến — đáy sau cao hơn đáy trước ×3",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "NEN040",
+      "source": "stategy-netlify-app",
+      "name": "Nến rút chân cuối phiên Mỹ",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "NEN043",
+      "source": "stategy-netlify-app",
+      "name": "3 nến cùng đáy chờ nổ (coil)",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "NEN044",
+      "source": "stategy-netlify-app",
+      "name": "Nến thân lớn phá tích luỹ 20 nến",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "NEN045",
+      "source": "stategy-netlify-app",
+      "name": "Hai nến engulfing kép",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "NEN048",
+      "source": "stategy-netlify-app",
+      "name": "Cặp nến sức mạnh (2 marubozu cùng hướng)",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "NEN049",
+      "source": "stategy-netlify-app",
+      "name": "Nến ngược duy nhất trong 10 nến",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "REV001",
+      "source": "stategy-netlify-app",
+      "name": "Fade gap mở tuần",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "REV002",
+      "source": "stategy-netlify-app",
+      "name": "Kéo giãn khỏi EMA20 ≥2ATR",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "REV003",
+      "source": "stategy-netlify-app",
+      "name": "Kéo giãn khỏi EMA50 ≥3ATR",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "REV004",
+      "source": "stategy-netlify-app",
+      "name": "RSI-14 cực trị fade",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "REV005",
+      "source": "stategy-netlify-app",
+      "name": "3 nến xanh liên tiếp — fade",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "REV007",
+      "source": "stategy-netlify-app",
+      "name": "Đóng cửa thấp nhất 5 ngày — mua",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "REV009",
+      "source": "stategy-netlify-app",
+      "name": "2 nến đóng ngoài band — fade",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "REV011",
+      "source": "stategy-netlify-app",
+      "name": "Đầu phiên Á fade cú đẩy cuối Mỹ",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "REV013",
+      "source": "stategy-netlify-app",
+      "name": "Quay về giá mở ngày (fade open drive)",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "REV014",
+      "source": "stategy-netlify-app",
+      "name": "Pivot PP làm nam châm",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "REV016",
+      "source": "stategy-netlify-app",
+      "name": "Trung bình về giá đóng hôm qua",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "REV017",
+      "source": "stategy-netlify-app",
+      "name": "RSI-2 kép (2 nến < 10)",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "REV019",
+      "source": "stategy-netlify-app",
+      "name": "Stochastic treo 3 nến vùng 80 — fade",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "REV022",
+      "source": "stategy-netlify-app",
+      "name": "Z-score giá 20 nến",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "REV026",
+      "source": "stategy-netlify-app",
+      "name": "Mua đáy chênh lệch spread Á",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "REV027",
+      "source": "stategy-netlify-app",
+      "name": "Fade cú đẩy không volume",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "REV030",
+      "source": "stategy-netlify-app",
+      "name": "Trở về EMA200 D1",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "REV031",
+      "source": "stategy-netlify-app",
+      "name": "Hồi 50% nến mẹ",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "REV033",
+      "source": "stategy-netlify-app",
+      "name": "Đáy nhọn + volume climax — mua",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "REV034",
+      "source": "stategy-netlify-app",
+      "name": "Fade đỉnh số tròn lần chạm đầu",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "REV035",
+      "source": "stategy-netlify-app",
+      "name": "Buy the dip trong uptrend D1",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "REV037",
+      "source": "stategy-netlify-app",
+      "name": "Hồi về mây Ichimoku",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "REV039",
+      "source": "stategy-netlify-app",
+      "name": "Cửa sổ hồi sau ORB thất bại",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "REV040",
+      "source": "stategy-netlify-app",
+      "name": "Trung vị range 5 ngày làm nam châm",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "SEA001",
+      "source": "stategy-netlify-app",
+      "name": "Mua đầu tuần (Monday effect)",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "SEA002",
+      "source": "stategy-netlify-app",
+      "name": "Fade chiều thứ Sáu",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "SEA005",
+      "source": "stategy-netlify-app",
+      "name": "Drift qua đêm (overnight vs intraday)",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "SEA006",
+      "source": "stategy-netlify-app",
+      "name": "Giờ vàng London mở (14-16h VN hè)",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "SEA007",
+      "source": "stategy-netlify-app",
+      "name": "Giờ NY mở (19:30-21:30 VN hè)",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "SEA009",
+      "source": "stategy-netlify-app",
+      "name": "NFP thứ Sáu đầu tháng — đứng ngoài rồi theo",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "SEA014",
+      "source": "stategy-netlify-app",
+      "name": "Mùa cưới Ấn Độ (T10-T12) — thiên mua vàng",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "SEA016",
+      "source": "stategy-netlify-app",
+      "name": "London fix 15h London — drift",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "SEA017",
+      "source": "stategy-netlify-app",
+      "name": "Ngày đáo hạn quyền chọn (OpEx)",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "SEA020",
+      "source": "stategy-netlify-app",
+      "name": "Half-day Mỹ nghỉ lễ — fade range",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "SEA022",
+      "source": "stategy-netlify-app",
+      "name": "Cuối phiên Mỹ chốt lời (last hour)",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "SEA025",
+      "source": "stategy-netlify-app",
+      "name": "Sáng thứ Hai định hướng cả tuần",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "SEA028",
+      "source": "stategy-netlify-app",
+      "name": "Quarter theory — quý giờ (90 phút)",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "SEA029",
+      "source": "stategy-netlify-app",
+      "name": "Ngày sau ngày range lớn nhất tháng",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "VIR001",
+      "source": "stategy-netlify-app",
+      "name": "ICT Silver Bullet 10-11h NY",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "VIR002",
+      "source": "stategy-netlify-app",
+      "name": "ICT Silver Bullet 3-4h London",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "VIR003",
+      "source": "stategy-netlify-app",
+      "name": "Fair Value Gap (FVG) fill & go",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "VIR004",
+      "source": "stategy-netlify-app",
+      "name": "FVG làm hỗ trợ (inversion FVG)",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "VIR005",
+      "source": "stategy-netlify-app",
+      "name": "Order block bullish",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "VIR007",
+      "source": "stategy-netlify-app",
+      "name": "Breaker block",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "VIR008",
+      "source": "stategy-netlify-app",
+      "name": "Liquidity sweep đáy cũ rồi đảo",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "VIR010",
+      "source": "stategy-netlify-app",
+      "name": "Equal highs/lows làm mồi thanh khoản",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "VIR011",
+      "source": "stategy-netlify-app",
+      "name": "BOS + retest (break of structure)",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "VIR012",
+      "source": "stategy-netlify-app",
+      "name": "CHoCH (change of character)",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "VIR013",
+      "source": "stategy-netlify-app",
+      "name": "ICT Power of Three (AMD)",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "VIR014",
+      "source": "stategy-netlify-app",
+      "name": "ICT Judas Swing",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "VIR015",
+      "source": "stategy-netlify-app",
+      "name": "ICT Turtle Soup",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "VIR017",
+      "source": "stategy-netlify-app",
+      "name": "ICT OTE 62-79% (optimal trade entry)",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "VIR018",
+      "source": "stategy-netlify-app",
+      "name": "ICT Unicorn model (breaker + FVG)",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "VIR019",
+      "source": "stategy-netlify-app",
+      "name": "CRT — Candle Range Theory",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "VIR022",
+      "source": "stategy-netlify-app",
+      "name": "Vegas Tunnel",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "VIR026",
+      "source": "stategy-netlify-app",
+      "name": "EMA ribbon 8-13-21-55 scalp",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "VIR027",
+      "source": "stategy-netlify-app",
+      "name": "Heikin Ashi + SuperTrend combo",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "VIR029",
+      "source": "stategy-netlify-app",
+      "name": "Stochastic 8-3-3 + EMA cross scalp",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "VIR030",
+      "source": "stategy-netlify-app",
+      "name": "W-pattern / M-pattern TikTok",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "VIR031",
+      "source": "stategy-netlify-app",
+      "name": "Trap trading (bẫy 2 phía)",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "VIR033",
+      "source": "stategy-netlify-app",
+      "name": "Wyckoff Spring viral",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "VIR036",
+      "source": "stategy-netlify-app",
+      "name": "SnD zone + engulfing xác nhận",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "VIR037",
+      "source": "stategy-netlify-app",
+      "name": "Fibonacci golden zone 0.618",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "VIR038",
+      "source": "stategy-netlify-app",
+      "name": "Fib extension 1.272 chốt — vào 0.786",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "VIR041",
+      "source": "stategy-netlify-app",
+      "name": "Golden cross M5 scalping viral",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "VIR042",
+      "source": "stategy-netlify-app",
+      "name": "Scalping nến 9:45 (giờ mở NYSE)",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "VIR043",
+      "source": "stategy-netlify-app",
+      "name": "Power hour cuối phiên Mỹ",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "VIR045",
+      "source": "stategy-netlify-app",
+      "name": "Chiến lược 2.6 (mathematical)",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "VIR048",
+      "source": "stategy-netlify-app",
+      "name": "Rejection block",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "VIR049",
+      "source": "stategy-netlify-app",
+      "name": "Daily bias ICT (draw on liquidity)",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
+    },
+    {
+      "id": "VIR050",
+      "source": "stategy-netlify-app",
+      "name": "Session sweep + FVG entry model",
+      "category": "chat_failed_oos",
+      "reason": "Sụp đổ hiệu suất Out-of-Sample (Verdict: CHÁT, PF OOS1: N/A, Max DD OOS1: N/A%)."
     },
     {
       "id": "gplus-ea-mt4",
+      "source": "ea-directory-2026",
       "name": "GPlus EA MT4 v1.14 - Original version | Download Free",
-      "reason": "Phát hiện rủi ro Grid/Martingale: Cảnh báo Grid/Martingale: \"14 · Aug 28, 2026 Latest Download Category Forex EA › Automated Trading, Forex EA, Forex EA › Grid Trading Downloads 2 Added Aug 28, 2026 Overview Specifications FAQ Reviews Overview What Is GPlus EA\""
+      "category": "toxic_money_management",
+      "reason": "GRID_MARTINGALE_TOXIC_RISK: Cảnh báo Grid/Martingale: \"14 · Aug 28, 2026 Latest Download Category Forex EA › Automated Trading, Forex EA, Forex EA › Grid Trading Downloads 2 A\""
     },
     {
       "id": "js-hedging-pro-ea-mt5",
+      "source": "ea-directory-2026",
       "name": "JS Hedging Pro EA MT5 with SetFiles",
-      "reason": "Phát hiện rủi ro Grid/Martingale: Cảnh báo Grid/Martingale: \"JS Hedging Pro EA MT5 with SetFiles | EAFree Skip to content Getting Started Step-by-Step Guide Change Partner Guide Learn EA Library Premium Giveaway Contest About EA_LIBRARY / FOREX_EA / JS_HEDGING_PRO_EA_MT5_WITH_SETFILES Forex EA JS Hedging Pro EA MT5 with SetFiles JS Hedging Pro EA is an automated gold & forex hedging grid trading system using controlled martingale, wide spacing and daily profit cycles for stable returns\""
-    },
-    {
-      "id": "quantum-titan-mt5",
-      "name": "Quantum Titan MT5",
-      "reason": "Phát hiện rủi ro Grid/Martingale: Cảnh báo Grid/Martingale: \"Many general market robots deploy dangerous grid styles or high-risk martingale elements to recover quick losses\""
+      "category": "toxic_money_management",
+      "reason": "GRID_MARTINGALE_TOXIC_RISK: Cảnh báo Grid/Martingale: \"JS Hedging Pro EA MT5 with SetFiles | EAFree Skip to content Getting Started Step-by-Step Guide Change Partner Guide Lea\""
     },
     {
       "id": "scalping-robot-pro-mt5",
+      "source": "ea-directory-2026",
       "name": "Scalping Robot Pro MT5",
-      "reason": "Phát hiện rủi ro Grid/Martingale: Cảnh báo Grid/Martingale: \"Scalping Robot Pro MT5 | EAFree Skip to content Getting Started Step-by-Step Guide Change Partner Guide Learn EA Library Premium Giveaway Contest About EA_LIBRARY / FOREX_EA / SCALPING / SCALPING_ROBOT_PRO_MT5 Scalping Scalping Robot Pro MT5 Premium Scalping Robot Pro MT5 for XAUUSD trades M1 grid setups\""
-    },
-    {
-      "id": "statarb-full-suite",
-      "name": "STATARB FULL SUITE",
-      "reason": "Phát hiện rủi ro Grid/Martingale: Cảnh báo Grid/Martingale: \"This system is entirely unsuited for amateur traders seeking rapid, hyper-leveraged returns via reckless grid or martingale systems\""
+      "category": "toxic_money_management",
+      "reason": "GRID_MARTINGALE_TOXIC_RISK: Cảnh báo Grid/Martingale: \"Scalping Robot Pro MT5 | EAFree Skip to content Getting Started Step-by-Step Guide Change Partner Guide Learn EA Library\""
     },
     {
       "id": "sunan-giri-ea-mt4",
+      "source": "ea-directory-2026",
       "name": "Sunan Giri EA MT4 v2.0 - Original version | Download Free",
-      "reason": "Phát hiện rủi ro Grid/Martingale: Cảnh báo Grid/Martingale: \"0 · Aug 31, 2026 Latest Download Category Forex EA, Forex EA › Grid Trading Added Aug 31, 2026 Sunan Giri EA MT4 v2\""
+      "category": "toxic_money_management",
+      "reason": "GRID_MARTINGALE_TOXIC_RISK: Cảnh báo Grid/Martingale: \"0 · Aug 31, 2026 Latest Download Category Forex EA, Forex EA › Grid Trading Added Aug 31, 2026 Sunan Giri EA MT4 v2\""
     },
     {
-      "id": "volatility-pro-indicator-mt5",
-      "name": "Volatility Pro Indicator MT5 | Free Download",
-      "reason": "Phát hiện rủi ro Grid/Martingale: Cảnh báo Grid/Martingale: \"Officially Reviewed by: Michael Johnson Specifications Platform MT5 Timeframe M15 - H1 (Powered by D1 background calculations) Currency Pairs Gold (XAUUSD), Major Forex, Large-Cap Crypto Min Deposit Any (Depends strictly on the trader's broker) Leverage Any (Compatible with all leverage levels) Account Type Any (Standard, ECN, Pro, Raw Spread) Strategy Type Quantitative Volatility Analysis (GARCH(1,1) & Vol Cone) Risk Level Low Lot Sizing N/A (Manual trade execution tool) Max Drawdown N/A (Analytical indicator, not an automated trading system) Backtest Period 400 Days Historical Lookback (D1 bars via MLE grid search) Win Rate 60% - 70% (Statistical probability of price closing inside the ±1σ box) FAQ Q 1 ❓ Does this indicator predict the exact direction of the market\""
+      "id": "advanced-gold-trading-ea-v64-mt4",
+      "source": "ea-directory-2026",
+      "name": "Advanced Gold Trading EA v6.4 MT4 - Original version | Download Free",
+      "category": "blackbox_no_live_real_proof",
+      "reason": "NO_LIVE_REAL_PROOF_BLACKBOX: EA thương mại đóng mã nguồn không có liên kết kiểm chứng tài khoản thật (Myfxbook/MQL5 Live Real), không đủ điều kiện đưa vào danh mục định lượng."
+    },
+    {
+      "id": "aikon-mt5",
+      "source": "ea-directory-2026",
+      "name": "Aikon MT5",
+      "category": "blackbox_no_live_real_proof",
+      "reason": "NO_LIVE_REAL_PROOF_BLACKBOX: EA thương mại đóng mã nguồn không có liên kết kiểm chứng tài khoản thật (Myfxbook/MQL5 Live Real), không đủ điều kiện đưa vào danh mục định lượng."
+    },
+    {
+      "id": "alpha-ai-ea-mt5",
+      "source": "ea-directory-2026",
+      "name": "ALPHA AI EA MT5 v1.09 with SetFiles",
+      "category": "blackbox_no_live_real_proof",
+      "reason": "NO_LIVE_REAL_PROOF_BLACKBOX: EA thương mại đóng mã nguồn không có liên kết kiểm chứng tài khoản thật (Myfxbook/MQL5 Live Real), không đủ điều kiện đưa vào danh mục định lượng."
+    },
+    {
+      "id": "big-forex-players-mt4",
+      "source": "ea-directory-2026",
+      "name": "Big Forex Players MT4 v3.1 - Original version | Download Free",
+      "category": "blackbox_no_live_real_proof",
+      "reason": "NO_LIVE_REAL_PROOF_BLACKBOX: EA thương mại đóng mã nguồn không có liên kết kiểm chứng tài khoản thật (Myfxbook/MQL5 Live Real), không đủ điều kiện đưa vào danh mục định lượng."
+    },
+    {
+      "id": "cybervision-ea-mt4",
+      "source": "ea-directory-2026",
+      "name": "CyberVision EA MT4 v1.3 - Original version | Download Free",
+      "category": "blackbox_no_live_real_proof",
+      "reason": "NO_LIVE_REAL_PROOF_BLACKBOX: EA thương mại đóng mã nguồn không có liên kết kiểm chứng tài khoản thật (Myfxbook/MQL5 Live Real), không đủ điều kiện đưa vào danh mục định lượng."
+    },
+    {
+      "id": "fenghuang-rig-ea-mt4",
+      "source": "ea-directory-2026",
+      "name": "Fenghuang Rig EA MT4 v1.3 - Original version | Download Free",
+      "category": "blackbox_no_live_real_proof",
+      "reason": "NO_LIVE_REAL_PROOF_BLACKBOX: EA thương mại đóng mã nguồn không có liên kết kiểm chứng tài khoản thật (Myfxbook/MQL5 Live Real), không đủ điều kiện đưa vào danh mục định lượng."
+    },
+    {
+      "id": "ghost-ai-ea-mt5",
+      "source": "ea-directory-2026",
+      "name": "Ghost AI EA MT5 with SetFiles",
+      "category": "blackbox_no_live_real_proof",
+      "reason": "NO_LIVE_REAL_PROOF_BLACKBOX: EA thương mại đóng mã nguồn không có liên kết kiểm chứng tài khoản thật (Myfxbook/MQL5 Live Real), không đủ điều kiện đưa vào danh mục định lượng."
+    },
+    {
+      "id": "hft-pro-evolution-ea-mt4",
+      "source": "ea-directory-2026",
+      "name": "HFT Pro Evolution EA MT4 - Original version | Download Free",
+      "category": "blackbox_no_live_real_proof",
+      "reason": "NO_LIVE_REAL_PROOF_BLACKBOX: EA thương mại đóng mã nguồn không có liên kết kiểm chứng tài khoản thật (Myfxbook/MQL5 Live Real), không đủ điều kiện đưa vào danh mục định lượng."
+    },
+    {
+      "id": "high-frequency-trading-bot-mt4",
+      "source": "ea-directory-2026",
+      "name": "High Frequency Trading Bot MT4",
+      "category": "blackbox_no_live_real_proof",
+      "reason": "NO_LIVE_REAL_PROOF_BLACKBOX: EA thương mại đóng mã nguồn không có liên kết kiểm chứng tài khoản thật (Myfxbook/MQL5 Live Real), không đủ điều kiện đưa vào danh mục định lượng."
+    },
+    {
+      "id": "moondog-ea-v334-mt5-free-download",
+      "source": "ea-directory-2026",
+      "name": "MoonDog EA V3.38 MT5 - FREE DOWNLOAD",
+      "category": "blackbox_no_live_real_proof",
+      "reason": "NO_LIVE_REAL_PROOF_BLACKBOX: EA thương mại đóng mã nguồn không có liên kết kiểm chứng tài khoản thật (Myfxbook/MQL5 Live Real), không đủ điều kiện đưa vào danh mục định lượng."
+    },
+    {
+      "id": "quantum-titan-mt5",
+      "source": "ea-directory-2026",
+      "name": "Quantum Titan MT5",
+      "category": "blackbox_no_live_real_proof",
+      "reason": "NO_LIVE_REAL_PROOF_BLACKBOX: EA thương mại đóng mã nguồn không có liên kết kiểm chứng tài khoản thật (Myfxbook/MQL5 Live Real), không đủ điều kiện đưa vào danh mục định lượng."
+    },
+    {
+      "id": "scalping-enslaver-ea-mt4",
+      "source": "ea-directory-2026",
+      "name": "Scalping Enslaver EA MT4 - Original version | Download Free",
+      "category": "blackbox_no_live_real_proof",
+      "reason": "NO_LIVE_REAL_PROOF_BLACKBOX: EA thương mại đóng mã nguồn không có liên kết kiểm chứng tài khoản thật (Myfxbook/MQL5 Live Real), không đủ điều kiện đưa vào danh mục định lượng."
+    },
+    {
+      "id": "top-gold-mt5",
+      "source": "ea-directory-2026",
+      "name": "Top Gold MT5 v1.0 with SetFiles",
+      "category": "blackbox_no_live_real_proof",
+      "reason": "NO_LIVE_REAL_PROOF_BLACKBOX: EA thương mại đóng mã nguồn không có liên kết kiểm chứng tài khoản thật (Myfxbook/MQL5 Live Real), không đủ điều kiện đưa vào danh mục định lượng."
+    },
+    {
+      "id": "ultimate-breakout-system-mt5",
+      "source": "ea-directory-2026",
+      "name": "Ultimate Breakout System MT5",
+      "category": "blackbox_no_live_real_proof",
+      "reason": "NO_LIVE_REAL_PROOF_BLACKBOX: EA thương mại đóng mã nguồn không có liên kết kiểm chứng tài khoản thật (Myfxbook/MQL5 Live Real), không đủ điều kiện đưa vào danh mục định lượng."
     }
   ]
 }

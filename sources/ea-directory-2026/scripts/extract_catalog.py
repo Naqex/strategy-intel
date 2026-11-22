@@ -8,14 +8,16 @@ from bs4 import BeautifulSoup
 from pydantic import BaseModel, Field
 
 class EACatalogItem(BaseModel):
-    name: str = Field(..., description="Tên thương mại của EA")
+    name: str = Field(..., description="Tên thương mại của EA hoặc công cụ")
     url: str = Field(..., description="Đường dẫn bài viết chi tiết tại eafree.net")
+    asset_type: str = Field(..., description="Phân loại tài sản: EA | INDICATOR | UTILITY")
     platform: str = Field(..., description="Nền tảng giao dịch (MT4 / MT5 / MT4/MT5 / NOT_DISCLOSED)")
     pricing: str = Field(..., description="Giá / Hình thức cấp phép (Free / Paid / Freemium)")
     site_score: Optional[float] = Field(None, description="Điểm đánh giá từ người dùng hoặc NOT_DISCLOSED (null)")
     risk_label: str = Field(..., description="Mức rủi ro gắn nhãn (Low / Medium / High / NOT_DISCLOSED)")
-    claimed_strategy_type: str = Field(..., description="Trường phái chiến lược (Breakout / Mean-Reversion / Grid / Martingale / Scalping / Trend / NOT_DISCLOSED)")
+    claimed_strategy_type: str = Field(..., description="Trường phái chiến lược (Breakout / Mean-Reversion / Grid / Martingale / Scalping / Trend / Indicator / Utility / NOT_DISCLOSED)")
     has_grid_or_martingale_signals: bool = Field(..., description="Có tín hiệu dùng Grid hoặc Martingale hay không")
+    is_hft_or_hedging_blackbox: bool = Field(..., description="Cảnh báo HFT / Hedging / Arbitrage / AI Blackbox không có Live Real Proof")
     grid_martingale_rationale: str = Field(..., description="Lý do và câu trích nguyên văn từ bài viết")
     symbols: List[str] = Field(..., description="Cặp tiền tệ / Tài sản giao dịch")
     timeframes: List[str] = Field(..., description="Khung thời gian giao dịch")
@@ -52,9 +54,19 @@ def extract_ea_from_html(filepath: str) -> EACatalogItem:
         raw_name = h1.get_text(strip=True) if h1 else slug
     name = re.sub(r'\s*Premium\s*$', '', raw_name).strip()
 
-    # Full text
+    # Full text & lower
     full_text = soup.get_text(separator=' ', strip=True)
     text_lower = full_text.lower()
+    title_str = soup.title.string.strip() if soup.title and soup.title.string else ''
+    title_lower = title_str.lower()
+
+    # Asset Type: EA vs INDICATOR vs UTILITY
+    if any(k in slug for k in ['dashboard', 'tradepad', 'trade-manager']) or any(k in title_lower for k in ['dashboard', 'tradepad']):
+        asset_type = 'UTILITY'
+    elif any(k in slug for k in ['-indicator-', '-suite']) or any(k in title_lower for k in ['indicator', 'suite']):
+        asset_type = 'INDICATOR'
+    else:
+        asset_type = 'EA'
 
     # Platform
     platform = "NOT_DISCLOSED"
@@ -94,8 +106,11 @@ def extract_ea_from_html(filepath: str) -> EACatalogItem:
         risk_label = "Medium"
 
     # Claimed Strategy Type
-    claimed_type = "NOT_DISCLOSED"
-    if "breakout" in text_lower:
+    if asset_type == 'UTILITY':
+        claimed_type = "Utility"
+    elif asset_type == 'INDICATOR':
+        claimed_type = "Indicator"
+    elif "breakout" in text_lower:
         claimed_type = "Breakout"
     elif "scalp" in text_lower:
         claimed_type = "Scalping"
@@ -105,41 +120,65 @@ def extract_ea_from_html(filepath: str) -> EACatalogItem:
         claimed_type = "Mean-Reversion"
     elif "grid trading" in text_lower or "martingale" in text_lower or "hedging recovery" in text_lower:
         claimed_type = "Grid"
-    elif "indicator" in slug.lower() or "indicator" in name.lower() or "suite" in slug.lower():
-        claimed_type = "Indicator"
+    else:
+        claimed_type = "NOT_DISCLOSED"
+
+    # Verified live links (Myfxbook, MQL5 signals)
+    verified_links = []
+    has_live_real = False
+    for a in soup.find_all('a', href=True):
+        href = a['href']
+        h_lower = href.lower()
+        if 'myfxbook.com' in h_lower or 'mql5.com/en/signals' in h_lower or 'mql5.com/signals' in h_lower:
+            verified_links.append(href)
+            if 'demo' not in h_lower:
+                has_live_real = True
+
+    # is_hft_or_hedging_blackbox: for EAs with HFT / Hedging / Arbitrage / AI Blackbox keywords without Live Real Proof
+    is_hft_hedging_blackbox = False
+    if asset_type == 'EA':
+        bb_patterns = [
+            r'\bhft\b', r'\bhigh[- ]frequency\b', r'\bhedging\b', r'\bhedge\b',
+            r'\barbitrage\b', r'\bblack[- ]?box\b', r'\bneural\b', r'\bai\b',
+            r'\bartificial intelligence\b', r'\bmachine learning\b', r'\bdeep learning\b'
+        ]
+        matched_bb = [p for p in bb_patterns if re.search(p, text_lower) or re.search(p, slug.lower())]
+        if matched_bb and not has_live_real:
+            is_hft_hedging_blackbox = True
 
     # Grid / Martingale Analysis
     has_grid = False
-    rationale = "Không phát hiện tín hiệu giao dịch Grid/Martingale trong tài liệu mô tả."
+    rationale = "Không phát hiện tín hiệu giao dịch Grid/Martingale."
 
-    sentences = re.split(r'[.!?\n]', full_text)
-    # Search for trading grid / martingale keywords, excluding visual grid terms
-    trading_grid_sentences = []
-    for s in sentences:
-        s_clean = s.strip()
-        # skip visual display grids
-        if any(v in s_clean.lower() for v in ['visualizes', 'calendar tab', 'heatmap', 'square of 9', 'rowatr', 'chart patterns']):
-            continue
-        if re.search(r'\b(martingale|cost-averaging|averaging down|lot multiplier|recovery hedging|hedging grid|grid setups|grid trading|grid strategy|grid system)\b', s_clean, re.IGNORECASE):
-            trading_grid_sentences.append(s_clean)
-        elif re.search(r'\bgrid\b', s_clean, re.IGNORECASE) and any(kw in s_clean.lower() for kw in ['orders', 'levels', 'recovery', 'danger', 'risk', 'avoid', 'trades']):
-            trading_grid_sentences.append(s_clean)
-
-    if trading_grid_sentences:
-        target_s = trading_grid_sentences[0]
-        s_lower = target_s.lower()
-        # Check if denial
-        is_negation = any(neg in s_lower for neg in [
-            'non-grid', 'no-grid', 'no grid', 'no martingale', 'avoids', 'avoiding',
-            'without grid', 'without martingale', 'never use', 'not use', 'completely avoiding',
-            'strictly avoids', 'does not rely', 'unlike', 'doesn\'t use'
-        ])
-        if is_negation:
-            has_grid = False
-            rationale = f"Khẳng định KHÔNG dùng: \"{target_s}\""
-        else:
-            has_grid = True
-            rationale = f"Cảnh báo Grid/Martingale: \"{target_s}\""
+    if 'category forex ea › grid trading' in text_lower or 'category forex ea › martingale' in text_lower:
+        has_grid = True
+        rationale = "Gắn nhãn danh mục chính thức: Grid/Martingale Trading"
+    elif asset_type == 'EA':
+        sentences = re.split(r'[.!?\n]', full_text)
+        for s in sentences:
+            s_clean = s.strip()
+            # skip visual display grids
+            if any(v in s_clean.lower() for v in ['visualizes', 'calendar tab', 'heatmap', 'square of 9', 'rowatr', 'chart patterns']):
+                continue
+            if re.search(r'\b(martingale|cost-averaging|averaging down|lot multiplier|recovery hedging|hedging grid|grid setups|grid trading|grid strategy|grid system)\b', s_clean, re.IGNORECASE):
+                s_low = s_clean.lower()
+                # Skip questions
+                if re.match(r'^(does|can|is|what|how|why|q\s*\d|question)', s_low) and ('use' in s_low or 'rely' in s_low or 'setup' in s_low):
+                    continue
+                # Skip comparisons against other market robots
+                if any(comp in s_low for comp in ['other robots', 'general market robots', 'many general market']):
+                    continue
+                # Negation check
+                is_negation = any(neg in s_low for neg in [
+                    'non-grid', 'no-grid', 'no grid', 'no martingale', 'non-martingale', 'zero martingale', 'zero grid',
+                    'rejects', 'strips away', 'strips out', 'avoids', 'avoiding', 'avoidance', 'without grid', 'without martingale',
+                    'never use', 'not use', 'completely avoiding', 'strictly avoids', 'does not rely', 'unlike',
+                    'doesn\'t use', 'does not use', 'safe alternative to dangerous', 'do not risk', 'without relying'
+                ])
+                if not is_negation:
+                    has_grid = True
+                    rationale = f"Cảnh báo Grid/Martingale: \"{s_clean[:120]}\""
+                    break
 
     # Symbols
     symbols = []
@@ -165,23 +204,17 @@ def extract_ea_from_html(filepath: str) -> EACatalogItem:
     elif re.search(r'without stop loss|no stop loss|virtual equity drawdown cutoff|basket tp', full_text, re.IGNORECASE):
         uses_hard_sl = False
 
-    # Verified live links (Myfxbook, MQL5 signals)
-    verified_links = []
-    for a in soup.find_all('a', href=True):
-        href = a['href']
-        h_lower = href.lower()
-        if 'myfxbook.com' in h_lower or 'mql5.com/en/signals' in h_lower or 'mql5.com/signals' in h_lower:
-            verified_links.append(href)
-
     return EACatalogItem(
         name=name,
         url=url,
+        asset_type=asset_type,
         platform=platform,
         pricing=pricing,
         site_score=site_score,
         risk_label=risk_label,
         claimed_strategy_type=claimed_type,
         has_grid_or_martingale_signals=has_grid,
+        is_hft_or_hedging_blackbox=is_hft_hedging_blackbox,
         grid_martingale_rationale=rationale,
         symbols=symbols,
         timeframes=timeframes,
@@ -196,7 +229,7 @@ def main():
     os.makedirs(ext_dir, exist_ok=True)
 
     html_files = sorted(glob.glob(os.path.join(details_dir, '*.html')))
-    print(f"[*] Parsing {len(html_files)} EA detail pages from {details_dir}...")
+    print(f"[*] Parsing {len(html_files)} EA & Tool detail pages from {details_dir}...")
 
     catalog = []
     for f in html_files:
@@ -216,8 +249,8 @@ def main():
     # Output CSV
     csv_path = os.path.join(ext_dir, '01_ea_catalog.csv')
     fieldnames = [
-        'name', 'url', 'platform', 'pricing', 'site_score', 'risk_label',
-        'claimed_strategy_type', 'has_grid_or_martingale_signals',
+        'name', 'url', 'asset_type', 'platform', 'pricing', 'site_score', 'risk_label',
+        'claimed_strategy_type', 'has_grid_or_martingale_signals', 'is_hft_or_hedging_blackbox',
         'grid_martingale_rationale', 'symbols', 'timeframes', 'uses_hard_sl',
         'verified_live_links'
     ]
@@ -228,12 +261,14 @@ def main():
             writer.writerow([
                 item.name,
                 item.url,
+                item.asset_type,
                 item.platform,
                 item.pricing,
                 item.site_score if item.site_score is not None else 'NOT_DISCLOSED',
                 item.risk_label,
                 item.claimed_strategy_type,
                 'TRUE' if item.has_grid_or_martingale_signals else 'FALSE',
+                'TRUE' if item.is_hft_or_hedging_blackbox else 'FALSE',
                 item.grid_martingale_rationale,
                 '; '.join(item.symbols),
                 '; '.join(item.timeframes),
@@ -243,14 +278,21 @@ def main():
     print(f"[+] Saved {csv_path}")
 
     # Summary statistics
-    grid_count = sum(1 for item in catalog if item.has_grid_or_martingale_signals)
-    non_grid = len(catalog) - grid_count
-    live_links_count = sum(len(item.verified_live_links) for item in catalog)
+    ea_items = [i for i in catalog if i.asset_type == 'EA']
+    ind_items = [i for i in catalog if i.asset_type == 'INDICATOR']
+    ut_items = [i for i in catalog if i.asset_type == 'UTILITY']
+    grid_count = sum(1 for item in ea_items if item.has_grid_or_martingale_signals)
+    blackbox_count = sum(1 for item in ea_items if item.is_hft_or_hedging_blackbox)
+    live_links_count = sum(len(item.verified_live_links) for item in ea_items)
+
     print(f"\n--- AUDIT SUMMARY ---")
-    print(f"Total EAs Analyzed: {len(catalog)}")
-    print(f"Clean (Non-Grid / No Martingale claimed): {non_grid}")
-    print(f"Toxic Risk (Grid / Martingale detected): {grid_count}")
-    print(f"Verified Live Links (Myfxbook/MQL5 Signals): {live_links_count}")
+    print(f"Total Items Analyzed: {len(catalog)}")
+    print(f"  - EAs: {len(ea_items)}")
+    print(f"  - Indicators: {len(ind_items)}")
+    print(f"  - Utilities: {len(ut_items)}")
+    print(f"EA Grid/Martingale Detected: {grid_count}")
+    print(f"EA HFT/Hedging/AI Blackbox Flagged: {blackbox_count}")
+    print(f"EA Verified Live Links: {live_links_count}")
 
 if __name__ == '__main__':
     main()

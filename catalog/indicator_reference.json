@@ -1,0 +1,584 @@
+{
+  "generated_at": "2026-11-23T01:47:27.761054",
+  "source": "ea-directory-2026",
+  "total_items": 27,
+  "indicators_count": 25,
+  "utilities_count": 2,
+  "items": [
+    {
+      "id": "chart-patterns-indicator-mt5",
+      "name": "CHART PATTERNS Indicator MT5 | Free Download",
+      "asset_type": "INDICATOR",
+      "url": "https://www.eafree.net/ea/chart-patterns-indicator-mt5",
+      "platform": "MT5",
+      "pricing": "Free (Premium Membership Required)",
+      "site_score": 5.0,
+      "claimed_strategy_type": "Indicator",
+      "symbols": [
+        "XAUUSD",
+        "GOLD"
+      ],
+      "timeframes": [
+        "M1",
+        "M5",
+        "M15",
+        "H1",
+        "H4"
+      ],
+      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Indicator."
+    },
+    {
+      "id": "divergence-scanner-indicator-mt5",
+      "name": "Divergence Scanner Indicator MT5 | Free Download",
+      "asset_type": "INDICATOR",
+      "url": "https://www.eafree.net/ea/divergence-scanner-indicator-mt5",
+      "platform": "MT5",
+      "pricing": "Free (Premium Membership Required)",
+      "site_score": null,
+      "claimed_strategy_type": "Indicator",
+      "symbols": [
+        "XAUUSD",
+        "GOLD"
+      ],
+      "timeframes": [
+        "M15",
+        "H1",
+        "H4"
+      ],
+      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Indicator."
+    },
+    {
+      "id": "eafree-dashboard-v13",
+      "name": "EAFree Dashboard Version 1.3",
+      "asset_type": "UTILITY",
+      "url": "https://www.eafree.net/ea/eafree-dashboard-v13",
+      "platform": "MT4/MT5",
+      "pricing": "Free (Premium Membership Required)",
+      "site_score": null,
+      "claimed_strategy_type": "Utility",
+      "symbols": [
+        "XAUUSD",
+        "GOLD",
+        "EURUSD"
+      ],
+      "timeframes": [
+        "M15",
+        "H1"
+      ],
+      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (UTILITY) dựa trên Utility."
+    },
+    {
+      "id": "eafree-tradepad-v216",
+      "name": "EAFree TradePad v2.16",
+      "asset_type": "UTILITY",
+      "url": "https://www.eafree.net/ea/eafree-tradepad-v216",
+      "platform": "MT5",
+      "pricing": "Free (Premium Membership Required)",
+      "site_score": 5.0,
+      "claimed_strategy_type": "Utility",
+      "symbols": [
+        "XAUUSD",
+        "GOLD"
+      ],
+      "timeframes": [
+        "NOT_DISCLOSED"
+      ],
+      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (UTILITY) dựa trên Utility."
+    },
+    {
+      "id": "ehlers-dsp-indicator-mt5",
+      "name": "Ehlers DSP Indicator MT5 | Free Download",
+      "asset_type": "INDICATOR",
+      "url": "https://www.eafree.net/ea/ehlers-dsp-indicator-mt5",
+      "platform": "MT5",
+      "pricing": "Free (Premium Membership Required)",
+      "site_score": null,
+      "claimed_strategy_type": "Indicator",
+      "symbols": [
+        "XAUUSD",
+        "GOLD"
+      ],
+      "timeframes": [
+        "M15",
+        "H1",
+        "H4"
+      ],
+      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Indicator."
+    },
+    {
+      "id": "elliott-full-suite",
+      "name": "Elliott Full Suite V2.12 | Free Download",
+      "asset_type": "INDICATOR",
+      "url": "https://www.eafree.net/ea/elliott-full-suite",
+      "platform": "MT5",
+      "pricing": "Free (Premium Membership Required)",
+      "site_score": null,
+      "claimed_strategy_type": "Indicator",
+      "symbols": [
+        "XAUUSD",
+        "GOLD",
+        "EURUSD",
+        "GBPUSD",
+        "BTCUSD"
+      ],
+      "timeframes": [
+        "M5",
+        "M15",
+        "H1",
+        "H4"
+      ],
+      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Indicator."
+    },
+    {
+      "id": "fib-cluster-indicator-mt5",
+      "name": "FIB CLUSTER Indicator MT5 | Free Download",
+      "asset_type": "INDICATOR",
+      "url": "https://www.eafree.net/ea/fib-cluster-indicator-mt5",
+      "platform": "MT5",
+      "pricing": "Free (Premium Membership Required)",
+      "site_score": null,
+      "claimed_strategy_type": "Indicator",
+      "symbols": [
+        "XAUUSD",
+        "GOLD"
+      ],
+      "timeframes": [
+        "M15",
+        "H1",
+        "H4",
+        "D1"
+      ],
+      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Indicator."
+    },
+    {
+      "id": "footprint-alpha-indicator-mt5",
+      "name": "Footprint Alpha Indicator MT5 | Free Download",
+      "asset_type": "INDICATOR",
+      "url": "https://www.eafree.net/ea/footprint-alpha-indicator-mt5",
+      "platform": "MT5",
+      "pricing": "Free (Premium Membership Required)",
+      "site_score": null,
+      "claimed_strategy_type": "Indicator",
+      "symbols": [
+        "XAUUSD",
+        "GOLD"
+      ],
+      "timeframes": [
+        "M1",
+        "M5",
+        "M15"
+      ],
+      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Indicator."
+    },
+    {
+      "id": "fractal-ipda-suite",
+      "name": "FRACTAL / IPDA SUITE V1.0 | Free Download",
+      "asset_type": "INDICATOR",
+      "url": "https://www.eafree.net/ea/fractal-ipda-suite",
+      "platform": "MT4",
+      "pricing": "Free (Premium Membership Required)",
+      "site_score": null,
+      "claimed_strategy_type": "Indicator",
+      "symbols": [
+        "XAUUSD",
+        "GOLD"
+      ],
+      "timeframes": [
+        "M5",
+        "M15",
+        "D1"
+      ],
+      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Indicator."
+    },
+    {
+      "id": "gann-full-suite",
+      "name": "GANN FULL SUITE V1.12 | Free Download",
+      "asset_type": "INDICATOR",
+      "url": "https://www.eafree.net/ea/gann-full-suite",
+      "platform": "MT5",
+      "pricing": "Free (Premium Membership Required)",
+      "site_score": null,
+      "claimed_strategy_type": "Indicator",
+      "symbols": [
+        "XAUUSD",
+        "GOLD"
+      ],
+      "timeframes": [
+        "H4",
+        "D1"
+      ],
+      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Indicator."
+    },
+    {
+      "id": "harmonic-full-suite",
+      "name": "Harmonic Full Suite V1.14 | Free Download",
+      "asset_type": "INDICATOR",
+      "url": "https://www.eafree.net/ea/harmonic-full-suite",
+      "platform": "MT5",
+      "pricing": "Free (Premium Membership Required)",
+      "site_score": null,
+      "claimed_strategy_type": "Indicator",
+      "symbols": [
+        "XAUUSD",
+        "GOLD",
+        "EURUSD",
+        "GBPUSD",
+        "BTCUSD"
+      ],
+      "timeframes": [
+        "H1",
+        "H4"
+      ],
+      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Indicator."
+    },
+    {
+      "id": "ict-full-suite",
+      "name": "ICT FULL SUITE V1.12 | Free Download",
+      "asset_type": "INDICATOR",
+      "url": "https://www.eafree.net/ea/ict-full-suite",
+      "platform": "MT4",
+      "pricing": "Free (Premium Membership Required)",
+      "site_score": null,
+      "claimed_strategy_type": "Indicator",
+      "symbols": [
+        "XAUUSD",
+        "GOLD",
+        "EURUSD",
+        "GBPUSD"
+      ],
+      "timeframes": [
+        "M1",
+        "M5",
+        "M15",
+        "H1",
+        "H4",
+        "D1"
+      ],
+      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Indicator."
+    },
+    {
+      "id": "liquidity-full-suite",
+      "name": "Liquidity Full Suite V1.0 | Free Download",
+      "asset_type": "INDICATOR",
+      "url": "https://www.eafree.net/ea/liquidity-full-suite",
+      "platform": "MT5",
+      "pricing": "Free (Premium Membership Required)",
+      "site_score": null,
+      "claimed_strategy_type": "Indicator",
+      "symbols": [
+        "XAUUSD",
+        "GOLD",
+        "EURUSD",
+        "GBPUSD",
+        "USDJPY"
+      ],
+      "timeframes": [
+        "M5",
+        "M15",
+        "H1"
+      ],
+      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Indicator."
+    },
+    {
+      "id": "market-profile-full-suite",
+      "name": "Market Profile Full Suite v1.02 | Free Download",
+      "asset_type": "INDICATOR",
+      "url": "https://www.eafree.net/ea/market-profile-full-suite",
+      "platform": "MT5",
+      "pricing": "Free (Premium Membership Required)",
+      "site_score": null,
+      "claimed_strategy_type": "Indicator",
+      "symbols": [
+        "XAUUSD",
+        "GOLD",
+        "US30",
+        "NAS100"
+      ],
+      "timeframes": [
+        "M5",
+        "M15",
+        "M30",
+        "H1",
+        "D1"
+      ],
+      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Indicator."
+    },
+    {
+      "id": "ml-lorentzian-indicator-mt5",
+      "name": "ML Lorentzian Indicator MT5 | Free Download",
+      "asset_type": "INDICATOR",
+      "url": "https://www.eafree.net/ea/ml-lorentzian-indicator-mt5",
+      "platform": "MT5",
+      "pricing": "Free (Premium Membership Required)",
+      "site_score": 3.0,
+      "claimed_strategy_type": "Indicator",
+      "symbols": [
+        "XAUUSD",
+        "GOLD"
+      ],
+      "timeframes": [
+        "M15",
+        "M30",
+        "H1",
+        "D1"
+      ],
+      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Indicator."
+    },
+    {
+      "id": "order-flow-full-suite",
+      "name": "Order Flow Full Suite V1.42 | Free Download",
+      "asset_type": "INDICATOR",
+      "url": "https://www.eafree.net/ea/order-flow-full-suite",
+      "platform": "MT5",
+      "pricing": "Free (Premium Membership Required)",
+      "site_score": 5.0,
+      "claimed_strategy_type": "Indicator",
+      "symbols": [
+        "XAUUSD",
+        "GOLD"
+      ],
+      "timeframes": [
+        "M1",
+        "M5",
+        "M15"
+      ],
+      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Indicator."
+    },
+    {
+      "id": "price-action-full-suite",
+      "name": "Price Action Full Suite V1.02 | Free Download",
+      "asset_type": "INDICATOR",
+      "url": "https://www.eafree.net/ea/price-action-full-suite",
+      "platform": "MT5",
+      "pricing": "Free (Premium Membership Required)",
+      "site_score": null,
+      "claimed_strategy_type": "Indicator",
+      "symbols": [
+        "XAUUSD",
+        "GOLD"
+      ],
+      "timeframes": [
+        "M5",
+        "M15",
+        "H1",
+        "H4"
+      ],
+      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Indicator."
+    },
+    {
+      "id": "quant-full-suite",
+      "name": "QUANT FULL SUITE V1.0 |Free Download",
+      "asset_type": "INDICATOR",
+      "url": "https://www.eafree.net/ea/quant-full-suite",
+      "platform": "MT5",
+      "pricing": "Free (Premium Membership Required)",
+      "site_score": null,
+      "claimed_strategy_type": "Indicator",
+      "symbols": [
+        "XAUUSD",
+        "GOLD"
+      ],
+      "timeframes": [
+        "H1"
+      ],
+      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Indicator."
+    },
+    {
+      "id": "session-news-indicator-mt5",
+      "name": "SESSION & NEWS Indicator MT5 | Free Download",
+      "asset_type": "INDICATOR",
+      "url": "https://www.eafree.net/ea/session-news-indicator-mt5",
+      "platform": "MT5",
+      "pricing": "Free (Premium Membership Required)",
+      "site_score": null,
+      "claimed_strategy_type": "Indicator",
+      "symbols": [
+        "XAUUSD",
+        "GOLD"
+      ],
+      "timeframes": [
+        "M1",
+        "M5",
+        "M15"
+      ],
+      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Indicator."
+    },
+    {
+      "id": "smc-toolkit-indicator-mt5",
+      "name": "SMC TOOLKIT Indicator MT5 | Free Download",
+      "asset_type": "INDICATOR",
+      "url": "https://www.eafree.net/ea/smc-toolkit-indicator-mt5",
+      "platform": "MT5",
+      "pricing": "Free (Premium Membership Required)",
+      "site_score": null,
+      "claimed_strategy_type": "Indicator",
+      "symbols": [
+        "XAUUSD",
+        "GOLD"
+      ],
+      "timeframes": [
+        "M5",
+        "M15",
+        "H1",
+        "H4"
+      ],
+      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Indicator."
+    },
+    {
+      "id": "spline-qr-indicator-mt5",
+      "name": "SPLINE QR Indicator MT5 | Free Download",
+      "asset_type": "INDICATOR",
+      "url": "https://www.eafree.net/ea/spline-qr-indicator-mt5",
+      "platform": "MT5",
+      "pricing": "Free (Premium Membership Required)",
+      "site_score": null,
+      "claimed_strategy_type": "Indicator",
+      "symbols": [
+        "XAUUSD",
+        "GOLD",
+        "NAS100"
+      ],
+      "timeframes": [
+        "M15",
+        "H1",
+        "H4"
+      ],
+      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Indicator."
+    },
+    {
+      "id": "statarb-full-suite",
+      "name": "STATARB FULL SUITE",
+      "asset_type": "INDICATOR",
+      "url": "https://www.eafree.net/ea/statarb-full-suite",
+      "platform": "MT5",
+      "pricing": "Free (Premium Membership Required)",
+      "site_score": null,
+      "claimed_strategy_type": "Indicator",
+      "symbols": [
+        "XAUUSD",
+        "GOLD",
+        "EURUSD",
+        "GBPUSD",
+        "AUDUSD",
+        "NZDUSD"
+      ],
+      "timeframes": [
+        "M15",
+        "H1",
+        "H4"
+      ],
+      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Indicator."
+    },
+    {
+      "id": "supply-demand-indicator-mt5",
+      "name": "SUPPLY & DEMAND Indicator MT5 | Free Download",
+      "asset_type": "INDICATOR",
+      "url": "https://www.eafree.net/ea/supply-demand-indicator-mt5",
+      "platform": "MT5",
+      "pricing": "Free (Premium Membership Required)",
+      "site_score": null,
+      "claimed_strategy_type": "Indicator",
+      "symbols": [
+        "XAUUSD",
+        "GOLD"
+      ],
+      "timeframes": [
+        "M1",
+        "M5",
+        "M15",
+        "H1",
+        "H4",
+        "D1"
+      ],
+      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Indicator."
+    },
+    {
+      "id": "volatility-pro-indicator-mt5",
+      "name": "Volatility Pro Indicator MT5 | Free Download",
+      "asset_type": "INDICATOR",
+      "url": "https://www.eafree.net/ea/volatility-pro-indicator-mt5",
+      "platform": "MT5",
+      "pricing": "Free (Premium Membership Required)",
+      "site_score": 5.0,
+      "claimed_strategy_type": "Indicator",
+      "symbols": [
+        "XAUUSD",
+        "GOLD"
+      ],
+      "timeframes": [
+        "M1",
+        "M5",
+        "M15",
+        "M30",
+        "H1",
+        "H4",
+        "D1"
+      ],
+      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Indicator."
+    },
+    {
+      "id": "vsa-full-suite",
+      "name": "VSA Full Suite V1.12 | Free Download",
+      "asset_type": "INDICATOR",
+      "url": "https://www.eafree.net/ea/vsa-full-suite",
+      "platform": "MT5",
+      "pricing": "Free (Premium Membership Required)",
+      "site_score": null,
+      "claimed_strategy_type": "Indicator",
+      "symbols": [
+        "XAUUSD",
+        "GOLD"
+      ],
+      "timeframes": [
+        "M1",
+        "M5",
+        "M15",
+        "H1",
+        "H4",
+        "D1"
+      ],
+      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Indicator."
+    },
+    {
+      "id": "vwap-pro-indicator-mt5",
+      "name": "VWAP PRO Indicator MT5 | Free Download",
+      "asset_type": "INDICATOR",
+      "url": "https://www.eafree.net/ea/vwap-pro-indicator-mt5",
+      "platform": "MT5",
+      "pricing": "Free (Premium Membership Required)",
+      "site_score": null,
+      "claimed_strategy_type": "Indicator",
+      "symbols": [
+        "XAUUSD",
+        "GOLD"
+      ],
+      "timeframes": [
+        "M5",
+        "M15",
+        "H1",
+        "H4"
+      ],
+      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Indicator."
+    },
+    {
+      "id": "wyckoff-full-suite",
+      "name": "WYCKOFF FULL SUITE v3.32 | Free Download",
+      "asset_type": "INDICATOR",
+      "url": "https://www.eafree.net/ea/wyckoff-full-suite",
+      "platform": "MT5",
+      "pricing": "Free (Premium Membership Required)",
+      "site_score": 5.0,
+      "claimed_strategy_type": "Indicator",
+      "symbols": [
+        "XAUUSD",
+        "GOLD"
+      ],
+      "timeframes": [
+        "M15",
+        "H1",
+        "H4"
+      ],
+      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Indicator."
+    }
+  ]
+}

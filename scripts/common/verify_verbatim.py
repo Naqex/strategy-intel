@@ -57,7 +57,7 @@ def verify():
                     errors.append(f"Strategy {item.get('spec', {}).get('id')} has verdict '{item.get('verdict')}' instead of CHẤT")
             print(f"[+] Source 1 (Top 15 CHẤT): 15/15 verified.")
 
-    # 2. Verify sources/ea-directory-2026/ (if exists)
+    # 2. Verify sources/ea-directory-2026/
     source2_dir = os.path.join(ROOT_DIR, 'sources/ea-directory-2026')
     if os.path.exists(source2_dir):
         catalog_file = os.path.join(source2_dir, 'extracted/01_ea_catalog.json')
@@ -65,15 +65,52 @@ def verify():
             with open(catalog_file, encoding='utf-8') as f:
                 catalog = json.load(f)
             required_keys = {
-                'name', 'url', 'platform', 'pricing', 'site_score', 'risk_label',
-                'claimed_strategy_type', 'has_grid_or_martingale_signals',
+                'name', 'url', 'asset_type', 'platform', 'pricing', 'site_score', 'risk_label',
+                'claimed_strategy_type', 'has_grid_or_martingale_signals', 'is_hft_or_hedging_blackbox',
                 'symbols', 'timeframes', 'uses_hard_sl', 'verified_live_links'
             }
-            for ea in catalog:
-                missing_keys = required_keys - set(ea.keys())
+            valid_asset_types = {'EA', 'INDICATOR', 'UTILITY'}
+            for item in catalog:
+                missing_keys = required_keys - set(item.keys())
                 if missing_keys:
-                    errors.append(f"EA '{ea.get('name')}' is missing required fields: {missing_keys}")
-            print(f"[+] Source 2 (ea-directory-2026): {len(catalog)} EAs verified schema.")
+                    errors.append(f"Item '{item.get('name')}' is missing required fields: {missing_keys}")
+                if item.get('asset_type') not in valid_asset_types:
+                    errors.append(f"Item '{item.get('name')}' has invalid asset_type: '{item.get('asset_type')}'")
+            print(f"[+] Source 2 (ea-directory-2026): {len(catalog)} items verified schema (asset_type & blackbox flag present).")
+
+    # 3. Verify catalog/
+    ind_file = os.path.join(ROOT_DIR, 'catalog/indicator_reference.json')
+    master_file = os.path.join(ROOT_DIR, 'catalog/master_leads.json')
+    rej_file = os.path.join(ROOT_DIR, 'catalog/rejected_log.json')
+
+    if os.path.exists(ind_file):
+        with open(ind_file, encoding='utf-8') as f:
+            ind_data = json.load(f)
+        for i in ind_data.get('items', []):
+            if i.get('asset_type') not in {'INDICATOR', 'UTILITY'}:
+                errors.append(f"Non-indicator item in indicator_reference: {i.get('name')}")
+        print(f"[+] Catalog (indicator_reference.json): {len(ind_data.get('items', []))} items verified.")
+
+    if os.path.exists(master_file):
+        with open(master_file, encoding='utf-8') as f:
+            m_data = json.load(f)
+        for lead in m_data.get('leads', []):
+            # Must meet condition a or b
+            if not lead.get('gate_condition_met'):
+                errors.append(f"Lead {lead.get('lead_id')} missing gate_condition_met tag")
+        print(f"[+] Catalog (master_leads.json): {len(m_data.get('leads', []))} cleanroom leads verified.")
+
+    if os.path.exists(rej_file):
+        with open(rej_file, encoding='utf-8') as f:
+            r_data = json.load(f)
+        valid_cats = {
+            'curve_fitted_retail_schools', 'chat_failed_oos',
+            'toxic_money_management', 'blackbox_no_live_real_proof'
+        }
+        for item in r_data.get('rejected_items', []):
+            if item.get('category') not in valid_cats:
+                errors.append(f"Rejected item {item.get('id')} has unknown category: {item.get('category')}")
+        print(f"[+] Catalog (rejected_log.json): {len(r_data.get('rejected_items', []))} rejected items verified.")
 
     if errors:
         print("\n[!] VERIFICATION FAILED with errors:")
