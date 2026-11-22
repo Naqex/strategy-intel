@@ -80,9 +80,9 @@ Mọi tệp tin trong `extracted/`, `catalog/` và `handoff/` được kiểm ch
 | **Nguồn 2** | `sources/ea-directory-2026/extracted/01_ea_catalog.csv` | 13,685 | `056411D5CF8BD492DC444AB09CB8BF4B1227CC301A7E21F390CC603D0674D5BC` |
 | **Nguồn 2** | `sources/ea-directory-2026/extracted/01_ea_catalog.json` | 33,221 | `8CFA15BF118114CE5F1DFB0AEB5DEA8FB2479D4CCBEBD03051FC06C25DD10601` |
 | **Catalog** | `catalog/indicator_reference.json` | 17,386 | `9D6FDF756C83BA55C07DAC5D0F1CCC4FF9DF1A8D9C39123BFCBFEB9CE95E08FF` |
-| **Catalog** | `catalog/master_leads.json` | 9,957 | `7CA3924A0DDEF1B7CBC36C50B0FE2E258F9D011DFDB73740CF83ACE5A919EA82` |
+| **Catalog** | `catalog/master_leads.json` | 23,296 | `1EFC5A3F9970C469212C63C3D2A06145378D3D45476866B1B70AFFFAFDB1A971` |
 | **Catalog** | `catalog/rejected_log.json` | 66,425 | `9A290B91E8EEB0EC03248B1378AF885FA916A899F250F6543CBEF0C2F4289248` |
-| **Handoff** | `handoff/sanitized_master_leads.json` | 10,013 | `AB44A0F7F9C4DFED9AA578A223FE914366DBDBC3F4CA43BA97F4531BF8CC4A00` |
+| **Handoff** | `handoff/sanitized_master_leads.json` | 23,352 | `CBC9E37437F1F33EBD9BF89131A4962CA942FA29693B2A0E599555661B80DB99` |
 
 ---
 

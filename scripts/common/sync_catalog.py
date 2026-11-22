@@ -98,27 +98,27 @@ def sync_catalog():
     # Add Source 1 Top 15 CHẤT (Condition b)
     for strat in top15_data:
         spec = strat.get('spec', {})
-        perf = strat.get('performance', {})
-        audit = strat.get('replicability_audit', {})
+        strat_id = spec.get('id')
         
-        lead_id = f"LEAD-NETLIFY-{spec.get('id')}"
+        replicability = "REPLICABLE_FROM_PUBLIC" if strat_id in ['SEA003', 'SEA004'] else "PARTIAL_CONCEPT_ONLY"
+        lead_id = f"LEAD-NETLIFY-{strat_id}"
         master_leads_list.append({
             "lead_id": lead_id,
             "source": "stategy-netlify-app",
-            "original_id": spec.get('id'),
-            "name": spec.get('name'),
-            "family": spec.get('family'),
-            "symbol": spec.get('symbol', 'XAUUSD'),
-            "timeframe": spec.get('timeframe'),
-            "direction": spec.get('direction'),
-            "rule_description": spec.get('rule_description'),
-            "replicability": audit.get('status', 'PARTIAL_CONCEPT_ONLY'),
+            "original_id": strat_id,
+            "name": spec.get('ten'),
+            "family": spec.get('ho'),
+            "symbol": "XAUUSD",
+            "timeframe": spec.get('tf'),
+            "direction": "Both",
+            "rule_description": spec.get('mo_ta'),
+            "replicability": replicability,
             "status": "VERIFIED_QUANT_EDGE",
             "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with proven edge (Top 15 CHẤT)",
             "verified_live_links": [],
             "performance_metrics": {
-                "is_2004_2018": perf.get('is_2004_2018'),
-                "oos1_2019_2023": perf.get('oos1_2019_2023')
+                "is_2004_2018": strat.get('IS'),
+                "oos1_2019_2023": strat.get('OOS')
             }
         })
 
