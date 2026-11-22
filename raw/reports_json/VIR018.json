@@ -1,0 +1,65 @@
+{
+  "spec": {
+    "id": "VIR018",
+    "ten": "ICT Unicorn model (breaker + FVG)",
+    "ho": "Viral & SMC/ICT",
+    "nguon": "ICT mới 2024+",
+    "mo_ta": "Breaker block chồng FVG = vùng vào xác suất cao",
+    "tf": "H1"
+  },
+  "verdict": "CHÁT",
+  "tieu_chi": {
+    "edge_vs_null": false,
+    "ben_tham_so": true,
+    "song_sot_oos": false,
+    "chiu_phi": true,
+    "kha_thi": true
+  },
+  "IS": {
+    "n": 263,
+    "wr": 28.5,
+    "years_pos": "7/15",
+    "nam_duong": {
+      "2004": false,
+      "2005": true,
+      "2006": true,
+      "2007": true,
+      "2008": false,
+      "2009": false,
+      "2010": false,
+      "2011": true,
+      "2012": false,
+      "2013": true,
+      "2014": false,
+      "2015": true,
+      "2016": false,
+      "2017": true,
+      "2018": false
+    }
+  },
+  "OOS": {
+    "n": 77,
+    "wr": 24.7,
+    "years_pos": "2/5",
+    "nam_duong": {
+      "2019": true,
+      "2020": true,
+      "2021": false,
+      "2022": false,
+      "2023": false
+    }
+  },
+  "OOS2": {
+    "n": 49,
+    "wr": 22.4,
+    "years_pos": "0/3",
+    "status": "vẫn rớt",
+    "pham_vi": "2024-02-01 → 2026-07-07",
+    "ghi_chu": "Kỳ thi lần 2 chấm một lần duy nhất ngày 2026-08-16. KHÔNG thay đổi verdict gốc từ kỳ thi thật 2019–2023.",
+    "nam_duong": {
+      "2024": false,
+      "2025": false,
+      "2026": false
+    }
+  }
+}

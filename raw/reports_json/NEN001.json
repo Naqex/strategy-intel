@@ -1,0 +1,65 @@
+{
+  "spec": {
+    "id": "NEN001",
+    "ten": "Pin bar đảo chiều tại đáy/đỉnh",
+    "ho": "Mẫu nến",
+    "nguon": "Martin Pring / price action kinh điển",
+    "mo_ta": "Nến râu dài ≥2/3 thân xuất hiện tại đáy/đỉnh cục bộ, vào theo hướng ngược râu ở nến kế",
+    "tf": "H1"
+  },
+  "verdict": "CHÁT",
+  "tieu_chi": {
+    "edge_vs_null": false,
+    "ben_tham_so": false,
+    "song_sot_oos": false,
+    "chiu_phi": true,
+    "kha_thi": true
+  },
+  "IS": {
+    "n": 1871,
+    "wr": 24.9,
+    "years_pos": "3/15",
+    "nam_duong": {
+      "2004": true,
+      "2005": false,
+      "2006": false,
+      "2007": false,
+      "2008": true,
+      "2009": false,
+      "2010": true,
+      "2011": false,
+      "2012": false,
+      "2013": false,
+      "2014": false,
+      "2015": false,
+      "2016": false,
+      "2017": false,
+      "2018": false
+    }
+  },
+  "OOS": {
+    "n": 644,
+    "wr": 26.9,
+    "years_pos": "1/5",
+    "nam_duong": {
+      "2019": false,
+      "2020": false,
+      "2021": false,
+      "2022": true,
+      "2023": false
+    }
+  },
+  "OOS2": {
+    "n": 302,
+    "wr": 23.5,
+    "years_pos": "0/3",
+    "status": "vẫn rớt",
+    "pham_vi": "2024-02-01 → 2026-07-07",
+    "ghi_chu": "Kỳ thi lần 2 chấm một lần duy nhất ngày 2026-08-16. KHÔNG thay đổi verdict gốc từ kỳ thi thật 2019–2023.",
+    "nam_duong": {
+      "2024": false,
+      "2025": false,
+      "2026": false
+    }
+  }
+}

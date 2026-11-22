@@ -1,0 +1,65 @@
+{
+  "spec": {
+    "id": "VIR040",
+    "ten": "Head & Shoulders phá neckline",
+    "ho": "Viral & SMC/ICT",
+    "nguon": "Kinh điển được TikTok hồi sinh",
+    "mo_ta": "Vai-đầu-vai phá neckline — vào theo, SL trên vai phải",
+    "tf": "H4"
+  },
+  "verdict": "CHẤT",
+  "tieu_chi": {
+    "edge_vs_null": true,
+    "ben_tham_so": true,
+    "song_sot_oos": true,
+    "chiu_phi": true,
+    "kha_thi": true
+  },
+  "IS": {
+    "n": 221,
+    "wr": 35.7,
+    "years_pos": "14/15",
+    "nam_duong": {
+      "2004": true,
+      "2005": true,
+      "2006": true,
+      "2007": false,
+      "2008": true,
+      "2009": true,
+      "2010": true,
+      "2011": true,
+      "2012": true,
+      "2013": true,
+      "2014": true,
+      "2015": true,
+      "2016": true,
+      "2017": true,
+      "2018": true
+    }
+  },
+  "OOS": {
+    "n": 100,
+    "wr": 32,
+    "years_pos": "4/5",
+    "nam_duong": {
+      "2019": false,
+      "2020": true,
+      "2021": true,
+      "2022": true,
+      "2023": true
+    }
+  },
+  "OOS2": {
+    "n": 37,
+    "wr": 29.7,
+    "years_pos": "2/3",
+    "status": "giữ vững",
+    "pham_vi": "2024-02-01 → 2026-07-07",
+    "ghi_chu": "Kỳ thi lần 2 chấm một lần duy nhất ngày 2026-08-16. KHÔNG thay đổi verdict gốc từ kỳ thi thật 2019–2023.",
+    "nam_duong": {
+      "2024": false,
+      "2025": true,
+      "2026": true
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "spec": {
+    "id": "NEN029",
+    "ten": "Gap sáng thứ Hai — theo",
+    "ho": "Mẫu nến",
+    "nguon": "Biến thể ngược",
+    "mo_ta": "Gap mở tuần ≥1ATR, vào THEO hướng gap (momentum)",
+    "tf": "H1"
+  },
+  "verdict": "TÌNH HUỐNG",
+  "tieu_chi": {
+    "edge_vs_null": true,
+    "ben_tham_so": true,
+    "song_sot_oos": false,
+    "chiu_phi": true,
+    "kha_thi": false
+  },
+  "IS": {
+    "n": 18,
+    "wr": 44.4,
+    "years_pos": "4/8",
+    "nam_duong": {
+      "2004": false,
+      "2005": true,
+      "2006": true,
+      "2007": false,
+      "2010": false,
+      "2011": false,
+      "2017": true,
+      "2018": true
+    }
+  },
+  "OOS": {
+    "n": 2,
+    "wr": 100,
+    "years_pos": "2/2",
+    "nam_duong": {
+      "2022": true,
+      "2023": true
+    }
+  },
+  "OOS2": {
+    "n": 0,
+    "wr": 0,
+    "years_pos": "0/0",
+    "status": "không lệnh",
+    "pham_vi": "2024-02-01 → 2026-07-07",
+    "ghi_chu": "Kỳ thi lần 2 chấm một lần duy nhất ngày 2026-08-16. KHÔNG thay đổi verdict gốc từ kỳ thi thật 2019–2023.",
+    "nam_duong": {}
+  }
+}

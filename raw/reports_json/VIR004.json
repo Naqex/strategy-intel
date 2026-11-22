@@ -1,0 +1,65 @@
+{
+  "spec": {
+    "id": "VIR004",
+    "ten": "FVG làm hỗ trợ (inversion FVG)",
+    "ho": "Viral & SMC/ICT",
+    "nguon": "ICT mới",
+    "mo_ta": "FVG bị phá trở thành vùng cản ngược — vào khi retest",
+    "tf": "H1"
+  },
+  "verdict": "CHÁT",
+  "tieu_chi": {
+    "edge_vs_null": false,
+    "ben_tham_so": true,
+    "song_sot_oos": false,
+    "chiu_phi": true,
+    "kha_thi": true
+  },
+  "IS": {
+    "n": 1944,
+    "wr": 28.1,
+    "years_pos": "9/15",
+    "nam_duong": {
+      "2004": false,
+      "2005": true,
+      "2006": false,
+      "2007": true,
+      "2008": false,
+      "2009": true,
+      "2010": true,
+      "2011": true,
+      "2012": false,
+      "2013": false,
+      "2014": false,
+      "2015": true,
+      "2016": true,
+      "2017": true,
+      "2018": true
+    }
+  },
+  "OOS": {
+    "n": 599,
+    "wr": 26.2,
+    "years_pos": "2/5",
+    "nam_duong": {
+      "2019": false,
+      "2020": false,
+      "2021": false,
+      "2022": true,
+      "2023": true
+    }
+  },
+  "OOS2": {
+    "n": 309,
+    "wr": 27.8,
+    "years_pos": "2/3",
+    "status": "vẫn rớt",
+    "pham_vi": "2024-02-01 → 2026-07-07",
+    "ghi_chu": "Kỳ thi lần 2 chấm một lần duy nhất ngày 2026-08-16. KHÔNG thay đổi verdict gốc từ kỳ thi thật 2019–2023.",
+    "nam_duong": {
+      "2024": true,
+      "2025": false,
+      "2026": true
+    }
+  }
+}

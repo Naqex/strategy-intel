@@ -1,0 +1,64 @@
+{
+  "spec": {
+    "id": "MTF020",
+    "ten": "Golden cross D1 nền + mua mọi hồi H4",
+    "ho": "Đa khung & lai",
+    "nguon": "Trend nền dài",
+    "mo_ta": "Sau golden cross D1, mua mỗi lần H4 hồi về EMA20",
+    "tf": "H4"
+  },
+  "verdict": "CHẤT",
+  "tieu_chi": {
+    "edge_vs_null": true,
+    "ben_tham_so": true,
+    "song_sot_oos": true,
+    "chiu_phi": true,
+    "kha_thi": true
+  },
+  "IS": {
+    "n": 482,
+    "wr": 30.3,
+    "years_pos": "11/14",
+    "nam_duong": {
+      "2005": true,
+      "2006": true,
+      "2007": true,
+      "2008": true,
+      "2009": true,
+      "2010": true,
+      "2011": true,
+      "2012": false,
+      "2013": true,
+      "2014": false,
+      "2015": true,
+      "2016": true,
+      "2017": true,
+      "2018": false
+    }
+  },
+  "OOS": {
+    "n": 143,
+    "wr": 30.8,
+    "years_pos": "4/5",
+    "nam_duong": {
+      "2019": true,
+      "2020": true,
+      "2021": false,
+      "2022": true,
+      "2023": true
+    }
+  },
+  "OOS2": {
+    "n": 48,
+    "wr": 45.8,
+    "years_pos": "2/3",
+    "status": "giữ vững",
+    "pham_vi": "2024-02-01 → 2026-07-07",
+    "ghi_chu": "Kỳ thi lần 2 chấm một lần duy nhất ngày 2026-08-16. KHÔNG thay đổi verdict gốc từ kỳ thi thật 2019–2023.",
+    "nam_duong": {
+      "2024": true,
+      "2025": true,
+      "2026": false
+    }
+  }
+}

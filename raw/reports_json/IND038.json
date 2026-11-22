@@ -1,0 +1,65 @@
+{
+  "spec": {
+    "id": "IND038",
+    "ten": "OBV phân kỳ",
+    "ho": "Indicator kinh điển",
+    "nguon": "Joe Granville (1963)",
+    "mo_ta": "OBV phân kỳ với giá tại cực trị, vào ngược",
+    "tf": "H4"
+  },
+  "verdict": "TÌNH HUỐNG",
+  "tieu_chi": {
+    "edge_vs_null": false,
+    "ben_tham_so": false,
+    "song_sot_oos": true,
+    "chiu_phi": true,
+    "kha_thi": true
+  },
+  "IS": {
+    "n": 443,
+    "wr": 25.5,
+    "years_pos": "6/15",
+    "nam_duong": {
+      "2004": false,
+      "2005": true,
+      "2006": false,
+      "2007": false,
+      "2008": true,
+      "2009": true,
+      "2010": true,
+      "2011": true,
+      "2012": false,
+      "2013": false,
+      "2014": false,
+      "2015": false,
+      "2016": true,
+      "2017": false,
+      "2018": false
+    }
+  },
+  "OOS": {
+    "n": 143,
+    "wr": 34.3,
+    "years_pos": "4/5",
+    "nam_duong": {
+      "2019": false,
+      "2020": true,
+      "2021": true,
+      "2022": true,
+      "2023": true
+    }
+  },
+  "OOS2": {
+    "n": 60,
+    "wr": 28.3,
+    "years_pos": "2/3",
+    "status": "giữ vững",
+    "pham_vi": "2024-02-01 → 2026-07-07",
+    "ghi_chu": "Kỳ thi lần 2 chấm một lần duy nhất ngày 2026-08-16. KHÔNG thay đổi verdict gốc từ kỳ thi thật 2019–2023.",
+    "nam_duong": {
+      "2024": true,
+      "2025": true,
+      "2026": false
+    }
+  }
+}

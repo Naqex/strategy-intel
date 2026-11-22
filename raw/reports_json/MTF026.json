@@ -1,0 +1,49 @@
+{
+  "spec": {
+    "id": "MTF026",
+    "ten": "Tuần mở gap + ngày theo gap có lọc H4",
+    "ho": "Đa khung & lai",
+    "nguon": "Gap đa khung",
+    "mo_ta": "Gap tuần cùng hướng trend H4 mới theo, ngược thì bỏ",
+    "tf": "H1"
+  },
+  "verdict": "CHÁT",
+  "tieu_chi": {
+    "edge_vs_null": false,
+    "ben_tham_so": true,
+    "song_sot_oos": false,
+    "chiu_phi": true,
+    "kha_thi": false
+  },
+  "IS": {
+    "n": 16,
+    "wr": 50,
+    "years_pos": "4/7",
+    "nam_duong": {
+      "2005": true,
+      "2006": true,
+      "2007": false,
+      "2010": false,
+      "2011": false,
+      "2017": true,
+      "2018": true
+    }
+  },
+  "OOS": {
+    "n": 1,
+    "wr": 100,
+    "years_pos": "1/1",
+    "nam_duong": {
+      "2023": true
+    }
+  },
+  "OOS2": {
+    "n": 0,
+    "wr": 0,
+    "years_pos": "0/0",
+    "status": "không lệnh",
+    "pham_vi": "2024-02-01 → 2026-07-07",
+    "ghi_chu": "Kỳ thi lần 2 chấm một lần duy nhất ngày 2026-08-16. KHÔNG thay đổi verdict gốc từ kỳ thi thật 2019–2023.",
+    "nam_duong": {}
+  }
+}

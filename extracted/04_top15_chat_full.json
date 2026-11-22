@@ -1,0 +1,974 @@
+[
+  {
+    "spec": {
+      "id": "BRK012",
+      "ten": "Inside day breakout",
+      "ho": "Breakout & phiên",
+      "nguon": "Toby Crabel",
+      "mo_ta": "Hôm nay nằm trọn trong hôm qua → mai phá biên nào theo biên đó",
+      "tf": "D1"
+    },
+    "verdict": "CHẤT",
+    "tieu_chi": {
+      "edge_vs_null": true,
+      "ben_tham_so": true,
+      "song_sot_oos": true,
+      "chiu_phi": true,
+      "kha_thi": true
+    },
+    "IS": {
+      "n": 113,
+      "wr": 29.2,
+      "years_pos": "8/15",
+      "nam_duong": {
+        "2004": false,
+        "2005": false,
+        "2006": false,
+        "2007": true,
+        "2008": false,
+        "2009": false,
+        "2010": false,
+        "2011": true,
+        "2012": true,
+        "2013": true,
+        "2014": true,
+        "2015": true,
+        "2016": true,
+        "2017": true,
+        "2018": false
+      }
+    },
+    "OOS": {
+      "n": 36,
+      "wr": 30.6,
+      "years_pos": "3/5",
+      "nam_duong": {
+        "2019": true,
+        "2020": false,
+        "2021": true,
+        "2022": false,
+        "2023": true
+      }
+    },
+    "OOS2": {
+      "n": 22,
+      "wr": 45.5,
+      "years_pos": "3/3",
+      "status": "giữ vững",
+      "pham_vi": "2024-02-01 → 2026-07-07",
+      "ghi_chu": "Kỳ thi lần 2 chấm một lần duy nhất ngày 2026-08-16. KHÔNG thay đổi verdict gốc từ kỳ thi thật 2019–2023.",
+      "nam_duong": {
+        "2024": true,
+        "2025": true,
+        "2026": true
+      }
+    }
+  },
+  {
+    "spec": {
+      "id": "BRK035",
+      "ten": "Hộp 4h đầu tuần",
+      "ho": "Breakout & phiên",
+      "nguon": "Weekly opening range",
+      "mo_ta": "Range 4 giờ đầu tuần, phá biên trong ngày thứ Hai",
+      "tf": "H1"
+    },
+    "verdict": "CHẤT",
+    "tieu_chi": {
+      "edge_vs_null": true,
+      "ben_tham_so": true,
+      "song_sot_oos": true,
+      "chiu_phi": true,
+      "kha_thi": true
+    },
+    "IS": {
+      "n": 945,
+      "wr": 29.6,
+      "years_pos": "9/15",
+      "nam_duong": {
+        "2004": false,
+        "2005": false,
+        "2006": false,
+        "2007": true,
+        "2008": true,
+        "2009": false,
+        "2010": true,
+        "2011": true,
+        "2012": false,
+        "2013": true,
+        "2014": true,
+        "2015": true,
+        "2016": true,
+        "2017": true,
+        "2018": false
+      }
+    },
+    "OOS": {
+      "n": 337,
+      "wr": 29.1,
+      "years_pos": "4/5",
+      "nam_duong": {
+        "2019": true,
+        "2020": true,
+        "2021": false,
+        "2022": true,
+        "2023": true
+      }
+    },
+    "OOS2": {
+      "n": 168,
+      "wr": 28.6,
+      "years_pos": "1/3",
+      "status": "giữ vững",
+      "pham_vi": "2024-02-01 → 2026-07-07",
+      "ghi_chu": "Kỳ thi lần 2 chấm một lần duy nhất ngày 2026-08-16. KHÔNG thay đổi verdict gốc từ kỳ thi thật 2019–2023.",
+      "nam_duong": {
+        "2024": false,
+        "2025": true,
+        "2026": false
+      }
+    }
+  },
+  {
+    "spec": {
+      "id": "IND026",
+      "ten": "Ichimoku Chikou xác nhận",
+      "ho": "Indicator kinh điển",
+      "nguon": "Hosoda",
+      "mo_ta": "Chikou vượt giá 26 nến trước + giá trên mây → mua",
+      "tf": "D1"
+    },
+    "verdict": "CHẤT",
+    "tieu_chi": {
+      "edge_vs_null": true,
+      "ben_tham_so": true,
+      "song_sot_oos": true,
+      "chiu_phi": true,
+      "kha_thi": false
+    },
+    "IS": {
+      "n": 63,
+      "wr": 33.3,
+      "years_pos": "9/15",
+      "nam_duong": {
+        "2004": true,
+        "2005": true,
+        "2006": false,
+        "2007": true,
+        "2008": false,
+        "2009": true,
+        "2010": true,
+        "2011": false,
+        "2012": true,
+        "2013": true,
+        "2014": true,
+        "2015": false,
+        "2016": false,
+        "2017": false,
+        "2018": true
+      }
+    },
+    "OOS": {
+      "n": 23,
+      "wr": 34.8,
+      "years_pos": "3/5",
+      "nam_duong": {
+        "2019": false,
+        "2020": true,
+        "2021": false,
+        "2022": true,
+        "2023": true
+      }
+    },
+    "OOS2": {
+      "n": 9,
+      "wr": 44.4,
+      "years_pos": "2/3",
+      "status": "giữ vững",
+      "pham_vi": "2024-02-01 → 2026-07-07",
+      "ghi_chu": "Kỳ thi lần 2 chấm một lần duy nhất ngày 2026-08-16. KHÔNG thay đổi verdict gốc từ kỳ thi thật 2019–2023.",
+      "nam_duong": {
+        "2024": true,
+        "2025": true,
+        "2026": false
+      }
+    }
+  },
+  {
+    "spec": {
+      "id": "IND041",
+      "ten": "ROC momentum 10",
+      "ho": "Indicator kinh điển",
+      "nguon": "Giáo khoa",
+      "mo_ta": "Rate of Change vượt ngưỡng ±X%, vào theo momentum",
+      "tf": "H4"
+    },
+    "verdict": "CHẤT",
+    "tieu_chi": {
+      "edge_vs_null": true,
+      "ben_tham_so": true,
+      "song_sot_oos": true,
+      "chiu_phi": true,
+      "kha_thi": true
+    },
+    "IS": {
+      "n": 496,
+      "wr": 30,
+      "years_pos": "12/15",
+      "nam_duong": {
+        "2004": false,
+        "2005": true,
+        "2006": true,
+        "2007": true,
+        "2008": true,
+        "2009": true,
+        "2010": true,
+        "2011": true,
+        "2012": false,
+        "2013": true,
+        "2014": true,
+        "2015": true,
+        "2016": false,
+        "2017": true,
+        "2018": true
+      }
+    },
+    "OOS": {
+      "n": 188,
+      "wr": 29.8,
+      "years_pos": "3/5",
+      "nam_duong": {
+        "2019": true,
+        "2020": true,
+        "2021": false,
+        "2022": false,
+        "2023": true
+      }
+    },
+    "OOS2": {
+      "n": 91,
+      "wr": 29.7,
+      "years_pos": "1/3",
+      "status": "giữ vững",
+      "pham_vi": "2024-02-01 → 2026-07-07",
+      "ghi_chu": "Kỳ thi lần 2 chấm một lần duy nhất ngày 2026-08-16. KHÔNG thay đổi verdict gốc từ kỳ thi thật 2019–2023.",
+      "nam_duong": {
+        "2024": false,
+        "2025": true,
+        "2026": false
+      }
+    }
+  },
+  {
+    "spec": {
+      "id": "IND049",
+      "ten": "Alligator mở miệng",
+      "ho": "Indicator kinh điển",
+      "nguon": "Bill Williams",
+      "mo_ta": "3 đường alligator tách nhau sau khi cuộn, vào theo hướng mở",
+      "tf": "H4"
+    },
+    "verdict": "CHẤT",
+    "tieu_chi": {
+      "edge_vs_null": true,
+      "ben_tham_so": true,
+      "song_sot_oos": true,
+      "chiu_phi": true,
+      "kha_thi": true
+    },
+    "IS": {
+      "n": 537,
+      "wr": 31.1,
+      "years_pos": "12/15",
+      "nam_duong": {
+        "2004": true,
+        "2005": true,
+        "2006": true,
+        "2007": true,
+        "2008": true,
+        "2009": true,
+        "2010": true,
+        "2011": true,
+        "2012": false,
+        "2013": true,
+        "2014": true,
+        "2015": false,
+        "2016": false,
+        "2017": true,
+        "2018": true
+      }
+    },
+    "OOS": {
+      "n": 174,
+      "wr": 31.6,
+      "years_pos": "4/5",
+      "nam_duong": {
+        "2019": true,
+        "2020": true,
+        "2021": true,
+        "2022": true,
+        "2023": false
+      }
+    },
+    "OOS2": {
+      "n": 84,
+      "wr": 29.8,
+      "years_pos": "2/3",
+      "status": "giữ vững",
+      "pham_vi": "2024-02-01 → 2026-07-07",
+      "ghi_chu": "Kỳ thi lần 2 chấm một lần duy nhất ngày 2026-08-16. KHÔNG thay đổi verdict gốc từ kỳ thi thật 2019–2023.",
+      "nam_duong": {
+        "2024": true,
+        "2025": true,
+        "2026": false
+      }
+    }
+  },
+  {
+    "spec": {
+      "id": "IND053",
+      "ten": "Momentum 10 vượt 100",
+      "ho": "Indicator kinh điển",
+      "nguon": "Giáo khoa",
+      "mo_ta": "Momentum vượt ngưỡng — mua; thủng — bán",
+      "tf": "H4"
+    },
+    "verdict": "CHẤT",
+    "tieu_chi": {
+      "edge_vs_null": true,
+      "ben_tham_so": true,
+      "song_sot_oos": true,
+      "chiu_phi": true,
+      "kha_thi": true
+    },
+    "IS": {
+      "n": 566,
+      "wr": 29.2,
+      "years_pos": "10/15",
+      "nam_duong": {
+        "2004": false,
+        "2005": true,
+        "2006": true,
+        "2007": true,
+        "2008": false,
+        "2009": true,
+        "2010": true,
+        "2011": true,
+        "2012": false,
+        "2013": false,
+        "2014": true,
+        "2015": true,
+        "2016": true,
+        "2017": false,
+        "2018": true
+      }
+    },
+    "OOS": {
+      "n": 176,
+      "wr": 27.8,
+      "years_pos": "4/5",
+      "nam_duong": {
+        "2019": true,
+        "2020": true,
+        "2021": false,
+        "2022": true,
+        "2023": true
+      }
+    },
+    "OOS2": {
+      "n": 94,
+      "wr": 31.9,
+      "years_pos": "2/3",
+      "status": "giữ vững",
+      "pham_vi": "2024-02-01 → 2026-07-07",
+      "ghi_chu": "Kỳ thi lần 2 chấm một lần duy nhất ngày 2026-08-16. KHÔNG thay đổi verdict gốc từ kỳ thi thật 2019–2023.",
+      "nam_duong": {
+        "2024": true,
+        "2025": true,
+        "2026": false
+      }
+    }
+  },
+  {
+    "spec": {
+      "id": "MTF016",
+      "ten": "Mùa vụ D1 + tín hiệu H1",
+      "ho": "Đa khung & lai",
+      "nguon": "Seasonality làm lọc",
+      "mo_ta": "Chỉ nhận tín hiệu H1 thuận hướng mùa vụ tháng đó",
+      "tf": "H1"
+    },
+    "verdict": "CHẤT",
+    "tieu_chi": {
+      "edge_vs_null": true,
+      "ben_tham_so": true,
+      "song_sot_oos": true,
+      "chiu_phi": true,
+      "kha_thi": true
+    },
+    "IS": {
+      "n": 311,
+      "wr": 31.5,
+      "years_pos": "11/15",
+      "nam_duong": {
+        "2004": true,
+        "2005": true,
+        "2006": true,
+        "2007": true,
+        "2008": true,
+        "2009": true,
+        "2010": true,
+        "2011": true,
+        "2012": false,
+        "2013": false,
+        "2014": true,
+        "2015": false,
+        "2016": false,
+        "2017": true,
+        "2018": true
+      }
+    },
+    "OOS": {
+      "n": 101,
+      "wr": 35.6,
+      "years_pos": "3/5",
+      "nam_duong": {
+        "2019": true,
+        "2020": false,
+        "2021": false,
+        "2022": true,
+        "2023": true
+      }
+    },
+    "OOS2": {
+      "n": 41,
+      "wr": 29.3,
+      "years_pos": "1/2",
+      "status": "giữ vững",
+      "pham_vi": "2024-02-01 → 2026-07-07",
+      "ghi_chu": "Kỳ thi lần 2 chấm một lần duy nhất ngày 2026-08-16. KHÔNG thay đổi verdict gốc từ kỳ thi thật 2019–2023.",
+      "nam_duong": {
+        "2024": false,
+        "2025": true
+      }
+    }
+  },
+  {
+    "spec": {
+      "id": "MTF020",
+      "ten": "Golden cross D1 nền + mua mọi hồi H4",
+      "ho": "Đa khung & lai",
+      "nguon": "Trend nền dài",
+      "mo_ta": "Sau golden cross D1, mua mỗi lần H4 hồi về EMA20",
+      "tf": "H4"
+    },
+    "verdict": "CHẤT",
+    "tieu_chi": {
+      "edge_vs_null": true,
+      "ben_tham_so": true,
+      "song_sot_oos": true,
+      "chiu_phi": true,
+      "kha_thi": true
+    },
+    "IS": {
+      "n": 482,
+      "wr": 30.3,
+      "years_pos": "11/14",
+      "nam_duong": {
+        "2005": true,
+        "2006": true,
+        "2007": true,
+        "2008": true,
+        "2009": true,
+        "2010": true,
+        "2011": true,
+        "2012": false,
+        "2013": true,
+        "2014": false,
+        "2015": true,
+        "2016": true,
+        "2017": true,
+        "2018": false
+      }
+    },
+    "OOS": {
+      "n": 143,
+      "wr": 30.8,
+      "years_pos": "4/5",
+      "nam_duong": {
+        "2019": true,
+        "2020": true,
+        "2021": false,
+        "2022": true,
+        "2023": true
+      }
+    },
+    "OOS2": {
+      "n": 48,
+      "wr": 45.8,
+      "years_pos": "2/3",
+      "status": "giữ vững",
+      "pham_vi": "2024-02-01 → 2026-07-07",
+      "ghi_chu": "Kỳ thi lần 2 chấm một lần duy nhất ngày 2026-08-16. KHÔNG thay đổi verdict gốc từ kỳ thi thật 2019–2023.",
+      "nam_duong": {
+        "2024": true,
+        "2025": true,
+        "2026": false
+      }
+    }
+  },
+  {
+    "spec": {
+      "id": "NEN006",
+      "ten": "Inside bar thuận trend D1",
+      "ho": "Mẫu nến",
+      "nguon": "Biến thể lọc trend",
+      "mo_ta": "Chỉ trade inside bar khi D1 đang trend (giá trên/dưới EMA200)",
+      "tf": "D1"
+    },
+    "verdict": "CHẤT",
+    "tieu_chi": {
+      "edge_vs_null": true,
+      "ben_tham_so": true,
+      "song_sot_oos": true,
+      "chiu_phi": true,
+      "kha_thi": true
+    },
+    "IS": {
+      "n": 102,
+      "wr": 30.4,
+      "years_pos": "9/15",
+      "nam_duong": {
+        "2004": false,
+        "2005": true,
+        "2006": true,
+        "2007": true,
+        "2008": false,
+        "2009": true,
+        "2010": true,
+        "2011": true,
+        "2012": false,
+        "2013": true,
+        "2014": false,
+        "2015": false,
+        "2016": true,
+        "2017": true,
+        "2018": false
+      }
+    },
+    "OOS": {
+      "n": 30,
+      "wr": 33.3,
+      "years_pos": "3/5",
+      "nam_duong": {
+        "2019": true,
+        "2020": true,
+        "2021": false,
+        "2022": true,
+        "2023": false
+      }
+    },
+    "OOS2": {
+      "n": 15,
+      "wr": 60,
+      "years_pos": "3/3",
+      "status": "giữ vững",
+      "pham_vi": "2024-02-01 → 2026-07-07",
+      "ghi_chu": "Kỳ thi lần 2 chấm một lần duy nhất ngày 2026-08-16. KHÔNG thay đổi verdict gốc từ kỳ thi thật 2019–2023.",
+      "nam_duong": {
+        "2024": true,
+        "2025": true,
+        "2026": true
+      }
+    }
+  },
+  {
+    "spec": {
+      "id": "NEN022",
+      "ten": "Nến phá vỡ giả (fakey)",
+      "ho": "Mẫu nến",
+      "nguon": "Nial Fuller phổ biến hoá",
+      "mo_ta": "Inside bar bị phá một đầu rồi đóng ngược lại — vào theo hướng đóng",
+      "tf": "H4"
+    },
+    "verdict": "CHẤT",
+    "tieu_chi": {
+      "edge_vs_null": true,
+      "ben_tham_so": true,
+      "song_sot_oos": true,
+      "chiu_phi": true,
+      "kha_thi": true
+    },
+    "IS": {
+      "n": 290,
+      "wr": 29.3,
+      "years_pos": "8/15",
+      "nam_duong": {
+        "2004": false,
+        "2005": true,
+        "2006": true,
+        "2007": true,
+        "2008": false,
+        "2009": false,
+        "2010": true,
+        "2011": true,
+        "2012": false,
+        "2013": true,
+        "2014": false,
+        "2015": true,
+        "2016": true,
+        "2017": false,
+        "2018": false
+      }
+    },
+    "OOS": {
+      "n": 127,
+      "wr": 29.9,
+      "years_pos": "3/5",
+      "nam_duong": {
+        "2019": true,
+        "2020": true,
+        "2021": false,
+        "2022": false,
+        "2023": true
+      }
+    },
+    "OOS2": {
+      "n": 58,
+      "wr": 31,
+      "years_pos": "2/3",
+      "status": "giữ vững",
+      "pham_vi": "2024-02-01 → 2026-07-07",
+      "ghi_chu": "Kỳ thi lần 2 chấm một lần duy nhất ngày 2026-08-16. KHÔNG thay đổi verdict gốc từ kỳ thi thật 2019–2023.",
+      "nam_duong": {
+        "2024": true,
+        "2025": true,
+        "2026": false
+      }
+    }
+  },
+  {
+    "spec": {
+      "id": "SEA003",
+      "ten": "Turn-of-month vàng",
+      "ho": "Giờ giấc & mùa vụ",
+      "nguon": "Seasonality kinh điển",
+      "mo_ta": "Mua 2 phiên cuối tháng, đóng phiên 3 tháng mới",
+      "tf": "D1"
+    },
+    "verdict": "CHẤT",
+    "tieu_chi": {
+      "edge_vs_null": true,
+      "ben_tham_so": true,
+      "song_sot_oos": true,
+      "chiu_phi": true,
+      "kha_thi": false
+    },
+    "IS": {
+      "n": 99,
+      "wr": 36.4,
+      "years_pos": "11/15",
+      "nam_duong": {
+        "2004": false,
+        "2005": true,
+        "2006": true,
+        "2007": true,
+        "2008": true,
+        "2009": true,
+        "2010": true,
+        "2011": true,
+        "2012": false,
+        "2013": false,
+        "2014": true,
+        "2015": true,
+        "2016": true,
+        "2017": true,
+        "2018": false
+      }
+    },
+    "OOS": {
+      "n": 36,
+      "wr": 33.3,
+      "years_pos": "4/5",
+      "nam_duong": {
+        "2019": true,
+        "2020": true,
+        "2021": true,
+        "2022": true,
+        "2023": false
+      }
+    },
+    "OOS2": {
+      "n": 13,
+      "wr": 53.8,
+      "years_pos": "2/3",
+      "status": "giữ vững",
+      "pham_vi": "2024-02-01 → 2026-07-07",
+      "ghi_chu": "Kỳ thi lần 2 chấm một lần duy nhất ngày 2026-08-16. KHÔNG thay đổi verdict gốc từ kỳ thi thật 2019–2023.",
+      "nam_duong": {
+        "2024": true,
+        "2025": true,
+        "2026": false
+      }
+    }
+  },
+  {
+    "spec": {
+      "id": "SEA004",
+      "ten": "Hiệu ứng đầu quý",
+      "ho": "Giờ giấc & mùa vụ",
+      "nguon": "Seasonality",
+      "mo_ta": "Mua/bán theo drift 3 ngày đầu quý",
+      "tf": "D1"
+    },
+    "verdict": "CHẤT",
+    "tieu_chi": {
+      "edge_vs_null": true,
+      "ben_tham_so": true,
+      "song_sot_oos": true,
+      "chiu_phi": true,
+      "kha_thi": false
+    },
+    "IS": {
+      "n": 53,
+      "wr": 35.8,
+      "years_pos": "7/15",
+      "nam_duong": {
+        "2004": false,
+        "2005": false,
+        "2006": true,
+        "2007": false,
+        "2008": false,
+        "2009": false,
+        "2010": true,
+        "2011": true,
+        "2012": true,
+        "2013": false,
+        "2014": false,
+        "2015": true,
+        "2016": true,
+        "2017": false,
+        "2018": true
+      }
+    },
+    "OOS": {
+      "n": 15,
+      "wr": 46.7,
+      "years_pos": "4/5",
+      "nam_duong": {
+        "2019": true,
+        "2020": true,
+        "2021": true,
+        "2022": true,
+        "2023": false
+      }
+    },
+    "OOS2": {
+      "n": 9,
+      "wr": 66.7,
+      "years_pos": "3/3",
+      "status": "giữ vững",
+      "pham_vi": "2024-02-01 → 2026-07-07",
+      "ghi_chu": "Kỳ thi lần 2 chấm một lần duy nhất ngày 2026-08-16. KHÔNG thay đổi verdict gốc từ kỳ thi thật 2019–2023.",
+      "nam_duong": {
+        "2024": true,
+        "2025": true,
+        "2026": true
+      }
+    }
+  },
+  {
+    "spec": {
+      "id": "SEA011",
+      "ten": "Thứ Ba đảo chiều (turnaround Tuesday)",
+      "ho": "Giờ giấc & mùa vụ",
+      "nguon": "Chứng khoán kinh điển",
+      "mo_ta": "Sau thứ Hai giảm mạnh, mua thứ Ba",
+      "tf": "D1"
+    },
+    "verdict": "CHẤT",
+    "tieu_chi": {
+      "edge_vs_null": true,
+      "ben_tham_so": true,
+      "song_sot_oos": true,
+      "chiu_phi": true,
+      "kha_thi": true
+    },
+    "IS": {
+      "n": 116,
+      "wr": 34.5,
+      "years_pos": "9/15",
+      "nam_duong": {
+        "2004": false,
+        "2005": true,
+        "2006": true,
+        "2007": true,
+        "2008": true,
+        "2009": true,
+        "2010": true,
+        "2011": true,
+        "2012": false,
+        "2013": false,
+        "2014": false,
+        "2015": false,
+        "2016": true,
+        "2017": true,
+        "2018": false
+      }
+    },
+    "OOS": {
+      "n": 42,
+      "wr": 33.3,
+      "years_pos": "3/5",
+      "nam_duong": {
+        "2019": true,
+        "2020": true,
+        "2021": true,
+        "2022": false,
+        "2023": false
+      }
+    },
+    "OOS2": {
+      "n": 10,
+      "wr": 70,
+      "years_pos": "2/3",
+      "status": "giữ vững",
+      "pham_vi": "2024-02-01 → 2026-07-07",
+      "ghi_chu": "Kỳ thi lần 2 chấm một lần duy nhất ngày 2026-08-16. KHÔNG thay đổi verdict gốc từ kỳ thi thật 2019–2023.",
+      "nam_duong": {
+        "2024": true,
+        "2025": true,
+        "2026": false
+      }
+    }
+  },
+  {
+    "spec": {
+      "id": "SEA021",
+      "ten": "Thứ Hai sau NFP xấu — hồi",
+      "ho": "Giờ giấc & mùa vụ",
+      "nguon": "Event follow-through",
+      "mo_ta": "NFP làm vàng giảm mạnh thứ Sáu → mua hồi thứ Hai",
+      "tf": "H1"
+    },
+    "verdict": "CHẤT",
+    "tieu_chi": {
+      "edge_vs_null": true,
+      "ben_tham_so": true,
+      "song_sot_oos": true,
+      "chiu_phi": true,
+      "kha_thi": false
+    },
+    "IS": {
+      "n": 74,
+      "wr": 37.8,
+      "years_pos": "10/14",
+      "nam_duong": {
+        "2005": true,
+        "2006": false,
+        "2007": true,
+        "2008": true,
+        "2009": false,
+        "2010": true,
+        "2011": true,
+        "2012": false,
+        "2013": true,
+        "2014": true,
+        "2015": true,
+        "2016": true,
+        "2017": true,
+        "2018": false
+      }
+    },
+    "OOS": {
+      "n": 24,
+      "wr": 41.7,
+      "years_pos": "3/5",
+      "nam_duong": {
+        "2019": true,
+        "2020": false,
+        "2021": true,
+        "2022": true,
+        "2023": false
+      }
+    },
+    "OOS2": {
+      "n": 14,
+      "wr": 57.1,
+      "years_pos": "2/3",
+      "status": "giữ vững",
+      "pham_vi": "2024-02-01 → 2026-07-07",
+      "ghi_chu": "Kỳ thi lần 2 chấm một lần duy nhất ngày 2026-08-16. KHÔNG thay đổi verdict gốc từ kỳ thi thật 2019–2023.",
+      "nam_duong": {
+        "2024": true,
+        "2025": true,
+        "2026": false
+      }
+    }
+  },
+  {
+    "spec": {
+      "id": "VIR040",
+      "ten": "Head & Shoulders phá neckline",
+      "ho": "Viral & SMC/ICT",
+      "nguon": "Kinh điển được TikTok hồi sinh",
+      "mo_ta": "Vai-đầu-vai phá neckline — vào theo, SL trên vai phải",
+      "tf": "H4"
+    },
+    "verdict": "CHẤT",
+    "tieu_chi": {
+      "edge_vs_null": true,
+      "ben_tham_so": true,
+      "song_sot_oos": true,
+      "chiu_phi": true,
+      "kha_thi": true
+    },
+    "IS": {
+      "n": 221,
+      "wr": 35.7,
+      "years_pos": "14/15",
+      "nam_duong": {
+        "2004": true,
+        "2005": true,
+        "2006": true,
+        "2007": false,
+        "2008": true,
+        "2009": true,
+        "2010": true,
+        "2011": true,
+        "2012": true,
+        "2013": true,
+        "2014": true,
+        "2015": true,
+        "2016": true,
+        "2017": true,
+        "2018": true
+      }
+    },
+    "OOS": {
+      "n": 100,
+      "wr": 32,
+      "years_pos": "4/5",
+      "nam_duong": {
+        "2019": false,
+        "2020": true,
+        "2021": true,
+        "2022": true,
+        "2023": true
+      }
+    },
+    "OOS2": {
+      "n": 37,
+      "wr": 29.7,
+      "years_pos": "2/3",
+      "status": "giữ vững",
+      "pham_vi": "2024-02-01 → 2026-07-07",
+      "ghi_chu": "Kỳ thi lần 2 chấm một lần duy nhất ngày 2026-08-16. KHÔNG thay đổi verdict gốc từ kỳ thi thật 2019–2023.",
+      "nam_duong": {
+        "2024": false,
+        "2025": true,
+        "2026": true
+      }
+    }
+  }
+]

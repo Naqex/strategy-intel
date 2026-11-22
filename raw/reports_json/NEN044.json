@@ -1,0 +1,65 @@
+{
+  "spec": {
+    "id": "NEN044",
+    "ten": "Nến thân lớn phá tích luỹ 20 nến",
+    "ho": "Mẫu nến",
+    "nguon": "Breakout nến đơn",
+    "mo_ta": "Nến thân ≥2ATR đóng ngoài biên 20 nến trước, vào tiếp diễn",
+    "tf": "H1"
+  },
+  "verdict": "CHÁT",
+  "tieu_chi": {
+    "edge_vs_null": false,
+    "ben_tham_so": true,
+    "song_sot_oos": false,
+    "chiu_phi": true,
+    "kha_thi": true
+  },
+  "IS": {
+    "n": 973,
+    "wr": 27.7,
+    "years_pos": "9/15",
+    "nam_duong": {
+      "2004": false,
+      "2005": false,
+      "2006": true,
+      "2007": true,
+      "2008": false,
+      "2009": true,
+      "2010": true,
+      "2011": true,
+      "2012": false,
+      "2013": true,
+      "2014": true,
+      "2015": true,
+      "2016": false,
+      "2017": true,
+      "2018": false
+    }
+  },
+  "OOS": {
+    "n": 272,
+    "wr": 27.6,
+    "years_pos": "2/5",
+    "nam_duong": {
+      "2019": true,
+      "2020": true,
+      "2021": false,
+      "2022": false,
+      "2023": false
+    }
+  },
+  "OOS2": {
+    "n": 126,
+    "wr": 29.4,
+    "years_pos": "2/3",
+    "status": "lãi lại",
+    "pham_vi": "2024-02-01 → 2026-07-07",
+    "ghi_chu": "Kỳ thi lần 2 chấm một lần duy nhất ngày 2026-08-16. KHÔNG thay đổi verdict gốc từ kỳ thi thật 2019–2023.",
+    "nam_duong": {
+      "2024": true,
+      "2025": false,
+      "2026": true
+    }
+  }
+}

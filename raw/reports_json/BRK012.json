@@ -1,0 +1,65 @@
+{
+  "spec": {
+    "id": "BRK012",
+    "ten": "Inside day breakout",
+    "ho": "Breakout & phiên",
+    "nguon": "Toby Crabel",
+    "mo_ta": "Hôm nay nằm trọn trong hôm qua → mai phá biên nào theo biên đó",
+    "tf": "D1"
+  },
+  "verdict": "CHẤT",
+  "tieu_chi": {
+    "edge_vs_null": true,
+    "ben_tham_so": true,
+    "song_sot_oos": true,
+    "chiu_phi": true,
+    "kha_thi": true
+  },
+  "IS": {
+    "n": 113,
+    "wr": 29.2,
+    "years_pos": "8/15",
+    "nam_duong": {
+      "2004": false,
+      "2005": false,
+      "2006": false,
+      "2007": true,
+      "2008": false,
+      "2009": false,
+      "2010": false,
+      "2011": true,
+      "2012": true,
+      "2013": true,
+      "2014": true,
+      "2015": true,
+      "2016": true,
+      "2017": true,
+      "2018": false
+    }
+  },
+  "OOS": {
+    "n": 36,
+    "wr": 30.6,
+    "years_pos": "3/5",
+    "nam_duong": {
+      "2019": true,
+      "2020": false,
+      "2021": true,
+      "2022": false,
+      "2023": true
+    }
+  },
+  "OOS2": {
+    "n": 22,
+    "wr": 45.5,
+    "years_pos": "3/3",
+    "status": "giữ vững",
+    "pham_vi": "2024-02-01 → 2026-07-07",
+    "ghi_chu": "Kỳ thi lần 2 chấm một lần duy nhất ngày 2026-08-16. KHÔNG thay đổi verdict gốc từ kỳ thi thật 2019–2023.",
+    "nam_duong": {
+      "2024": true,
+      "2025": true,
+      "2026": true
+    }
+  }
+}

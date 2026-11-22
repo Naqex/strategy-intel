@@ -1,0 +1,1 @@
+function e(e){let t=String(e||``).trim().toUpperCase();return t===`CHẤT`||t===`CHAT_DAT`?`Đạt tiêu chí`:t===`TÌNH HUỐNG`||t===`TINH HUONG`?`Phụ thuộc bối cảnh nhất định`:t===`CHÁT`||t===`KHONG_DAT`?`Không đạt tiêu chí`:String(e||``)}export{e as t};

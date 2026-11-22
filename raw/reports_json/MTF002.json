@@ -1,0 +1,65 @@
+{
+  "spec": {
+    "id": "MTF002",
+    "ten": "D1 bias + H1 pullback EMA20",
+    "ho": "Đa khung & lai",
+    "nguon": "Phổ biến",
+    "mo_ta": "D1 trên EMA50 → chỉ mua khi H1 hồi về EMA20 và bật",
+    "tf": "H1"
+  },
+  "verdict": "CHÁT",
+  "tieu_chi": {
+    "edge_vs_null": false,
+    "ben_tham_so": false,
+    "song_sot_oos": false,
+    "chiu_phi": true,
+    "kha_thi": true
+  },
+  "IS": {
+    "n": 2000,
+    "wr": 27.2,
+    "years_pos": "8/15",
+    "nam_duong": {
+      "2004": true,
+      "2005": true,
+      "2006": true,
+      "2007": true,
+      "2008": true,
+      "2009": false,
+      "2010": true,
+      "2011": true,
+      "2012": false,
+      "2013": true,
+      "2014": false,
+      "2015": false,
+      "2016": false,
+      "2017": false,
+      "2018": false
+    }
+  },
+  "OOS": {
+    "n": 621,
+    "wr": 26.4,
+    "years_pos": "2/5",
+    "nam_duong": {
+      "2019": false,
+      "2020": true,
+      "2021": false,
+      "2022": true,
+      "2023": false
+    }
+  },
+  "OOS2": {
+    "n": 294,
+    "wr": 30.6,
+    "years_pos": "3/3",
+    "status": "lãi lại",
+    "pham_vi": "2024-02-01 → 2026-07-07",
+    "ghi_chu": "Kỳ thi lần 2 chấm một lần duy nhất ngày 2026-08-16. KHÔNG thay đổi verdict gốc từ kỳ thi thật 2019–2023.",
+    "nam_duong": {
+      "2024": true,
+      "2025": true,
+      "2026": true
+    }
+  }
+}

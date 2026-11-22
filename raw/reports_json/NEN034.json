@@ -1,0 +1,65 @@
+{
+  "spec": {
+    "id": "NEN034",
+    "ten": "Hai nến ngược liền nhau rồi tiếp diễn",
+    "ho": "Mẫu nến",
+    "nguon": "Biến thể Lonely Candle 2 nến",
+    "mo_ta": "≥3 nến thuận + đúng 2 nến ngược + xác nhận vượt",
+    "tf": "H1"
+  },
+  "verdict": "CHÁT",
+  "tieu_chi": {
+    "edge_vs_null": false,
+    "ben_tham_so": false,
+    "song_sot_oos": false,
+    "chiu_phi": true,
+    "kha_thi": true
+  },
+  "IS": {
+    "n": 430,
+    "wr": 26.7,
+    "years_pos": "7/15",
+    "nam_duong": {
+      "2004": true,
+      "2005": true,
+      "2006": true,
+      "2007": false,
+      "2008": true,
+      "2009": false,
+      "2010": false,
+      "2011": false,
+      "2012": false,
+      "2013": true,
+      "2014": true,
+      "2015": true,
+      "2016": false,
+      "2017": false,
+      "2018": false
+    }
+  },
+  "OOS": {
+    "n": 171,
+    "wr": 27.5,
+    "years_pos": "1/5",
+    "nam_duong": {
+      "2019": false,
+      "2020": false,
+      "2021": true,
+      "2022": false,
+      "2023": false
+    }
+  },
+  "OOS2": {
+    "n": 90,
+    "wr": 36.7,
+    "years_pos": "3/3",
+    "status": "lãi lại",
+    "pham_vi": "2024-02-01 → 2026-07-07",
+    "ghi_chu": "Kỳ thi lần 2 chấm một lần duy nhất ngày 2026-08-16. KHÔNG thay đổi verdict gốc từ kỳ thi thật 2019–2023.",
+    "nam_duong": {
+      "2024": true,
+      "2025": true,
+      "2026": true
+    }
+  }
+}

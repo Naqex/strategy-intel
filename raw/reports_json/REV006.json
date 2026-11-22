@@ -1,0 +1,65 @@
+{
+  "spec": {
+    "id": "REV006",
+    "ten": "5 ngày giảm liên tiếp — mua",
+    "ho": "Hồi quy trung bình",
+    "nguon": "Connors style",
+    "mo_ta": "5 nến D1 đỏ liên tiếp, mua hồi kỹ thuật",
+    "tf": "D1"
+  },
+  "verdict": "TÌNH HUỐNG",
+  "tieu_chi": {
+    "edge_vs_null": true,
+    "ben_tham_so": false,
+    "song_sot_oos": false,
+    "chiu_phi": true,
+    "kha_thi": false
+  },
+  "IS": {
+    "n": 72,
+    "wr": 33.3,
+    "years_pos": "10/15",
+    "nam_duong": {
+      "2004": false,
+      "2005": false,
+      "2006": true,
+      "2007": false,
+      "2008": true,
+      "2009": true,
+      "2010": true,
+      "2011": false,
+      "2012": true,
+      "2013": true,
+      "2014": true,
+      "2015": true,
+      "2016": true,
+      "2017": false,
+      "2018": true
+    }
+  },
+  "OOS": {
+    "n": 24,
+    "wr": 25,
+    "years_pos": "3/5",
+    "nam_duong": {
+      "2019": false,
+      "2020": true,
+      "2021": true,
+      "2022": true,
+      "2023": false
+    }
+  },
+  "OOS2": {
+    "n": 13,
+    "wr": 30.8,
+    "years_pos": "2/3",
+    "status": "giữ vững",
+    "pham_vi": "2024-02-01 → 2026-07-07",
+    "ghi_chu": "Kỳ thi lần 2 chấm một lần duy nhất ngày 2026-08-16. KHÔNG thay đổi verdict gốc từ kỳ thi thật 2019–2023.",
+    "nam_duong": {
+      "2024": true,
+      "2025": false,
+      "2026": true
+    }
+  }
+}

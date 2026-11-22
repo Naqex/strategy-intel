@@ -1,0 +1,11 @@
+import{$ as e,F as t,I as n,L as r,O as i,X as a,Y as o,a as s,c,d as l,et as u,g as d,w as f}from"./vendor-three-CwdPd41w.js";function p(e,t,n=2.4){return new a({uniforms:{uColor:{value:new d(e)},uAmp:{value:t},uPow:{value:n}},vertexShader:`varying vec3 vN; varying vec3 vV;
+      void main() {
+        vec4 wp = modelMatrix * vec4(position, 1.0);
+        vN = normalize(mat3(modelMatrix) * normal);
+        vV = normalize(cameraPosition - wp.xyz);
+        gl_Position = projectionMatrix * viewMatrix * wp;
+      }`,fragmentShader:`uniform vec3 uColor; uniform float uAmp; uniform float uPow; varying vec3 vN; varying vec3 vV;
+      void main() {
+        float f = pow(1.0 - abs(dot(normalize(vN), normalize(vV))), uPow) * uAmp;
+        gl_FragColor = vec4(uColor * f, f);
+      }`,transparent:!0,depthWrite:!1,side:2,blending:2})}function m(e=12578815,t=.1){return new r({color:e,metalness:0,roughness:.05,clearcoat:1,clearcoatRoughness:.05,envMapIntensity:1.6,transparent:!0,opacity:t,side:2,depthWrite:!1})}function h(e,n,r,a){let o=new i(e,64),s=new f;return s.add(new t(o,m(void 0,a)),new t(o,p(n,r))),s}function g(e){let r=new o,i=new c(1,1,1),a=new t(i,new n({color:661026,side:1}));a.scale.setScalar(20),r.add(a),[{p:[0,9,0],s:[12,.2,6],c:16777215},{p:[-9,2,2],s:[.2,6,3],c:10483455},{p:[9,3,-2],s:[.2,4,6],c:13624302},{p:[0,1,9],s:[6,2,.2],c:4059903}].forEach(({p:e,s:a,c:o})=>{let s=new t(i,new n({color:o}));s.position.set(e[0],e[1],e[2]),s.scale.set(a[0],a[1],a[2]),r.add(s)});let l=new s(e),u=l.fromScene(r,.04).texture;return l.dispose(),i.dispose(),u}var _=null;function v(t,n,r){if(!_){let e=document.createElement(`canvas`);e.width=e.height=128;let t=e.getContext(`2d`);if(t){let e=t.createRadialGradient(64,64,0,64,64,64);e.addColorStop(0,`rgba(255,255,255,1)`),e.addColorStop(.35,`rgba(255,255,255,0.35)`),e.addColorStop(1,`rgba(255,255,255,0)`),t.fillStyle=e,t.fillRect(0,0,128,128)}_=new l(e)}let i=new e(new u({map:_,color:t,transparent:!0,opacity:r,depthWrite:!1,blending:2}));return i.scale.set(n,n,1),i}export{g as a,p as i,m as n,v as r,h as t};

@@ -1,0 +1,65 @@
+{
+  "spec": {
+    "id": "NEN039",
+    "ten": "3 nến — đáy sau cao hơn đáy trước ×3",
+    "ho": "Mẫu nến",
+    "nguon": "Cấu trúc HL kinh điển",
+    "mo_ta": "3 đáy nến liên tiếp cao dần trong xu hướng tăng mới chớm, mua phá đỉnh gần nhất",
+    "tf": "H1"
+  },
+  "verdict": "CHÁT",
+  "tieu_chi": {
+    "edge_vs_null": true,
+    "ben_tham_so": true,
+    "song_sot_oos": false,
+    "chiu_phi": true,
+    "kha_thi": true
+  },
+  "IS": {
+    "n": 985,
+    "wr": 28.8,
+    "years_pos": "10/15",
+    "nam_duong": {
+      "2004": true,
+      "2005": true,
+      "2006": true,
+      "2007": true,
+      "2008": false,
+      "2009": false,
+      "2010": true,
+      "2011": true,
+      "2012": false,
+      "2013": true,
+      "2014": false,
+      "2015": false,
+      "2016": true,
+      "2017": true,
+      "2018": true
+    }
+  },
+  "OOS": {
+    "n": 352,
+    "wr": 25.9,
+    "years_pos": "2/5",
+    "nam_duong": {
+      "2019": false,
+      "2020": true,
+      "2021": true,
+      "2022": false,
+      "2023": false
+    }
+  },
+  "OOS2": {
+    "n": 184,
+    "wr": 32.1,
+    "years_pos": "3/3",
+    "status": "lãi lại",
+    "pham_vi": "2024-02-01 → 2026-07-07",
+    "ghi_chu": "Kỳ thi lần 2 chấm một lần duy nhất ngày 2026-08-16. KHÔNG thay đổi verdict gốc từ kỳ thi thật 2019–2023.",
+    "nam_duong": {
+      "2024": true,
+      "2025": true,
+      "2026": true
+    }
+  }
+}

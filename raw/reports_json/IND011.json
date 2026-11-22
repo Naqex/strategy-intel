@@ -1,0 +1,62 @@
+{
+  "spec": {
+    "id": "IND011",
+    "ten": "Bollinger squeeze breakout",
+    "ho": "Indicator kinh điển",
+    "nguon": "Bollinger",
+    "mo_ta": "Bandwidth hẹp nhất 100 nến rồi giá phá band, vào theo hướng phá",
+    "tf": "H4"
+  },
+  "verdict": "CHÁT",
+  "tieu_chi": {
+    "edge_vs_null": false,
+    "ben_tham_so": false,
+    "song_sot_oos": false,
+    "chiu_phi": true,
+    "kha_thi": false
+  },
+  "IS": {
+    "n": 32,
+    "wr": 15.6,
+    "years_pos": "4/13",
+    "nam_duong": {
+      "2004": false,
+      "2005": false,
+      "2006": false,
+      "2007": false,
+      "2008": true,
+      "2009": false,
+      "2010": false,
+      "2011": true,
+      "2012": true,
+      "2013": false,
+      "2015": false,
+      "2016": true,
+      "2018": false
+    }
+  },
+  "OOS": {
+    "n": 12,
+    "wr": 25,
+    "years_pos": "2/5",
+    "nam_duong": {
+      "2019": false,
+      "2020": false,
+      "2021": false,
+      "2022": true,
+      "2023": true
+    }
+  },
+  "OOS2": {
+    "n": 3,
+    "wr": 0,
+    "years_pos": "0/2",
+    "status": "vẫn rớt",
+    "pham_vi": "2024-02-01 → 2026-07-07",
+    "ghi_chu": "Kỳ thi lần 2 chấm một lần duy nhất ngày 2026-08-16. KHÔNG thay đổi verdict gốc từ kỳ thi thật 2019–2023.",
+    "nam_duong": {
+      "2024": false,
+      "2025": false
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "spec": {
+    "id": "NEN009",
+    "ten": "Morning star (sao mai)",
+    "ho": "Mẫu nến",
+    "nguon": "Nison",
+    "mo_ta": "Cụm 3 nến: giảm mạnh — nến nhỏ — tăng mạnh vượt 50% nến 1, mua nến kế",
+    "tf": "H4"
+  },
+  "verdict": "CHÁT",
+  "tieu_chi": {
+    "edge_vs_null": false,
+    "ben_tham_so": false,
+    "song_sot_oos": false,
+    "chiu_phi": true,
+    "kha_thi": false
+  },
+  "IS": {
+    "n": 64,
+    "wr": 25,
+    "years_pos": "8/15",
+    "nam_duong": {
+      "2004": true,
+      "2005": false,
+      "2006": false,
+      "2007": true,
+      "2008": true,
+      "2009": true,
+      "2010": false,
+      "2011": false,
+      "2012": true,
+      "2013": false,
+      "2014": true,
+      "2015": false,
+      "2016": true,
+      "2017": true,
+      "2018": false
+    }
+  },
+  "OOS": {
+    "n": 21,
+    "wr": 14.3,
+    "years_pos": "2/5",
+    "nam_duong": {
+      "2019": false,
+      "2020": false,
+      "2021": false,
+      "2022": true,
+      "2023": true
+    }
+  },
+  "OOS2": {
+    "n": 10,
+    "wr": 40,
+    "years_pos": "2/3",
+    "status": "lãi lại",
+    "pham_vi": "2024-02-01 → 2026-07-07",
+    "ghi_chu": "Kỳ thi lần 2 chấm một lần duy nhất ngày 2026-08-16. KHÔNG thay đổi verdict gốc từ kỳ thi thật 2019–2023.",
+    "nam_duong": {
+      "2024": true,
+      "2025": true,
+      "2026": false
+    }
+  }
+}

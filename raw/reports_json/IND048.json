@@ -1,0 +1,65 @@
+{
+  "spec": {
+    "id": "IND048",
+    "ten": "AO twin peaks",
+    "ho": "Indicator kinh điển",
+    "nguon": "Bill Williams",
+    "mo_ta": "2 đáy AO dưới zero, đáy sau nông hơn → mua",
+    "tf": "H4"
+  },
+  "verdict": "CHÁT",
+  "tieu_chi": {
+    "edge_vs_null": false,
+    "ben_tham_so": false,
+    "song_sot_oos": false,
+    "chiu_phi": true,
+    "kha_thi": true
+  },
+  "IS": {
+    "n": 318,
+    "wr": 25.8,
+    "years_pos": "9/15",
+    "nam_duong": {
+      "2004": true,
+      "2005": true,
+      "2006": false,
+      "2007": true,
+      "2008": true,
+      "2009": false,
+      "2010": false,
+      "2011": true,
+      "2012": false,
+      "2013": true,
+      "2014": true,
+      "2015": true,
+      "2016": true,
+      "2017": false,
+      "2018": false
+    }
+  },
+  "OOS": {
+    "n": 121,
+    "wr": 20.7,
+    "years_pos": "1/5",
+    "nam_duong": {
+      "2019": false,
+      "2020": false,
+      "2021": false,
+      "2022": true,
+      "2023": false
+    }
+  },
+  "OOS2": {
+    "n": 39,
+    "wr": 23.1,
+    "years_pos": "2/3",
+    "status": "vẫn rớt",
+    "pham_vi": "2024-02-01 → 2026-07-07",
+    "ghi_chu": "Kỳ thi lần 2 chấm một lần duy nhất ngày 2026-08-16. KHÔNG thay đổi verdict gốc từ kỳ thi thật 2019–2023.",
+    "nam_duong": {
+      "2024": false,
+      "2025": true,
+      "2026": true
+    }
+  }
+}

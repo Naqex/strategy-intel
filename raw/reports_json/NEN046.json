@@ -1,0 +1,63 @@
+{
+  "spec": {
+    "id": "NEN046",
+    "ten": "Nến doji chuồn (dragonfly) tại EMA200",
+    "ho": "Mẫu nến",
+    "nguon": "Nison + lọc",
+    "mo_ta": "Dragonfly doji chạm EMA200 D1, mua xác nhận nến kế",
+    "tf": "D1"
+  },
+  "verdict": "TÌNH HUỐNG",
+  "tieu_chi": {
+    "edge_vs_null": true,
+    "ben_tham_so": true,
+    "song_sot_oos": false,
+    "chiu_phi": true,
+    "kha_thi": false
+  },
+  "IS": {
+    "n": 34,
+    "wr": 38.2,
+    "years_pos": "8/14",
+    "nam_duong": {
+      "2005": false,
+      "2006": true,
+      "2007": false,
+      "2008": true,
+      "2009": true,
+      "2010": true,
+      "2011": false,
+      "2012": false,
+      "2013": true,
+      "2014": false,
+      "2015": true,
+      "2016": true,
+      "2017": false,
+      "2018": true
+    }
+  },
+  "OOS": {
+    "n": 12,
+    "wr": 33.3,
+    "years_pos": "2/5",
+    "nam_duong": {
+      "2019": true,
+      "2020": false,
+      "2021": false,
+      "2022": true,
+      "2023": false
+    }
+  },
+  "OOS2": {
+    "n": 2,
+    "wr": 50,
+    "years_pos": "1/2",
+    "status": "giữ vững",
+    "pham_vi": "2024-02-01 → 2026-07-07",
+    "ghi_chu": "Kỳ thi lần 2 chấm một lần duy nhất ngày 2026-08-16. KHÔNG thay đổi verdict gốc từ kỳ thi thật 2019–2023.",
+    "nam_duong": {
+      "2024": true,
+      "2026": false
+    }
+  }
+}

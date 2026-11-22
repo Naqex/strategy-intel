@@ -1,0 +1,65 @@
+{
+  "spec": {
+    "id": "NEN048",
+    "ten": "Cặp nến sức mạnh (2 marubozu cùng hướng)",
+    "ho": "Mẫu nến",
+    "nguon": "Quan sát",
+    "mo_ta": "2 nến trọc cùng hướng liên tiếp, vào tiếp diễn nến 3",
+    "tf": "M15"
+  },
+  "verdict": "CHÁT",
+  "tieu_chi": {
+    "edge_vs_null": false,
+    "ben_tham_so": false,
+    "song_sot_oos": false,
+    "chiu_phi": true,
+    "kha_thi": true
+  },
+  "IS": {
+    "n": 549,
+    "wr": 27.5,
+    "years_pos": "7/15",
+    "nam_duong": {
+      "2004": false,
+      "2005": false,
+      "2006": true,
+      "2007": false,
+      "2008": false,
+      "2009": true,
+      "2010": false,
+      "2011": true,
+      "2012": false,
+      "2013": false,
+      "2014": true,
+      "2015": false,
+      "2016": true,
+      "2017": true,
+      "2018": true
+    }
+  },
+  "OOS": {
+    "n": 92,
+    "wr": 33.7,
+    "years_pos": "2/5",
+    "nam_duong": {
+      "2019": false,
+      "2020": false,
+      "2021": true,
+      "2022": false,
+      "2023": true
+    }
+  },
+  "OOS2": {
+    "n": 57,
+    "wr": 24.6,
+    "years_pos": "1/3",
+    "status": "vẫn rớt",
+    "pham_vi": "2024-02-01 → 2026-07-07",
+    "ghi_chu": "Kỳ thi lần 2 chấm một lần duy nhất ngày 2026-08-16. KHÔNG thay đổi verdict gốc từ kỳ thi thật 2019–2023.",
+    "nam_duong": {
+      "2024": false,
+      "2025": false,
+      "2026": true
+    }
+  }
+}

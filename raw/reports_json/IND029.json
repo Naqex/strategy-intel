@@ -1,0 +1,57 @@
+{
+  "spec": {
+    "id": "IND029",
+    "ten": "Golden cross / Death cross 50/200",
+    "ho": "Indicator kinh điển",
+    "nguon": "Kinh điển chứng khoán",
+    "mo_ta": "SMA50 cắt SMA200 — theo hướng cắt",
+    "tf": "D1"
+  },
+  "verdict": "CHÁT",
+  "tieu_chi": {
+    "edge_vs_null": false,
+    "ben_tham_so": false,
+    "song_sot_oos": false,
+    "chiu_phi": true,
+    "kha_thi": false
+  },
+  "IS": {
+    "n": 21,
+    "wr": 28.6,
+    "years_pos": "3/11",
+    "nam_duong": {
+      "2005": false,
+      "2006": false,
+      "2008": false,
+      "2009": false,
+      "2012": false,
+      "2013": true,
+      "2014": false,
+      "2015": false,
+      "2016": true,
+      "2017": false,
+      "2018": true
+    }
+  },
+  "OOS": {
+    "n": 8,
+    "wr": 62.5,
+    "years_pos": "2/3",
+    "nam_duong": {
+      "2021": true,
+      "2022": true,
+      "2023": false
+    }
+  },
+  "OOS2": {
+    "n": 1,
+    "wr": 100,
+    "years_pos": "1/1",
+    "status": "lãi lại",
+    "pham_vi": "2024-02-01 → 2026-07-07",
+    "ghi_chu": "Kỳ thi lần 2 chấm một lần duy nhất ngày 2026-08-16. KHÔNG thay đổi verdict gốc từ kỳ thi thật 2019–2023.",
+    "nam_duong": {
+      "2026": true
+    }
+  }
+}

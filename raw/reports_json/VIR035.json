@@ -1,0 +1,65 @@
+{
+  "spec": {
+    "id": "VIR035",
+    "ten": "Supply & Demand zone fresh",
+    "ho": "Viral & SMC/ICT",
+    "nguon": "Sam Seiden phổ thông hoá",
+    "mo_ta": "Vùng cầu 'còn tươi' (chưa test) — đặt limit mua tại mép vùng",
+    "tf": "H4"
+  },
+  "verdict": "TÌNH HUỐNG",
+  "tieu_chi": {
+    "edge_vs_null": false,
+    "ben_tham_so": false,
+    "song_sot_oos": true,
+    "chiu_phi": true,
+    "kha_thi": true
+  },
+  "IS": {
+    "n": 246,
+    "wr": 27.2,
+    "years_pos": "9/15",
+    "nam_duong": {
+      "2004": true,
+      "2005": false,
+      "2006": false,
+      "2007": true,
+      "2008": false,
+      "2009": true,
+      "2010": true,
+      "2011": true,
+      "2012": true,
+      "2013": false,
+      "2014": false,
+      "2015": true,
+      "2016": true,
+      "2017": false,
+      "2018": true
+    }
+  },
+  "OOS": {
+    "n": 60,
+    "wr": 28.3,
+    "years_pos": "3/5",
+    "nam_duong": {
+      "2019": true,
+      "2020": false,
+      "2021": false,
+      "2022": true,
+      "2023": true
+    }
+  },
+  "OOS2": {
+    "n": 38,
+    "wr": 28.9,
+    "years_pos": "3/3",
+    "status": "giữ vững",
+    "pham_vi": "2024-02-01 → 2026-07-07",
+    "ghi_chu": "Kỳ thi lần 2 chấm một lần duy nhất ngày 2026-08-16. KHÔNG thay đổi verdict gốc từ kỳ thi thật 2019–2023.",
+    "nam_duong": {
+      "2024": true,
+      "2025": true,
+      "2026": true
+    }
+  }
+}

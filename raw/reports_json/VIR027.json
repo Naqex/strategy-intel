@@ -1,0 +1,65 @@
+{
+  "spec": {
+    "id": "VIR027",
+    "ten": "Heikin Ashi + SuperTrend combo",
+    "ho": "Viral & SMC/ICT",
+    "nguon": "Viral YouTube",
+    "mo_ta": "HA đổi màu cùng SuperTrend flip — vào theo",
+    "tf": "H1"
+  },
+  "verdict": "CHÁT",
+  "tieu_chi": {
+    "edge_vs_null": false,
+    "ben_tham_so": false,
+    "song_sot_oos": false,
+    "chiu_phi": true,
+    "kha_thi": true
+  },
+  "IS": {
+    "n": 2046,
+    "wr": 26.6,
+    "years_pos": "5/15",
+    "nam_duong": {
+      "2004": false,
+      "2005": true,
+      "2006": true,
+      "2007": true,
+      "2008": false,
+      "2009": false,
+      "2010": false,
+      "2011": true,
+      "2012": false,
+      "2013": false,
+      "2014": false,
+      "2015": false,
+      "2016": false,
+      "2017": true,
+      "2018": false
+    }
+  },
+  "OOS": {
+    "n": 662,
+    "wr": 26.4,
+    "years_pos": "2/5",
+    "nam_duong": {
+      "2019": false,
+      "2020": true,
+      "2021": false,
+      "2022": false,
+      "2023": true
+    }
+  },
+  "OOS2": {
+    "n": 364,
+    "wr": 26.9,
+    "years_pos": "1/3",
+    "status": "vẫn rớt",
+    "pham_vi": "2024-02-01 → 2026-07-07",
+    "ghi_chu": "Kỳ thi lần 2 chấm một lần duy nhất ngày 2026-08-16. KHÔNG thay đổi verdict gốc từ kỳ thi thật 2019–2023.",
+    "nam_duong": {
+      "2024": false,
+      "2025": false,
+      "2026": true
+    }
+  }
+}

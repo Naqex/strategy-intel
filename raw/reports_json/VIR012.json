@@ -1,0 +1,65 @@
+{
+  "spec": {
+    "id": "VIR012",
+    "ten": "CHoCH (change of character)",
+    "ho": "Viral & SMC/ICT",
+    "nguon": "SMC",
+    "mo_ta": "Cú phá ngược đầu tiên sau trend dài = đổi tính chất — vào sớm",
+    "tf": "H1"
+  },
+  "verdict": "CHÁT",
+  "tieu_chi": {
+    "edge_vs_null": false,
+    "ben_tham_so": false,
+    "song_sot_oos": false,
+    "chiu_phi": true,
+    "kha_thi": true
+  },
+  "IS": {
+    "n": 1558,
+    "wr": 25.9,
+    "years_pos": "7/15",
+    "nam_duong": {
+      "2004": true,
+      "2005": false,
+      "2006": true,
+      "2007": false,
+      "2008": true,
+      "2009": false,
+      "2010": true,
+      "2011": true,
+      "2012": false,
+      "2013": true,
+      "2014": false,
+      "2015": true,
+      "2016": false,
+      "2017": false,
+      "2018": false
+    }
+  },
+  "OOS": {
+    "n": 513,
+    "wr": 28.7,
+    "years_pos": "2/5",
+    "nam_duong": {
+      "2019": false,
+      "2020": true,
+      "2021": false,
+      "2022": true,
+      "2023": false
+    }
+  },
+  "OOS2": {
+    "n": 243,
+    "wr": 28.4,
+    "years_pos": "2/3",
+    "status": "lãi lại",
+    "pham_vi": "2024-02-01 → 2026-07-07",
+    "ghi_chu": "Kỳ thi lần 2 chấm một lần duy nhất ngày 2026-08-16. KHÔNG thay đổi verdict gốc từ kỳ thi thật 2019–2023.",
+    "nam_duong": {
+      "2024": true,
+      "2025": true,
+      "2026": false
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "spec": {
+    "id": "SEA023",
+    "ten": "Chuỗi 3 ngày cùng hướng — ngày 4 đảo",
+    "ho": "Giờ giấc & mùa vụ",
+    "nguon": "Daily streak stats",
+    "mo_ta": "Sau 3 nến D1 cùng màu, vào ngược ngày 4",
+    "tf": "D1"
+  },
+  "verdict": "TÌNH HUỐNG",
+  "tieu_chi": {
+    "edge_vs_null": false,
+    "ben_tham_so": true,
+    "song_sot_oos": true,
+    "chiu_phi": true,
+    "kha_thi": true
+  },
+  "IS": {
+    "n": 136,
+    "wr": 25.7,
+    "years_pos": "8/15",
+    "nam_duong": {
+      "2004": true,
+      "2005": true,
+      "2006": false,
+      "2007": true,
+      "2008": true,
+      "2009": false,
+      "2010": false,
+      "2011": false,
+      "2012": false,
+      "2013": true,
+      "2014": true,
+      "2015": true,
+      "2016": true,
+      "2017": false,
+      "2018": false
+    }
+  },
+  "OOS": {
+    "n": 43,
+    "wr": 37.2,
+    "years_pos": "4/5",
+    "nam_duong": {
+      "2019": false,
+      "2020": true,
+      "2021": true,
+      "2022": true,
+      "2023": true
+    }
+  },
+  "OOS2": {
+    "n": 18,
+    "wr": 27.8,
+    "years_pos": "1/3",
+    "status": "giữ vững",
+    "pham_vi": "2024-02-01 → 2026-07-07",
+    "ghi_chu": "Kỳ thi lần 2 chấm một lần duy nhất ngày 2026-08-16. KHÔNG thay đổi verdict gốc từ kỳ thi thật 2019–2023.",
+    "nam_duong": {
+      "2024": true,
+      "2025": false,
+      "2026": false
+    }
+  }
+}

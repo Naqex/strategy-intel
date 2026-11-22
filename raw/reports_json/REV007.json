@@ -1,0 +1,64 @@
+{
+  "spec": {
+    "id": "REV007",
+    "ten": "Đóng cửa thấp nhất 5 ngày — mua",
+    "ho": "Hồi quy trung bình",
+    "nguon": "Connors",
+    "mo_ta": "Close thấp nhất 5 phiên trong uptrend (trên SMA200) — mua",
+    "tf": "D1"
+  },
+  "verdict": "CHÁT",
+  "tieu_chi": {
+    "edge_vs_null": true,
+    "ben_tham_so": true,
+    "song_sot_oos": false,
+    "chiu_phi": true,
+    "kha_thi": false
+  },
+  "IS": {
+    "n": 98,
+    "wr": 29.6,
+    "years_pos": "8/14",
+    "nam_duong": {
+      "2005": true,
+      "2006": true,
+      "2007": true,
+      "2008": false,
+      "2009": true,
+      "2010": true,
+      "2011": true,
+      "2012": false,
+      "2013": true,
+      "2014": false,
+      "2015": false,
+      "2016": false,
+      "2017": false,
+      "2018": true
+    }
+  },
+  "OOS": {
+    "n": 33,
+    "wr": 21.2,
+    "years_pos": "2/5",
+    "nam_duong": {
+      "2019": true,
+      "2020": true,
+      "2021": false,
+      "2022": false,
+      "2023": false
+    }
+  },
+  "OOS2": {
+    "n": 11,
+    "wr": 54.5,
+    "years_pos": "2/3",
+    "status": "lãi lại",
+    "pham_vi": "2024-02-01 → 2026-07-07",
+    "ghi_chu": "Kỳ thi lần 2 chấm một lần duy nhất ngày 2026-08-16. KHÔNG thay đổi verdict gốc từ kỳ thi thật 2019–2023.",
+    "nam_duong": {
+      "2024": true,
+      "2025": true,
+      "2026": false
+    }
+  }
+}

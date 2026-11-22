@@ -1,0 +1,65 @@
+{
+  "spec": {
+    "id": "BRK035",
+    "ten": "Hộp 4h đầu tuần",
+    "ho": "Breakout & phiên",
+    "nguon": "Weekly opening range",
+    "mo_ta": "Range 4 giờ đầu tuần, phá biên trong ngày thứ Hai",
+    "tf": "H1"
+  },
+  "verdict": "CHẤT",
+  "tieu_chi": {
+    "edge_vs_null": true,
+    "ben_tham_so": true,
+    "song_sot_oos": true,
+    "chiu_phi": true,
+    "kha_thi": true
+  },
+  "IS": {
+    "n": 945,
+    "wr": 29.6,
+    "years_pos": "9/15",
+    "nam_duong": {
+      "2004": false,
+      "2005": false,
+      "2006": false,
+      "2007": true,
+      "2008": true,
+      "2009": false,
+      "2010": true,
+      "2011": true,
+      "2012": false,
+      "2013": true,
+      "2014": true,
+      "2015": true,
+      "2016": true,
+      "2017": true,
+      "2018": false
+    }
+  },
+  "OOS": {
+    "n": 337,
+    "wr": 29.1,
+    "years_pos": "4/5",
+    "nam_duong": {
+      "2019": true,
+      "2020": true,
+      "2021": false,
+      "2022": true,
+      "2023": true
+    }
+  },
+  "OOS2": {
+    "n": 168,
+    "wr": 28.6,
+    "years_pos": "1/3",
+    "status": "giữ vững",
+    "pham_vi": "2024-02-01 → 2026-07-07",
+    "ghi_chu": "Kỳ thi lần 2 chấm một lần duy nhất ngày 2026-08-16. KHÔNG thay đổi verdict gốc từ kỳ thi thật 2019–2023.",
+    "nam_duong": {
+      "2024": false,
+      "2025": true,
+      "2026": false
+    }
+  }
+}

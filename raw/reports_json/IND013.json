@@ -1,0 +1,65 @@
+{
+  "spec": {
+    "id": "IND013",
+    "ten": "Bollinger %B cực trị",
+    "ho": "Indicator kinh điển",
+    "nguon": "Bollinger",
+    "mo_ta": "%B < 0 mua, > 1 bán (đóng ngoài band)",
+    "tf": "H1"
+  },
+  "verdict": "CHÁT",
+  "tieu_chi": {
+    "edge_vs_null": false,
+    "ben_tham_so": false,
+    "song_sot_oos": false,
+    "chiu_phi": true,
+    "kha_thi": true
+  },
+  "IS": {
+    "n": 1971,
+    "wr": 24.4,
+    "years_pos": "4/15",
+    "nam_duong": {
+      "2004": true,
+      "2005": false,
+      "2006": false,
+      "2007": false,
+      "2008": true,
+      "2009": false,
+      "2010": false,
+      "2011": false,
+      "2012": true,
+      "2013": false,
+      "2014": false,
+      "2015": false,
+      "2016": false,
+      "2017": false,
+      "2018": true
+    }
+  },
+  "OOS": {
+    "n": 623,
+    "wr": 27.8,
+    "years_pos": "4/5",
+    "nam_duong": {
+      "2019": false,
+      "2020": true,
+      "2021": true,
+      "2022": true,
+      "2023": true
+    }
+  },
+  "OOS2": {
+    "n": 325,
+    "wr": 22.8,
+    "years_pos": "0/3",
+    "status": "vẫn rớt",
+    "pham_vi": "2024-02-01 → 2026-07-07",
+    "ghi_chu": "Kỳ thi lần 2 chấm một lần duy nhất ngày 2026-08-16. KHÔNG thay đổi verdict gốc từ kỳ thi thật 2019–2023.",
+    "nam_duong": {
+      "2024": false,
+      "2025": false,
+      "2026": false
+    }
+  }
+}

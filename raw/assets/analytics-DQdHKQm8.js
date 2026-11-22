@@ -1,0 +1,1 @@
+function e(e,t){try{let n=window;typeof n.gtag==`function`&&n.gtag(`event`,e,t||{})}catch{}}export{e as t};

@@ -1,0 +1,65 @@
+{
+  "spec": {
+    "id": "BRK026",
+    "ten": "Break of structure (BOS) đơn giản",
+    "ho": "Breakout & phiên",
+    "nguon": "SMC phổ thông hoá",
+    "mo_ta": "Phá đỉnh swing gần nhất trong downtrend = đổi cấu trúc, mua",
+    "tf": "H1"
+  },
+  "verdict": "CHÁT",
+  "tieu_chi": {
+    "edge_vs_null": false,
+    "ben_tham_so": false,
+    "song_sot_oos": false,
+    "chiu_phi": true,
+    "kha_thi": true
+  },
+  "IS": {
+    "n": 2183,
+    "wr": 27,
+    "years_pos": "6/15",
+    "nam_duong": {
+      "2004": false,
+      "2005": true,
+      "2006": false,
+      "2007": true,
+      "2008": false,
+      "2009": false,
+      "2010": false,
+      "2011": true,
+      "2012": false,
+      "2013": true,
+      "2014": false,
+      "2015": true,
+      "2016": false,
+      "2017": true,
+      "2018": false
+    }
+  },
+  "OOS": {
+    "n": 721,
+    "wr": 26.2,
+    "years_pos": "2/5",
+    "nam_duong": {
+      "2019": false,
+      "2020": true,
+      "2021": false,
+      "2022": true,
+      "2023": false
+    }
+  },
+  "OOS2": {
+    "n": 387,
+    "wr": 28.7,
+    "years_pos": "2/3",
+    "status": "lãi lại",
+    "pham_vi": "2024-02-01 → 2026-07-07",
+    "ghi_chu": "Kỳ thi lần 2 chấm một lần duy nhất ngày 2026-08-16. KHÔNG thay đổi verdict gốc từ kỳ thi thật 2019–2023.",
+    "nam_duong": {
+      "2024": false,
+      "2025": true,
+      "2026": true
+    }
+  }
+}

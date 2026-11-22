@@ -1,0 +1,65 @@
+{
+  "spec": {
+    "id": "IND053",
+    "ten": "Momentum 10 vượt 100",
+    "ho": "Indicator kinh điển",
+    "nguon": "Giáo khoa",
+    "mo_ta": "Momentum vượt ngưỡng — mua; thủng — bán",
+    "tf": "H4"
+  },
+  "verdict": "CHẤT",
+  "tieu_chi": {
+    "edge_vs_null": true,
+    "ben_tham_so": true,
+    "song_sot_oos": true,
+    "chiu_phi": true,
+    "kha_thi": true
+  },
+  "IS": {
+    "n": 566,
+    "wr": 29.2,
+    "years_pos": "10/15",
+    "nam_duong": {
+      "2004": false,
+      "2005": true,
+      "2006": true,
+      "2007": true,
+      "2008": false,
+      "2009": true,
+      "2010": true,
+      "2011": true,
+      "2012": false,
+      "2013": false,
+      "2014": true,
+      "2015": true,
+      "2016": true,
+      "2017": false,
+      "2018": true
+    }
+  },
+  "OOS": {
+    "n": 176,
+    "wr": 27.8,
+    "years_pos": "4/5",
+    "nam_duong": {
+      "2019": true,
+      "2020": true,
+      "2021": false,
+      "2022": true,
+      "2023": true
+    }
+  },
+  "OOS2": {
+    "n": 94,
+    "wr": 31.9,
+    "years_pos": "2/3",
+    "status": "giữ vững",
+    "pham_vi": "2024-02-01 → 2026-07-07",
+    "ghi_chu": "Kỳ thi lần 2 chấm một lần duy nhất ngày 2026-08-16. KHÔNG thay đổi verdict gốc từ kỳ thi thật 2019–2023.",
+    "nam_duong": {
+      "2024": true,
+      "2025": true,
+      "2026": false
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "spec": {
+    "id": "IND060",
+    "ten": "RVI cross (Relative Vigor)",
+    "ho": "Indicator kinh điển",
+    "nguon": "John Ehlers",
+    "mo_ta": "RVI cắt signal, vào theo hướng",
+    "tf": "H4"
+  },
+  "verdict": "CHÁT",
+  "tieu_chi": {
+    "edge_vs_null": false,
+    "ben_tham_so": true,
+    "song_sot_oos": false,
+    "chiu_phi": true,
+    "kha_thi": true
+  },
+  "IS": {
+    "n": 750,
+    "wr": 22.4,
+    "years_pos": "5/15",
+    "nam_duong": {
+      "2004": true,
+      "2005": false,
+      "2006": false,
+      "2007": false,
+      "2008": false,
+      "2009": true,
+      "2010": true,
+      "2011": true,
+      "2012": false,
+      "2013": true,
+      "2014": false,
+      "2015": false,
+      "2016": false,
+      "2017": false,
+      "2018": false
+    }
+  },
+  "OOS": {
+    "n": 234,
+    "wr": 25.6,
+    "years_pos": "2/5",
+    "nam_duong": {
+      "2019": false,
+      "2020": false,
+      "2021": true,
+      "2022": false,
+      "2023": true
+    }
+  },
+  "OOS2": {
+    "n": 116,
+    "wr": 30.2,
+    "years_pos": "1/3",
+    "status": "lãi lại",
+    "pham_vi": "2024-02-01 → 2026-07-07",
+    "ghi_chu": "Kỳ thi lần 2 chấm một lần duy nhất ngày 2026-08-16. KHÔNG thay đổi verdict gốc từ kỳ thi thật 2019–2023.",
+    "nam_duong": {
+      "2024": true,
+      "2025": false,
+      "2026": false
+    }
+  }
+}

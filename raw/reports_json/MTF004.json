@@ -1,0 +1,65 @@
+{
+  "spec": {
+    "id": "MTF004",
+    "ten": "D1 engulfing + H1 xác nhận cấu trúc",
+    "ho": "Đa khung & lai",
+    "nguon": "Lai nến đa khung",
+    "mo_ta": "Engulfing D1 → chờ H1 BOS cùng hướng mới vào",
+    "tf": "H1"
+  },
+  "verdict": "CHÁT",
+  "tieu_chi": {
+    "edge_vs_null": false,
+    "ben_tham_so": false,
+    "song_sot_oos": false,
+    "chiu_phi": true,
+    "kha_thi": true
+  },
+  "IS": {
+    "n": 324,
+    "wr": 26.9,
+    "years_pos": "10/15",
+    "nam_duong": {
+      "2004": true,
+      "2005": true,
+      "2006": true,
+      "2007": false,
+      "2008": true,
+      "2009": true,
+      "2010": true,
+      "2011": false,
+      "2012": false,
+      "2013": true,
+      "2014": false,
+      "2015": true,
+      "2016": true,
+      "2017": true,
+      "2018": false
+    }
+  },
+  "OOS": {
+    "n": 67,
+    "wr": 25.4,
+    "years_pos": "3/5",
+    "nam_duong": {
+      "2019": true,
+      "2020": false,
+      "2021": true,
+      "2022": false,
+      "2023": true
+    }
+  },
+  "OOS2": {
+    "n": 39,
+    "wr": 33.3,
+    "years_pos": "3/3",
+    "status": "lãi lại",
+    "pham_vi": "2024-02-01 → 2026-07-07",
+    "ghi_chu": "Kỳ thi lần 2 chấm một lần duy nhất ngày 2026-08-16. KHÔNG thay đổi verdict gốc từ kỳ thi thật 2019–2023.",
+    "nam_duong": {
+      "2024": true,
+      "2025": true,
+      "2026": true
+    }
+  }
+}

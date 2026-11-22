@@ -1,0 +1,65 @@
+{
+  "spec": {
+    "id": "BRK034",
+    "ten": "Đỉnh/đáy phiên Mỹ hôm trước",
+    "ho": "Breakout & phiên",
+    "nguon": "Session levels",
+    "mo_ta": "Vượt high phiên Mỹ hôm qua — mua",
+    "tf": "H1"
+  },
+  "verdict": "CHÁT",
+  "tieu_chi": {
+    "edge_vs_null": false,
+    "ben_tham_so": false,
+    "song_sot_oos": false,
+    "chiu_phi": true,
+    "kha_thi": true
+  },
+  "IS": {
+    "n": 1882,
+    "wr": 26.9,
+    "years_pos": "7/15",
+    "nam_duong": {
+      "2004": false,
+      "2005": true,
+      "2006": true,
+      "2007": false,
+      "2008": false,
+      "2009": false,
+      "2010": true,
+      "2011": true,
+      "2012": false,
+      "2013": false,
+      "2014": false,
+      "2015": true,
+      "2016": false,
+      "2017": true,
+      "2018": false
+    }
+  },
+  "OOS": {
+    "n": 639,
+    "wr": 28.2,
+    "years_pos": "3/5",
+    "nam_duong": {
+      "2019": true,
+      "2020": true,
+      "2021": true,
+      "2022": false,
+      "2023": false
+    }
+  },
+  "OOS2": {
+    "n": 314,
+    "wr": 30.3,
+    "years_pos": "3/3",
+    "status": "lãi lại",
+    "pham_vi": "2024-02-01 → 2026-07-07",
+    "ghi_chu": "Kỳ thi lần 2 chấm một lần duy nhất ngày 2026-08-16. KHÔNG thay đổi verdict gốc từ kỳ thi thật 2019–2023.",
+    "nam_duong": {
+      "2024": true,
+      "2025": true,
+      "2026": true
+    }
+  }
+}

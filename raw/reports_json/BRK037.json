@@ -1,0 +1,65 @@
+{
+  "spec": {
+    "id": "BRK037",
+    "ten": "Momentum 2 nến liên tiếp phá",
+    "ho": "Breakout & phiên",
+    "nguon": "Lọc xác nhận",
+    "mo_ta": "2 nến liên tiếp đóng ngoài biên tích luỹ mới vào (chậm mà chắc)",
+    "tf": "H1"
+  },
+  "verdict": "TÌNH HUỐNG",
+  "tieu_chi": {
+    "edge_vs_null": true,
+    "ben_tham_so": true,
+    "song_sot_oos": false,
+    "chiu_phi": true,
+    "kha_thi": true
+  },
+  "IS": {
+    "n": 1981,
+    "wr": 29,
+    "years_pos": "11/15",
+    "nam_duong": {
+      "2004": true,
+      "2005": true,
+      "2006": true,
+      "2007": true,
+      "2008": true,
+      "2009": true,
+      "2010": false,
+      "2011": true,
+      "2012": false,
+      "2013": true,
+      "2014": false,
+      "2015": true,
+      "2016": true,
+      "2017": true,
+      "2018": false
+    }
+  },
+  "OOS": {
+    "n": 692,
+    "wr": 27.3,
+    "years_pos": "3/5",
+    "nam_duong": {
+      "2019": true,
+      "2020": true,
+      "2021": false,
+      "2022": false,
+      "2023": true
+    }
+  },
+  "OOS2": {
+    "n": 339,
+    "wr": 33,
+    "years_pos": "3/3",
+    "status": "giữ vững",
+    "pham_vi": "2024-02-01 → 2026-07-07",
+    "ghi_chu": "Kỳ thi lần 2 chấm một lần duy nhất ngày 2026-08-16. KHÔNG thay đổi verdict gốc từ kỳ thi thật 2019–2023.",
+    "nam_duong": {
+      "2024": true,
+      "2025": true,
+      "2026": true
+    }
+  }
+}

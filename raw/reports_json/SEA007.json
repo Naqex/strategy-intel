@@ -1,0 +1,65 @@
+{
+  "spec": {
+    "id": "SEA007",
+    "ten": "Giờ NY mở (19:30-21:30 VN hè)",
+    "ho": "Giờ giấc & mùa vụ",
+    "nguon": "Session stats",
+    "mo_ta": "Chỉ trade trong cửa sổ mở Mỹ — biến động nhất",
+    "tf": "M15"
+  },
+  "verdict": "CHÁT",
+  "tieu_chi": {
+    "edge_vs_null": false,
+    "ben_tham_so": false,
+    "song_sot_oos": false,
+    "chiu_phi": true,
+    "kha_thi": true
+  },
+  "IS": {
+    "n": 3050,
+    "wr": 27.5,
+    "years_pos": "4/15",
+    "nam_duong": {
+      "2004": false,
+      "2005": true,
+      "2006": true,
+      "2007": false,
+      "2008": false,
+      "2009": false,
+      "2010": false,
+      "2011": true,
+      "2012": false,
+      "2013": false,
+      "2014": false,
+      "2015": true,
+      "2016": false,
+      "2017": false,
+      "2018": false
+    }
+  },
+  "OOS": {
+    "n": 1121,
+    "wr": 26.7,
+    "years_pos": "0/5",
+    "nam_duong": {
+      "2019": false,
+      "2020": false,
+      "2021": false,
+      "2022": false,
+      "2023": false
+    }
+  },
+  "OOS2": {
+    "n": 572,
+    "wr": 24.5,
+    "years_pos": "0/3",
+    "status": "vẫn rớt",
+    "pham_vi": "2024-02-01 → 2026-07-07",
+    "ghi_chu": "Kỳ thi lần 2 chấm một lần duy nhất ngày 2026-08-16. KHÔNG thay đổi verdict gốc từ kỳ thi thật 2019–2023.",
+    "nam_duong": {
+      "2024": false,
+      "2025": false,
+      "2026": false
+    }
+  }
+}

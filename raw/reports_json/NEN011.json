@@ -1,0 +1,65 @@
+{
+  "spec": {
+    "id": "NEN011",
+    "ten": "Hammer tại đáy tuần",
+    "ho": "Mẫu nến",
+    "nguon": "Nison + lọc vị trí",
+    "mo_ta": "Nến búa có đáy thấp nhất 5 ngày, mua mở nến kế",
+    "tf": "D1"
+  },
+  "verdict": "CHÁT",
+  "tieu_chi": {
+    "edge_vs_null": true,
+    "ben_tham_so": true,
+    "song_sot_oos": false,
+    "chiu_phi": true,
+    "kha_thi": true
+  },
+  "IS": {
+    "n": 101,
+    "wr": 29.7,
+    "years_pos": "10/15",
+    "nam_duong": {
+      "2004": true,
+      "2005": false,
+      "2006": false,
+      "2007": true,
+      "2008": false,
+      "2009": false,
+      "2010": true,
+      "2011": true,
+      "2012": false,
+      "2013": true,
+      "2014": true,
+      "2015": true,
+      "2016": true,
+      "2017": true,
+      "2018": true
+    }
+  },
+  "OOS": {
+    "n": 40,
+    "wr": 22.5,
+    "years_pos": "2/5",
+    "nam_duong": {
+      "2019": true,
+      "2020": false,
+      "2021": false,
+      "2022": true,
+      "2023": false
+    }
+  },
+  "OOS2": {
+    "n": 19,
+    "wr": 31.6,
+    "years_pos": "2/3",
+    "status": "lãi lại",
+    "pham_vi": "2024-02-01 → 2026-07-07",
+    "ghi_chu": "Kỳ thi lần 2 chấm một lần duy nhất ngày 2026-08-16. KHÔNG thay đổi verdict gốc từ kỳ thi thật 2019–2023.",
+    "nam_duong": {
+      "2024": true,
+      "2025": false,
+      "2026": true
+    }
+  }
+}
