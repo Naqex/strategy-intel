@@ -1,8 +1,10 @@
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-const index = JSON.parse(fs.readFileSync('raw/thu_vien_index.json', 'utf8'));
-const reportsDir = 'raw/reports_json';
+const index = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../raw/thu_vien_index.json'), 'utf8'));
+const reportsDir = path.resolve(__dirname, '../raw/reports_json');
 
 const summaryList = [];
 
@@ -74,7 +76,7 @@ for (const item of index.danh_sach) {
 console.log(`Compiled summary for ${summaryList.length} strategies.`);
 
 // Save JSON
-fs.writeFileSync('extracted/02_library_242_summary.json', JSON.stringify({
+fs.writeFileSync(path.resolve(__dirname, '../extracted/02_library_242_summary.json'), JSON.stringify({
   tong_quan: {
     tong_so_muc_danh_ba: index.tong,
     da_kiem_dinh: index.da_chay,
@@ -155,5 +157,5 @@ for (const s of summaryList) {
   ].join(','));
 }
 
-fs.writeFileSync('extracted/02_library_242_summary.csv', '\uFEFF' + csvRows.join('\n'), 'utf8');
+fs.writeFileSync(path.resolve(__dirname, '../extracted/02_library_242_summary.csv'), '\uFEFF' + csvRows.join('\n'), 'utf8');
 console.log('Successfully written 02_library_242_summary.json and 02_library_242_summary.csv!');

@@ -1,9 +1,11 @@
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-const indexPath = path.resolve('raw/thu_vien_index.json');
-const reportsDir = path.resolve('raw/reports_json');
-const outputPath = path.resolve('extracted/07_missing_58_items.json');
+const indexPath = path.resolve(__dirname, '../raw/thu_vien_index.json');
+const reportsDir = path.resolve(__dirname, '../raw/reports_json');
+const outputPath = path.resolve(__dirname, '../extracted/07_missing_58_items.json');
 
 const indexData = JSON.parse(fs.readFileSync(indexPath, 'utf8'));
 const files = new Set(fs.readdirSync(reportsDir).map(f => f.replace('.json', '')));

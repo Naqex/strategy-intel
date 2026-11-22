@@ -1,8 +1,10 @@
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-const reportsDir = path.resolve('raw/reports_json');
-const indexPath = path.resolve('raw/thu_vien_index.json');
+const reportsDir = path.resolve(__dirname, '../raw/reports_json');
+const indexPath = path.resolve(__dirname, '../raw/thu_vien_index.json');
 const indexData = JSON.parse(fs.readFileSync(indexPath, 'utf8'));
 
 const indexMap = new Map();
@@ -35,7 +37,7 @@ const rawTop15 = chatList.map(item => {
   const { _meta, ...clean } = item;
   return clean;
 });
-fs.writeFileSync('extracted/04_top15_chat_full.json', JSON.stringify(rawTop15, null, 2), 'utf8');
+fs.writeFileSync(path.resolve(__dirname, '../extracted/04_top15_chat_full.json'), JSON.stringify(rawTop15, null, 2), 'utf8');
 console.log('Saved extracted/04_top15_chat_full.json with 15 strategies.');
 
 // Sort TÌNH HUỐNG by OOS1 (2019-2023)
@@ -203,5 +205,5 @@ md += `
 *Tài liệu kiểm toán hoàn thành ngày 23/11/2026.*
 `;
 
-fs.writeFileSync('extracted/05_replicability_audit.md', md, 'utf8');
+fs.writeFileSync(path.resolve(__dirname, '../extracted/05_replicability_audit.md'), md, 'utf8');
 console.log('Saved extracted/05_replicability_audit.md.');

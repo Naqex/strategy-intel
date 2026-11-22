@@ -47,7 +47,7 @@ Mọi kết quả kiểm chứng **bắt buộc phải trừ chi phí ma sát th
 1. **Phí hoa hồng (Commission):** Mặc định tính **0,02% mỗi chiều** (tương đương **$7 / standard lot** hai chiều vào-ra).
 2. **Chênh lệch giá mua - bán (Spread):** Cố định tối thiểu **30 points (3 pips)** trong điều kiện thanh khoản bình thường; nới rộng theo các khung giờ chuyển phiên.
 3. **Trượt giá thực thi (Slippage):** Mô phỏng trượt giá thực tế dựa trên độ sâu sổ lệnh giới hạn (Limit Order Book) và mất cân bằng dòng lệnh (OFI), đặc biệt trong các khung giờ thanh khoản mỏng hoặc tin tức mạnh.
-4. **Phí qua đêm (Swap):** Tính khấu trừ trực tiếp theo số ngày nắm giữ vị thế.
+4. **Phí qua đêm (Swap / Overnight Financing):** Hệ thống kiểm định KHÔNG tính phí swap qua đêm thả nổi (không áp dụng bảng swap thả nổi hay triple-swap thứ Tư); chi phí ma sát được chuẩn hóa qua hoa hồng cố định 0,02%/chiều và spread tối thiểu 30 points.
 
 ### 1.3. Phân Đoạn Dữ Liệu Huấn Luyện & Chấm Thi Độc Lập (In-Sample / Out-of-Sample Split)
 Toàn bộ 22 năm dữ liệu được phân chia nghiêm ngặt thành 3 giai đoạn độc lập:

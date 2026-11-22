@@ -1,0 +1,1023 @@
+[
+  {
+    "name": "Advanced Gold Trading EA v6.4 MT4 - Original version | Download Free",
+    "url": "https://www.eafree.net/ea/advanced-gold-trading-ea-v64-mt4",
+    "platform": "MT4",
+    "pricing": "Free (Premium Membership Required)",
+    "site_score": null,
+    "risk_label": "NOT_DISCLOSED",
+    "claimed_strategy_type": "Scalping",
+    "has_grid_or_martingale_signals": false,
+    "grid_martingale_rationale": "Không phát hiện tín hiệu giao dịch Grid/Martingale trong tài liệu mô tả.",
+    "symbols": [
+      "XAUUSD",
+      "GOLD"
+    ],
+    "timeframes": [
+      "M15"
+    ],
+    "uses_hard_sl": "NOT_DISCLOSED",
+    "verified_live_links": []
+  },
+  {
+    "name": "Aikon MT5",
+    "url": "https://www.eafree.net/ea/aikon-mt5",
+    "platform": "MT5",
+    "pricing": "Free (Premium Membership Required)",
+    "site_score": null,
+    "risk_label": "NOT_DISCLOSED",
+    "claimed_strategy_type": "Trend",
+    "has_grid_or_martingale_signals": false,
+    "grid_martingale_rationale": "Không phát hiện tín hiệu giao dịch Grid/Martingale trong tài liệu mô tả.",
+    "symbols": [
+      "GOLD",
+      "AUDUSD",
+      "AUDCAD",
+      "NZDUSD"
+    ],
+    "timeframes": [
+      "NOT_DISCLOSED"
+    ],
+    "uses_hard_sl": "NOT_DISCLOSED",
+    "verified_live_links": []
+  },
+  {
+    "name": "ALPHA AI EA MT5 v1.09 with SetFiles",
+    "url": "https://www.eafree.net/ea/alpha-ai-ea-mt5",
+    "platform": "MT5",
+    "pricing": "Free (Premium Membership Required)",
+    "site_score": 4.39,
+    "risk_label": "NOT_DISCLOSED",
+    "claimed_strategy_type": "Trend",
+    "has_grid_or_martingale_signals": false,
+    "grid_martingale_rationale": "Không phát hiện tín hiệu giao dịch Grid/Martingale trong tài liệu mô tả.",
+    "symbols": [
+      "XAUUSD",
+      "GOLD"
+    ],
+    "timeframes": [
+      "M1",
+      "M5",
+      "M15",
+      "M30",
+      "H1"
+    ],
+    "uses_hard_sl": "NOT_DISCLOSED",
+    "verified_live_links": []
+  },
+  {
+    "name": "Big Forex Players MT4 v3.1 - Original version | Download Free",
+    "url": "https://www.eafree.net/ea/big-forex-players-mt4",
+    "platform": "MT4",
+    "pricing": "Free (Premium Membership Required)",
+    "site_score": null,
+    "risk_label": "High",
+    "claimed_strategy_type": "NOT_DISCLOSED",
+    "has_grid_or_martingale_signals": false,
+    "grid_martingale_rationale": "Không phát hiện tín hiệu giao dịch Grid/Martingale trong tài liệu mô tả.",
+    "symbols": [
+      "XAUUSD",
+      "GOLD",
+      "EURUSD",
+      "GBPUSD",
+      "AUDUSD",
+      "USDJPY"
+    ],
+    "timeframes": [
+      "H1",
+      "H4",
+      "D1"
+    ],
+    "uses_hard_sl": "NOT_DISCLOSED",
+    "verified_live_links": []
+  },
+  {
+    "name": "CHART PATTERNS Indicator MT5 | Free Download",
+    "url": "https://www.eafree.net/ea/chart-patterns-indicator-mt5",
+    "platform": "MT5",
+    "pricing": "Free (Premium Membership Required)",
+    "site_score": 5.0,
+    "risk_label": "NOT_DISCLOSED",
+    "claimed_strategy_type": "Breakout",
+    "has_grid_or_martingale_signals": false,
+    "grid_martingale_rationale": "Không phát hiện tín hiệu giao dịch Grid/Martingale trong tài liệu mô tả.",
+    "symbols": [
+      "XAUUSD",
+      "GOLD"
+    ],
+    "timeframes": [
+      "M1",
+      "M5",
+      "M15",
+      "H1",
+      "H4"
+    ],
+    "uses_hard_sl": true,
+    "verified_live_links": []
+  },
+  {
+    "name": "CyberVision EA MT4 v1.3 - Original version | Download Free",
+    "url": "https://www.eafree.net/ea/cybervision-ea-mt4",
+    "platform": "MT4",
+    "pricing": "Free (Premium Membership Required)",
+    "site_score": null,
+    "risk_label": "High",
+    "claimed_strategy_type": "Grid",
+    "has_grid_or_martingale_signals": false,
+    "grid_martingale_rationale": "Khẳng định KHÔNG dùng: \"It does not use high-risk trading methods such as Martingale , Grid , or averaging , and each position is managed with a hard Stop Loss and Take Profit\"",
+    "symbols": [
+      "XAUUSD",
+      "GOLD"
+    ],
+    "timeframes": [
+      "M30"
+    ],
+    "uses_hard_sl": true,
+    "verified_live_links": []
+  },
+  {
+    "name": "Divergence Scanner Indicator MT5 | Free Download",
+    "url": "https://www.eafree.net/ea/divergence-scanner-indicator-mt5",
+    "platform": "MT5",
+    "pricing": "Free (Premium Membership Required)",
+    "site_score": null,
+    "risk_label": "NOT_DISCLOSED",
+    "claimed_strategy_type": "Scalping",
+    "has_grid_or_martingale_signals": false,
+    "grid_martingale_rationale": "Không phát hiện tín hiệu giao dịch Grid/Martingale trong tài liệu mô tả.",
+    "symbols": [
+      "XAUUSD",
+      "GOLD"
+    ],
+    "timeframes": [
+      "M15",
+      "H1",
+      "H4"
+    ],
+    "uses_hard_sl": true,
+    "verified_live_links": []
+  },
+  {
+    "name": "EAFree Dashboard Version 1.3",
+    "url": "https://www.eafree.net/ea/eafree-dashboard-v13",
+    "platform": "MT4/MT5",
+    "pricing": "Free (Premium Membership Required)",
+    "site_score": null,
+    "risk_label": "NOT_DISCLOSED",
+    "claimed_strategy_type": "Scalping",
+    "has_grid_or_martingale_signals": true,
+    "grid_martingale_rationale": "Cảnh báo Grid/Martingale: \"That is a typical sign of grid or martingale trading mindsets\"",
+    "symbols": [
+      "XAUUSD",
+      "GOLD",
+      "EURUSD"
+    ],
+    "timeframes": [
+      "M15",
+      "H1"
+    ],
+    "uses_hard_sl": "NOT_DISCLOSED",
+    "verified_live_links": []
+  },
+  {
+    "name": "EAFree TradePad v2.16",
+    "url": "https://www.eafree.net/ea/eafree-tradepad-v216",
+    "platform": "MT5",
+    "pricing": "Free (Premium Membership Required)",
+    "site_score": 5.0,
+    "risk_label": "NOT_DISCLOSED",
+    "claimed_strategy_type": "Breakout",
+    "has_grid_or_martingale_signals": false,
+    "grid_martingale_rationale": "Không phát hiện tín hiệu giao dịch Grid/Martingale trong tài liệu mô tả.",
+    "symbols": [
+      "XAUUSD",
+      "GOLD"
+    ],
+    "timeframes": [
+      "NOT_DISCLOSED"
+    ],
+    "uses_hard_sl": "NOT_DISCLOSED",
+    "verified_live_links": []
+  },
+  {
+    "name": "Ehlers DSP Indicator MT5 | Free Download",
+    "url": "https://www.eafree.net/ea/ehlers-dsp-indicator-mt5",
+    "platform": "MT5",
+    "pricing": "Free (Premium Membership Required)",
+    "site_score": null,
+    "risk_label": "NOT_DISCLOSED",
+    "claimed_strategy_type": "Breakout",
+    "has_grid_or_martingale_signals": false,
+    "grid_martingale_rationale": "Không phát hiện tín hiệu giao dịch Grid/Martingale trong tài liệu mô tả.",
+    "symbols": [
+      "XAUUSD",
+      "GOLD"
+    ],
+    "timeframes": [
+      "M15",
+      "H1",
+      "H4"
+    ],
+    "uses_hard_sl": true,
+    "verified_live_links": []
+  },
+  {
+    "name": "Elliott Full Suite V2.12 | Free Download",
+    "url": "https://www.eafree.net/ea/elliott-full-suite",
+    "platform": "MT5",
+    "pricing": "Free (Premium Membership Required)",
+    "site_score": null,
+    "risk_label": "High",
+    "claimed_strategy_type": "Breakout",
+    "has_grid_or_martingale_signals": false,
+    "grid_martingale_rationale": "Không phát hiện tín hiệu giao dịch Grid/Martingale trong tài liệu mô tả.",
+    "symbols": [
+      "XAUUSD",
+      "GOLD",
+      "EURUSD",
+      "GBPUSD",
+      "BTCUSD"
+    ],
+    "timeframes": [
+      "M5",
+      "M15",
+      "H1",
+      "H4"
+    ],
+    "uses_hard_sl": "NOT_DISCLOSED",
+    "verified_live_links": []
+  },
+  {
+    "name": "Fenghuang Rig EA MT4 v1.3 - Original version | Download Free",
+    "url": "https://www.eafree.net/ea/fenghuang-rig-ea-mt4",
+    "platform": "MT4",
+    "pricing": "Free (Premium Membership Required)",
+    "site_score": null,
+    "risk_label": "High",
+    "claimed_strategy_type": "Scalping",
+    "has_grid_or_martingale_signals": false,
+    "grid_martingale_rationale": "Khẳng định KHÔNG dùng: \"Unlike aggressive Expert Advisors that rely on Martingale , Grid , averaging, or scalping , Fenghuang EA is designed around data analysis and market volatility classification\"",
+    "symbols": [
+      "XAUUSD",
+      "GOLD",
+      "EURUSD"
+    ],
+    "timeframes": [
+      "M30"
+    ],
+    "uses_hard_sl": true,
+    "verified_live_links": []
+  },
+  {
+    "name": "FIB CLUSTER Indicator MT5 | Free Download",
+    "url": "https://www.eafree.net/ea/fib-cluster-indicator-mt5",
+    "platform": "MT5",
+    "pricing": "Free (Premium Membership Required)",
+    "site_score": null,
+    "risk_label": "NOT_DISCLOSED",
+    "claimed_strategy_type": "Trend",
+    "has_grid_or_martingale_signals": true,
+    "grid_martingale_rationale": "Cảnh báo Grid/Martingale: \"Weighted Scoring Matrix: All levels feed into a localized price grid\"",
+    "symbols": [
+      "XAUUSD",
+      "GOLD"
+    ],
+    "timeframes": [
+      "M15",
+      "H1",
+      "H4",
+      "D1"
+    ],
+    "uses_hard_sl": "NOT_DISCLOSED",
+    "verified_live_links": []
+  },
+  {
+    "name": "Footprint Alpha Indicator MT5 | Free Download",
+    "url": "https://www.eafree.net/ea/footprint-alpha-indicator-mt5",
+    "platform": "MT5",
+    "pricing": "Free (Premium Membership Required)",
+    "site_score": null,
+    "risk_label": "NOT_DISCLOSED",
+    "claimed_strategy_type": "Breakout",
+    "has_grid_or_martingale_signals": false,
+    "grid_martingale_rationale": "Không phát hiện tín hiệu giao dịch Grid/Martingale trong tài liệu mô tả.",
+    "symbols": [
+      "XAUUSD",
+      "GOLD"
+    ],
+    "timeframes": [
+      "M1",
+      "M5",
+      "M15"
+    ],
+    "uses_hard_sl": "NOT_DISCLOSED",
+    "verified_live_links": []
+  },
+  {
+    "name": "FRACTAL / IPDA SUITE V1.0 | Free Download",
+    "url": "https://www.eafree.net/ea/fractal-ipda-suite",
+    "platform": "MT4",
+    "pricing": "Free (Premium Membership Required)",
+    "site_score": null,
+    "risk_label": "NOT_DISCLOSED",
+    "claimed_strategy_type": "Scalping",
+    "has_grid_or_martingale_signals": false,
+    "grid_martingale_rationale": "Không phát hiện tín hiệu giao dịch Grid/Martingale trong tài liệu mô tả.",
+    "symbols": [
+      "XAUUSD",
+      "GOLD"
+    ],
+    "timeframes": [
+      "M5",
+      "M15",
+      "D1"
+    ],
+    "uses_hard_sl": "NOT_DISCLOSED",
+    "verified_live_links": []
+  },
+  {
+    "name": "GANN FULL SUITE V1.12 | Free Download",
+    "url": "https://www.eafree.net/ea/gann-full-suite",
+    "platform": "MT5",
+    "pricing": "Free (Premium Membership Required)",
+    "site_score": null,
+    "risk_label": "NOT_DISCLOSED",
+    "claimed_strategy_type": "Scalping",
+    "has_grid_or_martingale_signals": true,
+    "grid_martingale_rationale": "Cảnh báo Grid/Martingale: \"Pivot Realignment Risk (Shift) While closed-candle events never repaint, a break to fresh highs/lows forces the anchor to shift, causing the future grid to recalculate [B]\"",
+    "symbols": [
+      "XAUUSD",
+      "GOLD"
+    ],
+    "timeframes": [
+      "H4",
+      "D1"
+    ],
+    "uses_hard_sl": "NOT_DISCLOSED",
+    "verified_live_links": []
+  },
+  {
+    "name": "Ghost AI EA MT5 with SetFiles",
+    "url": "https://www.eafree.net/ea/ghost-ai-ea-mt5",
+    "platform": "MT5",
+    "pricing": "Free (Premium Membership Required)",
+    "site_score": 4.0,
+    "risk_label": "Low",
+    "claimed_strategy_type": "Trend",
+    "has_grid_or_martingale_signals": false,
+    "grid_martingale_rationale": "Khẳng định KHÔNG dùng: \"Ghost AI EA MT5 with SetFiles | EAFree Skip to content Getting Started Step-by-Step Guide Change Partner Guide Learn EA Library Premium Giveaway Contest About EA_LIBRARY / FOREX_EA / GHOST_AI_EA_MT5_WITH_SETFILES Forex EA Ghost AI EA MT5 with SetFiles Ghost AI EA is a professional automated Forex trading system using SMA 10/50 crossover, 1% risk, 1:2 RR, no grid/martingale for stable long-term growth\"",
+    "symbols": [
+      "XAUUSD",
+      "GOLD"
+    ],
+    "timeframes": [
+      "M15",
+      "M30",
+      "H1"
+    ],
+    "uses_hard_sl": "NOT_DISCLOSED",
+    "verified_live_links": []
+  },
+  {
+    "name": "GPlus EA MT4 v1.14 - Original version | Download Free",
+    "url": "https://www.eafree.net/ea/gplus-ea-mt4",
+    "platform": "MT4",
+    "pricing": "Free (Premium Membership Required)",
+    "site_score": null,
+    "risk_label": "NOT_DISCLOSED",
+    "claimed_strategy_type": "Grid",
+    "has_grid_or_martingale_signals": true,
+    "grid_martingale_rationale": "Cảnh báo Grid/Martingale: \"14 · Aug 28, 2026 Latest Download Category Forex EA › Automated Trading, Forex EA, Forex EA › Grid Trading Downloads 2 Added Aug 28, 2026 Overview Specifications FAQ Reviews Overview What Is GPlus EA\"",
+    "symbols": [
+      "XAUUSD",
+      "GOLD"
+    ],
+    "timeframes": [
+      "M30"
+    ],
+    "uses_hard_sl": "NOT_DISCLOSED",
+    "verified_live_links": [
+      "https://www.myfxbook.com/members/alanmhd7/gplus-ea-demo/10880280"
+    ]
+  },
+  {
+    "name": "Harmonic Full Suite V1.14 | Free Download",
+    "url": "https://www.eafree.net/ea/harmonic-full-suite",
+    "platform": "MT5",
+    "pricing": "Free (Premium Membership Required)",
+    "site_score": null,
+    "risk_label": "NOT_DISCLOSED",
+    "claimed_strategy_type": "Breakout",
+    "has_grid_or_martingale_signals": false,
+    "grid_martingale_rationale": "Không phát hiện tín hiệu giao dịch Grid/Martingale trong tài liệu mô tả.",
+    "symbols": [
+      "XAUUSD",
+      "GOLD",
+      "EURUSD",
+      "GBPUSD",
+      "BTCUSD"
+    ],
+    "timeframes": [
+      "H1",
+      "H4"
+    ],
+    "uses_hard_sl": "NOT_DISCLOSED",
+    "verified_live_links": []
+  },
+  {
+    "name": "HFT Pro Evolution EA MT4 - Original version | Download Free",
+    "url": "https://www.eafree.net/ea/hft-pro-evolution-ea-mt4",
+    "platform": "MT4",
+    "pricing": "Free (Premium Membership Required)",
+    "site_score": null,
+    "risk_label": "NOT_DISCLOSED",
+    "claimed_strategy_type": "Scalping",
+    "has_grid_or_martingale_signals": false,
+    "grid_martingale_rationale": "Không phát hiện tín hiệu giao dịch Grid/Martingale trong tài liệu mô tả.",
+    "symbols": [
+      "EURUSD"
+    ],
+    "timeframes": [
+      "NOT_DISCLOSED"
+    ],
+    "uses_hard_sl": "NOT_DISCLOSED",
+    "verified_live_links": []
+  },
+  {
+    "name": "High Frequency Trading Bot MT4",
+    "url": "https://www.eafree.net/ea/high-frequency-trading-bot-mt4",
+    "platform": "MT4",
+    "pricing": "Free (Premium Membership Required)",
+    "site_score": 3.5,
+    "risk_label": "NOT_DISCLOSED",
+    "claimed_strategy_type": "Scalping",
+    "has_grid_or_martingale_signals": false,
+    "grid_martingale_rationale": "Không phát hiện tín hiệu giao dịch Grid/Martingale trong tài liệu mô tả.",
+    "symbols": [
+      "GOLD"
+    ],
+    "timeframes": [
+      "M1",
+      "M5",
+      "M15",
+      "M30",
+      "H1",
+      "H4",
+      "D1"
+    ],
+    "uses_hard_sl": "NOT_DISCLOSED",
+    "verified_live_links": []
+  },
+  {
+    "name": "ICT FULL SUITE V1.12 | Free Download",
+    "url": "https://www.eafree.net/ea/ict-full-suite",
+    "platform": "MT4",
+    "pricing": "Free (Premium Membership Required)",
+    "site_score": null,
+    "risk_label": "NOT_DISCLOSED",
+    "claimed_strategy_type": "Breakout",
+    "has_grid_or_martingale_signals": false,
+    "grid_martingale_rationale": "Không phát hiện tín hiệu giao dịch Grid/Martingale trong tài liệu mô tả.",
+    "symbols": [
+      "XAUUSD",
+      "GOLD",
+      "EURUSD",
+      "GBPUSD"
+    ],
+    "timeframes": [
+      "M1",
+      "M5",
+      "M15",
+      "H1",
+      "H4",
+      "D1"
+    ],
+    "uses_hard_sl": "NOT_DISCLOSED",
+    "verified_live_links": []
+  },
+  {
+    "name": "JS Hedging Pro EA MT5 with SetFiles",
+    "url": "https://www.eafree.net/ea/js-hedging-pro-ea-mt5",
+    "platform": "MT5",
+    "pricing": "Free (Premium Membership Required)",
+    "site_score": 5.0,
+    "risk_label": "NOT_DISCLOSED",
+    "claimed_strategy_type": "Trend",
+    "has_grid_or_martingale_signals": true,
+    "grid_martingale_rationale": "Cảnh báo Grid/Martingale: \"JS Hedging Pro EA MT5 with SetFiles | EAFree Skip to content Getting Started Step-by-Step Guide Change Partner Guide Learn EA Library Premium Giveaway Contest About EA_LIBRARY / FOREX_EA / JS_HEDGING_PRO_EA_MT5_WITH_SETFILES Forex EA JS Hedging Pro EA MT5 with SetFiles JS Hedging Pro EA is an automated gold & forex hedging grid trading system using controlled martingale, wide spacing and daily profit cycles for stable returns\"",
+    "symbols": [
+      "XAUUSD",
+      "GOLD",
+      "BTCUSD"
+    ],
+    "timeframes": [
+      "M1"
+    ],
+    "uses_hard_sl": "NOT_DISCLOSED",
+    "verified_live_links": []
+  },
+  {
+    "name": "Liquidity Full Suite V1.0 | Free Download",
+    "url": "https://www.eafree.net/ea/liquidity-full-suite",
+    "platform": "MT5",
+    "pricing": "Free (Premium Membership Required)",
+    "site_score": null,
+    "risk_label": "NOT_DISCLOSED",
+    "claimed_strategy_type": "Breakout",
+    "has_grid_or_martingale_signals": false,
+    "grid_martingale_rationale": "Không phát hiện tín hiệu giao dịch Grid/Martingale trong tài liệu mô tả.",
+    "symbols": [
+      "XAUUSD",
+      "GOLD",
+      "EURUSD",
+      "GBPUSD",
+      "USDJPY"
+    ],
+    "timeframes": [
+      "M5",
+      "M15",
+      "H1"
+    ],
+    "uses_hard_sl": "NOT_DISCLOSED",
+    "verified_live_links": []
+  },
+  {
+    "name": "Market Profile Full Suite v1.02 | Free Download",
+    "url": "https://www.eafree.net/ea/market-profile-full-suite",
+    "platform": "MT5",
+    "pricing": "Free (Premium Membership Required)",
+    "site_score": null,
+    "risk_label": "NOT_DISCLOSED",
+    "claimed_strategy_type": "Breakout",
+    "has_grid_or_martingale_signals": false,
+    "grid_martingale_rationale": "Không phát hiện tín hiệu giao dịch Grid/Martingale trong tài liệu mô tả.",
+    "symbols": [
+      "XAUUSD",
+      "GOLD",
+      "US30",
+      "NAS100"
+    ],
+    "timeframes": [
+      "M5",
+      "M15",
+      "M30",
+      "H1",
+      "D1"
+    ],
+    "uses_hard_sl": "NOT_DISCLOSED",
+    "verified_live_links": []
+  },
+  {
+    "name": "ML Lorentzian Indicator MT5 | Free Download",
+    "url": "https://www.eafree.net/ea/ml-lorentzian-indicator-mt5",
+    "platform": "MT5",
+    "pricing": "Free (Premium Membership Required)",
+    "site_score": 3.0,
+    "risk_label": "NOT_DISCLOSED",
+    "claimed_strategy_type": "Breakout",
+    "has_grid_or_martingale_signals": false,
+    "grid_martingale_rationale": "Không phát hiện tín hiệu giao dịch Grid/Martingale trong tài liệu mô tả.",
+    "symbols": [
+      "XAUUSD",
+      "GOLD"
+    ],
+    "timeframes": [
+      "M15",
+      "M30",
+      "H1",
+      "D1"
+    ],
+    "uses_hard_sl": true,
+    "verified_live_links": []
+  },
+  {
+    "name": "MoonDog EA V3.38 MT5 - FREE DOWNLOAD",
+    "url": "https://www.eafree.net/ea/moondog-ea-v334-mt5-free-download",
+    "platform": "MT5",
+    "pricing": "Free (Premium Membership Required)",
+    "site_score": null,
+    "risk_label": "Low",
+    "claimed_strategy_type": "Breakout",
+    "has_grid_or_martingale_signals": false,
+    "grid_martingale_rationale": "Khẳng định KHÔNG dùng: \"NO Martingale, low risk, and fully optimized for Prop Firm challenges\"",
+    "symbols": [
+      "XAUUSD",
+      "GOLD"
+    ],
+    "timeframes": [
+      "M5",
+      "M15",
+      "H1"
+    ],
+    "uses_hard_sl": true,
+    "verified_live_links": []
+  },
+  {
+    "name": "Order Flow Full Suite V1.42 | Free Download",
+    "url": "https://www.eafree.net/ea/order-flow-full-suite",
+    "platform": "MT5",
+    "pricing": "Free (Premium Membership Required)",
+    "site_score": 5.0,
+    "risk_label": "NOT_DISCLOSED",
+    "claimed_strategy_type": "Breakout",
+    "has_grid_or_martingale_signals": false,
+    "grid_martingale_rationale": "Không phát hiện tín hiệu giao dịch Grid/Martingale trong tài liệu mô tả.",
+    "symbols": [
+      "XAUUSD",
+      "GOLD"
+    ],
+    "timeframes": [
+      "M1",
+      "M5",
+      "M15"
+    ],
+    "uses_hard_sl": "NOT_DISCLOSED",
+    "verified_live_links": []
+  },
+  {
+    "name": "Price Action Full Suite V1.02 | Free Download",
+    "url": "https://www.eafree.net/ea/price-action-full-suite",
+    "platform": "MT5",
+    "pricing": "Free (Premium Membership Required)",
+    "site_score": null,
+    "risk_label": "High",
+    "claimed_strategy_type": "Breakout",
+    "has_grid_or_martingale_signals": false,
+    "grid_martingale_rationale": "Khẳng định KHÔNG dùng: \"However, hardcoded algorithmic backtests across extensive historical tick data isolate distinct probability brackets across alternating market environments: Market Environment Core Signal Focus Expected Win Rate Range Drawdown Profile (At 1% Risk) Strong Trend Phase Setup A (H2/L2 Pullback) 60% – 65% Max Peak-to-Trough DD ≤ 5% – 7% Sideways Range Phase Setup B (False Breakout) 55% – 60% Controlled horizontal equity curve Low-Volatility Chopping Breakout Triggers High Failure Rate Avoid via Dashboard \"Indecision\" filter By isolating entries only when the Golden Diamond signal bar aligns with key EMA reference lines, the system mathematical modeling shows a sustained compounding edge, avoiding the deep catastrophic equity drops typical of grid or martingale software\"",
+    "symbols": [
+      "XAUUSD",
+      "GOLD"
+    ],
+    "timeframes": [
+      "M5",
+      "M15",
+      "H1",
+      "H4"
+    ],
+    "uses_hard_sl": "NOT_DISCLOSED",
+    "verified_live_links": []
+  },
+  {
+    "name": "QUANT FULL SUITE V1.0 |Free Download",
+    "url": "https://www.eafree.net/ea/quant-full-suite",
+    "platform": "MT5",
+    "pricing": "Free (Premium Membership Required)",
+    "site_score": null,
+    "risk_label": "NOT_DISCLOSED",
+    "claimed_strategy_type": "Breakout",
+    "has_grid_or_martingale_signals": false,
+    "grid_martingale_rationale": "Không phát hiện tín hiệu giao dịch Grid/Martingale trong tài liệu mô tả.",
+    "symbols": [
+      "XAUUSD",
+      "GOLD"
+    ],
+    "timeframes": [
+      "H1"
+    ],
+    "uses_hard_sl": true,
+    "verified_live_links": []
+  },
+  {
+    "name": "Quantum Titan MT5",
+    "url": "https://www.eafree.net/ea/quantum-titan-mt5",
+    "platform": "MT5",
+    "pricing": "Free (Premium Membership Required)",
+    "site_score": null,
+    "risk_label": "High",
+    "claimed_strategy_type": "Breakout",
+    "has_grid_or_martingale_signals": true,
+    "grid_martingale_rationale": "Cảnh báo Grid/Martingale: \"Many general market robots deploy dangerous grid styles or high-risk martingale elements to recover quick losses\"",
+    "symbols": [
+      "XAUUSD",
+      "GOLD"
+    ],
+    "timeframes": [
+      "M1",
+      "M5",
+      "M15",
+      "H1"
+    ],
+    "uses_hard_sl": true,
+    "verified_live_links": []
+  },
+  {
+    "name": "Scalping Enslaver EA MT4 - Original version | Download Free",
+    "url": "https://www.eafree.net/ea/scalping-enslaver-ea-mt4",
+    "platform": "MT4",
+    "pricing": "Free (Premium Membership Required)",
+    "site_score": 4.5,
+    "risk_label": "Low",
+    "claimed_strategy_type": "Scalping",
+    "has_grid_or_martingale_signals": false,
+    "grid_martingale_rationale": "Không phát hiện tín hiệu giao dịch Grid/Martingale trong tài liệu mô tả.",
+    "symbols": [
+      "GOLD",
+      "EURUSD",
+      "GBPUSD",
+      "AUDCAD"
+    ],
+    "timeframes": [
+      "M5"
+    ],
+    "uses_hard_sl": "NOT_DISCLOSED",
+    "verified_live_links": []
+  },
+  {
+    "name": "Scalping Robot Pro MT5",
+    "url": "https://www.eafree.net/ea/scalping-robot-pro-mt5",
+    "platform": "MT5",
+    "pricing": "Free (Premium Membership Required)",
+    "site_score": null,
+    "risk_label": "NOT_DISCLOSED",
+    "claimed_strategy_type": "Scalping",
+    "has_grid_or_martingale_signals": true,
+    "grid_martingale_rationale": "Cảnh báo Grid/Martingale: \"Scalping Robot Pro MT5 | EAFree Skip to content Getting Started Step-by-Step Guide Change Partner Guide Learn EA Library Premium Giveaway Contest About EA_LIBRARY / FOREX_EA / SCALPING / SCALPING_ROBOT_PRO_MT5 Scalping Scalping Robot Pro MT5 Premium Scalping Robot Pro MT5 for XAUUSD trades M1 grid setups\"",
+    "symbols": [
+      "XAUUSD",
+      "GOLD"
+    ],
+    "timeframes": [
+      "M1"
+    ],
+    "uses_hard_sl": "NOT_DISCLOSED",
+    "verified_live_links": []
+  },
+  {
+    "name": "SESSION & NEWS Indicator MT5 | Free Download",
+    "url": "https://www.eafree.net/ea/session-news-indicator-mt5",
+    "platform": "MT5",
+    "pricing": "Free (Premium Membership Required)",
+    "site_score": null,
+    "risk_label": "NOT_DISCLOSED",
+    "claimed_strategy_type": "Breakout",
+    "has_grid_or_martingale_signals": false,
+    "grid_martingale_rationale": "Không phát hiện tín hiệu giao dịch Grid/Martingale trong tài liệu mô tả.",
+    "symbols": [
+      "XAUUSD",
+      "GOLD"
+    ],
+    "timeframes": [
+      "M1",
+      "M5",
+      "M15"
+    ],
+    "uses_hard_sl": "NOT_DISCLOSED",
+    "verified_live_links": []
+  },
+  {
+    "name": "SMC TOOLKIT Indicator MT5 | Free Download",
+    "url": "https://www.eafree.net/ea/smc-toolkit-indicator-mt5",
+    "platform": "MT5",
+    "pricing": "Free (Premium Membership Required)",
+    "site_score": null,
+    "risk_label": "NOT_DISCLOSED",
+    "claimed_strategy_type": "Trend",
+    "has_grid_or_martingale_signals": false,
+    "grid_martingale_rationale": "Không phát hiện tín hiệu giao dịch Grid/Martingale trong tài liệu mô tả.",
+    "symbols": [
+      "XAUUSD",
+      "GOLD"
+    ],
+    "timeframes": [
+      "M5",
+      "M15",
+      "H1",
+      "H4"
+    ],
+    "uses_hard_sl": "NOT_DISCLOSED",
+    "verified_live_links": []
+  },
+  {
+    "name": "SPLINE QR Indicator MT5 | Free Download",
+    "url": "https://www.eafree.net/ea/spline-qr-indicator-mt5",
+    "platform": "MT5",
+    "pricing": "Free (Premium Membership Required)",
+    "site_score": null,
+    "risk_label": "NOT_DISCLOSED",
+    "claimed_strategy_type": "Breakout",
+    "has_grid_or_martingale_signals": false,
+    "grid_martingale_rationale": "Không phát hiện tín hiệu giao dịch Grid/Martingale trong tài liệu mô tả.",
+    "symbols": [
+      "XAUUSD",
+      "GOLD",
+      "NAS100"
+    ],
+    "timeframes": [
+      "M15",
+      "H1",
+      "H4"
+    ],
+    "uses_hard_sl": "NOT_DISCLOSED",
+    "verified_live_links": []
+  },
+  {
+    "name": "STATARB FULL SUITE",
+    "url": "https://www.eafree.net/ea/statarb-full-suite",
+    "platform": "MT5",
+    "pricing": "Free (Premium Membership Required)",
+    "site_score": null,
+    "risk_label": "NOT_DISCLOSED",
+    "claimed_strategy_type": "Trend",
+    "has_grid_or_martingale_signals": true,
+    "grid_martingale_rationale": "Cảnh báo Grid/Martingale: \"This system is entirely unsuited for amateur traders seeking rapid, hyper-leveraged returns via reckless grid or martingale systems\"",
+    "symbols": [
+      "XAUUSD",
+      "GOLD",
+      "EURUSD",
+      "GBPUSD",
+      "AUDUSD",
+      "NZDUSD"
+    ],
+    "timeframes": [
+      "M15",
+      "H1",
+      "H4"
+    ],
+    "uses_hard_sl": "NOT_DISCLOSED",
+    "verified_live_links": []
+  },
+  {
+    "name": "Sunan Giri EA MT4 v2.0 - Original version | Download Free",
+    "url": "https://www.eafree.net/ea/sunan-giri-ea-mt4",
+    "platform": "MT4",
+    "pricing": "Free (Premium Membership Required)",
+    "site_score": null,
+    "risk_label": "Low",
+    "claimed_strategy_type": "Grid",
+    "has_grid_or_martingale_signals": true,
+    "grid_martingale_rationale": "Cảnh báo Grid/Martingale: \"0 · Aug 31, 2026 Latest Download Category Forex EA, Forex EA › Grid Trading Added Aug 31, 2026 Sunan Giri EA MT4 v2\"",
+    "symbols": [
+      "EURUSD"
+    ],
+    "timeframes": [
+      "M15",
+      "M30",
+      "H1"
+    ],
+    "uses_hard_sl": "NOT_DISCLOSED",
+    "verified_live_links": []
+  },
+  {
+    "name": "SUPPLY & DEMAND Indicator MT5 | Free Download",
+    "url": "https://www.eafree.net/ea/supply-demand-indicator-mt5",
+    "platform": "MT5",
+    "pricing": "Free (Premium Membership Required)",
+    "site_score": null,
+    "risk_label": "NOT_DISCLOSED",
+    "claimed_strategy_type": "Scalping",
+    "has_grid_or_martingale_signals": false,
+    "grid_martingale_rationale": "Không phát hiện tín hiệu giao dịch Grid/Martingale trong tài liệu mô tả.",
+    "symbols": [
+      "XAUUSD",
+      "GOLD"
+    ],
+    "timeframes": [
+      "M1",
+      "M5",
+      "M15",
+      "H1",
+      "H4",
+      "D1"
+    ],
+    "uses_hard_sl": "NOT_DISCLOSED",
+    "verified_live_links": []
+  },
+  {
+    "name": "Top Gold MT5 v1.0 with SetFiles",
+    "url": "https://www.eafree.net/ea/top-gold-mt5",
+    "platform": "MT5",
+    "pricing": "Free (Premium Membership Required)",
+    "site_score": 3.38,
+    "risk_label": "Low",
+    "claimed_strategy_type": "Scalping",
+    "has_grid_or_martingale_signals": false,
+    "grid_martingale_rationale": "Khẳng định KHÔNG dùng: \"Top Gold MT5 uses a low-risk scalping and short-term trading approach with fixed lot sizing, avoiding high-risk systems such as Martingale and Grid trading to maintain more stable performance\"",
+    "symbols": [
+      "XAUUSD",
+      "GOLD"
+    ],
+    "timeframes": [
+      "M5",
+      "M15"
+    ],
+    "uses_hard_sl": true,
+    "verified_live_links": []
+  },
+  {
+    "name": "Ultimate Breakout System MT5",
+    "url": "https://www.eafree.net/ea/ultimate-breakout-system-mt5",
+    "platform": "MT5",
+    "pricing": "Free (Premium Membership Required)",
+    "site_score": null,
+    "risk_label": "NOT_DISCLOSED",
+    "claimed_strategy_type": "Breakout",
+    "has_grid_or_martingale_signals": false,
+    "grid_martingale_rationale": "Khẳng định KHÔNG dùng: \"Pros and Cons of Ultimate Breakout System EA MT5 ✅Pros: The software avoids grid setups, martingale multipliers, or unmanaged averaging down techniques entirely\"",
+    "symbols": [
+      "XAUUSD",
+      "GOLD",
+      "BTCUSD"
+    ],
+    "timeframes": [
+      "NOT_DISCLOSED"
+    ],
+    "uses_hard_sl": true,
+    "verified_live_links": []
+  },
+  {
+    "name": "Volatility Pro Indicator MT5 | Free Download",
+    "url": "https://www.eafree.net/ea/volatility-pro-indicator-mt5",
+    "platform": "MT5",
+    "pricing": "Free (Premium Membership Required)",
+    "site_score": 5.0,
+    "risk_label": "NOT_DISCLOSED",
+    "claimed_strategy_type": "Breakout",
+    "has_grid_or_martingale_signals": true,
+    "grid_martingale_rationale": "Cảnh báo Grid/Martingale: \"Officially Reviewed by: Michael Johnson Specifications Platform MT5 Timeframe M15 - H1 (Powered by D1 background calculations) Currency Pairs Gold (XAUUSD), Major Forex, Large-Cap Crypto Min Deposit Any (Depends strictly on the trader's broker) Leverage Any (Compatible with all leverage levels) Account Type Any (Standard, ECN, Pro, Raw Spread) Strategy Type Quantitative Volatility Analysis (GARCH(1,1) & Vol Cone) Risk Level Low Lot Sizing N/A (Manual trade execution tool) Max Drawdown N/A (Analytical indicator, not an automated trading system) Backtest Period 400 Days Historical Lookback (D1 bars via MLE grid search) Win Rate 60% - 70% (Statistical probability of price closing inside the ±1σ box) FAQ Q 1 ❓ Does this indicator predict the exact direction of the market\"",
+    "symbols": [
+      "XAUUSD",
+      "GOLD"
+    ],
+    "timeframes": [
+      "M1",
+      "M5",
+      "M15",
+      "M30",
+      "H1",
+      "H4",
+      "D1"
+    ],
+    "uses_hard_sl": "NOT_DISCLOSED",
+    "verified_live_links": []
+  },
+  {
+    "name": "VSA Full Suite V1.12 | Free Download",
+    "url": "https://www.eafree.net/ea/vsa-full-suite",
+    "platform": "MT5",
+    "pricing": "Free (Premium Membership Required)",
+    "site_score": null,
+    "risk_label": "NOT_DISCLOSED",
+    "claimed_strategy_type": "Scalping",
+    "has_grid_or_martingale_signals": false,
+    "grid_martingale_rationale": "Không phát hiện tín hiệu giao dịch Grid/Martingale trong tài liệu mô tả.",
+    "symbols": [
+      "XAUUSD",
+      "GOLD"
+    ],
+    "timeframes": [
+      "M1",
+      "M5",
+      "M15",
+      "H1",
+      "H4",
+      "D1"
+    ],
+    "uses_hard_sl": "NOT_DISCLOSED",
+    "verified_live_links": []
+  },
+  {
+    "name": "VWAP PRO Indicator MT5 | Free Download",
+    "url": "https://www.eafree.net/ea/vwap-pro-indicator-mt5",
+    "platform": "MT5",
+    "pricing": "Free (Premium Membership Required)",
+    "site_score": null,
+    "risk_label": "NOT_DISCLOSED",
+    "claimed_strategy_type": "Breakout",
+    "has_grid_or_martingale_signals": false,
+    "grid_martingale_rationale": "Không phát hiện tín hiệu giao dịch Grid/Martingale trong tài liệu mô tả.",
+    "symbols": [
+      "XAUUSD",
+      "GOLD"
+    ],
+    "timeframes": [
+      "M5",
+      "M15",
+      "H1",
+      "H4"
+    ],
+    "uses_hard_sl": "NOT_DISCLOSED",
+    "verified_live_links": []
+  },
+  {
+    "name": "WYCKOFF FULL SUITE v3.32 | Free Download",
+    "url": "https://www.eafree.net/ea/wyckoff-full-suite",
+    "platform": "MT5",
+    "pricing": "Free (Premium Membership Required)",
+    "site_score": 5.0,
+    "risk_label": "NOT_DISCLOSED",
+    "claimed_strategy_type": "Breakout",
+    "has_grid_or_martingale_signals": false,
+    "grid_martingale_rationale": "Không phát hiện tín hiệu giao dịch Grid/Martingale trong tài liệu mô tả.",
+    "symbols": [
+      "XAUUSD",
+      "GOLD"
+    ],
+    "timeframes": [
+      "M15",
+      "H1",
+      "H4"
+    ],
+    "uses_hard_sl": "NOT_DISCLOSED",
+    "verified_live_links": []
+  }
+]

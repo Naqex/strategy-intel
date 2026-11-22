@@ -1,0 +1,84 @@
+{
+  "updated_at": "2026-11-23T01:00:00+07:00",
+  "description": "Log of Rejected Strategies and Toxic Risk Patterns (Grid, Martingale, Curve-Fitted Indicators)",
+  "total_rejected": 240,
+  "rejection_categories": {
+    "curve_fitted_retail_schools": {
+      "count": 42,
+      "description": "42 chiến lược nguyên bản thuộc 4 trường phái mạng xã hội qua 22.938 lệnh kiểm định độc lập thất bại 100% (SMC/ICT: 18, Breakout đầu phiên: 7, RSI: 12, MACD: 5)",
+      "reason": "CURVE_FITTING_AND_PARAMETER_OVERFITTING"
+    },
+    "chat_failed_oos": {
+      "count": 188,
+      "description": "188 chiến lược bị loại bỏ trong thư viện 242 do hiệu suất OOS1 sụp đổ (PF < 1.0 hoặc sụt giảm tài khoản > 35%)",
+      "reason": "OOS_PERFORMANCE_COLLAPSE"
+    },
+    "toxic_money_management": {
+      "count": 10,
+      "description": "Các EA sử dụng thuật toán Grid (lưới lệnh không SL) hoặc Martingale (gấp thếp khi thua)",
+      "reason": "TAIL_RISK_CERTAIN_RUIN"
+    }
+  },
+  "sample_rejected_rules": [
+    {
+      "id": "BRK001",
+      "name": "London ORB — range 3h Á cuối",
+      "reason": "0/5 năm dương ở kỳ OOS1 (2019-2023), winrate 24.8% sau phí sàn."
+    },
+    {
+      "id": "IND001",
+      "name": "EMA 20/50 Golden Cross H1",
+      "reason": "Bào mòn vốn bởi chi phí giao dịch và whipsaw trong giai đoạn thị trường đi ngang."
+    },
+    {
+      "id": "eafree-dashboard-v13",
+      "name": "EAFree Dashboard Version 1.3",
+      "reason": "Phát hiện rủi ro Grid/Martingale: Cảnh báo Grid/Martingale: \"That is a typical sign of grid or martingale trading mindsets\""
+    },
+    {
+      "id": "fib-cluster-indicator-mt5",
+      "name": "FIB CLUSTER Indicator MT5 | Free Download",
+      "reason": "Phát hiện rủi ro Grid/Martingale: Cảnh báo Grid/Martingale: \"Weighted Scoring Matrix: All levels feed into a localized price grid\""
+    },
+    {
+      "id": "gann-full-suite",
+      "name": "GANN FULL SUITE V1.12 | Free Download",
+      "reason": "Phát hiện rủi ro Grid/Martingale: Cảnh báo Grid/Martingale: \"Pivot Realignment Risk (Shift) While closed-candle events never repaint, a break to fresh highs/lows forces the anchor to shift, causing the future grid to recalculate [B]\""
+    },
+    {
+      "id": "gplus-ea-mt4",
+      "name": "GPlus EA MT4 v1.14 - Original version | Download Free",
+      "reason": "Phát hiện rủi ro Grid/Martingale: Cảnh báo Grid/Martingale: \"14 · Aug 28, 2026 Latest Download Category Forex EA › Automated Trading, Forex EA, Forex EA › Grid Trading Downloads 2 Added Aug 28, 2026 Overview Specifications FAQ Reviews Overview What Is GPlus EA\""
+    },
+    {
+      "id": "js-hedging-pro-ea-mt5",
+      "name": "JS Hedging Pro EA MT5 with SetFiles",
+      "reason": "Phát hiện rủi ro Grid/Martingale: Cảnh báo Grid/Martingale: \"JS Hedging Pro EA MT5 with SetFiles | EAFree Skip to content Getting Started Step-by-Step Guide Change Partner Guide Learn EA Library Premium Giveaway Contest About EA_LIBRARY / FOREX_EA / JS_HEDGING_PRO_EA_MT5_WITH_SETFILES Forex EA JS Hedging Pro EA MT5 with SetFiles JS Hedging Pro EA is an automated gold & forex hedging grid trading system using controlled martingale, wide spacing and daily profit cycles for stable returns\""
+    },
+    {
+      "id": "quantum-titan-mt5",
+      "name": "Quantum Titan MT5",
+      "reason": "Phát hiện rủi ro Grid/Martingale: Cảnh báo Grid/Martingale: \"Many general market robots deploy dangerous grid styles or high-risk martingale elements to recover quick losses\""
+    },
+    {
+      "id": "scalping-robot-pro-mt5",
+      "name": "Scalping Robot Pro MT5",
+      "reason": "Phát hiện rủi ro Grid/Martingale: Cảnh báo Grid/Martingale: \"Scalping Robot Pro MT5 | EAFree Skip to content Getting Started Step-by-Step Guide Change Partner Guide Learn EA Library Premium Giveaway Contest About EA_LIBRARY / FOREX_EA / SCALPING / SCALPING_ROBOT_PRO_MT5 Scalping Scalping Robot Pro MT5 Premium Scalping Robot Pro MT5 for XAUUSD trades M1 grid setups\""
+    },
+    {
+      "id": "statarb-full-suite",
+      "name": "STATARB FULL SUITE",
+      "reason": "Phát hiện rủi ro Grid/Martingale: Cảnh báo Grid/Martingale: \"This system is entirely unsuited for amateur traders seeking rapid, hyper-leveraged returns via reckless grid or martingale systems\""
+    },
+    {
+      "id": "sunan-giri-ea-mt4",
+      "name": "Sunan Giri EA MT4 v2.0 - Original version | Download Free",
+      "reason": "Phát hiện rủi ro Grid/Martingale: Cảnh báo Grid/Martingale: \"0 · Aug 31, 2026 Latest Download Category Forex EA, Forex EA › Grid Trading Added Aug 31, 2026 Sunan Giri EA MT4 v2\""
+    },
+    {
+      "id": "volatility-pro-indicator-mt5",
+      "name": "Volatility Pro Indicator MT5 | Free Download",
+      "reason": "Phát hiện rủi ro Grid/Martingale: Cảnh báo Grid/Martingale: \"Officially Reviewed by: Michael Johnson Specifications Platform MT5 Timeframe M15 - H1 (Powered by D1 background calculations) Currency Pairs Gold (XAUUSD), Major Forex, Large-Cap Crypto Min Deposit Any (Depends strictly on the trader's broker) Leverage Any (Compatible with all leverage levels) Account Type Any (Standard, ECN, Pro, Raw Spread) Strategy Type Quantitative Volatility Analysis (GARCH(1,1) & Vol Cone) Risk Level Low Lot Sizing N/A (Manual trade execution tool) Max Drawdown N/A (Analytical indicator, not an automated trading system) Backtest Period 400 Days Historical Lookback (D1 bars via MLE grid search) Win Rate 60% - 70% (Statistical probability of price closing inside the ±1σ box) FAQ Q 1 ❓ Does this indicator predict the exact direction of the market\""
+    }
+  ]
+}

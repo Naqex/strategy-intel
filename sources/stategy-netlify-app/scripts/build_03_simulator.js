@@ -1,4 +1,7 @@
 import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 let md = `# KIỂM TOÁN THUẬT TOÁN & LOGIC VẬN HÀNH: PHÒNG MÔ PHỎNG (SIMULATOR AUDIT)
 
@@ -140,5 +143,5 @@ Trong đó:
 *Tài liệu kiểm toán logic Phòng Mô Phỏng hoàn thành ngày 23/11/2026.*
 `;
 
-fs.writeFileSync('extracted/03_simulator_logic.md', md, 'utf8');
+fs.writeFileSync(path.resolve(__dirname, '../extracted/03_simulator_logic.md'), md, 'utf8');
 console.log('Successfully written 03_simulator_logic.md!');
