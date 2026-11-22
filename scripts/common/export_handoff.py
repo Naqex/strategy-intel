@@ -1,12 +1,20 @@
 import os
 import json
 import re
-from datetime import datetime
 
 ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..'))
 
+ALLOWED_LEAD_KEYS = {
+    'lead_id', 'source', 'original_id', 'name', 'family', 'symbol',
+    'timeframe', 'direction', 'rule_description', 'source_verdict',
+    'passes_all_5', 'data_quality_flags', 'replicability', 'evidence_tier',
+    'gate_condition_met', 'verified_live_links', 'performance_metrics'
+}
+
+ALLOWED_METRIC_PERIODS = {'is_2004_2018', 'oos1_2019_2023'}
+
 def export_handoff():
-    print("[*] Exporting sanitized cleanroom handoff package...")
+    print("[*] Exporting sanitized cleanroom handoff package with strict allowlist schema...")
     master_leads_path = os.path.join(ROOT_DIR, 'catalog/master_leads.json')
     handoff_output_path = os.path.join(ROOT_DIR, 'handoff/sanitized_master_leads.json')
 
@@ -15,24 +23,34 @@ def export_handoff():
 
     clean_leads = []
     for lead in data.get('leads', []):
-        lead_copy = dict(lead)
-        # Deep scrub any potential holdout fields
-        if 'performance_metrics' in lead_copy:
-            pm = dict(lead_copy['performance_metrics'])
-            for k in list(pm.keys()):
-                if '2025' in k or '2026' in k or 'oos2' in k.lower():
-                    del pm[k]
-            lead_copy['performance_metrics'] = pm
+        # 1. Strict allowlist filter
+        clean_lead = {}
+        for k in ALLOWED_LEAD_KEYS:
+            if k in lead:
+                clean_lead[k] = lead[k]
+                
+        # 2. Strict metric periods allowlist
+        if 'performance_metrics' in clean_lead:
+            raw_pm = clean_lead['performance_metrics']
+            clean_pm = {}
+            for period in ALLOWED_METRIC_PERIODS:
+                if period in raw_pm and raw_pm[period] is not None:
+                    # Clean nam_duong to ensure no holdout year leakage
+                    period_data = dict(raw_pm[period])
+                    if 'nam_duong' in period_data:
+                        clean_nd = {
+                            yr: val for yr, val in period_data['nam_duong'].items()
+                            if yr not in ['2024', '2025', '2026'] and int(yr) <= 2023
+                        }
+                        period_data['nam_duong'] = clean_nd
+                    clean_pm[period] = period_data
+            clean_lead['performance_metrics'] = clean_pm
 
-        for k in list(lead_copy.keys()):
-            if '2025' in k or '2026' in k or 'oos2' in k.lower():
-                del lead_copy[k]
-
-        clean_leads.append(lead_copy)
+        clean_leads.append(clean_lead)
 
     handoff_package = {
-        "generated_at": datetime.now().isoformat(),
-        "description": "Cleanroom Handoff Package for Internal Quant Research (Holdout 2025-2026 Sanitized)",
+        "export_tier": "CLEANROOM_HOLDOUT_SANITIZED",
+        "description": "Cleanroom Handoff Package for Internal Quant Research (Holdout Sanitized)",
         "gate_criteria": data.get("gate_criteria"),
         "total_leads": len(clean_leads),
         "leads": clean_leads

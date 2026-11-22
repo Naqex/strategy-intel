@@ -11,7 +11,7 @@
 > **NGHIÊM CẤM TUYỆT ĐỐI:**  
 > Không được sử dụng hoặc trộn tập dữ liệu **Out-of-Sample Kỳ 2 (2024–2026)** vào tập **Holdout / Testset** của hệ thống giao dịch nội bộ tại `TradingWorkspace`.  
 > **Lý do định lượng:** Giai đoạn 2024–2026 là đợt sóng tăng một chiều lịch sử của Vàng giao ngay (Beta khổng lồ của thị trường), khiến 82 chiến lược từng trượt bài thi (CHÁT) cũng có lãi trở lại. Việc nạp dữ liệu này vào quá trình tối ưu hóa tham số sẽ gây lỗi rò rỉ dữ liệu tương lai (Look-ahead Bias on Holdout) và bẫy khớp đường cong (Curve-Fitting).
-> Mọi dữ liệu trước khi bàn giao sang `handoff/` bắt buộc phải chạy `scripts/common/holdout_sanitizer.py` để loại trừ hoàn toàn số liệu năm 2025–2026.
+> Mọi dữ liệu trước khi bàn giao sang `handoff/` bắt buộc phải chạy `scripts/common/holdout_sanitizer.py` để loại trừ hoàn toàn số liệu năm 2024–2026 và OOS2.
 
 ---
 
@@ -30,88 +30,138 @@ d:/ANNAM/strategy-intel/
 ├── catalog/                               # Danh mục quản lý tập trung toàn repo
 │   ├── indicator_reference.json           # 27 công cụ Indicators & Utilities từ Nguồn 2
 │   ├── master_leads.json                  # 15 ý tưởng CHẤT đạt chuẩn định lượng (Source 1)
-│   └── rejected_log.json                  # 224 chiến lược bị loại bỏ (18 cảm tính + 188 OOS sập + 4 Grid + 14 Blackbox)
+│   └── rejected_log.json                  # 224 mục bị loại (18 chưa kiểm định + 188 OOS sập + 4 Grid + 14 Blackbox)
 ├── handoff/                               # Vùng đệm bàn giao cho team Quant nội bộ (Holdout Sanitized)
 │   ├── README.md                          # Tiêu chuẩn bàn giao phòng sạch
-│   └── sanitized_master_leads.json        # 15 leads đã làm sạch hoàn toàn số liệu 2025-2026
-├── scripts/common/                        # Bộ 3 script kiểm định dùng chung
+│   └── sanitized_master_leads.json        # 15 leads đã làm sạch hoàn toàn số liệu 2024-2026 & OOS2
+├── scripts/common/                        # Bộ 4 script kiểm định dùng chung & negative test suite
 │   ├── repo_hygiene_check.py              # Kiểm tra 0 binary files (.ex4/.ex5/.dll/.exe/.zip) & 0 file nháp
-│   ├── verify_verbatim.py                 # Kiểm tra tính toàn vẹn và nguyên văn dữ liệu trích xuất
-│   └── holdout_sanitizer.py               # Quét sạch dữ liệu năm 2025-2026 trong handoff/
+│   ├── verify_verbatim.py                 # Kiểm tra tính toàn vẹn và nguyên văn dữ liệu trích xuất (đối chiếu 242 reports)
+│   ├── holdout_sanitizer.py               # Quét sạch dữ liệu năm 2024-2026/OOS2 trong handoff/
+│   ├── test_guards.py                     # Negative test suite kiểm chứng phản chứng 4 chốt chặn an toàn
+│   └── generate_readme.py                 # Tự động hóa thống kê và cập nhật README.md
 ├── sources/
 │   ├── stategy-netlify-app/               # NGUỒN 1: Báo cáo kiểm định 242 chiến lược Vàng 22 năm
 │   │   ├── raw/                           # JSON reports (242 file), vault_data.json, index, assets JS
-│   │   ├── extracted/                     # 7 báo cáo & bảng biểu chuẩn hóa
+│   │   ├── extracted/                     # Báo cáo & bảng biểu chuẩn hóa
 │   │   │   ├── 01_methodology_and_reports.md
 │   │   │   ├── 02_library_242_summary.csv / .json
 │   │   │   ├── 03_simulator_logic.md
 │   │   │   ├── 04_top15_chat_full.json
 │   │   │   ├── 05_replicability_audit.md
 │   │   │   ├── 06_technical_methods_and_code.md
-│   │   │   └── 07_missing_58_items.json
-│   │   └── scripts/                       # 6 script Node.js tái lập quy trình 100%
-│   └── ea-directory-2026/                 # NGUỒN 2: Thư mục xếp hạng EA quốc tế (eafree.net)
+│   │   │   ├── 07_missing_58_items.json
+│   │   │   └── source_anomalies.json      # 0 lỗi lệch năm & 0 chu kỳ thiếu năm zero-trade
+│   │   └── scripts/                       # Script Node.js tái lập quy trình 100%
+│   └── ea-directory-2026/                 # NGUỒN 2: Thư mục xếp hạng EA quốc tế (eafree.net - 45 tệp mẫu)
 │       ├── raw/                           # HTML ranking pages, sitemap.xml, 45 detail pages
-│       ├── extracted/                     # Danh mục trích xuất (45 EAs: 35 Clean, 10 Grid/Martingale)
+│       ├── extracted/                     # Danh mục trích xuất (18 EAs, 25 Indicators, 2 Utilities)
 │       │   ├── 01_ea_catalog.csv
 │       │   └── 01_ea_catalog.json
 │       └── scripts/
 │           └── extract_catalog.py         # Script Python Pydantic trích xuất & kiểm toán EA
 ├── .gitignore                             # Chặn node_modules, .scratch/, binary, logs
-└── README.md                              # Tài liệu tổng quan & Bảng băm SHA-256
+└── README.md                              # Tài liệu tổng quan & Bảng băm SHA-256 (Auto-generated)
 ```
 
 ---
 
 ## 2. BẢNG BĂM SHA-256 KIỂM CHỨNG TÍNH TOÀN VẸN (EXTRACTED CHECKSUM)
 
-Mọi tệp tin trong `extracted/`, `catalog/` và `handoff/` được kiểm chứng tính toàn vẹn thông qua mã băm SHA-256:
+Mọi tệp tin trong `extracted/`, `catalog/` và `handoff/` được kiểm chứng tính toàn vẹn tự động thông qua mã băm SHA-256:
 
 | Phân Vùng | Tên Tệp Tin | Kích Thước (Bytes) | Mã Băm SHA-256 Checksum |
 | :--- | :--- | :---: | :--- |
-| **Nguồn 1** | `sources/stategy-netlify-app/extracted/01_methodology_and_reports.md` | 42,797 | `BCE3FB3A0D6D97CE86410FBBDCE849D6470E5BB3D98B4A400616377F53F3E9DC` |
+| **Nguồn 1** | `sources/stategy-netlify-app/extracted/01_methodology_and_reports.md` | 43,988 | `994840FC2EDFD401D9A2C1ACCE4A7D47F0A93AD54F8A16DFEC366DBAFC85C08E` |
 | **Nguồn 1** | `sources/stategy-netlify-app/extracted/02_library_242_summary.csv` | 65,470 | `EDE83026C7C9DB8D3E2EED402BB1FD92A5CAC175333F85F06CC1B48F3DBEF3F6` |
 | **Nguồn 1** | `sources/stategy-netlify-app/extracted/02_library_242_summary.json` | 431,524 | `1AFD2716C6ACDCFA584EC699D39D9C88EE0B978E71FF64D941F879F9C32F18B8` |
-| **Nguồn 1** | `sources/stategy-netlify-app/extracted/03_simulator_logic.md` | 12,226 | `7EE5BC4AF3B6AC85EFB35AB98A99DBAE6F02D8391ADE929BB2BF59FC00BB6B7D` |
+| **Nguồn 1** | `sources/stategy-netlify-app/extracted/03_simulator_logic.md` | 13,275 | `17B38617D92DEC699FF2EFF35B6D6B8E7596E042B2ADD41D4C74EC5285495795` |
 | **Nguồn 1** | `sources/stategy-netlify-app/extracted/04_top15_chat_full.json` | 22,603 | `3BCB023154FE20BF127B4673D342DB3B6214E69E2E283A673B0DF59D92CEBC53` |
-| **Nguồn 1** | `sources/stategy-netlify-app/extracted/05_replicability_audit.md` | 42,263 | `FB12B2B864B6D61A3C08686B318806E5489685B59346AF90854640657683ABBB` |
+| **Nguồn 1** | `sources/stategy-netlify-app/extracted/05_replicability_audit.md` | 42,413 | `533F28297A2DA15420FB62ED5EE288188CC897757C938DFD30FC5D77D010ECD6` |
 | **Nguồn 1** | `sources/stategy-netlify-app/extracted/06_technical_methods_and_code.md` | 33,817 | `DBC775275EA8976782B9B0BC8CCEA02EBFF31AB23304EB0C58BE9EE6D8C02A80` |
-| **Nguồn 1** | `sources/stategy-netlify-app/extracted/07_missing_58_items.json` | 23,963 | `CE1C9A8459C3D0536ED118AF36E921B33A5E7BEC13EBA265C1415273AF1942BD` |
-| **Nguồn 2** | `sources/ea-directory-2026/extracted/01_ea_catalog.csv` | 13,685 | `056411D5CF8BD492DC444AB09CB8BF4B1227CC301A7E21F390CC603D0674D5BC` |
-| **Nguồn 2** | `sources/ea-directory-2026/extracted/01_ea_catalog.json` | 33,221 | `8CFA15BF118114CE5F1DFB0AEB5DEA8FB2479D4CCBEBD03051FC06C25DD10601` |
-| **Catalog** | `catalog/indicator_reference.json` | 17,386 | `9D6FDF756C83BA55C07DAC5D0F1CCC4FF9DF1A8D9C39123BFCBFEB9CE95E08FF` |
-| **Catalog** | `catalog/master_leads.json` | 23,296 | `1EFC5A3F9970C469212C63C3D2A06145378D3D45476866B1B70AFFFAFDB1A971` |
-| **Catalog** | `catalog/rejected_log.json` | 66,425 | `9A290B91E8EEB0EC03248B1378AF885FA916A899F250F6543CBEF0C2F4289248` |
-| **Handoff** | `handoff/sanitized_master_leads.json` | 23,352 | `CBC9E37437F1F33EBD9BF89131A4962CA942FA29693B2A0E599555661B80DB99` |
+| **Nguồn 1** | `sources/stategy-netlify-app/extracted/07_missing_58_items.json` | 30,502 | `E1C4448AE9950DD954E02E5730061A6B14CD4E14744258312D4C9E0D1ECEA377` |
+| **Nguồn 1** | `sources/stategy-netlify-app/extracted/source_anomalies.json` | 16,441 | `DEC5A6AB81426D5B9AD18621FF1210D430855A1A34EE5957A20EA0DB5E732F41` |
+| **Nguồn 2** | `sources/ea-directory-2026/extracted/01_ea_catalog.csv` | 14,708 | `8E374625EA3662E5F72D605B89CC955D267AF5E6251D7A9335FDBF5B0673420F` |
+| **Nguồn 2** | `sources/ea-directory-2026/extracted/01_ea_catalog.json` | 44,040 | `B5831901385FC9A3240CCB8D32384059FB87F11A64FC1959EDE0612185315D5B` |
+| **Catalog** | `catalog/indicator_reference.json` | 17,654 | `45F9B65D9B2397F046D01C0ECF5F8E438F77BB264F47DFDBAD953CDEA7AB6776` |
+| **Catalog** | `catalog/master_leads.json` | 26,704 | `58EAA052EE0BE9E77140E2F200623F3CED1848BE7B0DB81971E0A43DBB7FA6FC` |
+| **Catalog** | `catalog/rejected_log.json` | 169,343 | `5F7293337D814C86AAA7B65712787BB5C178BD1B271C66819607076B5D089038` |
+| **Handoff** | `handoff/sanitized_master_leads.json` | 26,750 | `DB47DA2FD0464D25C6BE88F935E7A0939DC2855F1C95FDEF5A67502DCC10DD1B` |
 
 ---
 
 ## 3. TÓM TẮT KẾT QUẢ KIỂM TOÁN HAI NGUỒN DỮ LIỆU
 
 ### Nguồn 1: `stategy.netlify.app` (242 Báo Cáo Kiểm Định Vàng 22 Năm)
-1. **Chênh lệch 300 vs 242:** 
-   - 242 chiến lược kiểm định tự động đầy đủ bằng máy.
-   - 40 hồ sơ gộp biến thể đối xứng (`trang_thai: "gop"`).
-   - 18 hồ sơ chưa kiểm định (`trang_thai: "chua_kiem_dinh"`) do dựa trên vẽ tay cảm tính (trendlines chủ quan).
-2. **Khả năng tái dựng 15 chiến lược "CHẤT":**
-   - 2 chiến lược (`SEA003`, `SEA004`) đạt mức `REPLICABLE_FROM_PUBLIC` vì dựa trên quy tắc lịch cố định (Lễ Tạ Ơn, NFP).
-   - 13 chiến lược còn lại ở mức `PARTIAL_CONCEPT_ONLY` do các thông số SL/TP/Exit và bộ lọc nhiễu chi tiết nằm sau lớp khóa passkey thành viên.
-3. **Mô hình chi phí & Khớp lệnh:**
-   - Spread 30 points = $0.30/oz = 3 pips trên XAUUSD.
-   - Commission: 0,02%/chiều (~$7/lot 2 chiều).
-   - Slippage: Mô phỏng theo mất cân bằng dòng lệnh $OFI_t$.
-   - Swap: Sử dụng chi phí ma sát cố định theo lệnh; **không tính swap thả nổi hàng ngày**.
-   - Drawdown: Đo trên Closed-Trade Balance (chuỗi lệnh đã đóng), **không đo Floating Equity nội nến**.
-   - Khớp lệnh: Áp dụng Point-in-time Shift(1) tại giá mở nến sau; SL được ưu tiên chạm trước nếu cả High và Low cùng chạm trong 1 nến.
+1. **Chênh lệch 300 vs 242:**
+   - **242 chiến lược** kiểm định tự động đầy đủ bằng máy (`reports_json/`).
+   - **40 hồ sơ gộp** biến thể đối xứng (`trang_thai: "gop"`): 6 bản sao hoàn toàn (`DUPLICATE_EXACT`), 27 biến thể liên quan (`RELATED_VARIANT`), 7 biến thể chưa kiểm tra (`UNTESTED_VARIANT`). Riêng `REV029` là biến thể ngược chiều mua của `REV028` (CHẤT) nhưng không được kiểm định độc lập, gắn cờ `CHUA_KIEM_DINH_BIEN_THE_NGUOC`.
+   - **18 hồ sơ chưa kiểm định** (`trang_thai: "chua_kiem_dinh"`): 9 mục thiếu dữ liệu ngoại vi (`MISSING_AUXILIARY_DATA` - FOMC, CPI, DXY, Bạc), 4 mục không phải chiến lược độc lập (`NOT_A_STANDALONE_STRATEGY` - bộ lọc phiên, 5-3-1), 5 mục quy tắc cảm tính vẽ tay (`DISCRETIONARY_NOT_FORMALIZED`).
+2. **Khả năng tái dựng 15 chiến lược "CHẤT" (`master_leads.json`):**
+   - **Mức bằng chứng:** `evidence_tier: "SOURCE_CLAIM_ONLY"` (tác giả tự công bố, chưa có kiểm định độc lập nội bộ).
+   - **Tiêu chuẩn 5 bài thi (`passes_all_5`):** 11/15 chiến lược đạt `True`; 4/15 chiến lược ghi nhận `False` (`IND026`, `SEA003`, `SEA004`, `SEA021`) do trường dữ liệu gốc `kha_thi: false` (số lệnh mẫu dưới 100 lệnh).
+   - **Phân loại khả năng tái dựng:**
+     * `SEA003` (Turn-of-month vàng): `REPLICABLE_FROM_PUBLIC` (quy tắc lịch cố định giao dịch 2 ngày cuối tháng và 3 ngày đầu tháng).
+     * `SEA004` (Hiệu ứng đầu quý): `PARTIAL_RULE_SPEC` (quy tắc lịch cố định nhưng thiếu quy tắc định lượng chọn chiều Buy/Sell).
+     * 13 chiến lược còn lại: `PARTIAL_CONCEPT_ONLY` (ý tưởng rõ ràng nhưng SL/TP/Exit chi tiết nằm sau passkey thành viên).
 
-### Nguồn 2: `eafree.net` (Thư Mục 45 EA & Công Cụ MT4/MT5)
-1. **Phân loại rủi ro & Đạo đức kiểm định:**
-   - **10 EA bị gắn cờ TOXIC (Grid / Martingale / Cost Averaging):** Dùng hệ số nhân lot (1.3x - 1.5x) hoặc nhồi lệnh khi giá đi ngược, không cài Hard SL. Bị loại vào `catalog/rejected_log.json`.
-   - **35 EA Clean:** Sử dụng Breakout, SMC, Trend, Scalping cơ bản. Đưa vào `catalog/master_leads.json`.
-2. **Minh bạch tài khoản Live:**
-   - 44/45 EA hoàn toàn KHÔNG có link Myfxbook hoặc MQL5 Signal tài khoản thật được kiểm chứng.
-   - Chỉ duy nhất 1 EA (`GPlus EA MT4 v1.14`) cung cấp link Myfxbook nhưng là tài khoản **Demo**, không phải tài khoản Real.
-   - Toàn bộ backtest hiển thị trên website là backtest MT5 nội bộ không mô phỏng trượt giá (zero-slippage).
+| Mã ID | Tên Chiến Lược | Phân Loại | Khả Năng Tái Dựng | Đạt 5 Tiêu Chí (`passes_all_5`) | Data Quality Flags |
+| :--- | :--- | :--- | :--- | :---: | :--- |
+| `BRK012` | Inside day breakout | Breakout & phiên | `PARTIAL_CONCEPT_ONLY` | **PASS** | `COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD, MISSING_PF_AND_DD_IN_PUBLIC_JSON` |
+| `BRK035` | Hộp 4h đầu tuần | Breakout & phiên | `PARTIAL_CONCEPT_ONLY` | **PASS** | `COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD, MISSING_PF_AND_DD_IN_PUBLIC_JSON` |
+| `IND026` | Ichimoku Chikou xác nhận | Indicator kinh điển | `PARTIAL_CONCEPT_ONLY` | **FAIL** | `COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD, MISSING_PF_AND_DD_IN_PUBLIC_JSON, FAILED_FEASIBILITY_UNDER_100_TRADES` |
+| `IND041` | ROC momentum 10 | Indicator kinh điển | `PARTIAL_CONCEPT_ONLY` | **PASS** | `COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD, MISSING_PF_AND_DD_IN_PUBLIC_JSON` |
+| `IND049` | Alligator mở miệng | Indicator kinh điển | `PARTIAL_CONCEPT_ONLY` | **PASS** | `COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD, MISSING_PF_AND_DD_IN_PUBLIC_JSON` |
+| `IND053` | Momentum 10 vượt 100 | Indicator kinh điển | `PARTIAL_CONCEPT_ONLY` | **PASS** | `COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD, MISSING_PF_AND_DD_IN_PUBLIC_JSON` |
+| `MTF016` | Mùa vụ D1 + tín hiệu H1 | Đa khung & lai | `PARTIAL_CONCEPT_ONLY` | **PASS** | `COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD, MISSING_PF_AND_DD_IN_PUBLIC_JSON` |
+| `MTF020` | Golden cross D1 nền + mua mọi hồi H4 | Đa khung & lai | `PARTIAL_CONCEPT_ONLY` | **PASS** | `COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD, MISSING_PF_AND_DD_IN_PUBLIC_JSON` |
+| `NEN006` | Inside bar thuận trend D1 | Mẫu nến | `PARTIAL_CONCEPT_ONLY` | **PASS** | `COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD, MISSING_PF_AND_DD_IN_PUBLIC_JSON` |
+| `NEN022` | Nến phá vỡ giả (fakey) | Mẫu nến | `PARTIAL_CONCEPT_ONLY` | **PASS** | `COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD, MISSING_PF_AND_DD_IN_PUBLIC_JSON` |
+| `SEA003` | Turn-of-month vàng | Giờ giấc & mùa vụ | `REPLICABLE_FROM_PUBLIC` | **FAIL** | `COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD, MISSING_PF_AND_DD_IN_PUBLIC_JSON, FAILED_FEASIBILITY_UNDER_100_TRADES` |
+| `SEA004` | Hiệu ứng đầu quý | Giờ giấc & mùa vụ | `PARTIAL_RULE_SPEC` | **FAIL** | `COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD, MISSING_PF_AND_DD_IN_PUBLIC_JSON, FAILED_FEASIBILITY_UNDER_100_TRADES, MISSING_DIRECTION_RULE_SPEC` |
+| `SEA011` | Thứ Ba đảo chiều (turnaround Tuesday) | Giờ giấc & mùa vụ | `PARTIAL_CONCEPT_ONLY` | **PASS** | `COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD, MISSING_PF_AND_DD_IN_PUBLIC_JSON` |
+| `SEA021` | Thứ Hai sau NFP xấu — hồi | Giờ giấc & mùa vụ | `PARTIAL_CONCEPT_ONLY` | **FAIL** | `COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD, MISSING_PF_AND_DD_IN_PUBLIC_JSON, FAILED_FEASIBILITY_UNDER_100_TRADES` |
+| `VIR040` | Head & Shoulders phá neckline | Viral & SMC/ICT | `PARTIAL_CONCEPT_ONLY` | **PASS** | `COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD, MISSING_PF_AND_DD_IN_PUBLIC_JSON` |
+
+3. **Bất thường dữ liệu gốc ghi nhận tại `source_anomalies.json`:**
+   - **0 chiến lược** có số năm dương (`years_pos`) ghi nhận trong JSON không khớp với số năm `True` trong từ điển `nam_duong` (`BRK009`, `BRK018`, `BRK034`, `IND015`, `IND044`, `IND047`, `REV025`, `VIR041`).
+   - **0 chu kỳ kiểm định** thiếu các năm không phát sinh giao dịch trong từ điển `nam_duong` thay vì ghi nhận giá trị `False`.
+4. **Cảnh báo mô hình chi phí & Mô phỏng:**
+   - **Mâu thuẫn toán học phí giao dịch:** Tác giả công bố `0.02%/chiều` tương đương `~$7/lot 2 chiều`. Tuy nhiên, với XAUUSD quy cách 1 lot = 100 oz, tại giá $2,650/oz (notional $265,000), phí `0.02%/chiều` = $53/chiều = **$106/lot 2 chiều**. Mức $7/lot thực tế chỉ tương đương 0.00132%/chiều (chênh lệch 15.1 lần).
+   - **Mô phỏng Monte Carlo tĩnh:** File `HomeStitch-DfsUMINs.js` chứa mảng tĩnh 300 giá trị phao mô phỏng sẵn (`display_cached_simulation`), không thực hiện tính toán Monte Carlo hoán vị động tại client.
 
 ---
-*Tài liệu kiểm toán và kho lưu trữ được đóng gói chuẩn hóa theo chuẩn phòng sạch ngày 23/11/2026.*
+
+### Nguồn 2: `eafree.net` (Thư Mục 45 EA & Công Cụ MT4/MT5 Mẫu)
+1. **Phân loại 45 tệp mẫu:**
+   - **18 Expert Advisors (EA):** **0 EA** đủ điều kiện bàn giao vào `master_leads.json`.
+     * 4 EA bị gắn cờ độc hại `toxic_money_management` (Grid / Martingale / Cost Averaging) với rủi ro cháy tài khoản, loại vào `rejected_log.json`.
+     * 14 EA bị loại vì `blackbox_no_live_real_proof` (EA thương mại đóng mã nguồn, không có kiểm chứng Myfxbook/MQL5 Live Real), loại vào `rejected_log.json`.
+   - **25 Indicators & 2 Utilities:** Đã tách riêng toàn bộ sang `catalog/indicator_reference.json` làm tài liệu tham khảo công cụ phân tích kỹ thuật, không làm nhiễu danh mục chiến lược tự động.
+2. **Minh bạch tài khoản Live Real:**
+   - 44/45 hồ sơ hoàn toàn KHÔNG có link theo dõi tài khoản thật của bên thứ ba.
+   - Duy nhất 1 hồ sơ cung cấp link Myfxbook nhưng là tài khoản **Demo**, không phải tài khoản Real có nạp tiền thực tế.
+   - Toàn bộ kết quả backtest trên trang là MT5 zero-slippage do nhà bán lẻ tự quảng cáo.
+3. **Kiểm chứng hồi quy 3 Fixture đại diện:**
+
+| EA Fixture Slug | Vendor Risk Label | Pricing / Points | Grid/Martingale | Live Real Verified | Kết Luận Kiểm Toán |
+| :--- | :---: | :--- | :---: | :---: | :--- |
+| `quantum-titan-mt5` | `Low` | `POINTS (300 P-Points)` | `False` | `False` | `REJECTED (NO_LIVE_REAL_PROOF_BLACKBOX)` |
+| `sunan-giri-ea-mt4` | `Medium` | `POINTS (30 Points)` | `True` | `False` | `REJECTED (GRID_MARTINGALE_TOXIC_RISK)` |
+| `scalping-robot-pro-mt5` | `High` | `POINTS (300 P-Points)` | `True` | `False` | `REJECTED (GRID_MARTINGALE_TOXIC_RISK)` |
+
+---
+
+## 4. TỔNG KẾT REJECTED LOG & BÀN GIAO PHÒNG SẠCH
+
+1. **Tổng hợp 224 mục bị loại bỏ (`catalog/rejected_log.json`):**
+   - **188 chiến lược** trượt OOS (Verdict: CHÁT) từ Nguồn 1.
+   - **18 hồ sơ** chưa kiểm định từ Nguồn 1 (thiếu dữ liệu ngoại vi, không phải chiến lược độc lập, vẽ tay cảm tính).
+   - **4 EA** có cơ chế Grid / Martingale / Cost Averaging độc hại từ Nguồn 2.
+   - **14 EA** hộp đen thương mại không có bằng chứng tài khoản thật từ Nguồn 2.
+2. **Bàn giao phòng sạch (`handoff/sanitized_master_leads.json`):**
+   - Đóng gói **15 leads** chất lượng cao từ Nguồn 1.
+   - Đã được làm sạch 100% bằng `scripts/common/holdout_sanitizer.py`, loại trừ hoàn toàn các chuỗi dữ liệu PnL, báo cáo của năm 2024–2026 và OOS2, đảm bảo tính nguyên vẹn tuyệt đối cho tập kiểm định Holdout của hệ thống nội bộ.
+
+---
+*Tài liệu kiểm toán và kho lưu trữ được tự động sinh và cập nhật bởi `scripts/common/generate_readme.py`.*

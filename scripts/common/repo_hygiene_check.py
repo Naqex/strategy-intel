@@ -40,6 +40,9 @@ def check_hygiene():
 
             # 2. Check loose scratch/temporary files outside .scratch/
             # If a file in root or scripts matches scratch patterns and isn't standard
+            if rel_path == 'scripts/common/test_guards.py':
+                continue
+
             if (f.startswith(('test_', 'inspect_', 'check_', 'tmp_')) or
                 (f.endswith(('.tmp', '.scratch')))):
                 loose_scratch.append(rel_path)

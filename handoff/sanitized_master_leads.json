@@ -1,26 +1,27 @@
 {
-  "generated_at": "2026-11-23T01:49:11.477093",
-  "description": "Cleanroom Handoff Package for Internal Quant Research (Holdout 2025-2026 Sanitized)",
+  "export_tier": "CLEANROOM_HOLDOUT_SANITIZED",
+  "description": "Cleanroom Handoff Package for Internal Quant Research (Holdout Sanitized)",
   "gate_criteria": {
     "condition_a": "EA with Live Real Verified link (strictly excluding demo, grid, HFT, hedging)",
-    "condition_b": "Independently verifiable trading mechanism with quantified edge (Top 15 CHẤT from Source 1)"
+    "condition_b": "Independently verifiable trading mechanism with stated rules (Top 15 CHẤT from Source 1)"
   },
   "total_leads": 15,
   "leads": [
     {
-      "lead_id": "LEAD-NETLIFY-BRK012",
-      "source": "stategy-netlify-app",
+      "verified_live_links": [],
       "original_id": "BRK012",
       "name": "Inside day breakout",
-      "family": "Breakout & phiên",
       "symbol": "XAUUSD",
-      "timeframe": "D1",
-      "direction": "Both",
-      "rule_description": "Hôm nay nằm trọn trong hôm qua → mai phá biên nào theo biên đó",
       "replicability": "PARTIAL_CONCEPT_ONLY",
-      "status": "VERIFIED_QUANT_EDGE",
-      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with proven edge (Top 15 CHẤT)",
-      "verified_live_links": [],
+      "family": "Breakout & phiên",
+      "source_verdict": "CHẤT",
+      "evidence_tier": "SOURCE_CLAIM_ONLY",
+      "lead_id": "LEAD-NETLIFY-BRK012",
+      "rule_description": "Hôm nay nằm trọn trong hôm qua → mai phá biên nào theo biên đó",
+      "data_quality_flags": [
+        "COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD",
+        "MISSING_PF_AND_DD_IN_PUBLIC_JSON"
+      ],
       "performance_metrics": {
         "is_2004_2018": {
           "n": 113,
@@ -56,22 +57,28 @@
             "2023": true
           }
         }
-      }
+      },
+      "passes_all_5": true,
+      "source": "stategy-netlify-app",
+      "timeframe": "D1",
+      "direction": "Both",
+      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with stated rules (Top 15 CHẤT)"
     },
     {
-      "lead_id": "LEAD-NETLIFY-BRK035",
-      "source": "stategy-netlify-app",
+      "verified_live_links": [],
       "original_id": "BRK035",
       "name": "Hộp 4h đầu tuần",
-      "family": "Breakout & phiên",
       "symbol": "XAUUSD",
-      "timeframe": "H1",
-      "direction": "Both",
-      "rule_description": "Range 4 giờ đầu tuần, phá biên trong ngày thứ Hai",
       "replicability": "PARTIAL_CONCEPT_ONLY",
-      "status": "VERIFIED_QUANT_EDGE",
-      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with proven edge (Top 15 CHẤT)",
-      "verified_live_links": [],
+      "family": "Breakout & phiên",
+      "source_verdict": "CHẤT",
+      "evidence_tier": "SOURCE_CLAIM_ONLY",
+      "lead_id": "LEAD-NETLIFY-BRK035",
+      "rule_description": "Range 4 giờ đầu tuần, phá biên trong ngày thứ Hai",
+      "data_quality_flags": [
+        "COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD",
+        "MISSING_PF_AND_DD_IN_PUBLIC_JSON"
+      ],
       "performance_metrics": {
         "is_2004_2018": {
           "n": 945,
@@ -107,22 +114,29 @@
             "2023": true
           }
         }
-      }
+      },
+      "passes_all_5": true,
+      "source": "stategy-netlify-app",
+      "timeframe": "H1",
+      "direction": "Both",
+      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with stated rules (Top 15 CHẤT)"
     },
     {
-      "lead_id": "LEAD-NETLIFY-IND026",
-      "source": "stategy-netlify-app",
+      "verified_live_links": [],
       "original_id": "IND026",
       "name": "Ichimoku Chikou xác nhận",
-      "family": "Indicator kinh điển",
       "symbol": "XAUUSD",
-      "timeframe": "D1",
-      "direction": "Both",
-      "rule_description": "Chikou vượt giá 26 nến trước + giá trên mây → mua",
       "replicability": "PARTIAL_CONCEPT_ONLY",
-      "status": "VERIFIED_QUANT_EDGE",
-      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with proven edge (Top 15 CHẤT)",
-      "verified_live_links": [],
+      "family": "Indicator kinh điển",
+      "source_verdict": "CHẤT",
+      "evidence_tier": "SOURCE_CLAIM_ONLY",
+      "lead_id": "LEAD-NETLIFY-IND026",
+      "rule_description": "Chikou vượt giá 26 nến trước + giá trên mây → mua",
+      "data_quality_flags": [
+        "COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD",
+        "MISSING_PF_AND_DD_IN_PUBLIC_JSON",
+        "FAILED_FEASIBILITY_UNDER_100_TRADES"
+      ],
       "performance_metrics": {
         "is_2004_2018": {
           "n": 63,
@@ -158,22 +172,28 @@
             "2023": true
           }
         }
-      }
+      },
+      "passes_all_5": false,
+      "source": "stategy-netlify-app",
+      "timeframe": "D1",
+      "direction": "Both",
+      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with stated rules (Top 15 CHẤT)"
     },
     {
-      "lead_id": "LEAD-NETLIFY-IND041",
-      "source": "stategy-netlify-app",
+      "verified_live_links": [],
       "original_id": "IND041",
       "name": "ROC momentum 10",
-      "family": "Indicator kinh điển",
       "symbol": "XAUUSD",
-      "timeframe": "H4",
-      "direction": "Both",
-      "rule_description": "Rate of Change vượt ngưỡng ±X%, vào theo momentum",
       "replicability": "PARTIAL_CONCEPT_ONLY",
-      "status": "VERIFIED_QUANT_EDGE",
-      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with proven edge (Top 15 CHẤT)",
-      "verified_live_links": [],
+      "family": "Indicator kinh điển",
+      "source_verdict": "CHẤT",
+      "evidence_tier": "SOURCE_CLAIM_ONLY",
+      "lead_id": "LEAD-NETLIFY-IND041",
+      "rule_description": "Rate of Change vượt ngưỡng ±X%, vào theo momentum",
+      "data_quality_flags": [
+        "COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD",
+        "MISSING_PF_AND_DD_IN_PUBLIC_JSON"
+      ],
       "performance_metrics": {
         "is_2004_2018": {
           "n": 496,
@@ -209,22 +229,28 @@
             "2023": true
           }
         }
-      }
-    },
-    {
-      "lead_id": "LEAD-NETLIFY-IND049",
+      },
+      "passes_all_5": true,
       "source": "stategy-netlify-app",
-      "original_id": "IND049",
-      "name": "Alligator mở miệng",
-      "family": "Indicator kinh điển",
-      "symbol": "XAUUSD",
       "timeframe": "H4",
       "direction": "Both",
-      "rule_description": "3 đường alligator tách nhau sau khi cuộn, vào theo hướng mở",
-      "replicability": "PARTIAL_CONCEPT_ONLY",
-      "status": "VERIFIED_QUANT_EDGE",
-      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with proven edge (Top 15 CHẤT)",
+      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with stated rules (Top 15 CHẤT)"
+    },
+    {
       "verified_live_links": [],
+      "original_id": "IND049",
+      "name": "Alligator mở miệng",
+      "symbol": "XAUUSD",
+      "replicability": "PARTIAL_CONCEPT_ONLY",
+      "family": "Indicator kinh điển",
+      "source_verdict": "CHẤT",
+      "evidence_tier": "SOURCE_CLAIM_ONLY",
+      "lead_id": "LEAD-NETLIFY-IND049",
+      "rule_description": "3 đường alligator tách nhau sau khi cuộn, vào theo hướng mở",
+      "data_quality_flags": [
+        "COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD",
+        "MISSING_PF_AND_DD_IN_PUBLIC_JSON"
+      ],
       "performance_metrics": {
         "is_2004_2018": {
           "n": 537,
@@ -260,22 +286,28 @@
             "2023": false
           }
         }
-      }
-    },
-    {
-      "lead_id": "LEAD-NETLIFY-IND053",
+      },
+      "passes_all_5": true,
       "source": "stategy-netlify-app",
-      "original_id": "IND053",
-      "name": "Momentum 10 vượt 100",
-      "family": "Indicator kinh điển",
-      "symbol": "XAUUSD",
       "timeframe": "H4",
       "direction": "Both",
-      "rule_description": "Momentum vượt ngưỡng — mua; thủng — bán",
-      "replicability": "PARTIAL_CONCEPT_ONLY",
-      "status": "VERIFIED_QUANT_EDGE",
-      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with proven edge (Top 15 CHẤT)",
+      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with stated rules (Top 15 CHẤT)"
+    },
+    {
       "verified_live_links": [],
+      "original_id": "IND053",
+      "name": "Momentum 10 vượt 100",
+      "symbol": "XAUUSD",
+      "replicability": "PARTIAL_CONCEPT_ONLY",
+      "family": "Indicator kinh điển",
+      "source_verdict": "CHẤT",
+      "evidence_tier": "SOURCE_CLAIM_ONLY",
+      "lead_id": "LEAD-NETLIFY-IND053",
+      "rule_description": "Momentum vượt ngưỡng — mua; thủng — bán",
+      "data_quality_flags": [
+        "COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD",
+        "MISSING_PF_AND_DD_IN_PUBLIC_JSON"
+      ],
       "performance_metrics": {
         "is_2004_2018": {
           "n": 566,
@@ -311,22 +343,28 @@
             "2023": true
           }
         }
-      }
+      },
+      "passes_all_5": true,
+      "source": "stategy-netlify-app",
+      "timeframe": "H4",
+      "direction": "Both",
+      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with stated rules (Top 15 CHẤT)"
     },
     {
-      "lead_id": "LEAD-NETLIFY-MTF016",
-      "source": "stategy-netlify-app",
+      "verified_live_links": [],
       "original_id": "MTF016",
       "name": "Mùa vụ D1 + tín hiệu H1",
-      "family": "Đa khung & lai",
       "symbol": "XAUUSD",
-      "timeframe": "H1",
-      "direction": "Both",
-      "rule_description": "Chỉ nhận tín hiệu H1 thuận hướng mùa vụ tháng đó",
       "replicability": "PARTIAL_CONCEPT_ONLY",
-      "status": "VERIFIED_QUANT_EDGE",
-      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with proven edge (Top 15 CHẤT)",
-      "verified_live_links": [],
+      "family": "Đa khung & lai",
+      "source_verdict": "CHẤT",
+      "evidence_tier": "SOURCE_CLAIM_ONLY",
+      "lead_id": "LEAD-NETLIFY-MTF016",
+      "rule_description": "Chỉ nhận tín hiệu H1 thuận hướng mùa vụ tháng đó",
+      "data_quality_flags": [
+        "COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD",
+        "MISSING_PF_AND_DD_IN_PUBLIC_JSON"
+      ],
       "performance_metrics": {
         "is_2004_2018": {
           "n": 311,
@@ -362,22 +400,28 @@
             "2023": true
           }
         }
-      }
+      },
+      "passes_all_5": true,
+      "source": "stategy-netlify-app",
+      "timeframe": "H1",
+      "direction": "Both",
+      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with stated rules (Top 15 CHẤT)"
     },
     {
-      "lead_id": "LEAD-NETLIFY-MTF020",
-      "source": "stategy-netlify-app",
+      "verified_live_links": [],
       "original_id": "MTF020",
       "name": "Golden cross D1 nền + mua mọi hồi H4",
-      "family": "Đa khung & lai",
       "symbol": "XAUUSD",
-      "timeframe": "H4",
-      "direction": "Both",
-      "rule_description": "Sau golden cross D1, mua mỗi lần H4 hồi về EMA20",
       "replicability": "PARTIAL_CONCEPT_ONLY",
-      "status": "VERIFIED_QUANT_EDGE",
-      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with proven edge (Top 15 CHẤT)",
-      "verified_live_links": [],
+      "family": "Đa khung & lai",
+      "source_verdict": "CHẤT",
+      "evidence_tier": "SOURCE_CLAIM_ONLY",
+      "lead_id": "LEAD-NETLIFY-MTF020",
+      "rule_description": "Sau golden cross D1, mua mỗi lần H4 hồi về EMA20",
+      "data_quality_flags": [
+        "COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD",
+        "MISSING_PF_AND_DD_IN_PUBLIC_JSON"
+      ],
       "performance_metrics": {
         "is_2004_2018": {
           "n": 482,
@@ -412,22 +456,28 @@
             "2023": true
           }
         }
-      }
+      },
+      "passes_all_5": true,
+      "source": "stategy-netlify-app",
+      "timeframe": "H4",
+      "direction": "Both",
+      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with stated rules (Top 15 CHẤT)"
     },
     {
-      "lead_id": "LEAD-NETLIFY-NEN006",
-      "source": "stategy-netlify-app",
+      "verified_live_links": [],
       "original_id": "NEN006",
       "name": "Inside bar thuận trend D1",
-      "family": "Mẫu nến",
       "symbol": "XAUUSD",
-      "timeframe": "D1",
-      "direction": "Both",
-      "rule_description": "Chỉ trade inside bar khi D1 đang trend (giá trên/dưới EMA200)",
       "replicability": "PARTIAL_CONCEPT_ONLY",
-      "status": "VERIFIED_QUANT_EDGE",
-      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with proven edge (Top 15 CHẤT)",
-      "verified_live_links": [],
+      "family": "Mẫu nến",
+      "source_verdict": "CHẤT",
+      "evidence_tier": "SOURCE_CLAIM_ONLY",
+      "lead_id": "LEAD-NETLIFY-NEN006",
+      "rule_description": "Chỉ trade inside bar khi D1 đang trend (giá trên/dưới EMA200)",
+      "data_quality_flags": [
+        "COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD",
+        "MISSING_PF_AND_DD_IN_PUBLIC_JSON"
+      ],
       "performance_metrics": {
         "is_2004_2018": {
           "n": 102,
@@ -463,22 +513,28 @@
             "2023": false
           }
         }
-      }
+      },
+      "passes_all_5": true,
+      "source": "stategy-netlify-app",
+      "timeframe": "D1",
+      "direction": "Both",
+      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with stated rules (Top 15 CHẤT)"
     },
     {
-      "lead_id": "LEAD-NETLIFY-NEN022",
-      "source": "stategy-netlify-app",
+      "verified_live_links": [],
       "original_id": "NEN022",
       "name": "Nến phá vỡ giả (fakey)",
-      "family": "Mẫu nến",
       "symbol": "XAUUSD",
-      "timeframe": "H4",
-      "direction": "Both",
-      "rule_description": "Inside bar bị phá một đầu rồi đóng ngược lại — vào theo hướng đóng",
       "replicability": "PARTIAL_CONCEPT_ONLY",
-      "status": "VERIFIED_QUANT_EDGE",
-      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with proven edge (Top 15 CHẤT)",
-      "verified_live_links": [],
+      "family": "Mẫu nến",
+      "source_verdict": "CHẤT",
+      "evidence_tier": "SOURCE_CLAIM_ONLY",
+      "lead_id": "LEAD-NETLIFY-NEN022",
+      "rule_description": "Inside bar bị phá một đầu rồi đóng ngược lại — vào theo hướng đóng",
+      "data_quality_flags": [
+        "COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD",
+        "MISSING_PF_AND_DD_IN_PUBLIC_JSON"
+      ],
       "performance_metrics": {
         "is_2004_2018": {
           "n": 290,
@@ -514,22 +570,29 @@
             "2023": true
           }
         }
-      }
+      },
+      "passes_all_5": true,
+      "source": "stategy-netlify-app",
+      "timeframe": "H4",
+      "direction": "Both",
+      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with stated rules (Top 15 CHẤT)"
     },
     {
-      "lead_id": "LEAD-NETLIFY-SEA003",
-      "source": "stategy-netlify-app",
+      "verified_live_links": [],
       "original_id": "SEA003",
       "name": "Turn-of-month vàng",
-      "family": "Giờ giấc & mùa vụ",
       "symbol": "XAUUSD",
-      "timeframe": "D1",
-      "direction": "Both",
-      "rule_description": "Mua 2 phiên cuối tháng, đóng phiên 3 tháng mới",
       "replicability": "REPLICABLE_FROM_PUBLIC",
-      "status": "VERIFIED_QUANT_EDGE",
-      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with proven edge (Top 15 CHẤT)",
-      "verified_live_links": [],
+      "family": "Giờ giấc & mùa vụ",
+      "source_verdict": "CHẤT",
+      "evidence_tier": "SOURCE_CLAIM_ONLY",
+      "lead_id": "LEAD-NETLIFY-SEA003",
+      "rule_description": "Mua 2 phiên cuối tháng, đóng phiên 3 tháng mới",
+      "data_quality_flags": [
+        "COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD",
+        "MISSING_PF_AND_DD_IN_PUBLIC_JSON",
+        "FAILED_FEASIBILITY_UNDER_100_TRADES"
+      ],
       "performance_metrics": {
         "is_2004_2018": {
           "n": 99,
@@ -565,22 +628,30 @@
             "2023": false
           }
         }
-      }
+      },
+      "passes_all_5": false,
+      "source": "stategy-netlify-app",
+      "timeframe": "D1",
+      "direction": "Long",
+      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with stated rules (Top 15 CHẤT)"
     },
     {
-      "lead_id": "LEAD-NETLIFY-SEA004",
-      "source": "stategy-netlify-app",
+      "verified_live_links": [],
       "original_id": "SEA004",
       "name": "Hiệu ứng đầu quý",
-      "family": "Giờ giấc & mùa vụ",
       "symbol": "XAUUSD",
-      "timeframe": "D1",
-      "direction": "Both",
+      "replicability": "PARTIAL_RULE_SPEC",
+      "family": "Giờ giấc & mùa vụ",
+      "source_verdict": "CHẤT",
+      "evidence_tier": "SOURCE_CLAIM_ONLY",
+      "lead_id": "LEAD-NETLIFY-SEA004",
       "rule_description": "Mua/bán theo drift 3 ngày đầu quý",
-      "replicability": "REPLICABLE_FROM_PUBLIC",
-      "status": "VERIFIED_QUANT_EDGE",
-      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with proven edge (Top 15 CHẤT)",
-      "verified_live_links": [],
+      "data_quality_flags": [
+        "COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD",
+        "MISSING_PF_AND_DD_IN_PUBLIC_JSON",
+        "FAILED_FEASIBILITY_UNDER_100_TRADES",
+        "MISSING_DIRECTION_RULE_SPEC"
+      ],
       "performance_metrics": {
         "is_2004_2018": {
           "n": 53,
@@ -616,22 +687,28 @@
             "2023": false
           }
         }
-      }
-    },
-    {
-      "lead_id": "LEAD-NETLIFY-SEA011",
+      },
+      "passes_all_5": false,
       "source": "stategy-netlify-app",
-      "original_id": "SEA011",
-      "name": "Thứ Ba đảo chiều (turnaround Tuesday)",
-      "family": "Giờ giấc & mùa vụ",
-      "symbol": "XAUUSD",
       "timeframe": "D1",
       "direction": "Both",
-      "rule_description": "Sau thứ Hai giảm mạnh, mua thứ Ba",
-      "replicability": "PARTIAL_CONCEPT_ONLY",
-      "status": "VERIFIED_QUANT_EDGE",
-      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with proven edge (Top 15 CHẤT)",
+      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with stated rules (Top 15 CHẤT)"
+    },
+    {
       "verified_live_links": [],
+      "original_id": "SEA011",
+      "name": "Thứ Ba đảo chiều (turnaround Tuesday)",
+      "symbol": "XAUUSD",
+      "replicability": "PARTIAL_CONCEPT_ONLY",
+      "family": "Giờ giấc & mùa vụ",
+      "source_verdict": "CHẤT",
+      "evidence_tier": "SOURCE_CLAIM_ONLY",
+      "lead_id": "LEAD-NETLIFY-SEA011",
+      "rule_description": "Sau thứ Hai giảm mạnh, mua thứ Ba",
+      "data_quality_flags": [
+        "COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD",
+        "MISSING_PF_AND_DD_IN_PUBLIC_JSON"
+      ],
       "performance_metrics": {
         "is_2004_2018": {
           "n": 116,
@@ -667,22 +744,29 @@
             "2023": false
           }
         }
-      }
+      },
+      "passes_all_5": true,
+      "source": "stategy-netlify-app",
+      "timeframe": "D1",
+      "direction": "Both",
+      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with stated rules (Top 15 CHẤT)"
     },
     {
-      "lead_id": "LEAD-NETLIFY-SEA021",
-      "source": "stategy-netlify-app",
+      "verified_live_links": [],
       "original_id": "SEA021",
       "name": "Thứ Hai sau NFP xấu — hồi",
-      "family": "Giờ giấc & mùa vụ",
       "symbol": "XAUUSD",
-      "timeframe": "H1",
-      "direction": "Both",
-      "rule_description": "NFP làm vàng giảm mạnh thứ Sáu → mua hồi thứ Hai",
       "replicability": "PARTIAL_CONCEPT_ONLY",
-      "status": "VERIFIED_QUANT_EDGE",
-      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with proven edge (Top 15 CHẤT)",
-      "verified_live_links": [],
+      "family": "Giờ giấc & mùa vụ",
+      "source_verdict": "CHẤT",
+      "evidence_tier": "SOURCE_CLAIM_ONLY",
+      "lead_id": "LEAD-NETLIFY-SEA021",
+      "rule_description": "NFP làm vàng giảm mạnh thứ Sáu → mua hồi thứ Hai",
+      "data_quality_flags": [
+        "COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD",
+        "MISSING_PF_AND_DD_IN_PUBLIC_JSON",
+        "FAILED_FEASIBILITY_UNDER_100_TRADES"
+      ],
       "performance_metrics": {
         "is_2004_2018": {
           "n": 74,
@@ -717,22 +801,28 @@
             "2023": false
           }
         }
-      }
+      },
+      "passes_all_5": false,
+      "source": "stategy-netlify-app",
+      "timeframe": "H1",
+      "direction": "Both",
+      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with stated rules (Top 15 CHẤT)"
     },
     {
-      "lead_id": "LEAD-NETLIFY-VIR040",
-      "source": "stategy-netlify-app",
+      "verified_live_links": [],
       "original_id": "VIR040",
       "name": "Head & Shoulders phá neckline",
-      "family": "Viral & SMC/ICT",
       "symbol": "XAUUSD",
-      "timeframe": "H4",
-      "direction": "Both",
-      "rule_description": "Vai-đầu-vai phá neckline — vào theo, SL trên vai phải",
       "replicability": "PARTIAL_CONCEPT_ONLY",
-      "status": "VERIFIED_QUANT_EDGE",
-      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with proven edge (Top 15 CHẤT)",
-      "verified_live_links": [],
+      "family": "Viral & SMC/ICT",
+      "source_verdict": "CHẤT",
+      "evidence_tier": "SOURCE_CLAIM_ONLY",
+      "lead_id": "LEAD-NETLIFY-VIR040",
+      "rule_description": "Vai-đầu-vai phá neckline — vào theo, SL trên vai phải",
+      "data_quality_flags": [
+        "COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD",
+        "MISSING_PF_AND_DD_IN_PUBLIC_JSON"
+      ],
       "performance_metrics": {
         "is_2004_2018": {
           "n": 221,
@@ -768,7 +858,12 @@
             "2023": true
           }
         }
-      }
+      },
+      "passes_all_5": true,
+      "source": "stategy-netlify-app",
+      "timeframe": "H4",
+      "direction": "Both",
+      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with stated rules (Top 15 CHẤT)"
     }
   ]
 }

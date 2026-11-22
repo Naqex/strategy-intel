@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-11-23T01:49:11.402803",
+  "generated_at": "2026-11-23T02:11:48.416722",
   "gate_criteria": {
     "condition_a": "EA with Live Real Verified link (strictly excluding demo, grid, HFT, hedging)",
-    "condition_b": "Independently verifiable trading mechanism with quantified edge (Top 15 CHẤT from Source 1)"
+    "condition_b": "Independently verifiable trading mechanism with stated rules (Top 15 CHẤT from Source 1)"
   },
   "sources": [
     "stategy-netlify-app"
@@ -19,9 +19,15 @@
       "timeframe": "D1",
       "direction": "Both",
       "rule_description": "Hôm nay nằm trọn trong hôm qua → mai phá biên nào theo biên đó",
+      "source_verdict": "CHẤT",
+      "passes_all_5": true,
+      "data_quality_flags": [
+        "COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD",
+        "MISSING_PF_AND_DD_IN_PUBLIC_JSON"
+      ],
       "replicability": "PARTIAL_CONCEPT_ONLY",
-      "status": "VERIFIED_QUANT_EDGE",
-      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with proven edge (Top 15 CHẤT)",
+      "evidence_tier": "SOURCE_CLAIM_ONLY",
+      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with stated rules (Top 15 CHẤT)",
       "verified_live_links": [],
       "performance_metrics": {
         "is_2004_2018": {
@@ -70,9 +76,15 @@
       "timeframe": "H1",
       "direction": "Both",
       "rule_description": "Range 4 giờ đầu tuần, phá biên trong ngày thứ Hai",
+      "source_verdict": "CHẤT",
+      "passes_all_5": true,
+      "data_quality_flags": [
+        "COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD",
+        "MISSING_PF_AND_DD_IN_PUBLIC_JSON"
+      ],
       "replicability": "PARTIAL_CONCEPT_ONLY",
-      "status": "VERIFIED_QUANT_EDGE",
-      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with proven edge (Top 15 CHẤT)",
+      "evidence_tier": "SOURCE_CLAIM_ONLY",
+      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with stated rules (Top 15 CHẤT)",
       "verified_live_links": [],
       "performance_metrics": {
         "is_2004_2018": {
@@ -121,9 +133,16 @@
       "timeframe": "D1",
       "direction": "Both",
       "rule_description": "Chikou vượt giá 26 nến trước + giá trên mây → mua",
+      "source_verdict": "CHẤT",
+      "passes_all_5": false,
+      "data_quality_flags": [
+        "COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD",
+        "MISSING_PF_AND_DD_IN_PUBLIC_JSON",
+        "FAILED_FEASIBILITY_UNDER_100_TRADES"
+      ],
       "replicability": "PARTIAL_CONCEPT_ONLY",
-      "status": "VERIFIED_QUANT_EDGE",
-      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with proven edge (Top 15 CHẤT)",
+      "evidence_tier": "SOURCE_CLAIM_ONLY",
+      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with stated rules (Top 15 CHẤT)",
       "verified_live_links": [],
       "performance_metrics": {
         "is_2004_2018": {
@@ -172,9 +191,15 @@
       "timeframe": "H4",
       "direction": "Both",
       "rule_description": "Rate of Change vượt ngưỡng ±X%, vào theo momentum",
+      "source_verdict": "CHẤT",
+      "passes_all_5": true,
+      "data_quality_flags": [
+        "COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD",
+        "MISSING_PF_AND_DD_IN_PUBLIC_JSON"
+      ],
       "replicability": "PARTIAL_CONCEPT_ONLY",
-      "status": "VERIFIED_QUANT_EDGE",
-      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with proven edge (Top 15 CHẤT)",
+      "evidence_tier": "SOURCE_CLAIM_ONLY",
+      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with stated rules (Top 15 CHẤT)",
       "verified_live_links": [],
       "performance_metrics": {
         "is_2004_2018": {
@@ -223,9 +248,15 @@
       "timeframe": "H4",
       "direction": "Both",
       "rule_description": "3 đường alligator tách nhau sau khi cuộn, vào theo hướng mở",
+      "source_verdict": "CHẤT",
+      "passes_all_5": true,
+      "data_quality_flags": [
+        "COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD",
+        "MISSING_PF_AND_DD_IN_PUBLIC_JSON"
+      ],
       "replicability": "PARTIAL_CONCEPT_ONLY",
-      "status": "VERIFIED_QUANT_EDGE",
-      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with proven edge (Top 15 CHẤT)",
+      "evidence_tier": "SOURCE_CLAIM_ONLY",
+      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with stated rules (Top 15 CHẤT)",
       "verified_live_links": [],
       "performance_metrics": {
         "is_2004_2018": {
@@ -274,9 +305,15 @@
       "timeframe": "H4",
       "direction": "Both",
       "rule_description": "Momentum vượt ngưỡng — mua; thủng — bán",
+      "source_verdict": "CHẤT",
+      "passes_all_5": true,
+      "data_quality_flags": [
+        "COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD",
+        "MISSING_PF_AND_DD_IN_PUBLIC_JSON"
+      ],
       "replicability": "PARTIAL_CONCEPT_ONLY",
-      "status": "VERIFIED_QUANT_EDGE",
-      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with proven edge (Top 15 CHẤT)",
+      "evidence_tier": "SOURCE_CLAIM_ONLY",
+      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with stated rules (Top 15 CHẤT)",
       "verified_live_links": [],
       "performance_metrics": {
         "is_2004_2018": {
@@ -325,9 +362,15 @@
       "timeframe": "H1",
       "direction": "Both",
       "rule_description": "Chỉ nhận tín hiệu H1 thuận hướng mùa vụ tháng đó",
+      "source_verdict": "CHẤT",
+      "passes_all_5": true,
+      "data_quality_flags": [
+        "COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD",
+        "MISSING_PF_AND_DD_IN_PUBLIC_JSON"
+      ],
       "replicability": "PARTIAL_CONCEPT_ONLY",
-      "status": "VERIFIED_QUANT_EDGE",
-      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with proven edge (Top 15 CHẤT)",
+      "evidence_tier": "SOURCE_CLAIM_ONLY",
+      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with stated rules (Top 15 CHẤT)",
       "verified_live_links": [],
       "performance_metrics": {
         "is_2004_2018": {
@@ -376,9 +419,15 @@
       "timeframe": "H4",
       "direction": "Both",
       "rule_description": "Sau golden cross D1, mua mỗi lần H4 hồi về EMA20",
+      "source_verdict": "CHẤT",
+      "passes_all_5": true,
+      "data_quality_flags": [
+        "COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD",
+        "MISSING_PF_AND_DD_IN_PUBLIC_JSON"
+      ],
       "replicability": "PARTIAL_CONCEPT_ONLY",
-      "status": "VERIFIED_QUANT_EDGE",
-      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with proven edge (Top 15 CHẤT)",
+      "evidence_tier": "SOURCE_CLAIM_ONLY",
+      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with stated rules (Top 15 CHẤT)",
       "verified_live_links": [],
       "performance_metrics": {
         "is_2004_2018": {
@@ -426,9 +475,15 @@
       "timeframe": "D1",
       "direction": "Both",
       "rule_description": "Chỉ trade inside bar khi D1 đang trend (giá trên/dưới EMA200)",
+      "source_verdict": "CHẤT",
+      "passes_all_5": true,
+      "data_quality_flags": [
+        "COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD",
+        "MISSING_PF_AND_DD_IN_PUBLIC_JSON"
+      ],
       "replicability": "PARTIAL_CONCEPT_ONLY",
-      "status": "VERIFIED_QUANT_EDGE",
-      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with proven edge (Top 15 CHẤT)",
+      "evidence_tier": "SOURCE_CLAIM_ONLY",
+      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with stated rules (Top 15 CHẤT)",
       "verified_live_links": [],
       "performance_metrics": {
         "is_2004_2018": {
@@ -477,9 +532,15 @@
       "timeframe": "H4",
       "direction": "Both",
       "rule_description": "Inside bar bị phá một đầu rồi đóng ngược lại — vào theo hướng đóng",
+      "source_verdict": "CHẤT",
+      "passes_all_5": true,
+      "data_quality_flags": [
+        "COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD",
+        "MISSING_PF_AND_DD_IN_PUBLIC_JSON"
+      ],
       "replicability": "PARTIAL_CONCEPT_ONLY",
-      "status": "VERIFIED_QUANT_EDGE",
-      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with proven edge (Top 15 CHẤT)",
+      "evidence_tier": "SOURCE_CLAIM_ONLY",
+      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with stated rules (Top 15 CHẤT)",
       "verified_live_links": [],
       "performance_metrics": {
         "is_2004_2018": {
@@ -526,11 +587,18 @@
       "family": "Giờ giấc & mùa vụ",
       "symbol": "XAUUSD",
       "timeframe": "D1",
-      "direction": "Both",
+      "direction": "Long",
       "rule_description": "Mua 2 phiên cuối tháng, đóng phiên 3 tháng mới",
+      "source_verdict": "CHẤT",
+      "passes_all_5": false,
+      "data_quality_flags": [
+        "COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD",
+        "MISSING_PF_AND_DD_IN_PUBLIC_JSON",
+        "FAILED_FEASIBILITY_UNDER_100_TRADES"
+      ],
       "replicability": "REPLICABLE_FROM_PUBLIC",
-      "status": "VERIFIED_QUANT_EDGE",
-      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with proven edge (Top 15 CHẤT)",
+      "evidence_tier": "SOURCE_CLAIM_ONLY",
+      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with stated rules (Top 15 CHẤT)",
       "verified_live_links": [],
       "performance_metrics": {
         "is_2004_2018": {
@@ -579,9 +647,17 @@
       "timeframe": "D1",
       "direction": "Both",
       "rule_description": "Mua/bán theo drift 3 ngày đầu quý",
-      "replicability": "REPLICABLE_FROM_PUBLIC",
-      "status": "VERIFIED_QUANT_EDGE",
-      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with proven edge (Top 15 CHẤT)",
+      "source_verdict": "CHẤT",
+      "passes_all_5": false,
+      "data_quality_flags": [
+        "COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD",
+        "MISSING_PF_AND_DD_IN_PUBLIC_JSON",
+        "FAILED_FEASIBILITY_UNDER_100_TRADES",
+        "MISSING_DIRECTION_RULE_SPEC"
+      ],
+      "replicability": "PARTIAL_RULE_SPEC",
+      "evidence_tier": "SOURCE_CLAIM_ONLY",
+      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with stated rules (Top 15 CHẤT)",
       "verified_live_links": [],
       "performance_metrics": {
         "is_2004_2018": {
@@ -630,9 +706,15 @@
       "timeframe": "D1",
       "direction": "Both",
       "rule_description": "Sau thứ Hai giảm mạnh, mua thứ Ba",
+      "source_verdict": "CHẤT",
+      "passes_all_5": true,
+      "data_quality_flags": [
+        "COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD",
+        "MISSING_PF_AND_DD_IN_PUBLIC_JSON"
+      ],
       "replicability": "PARTIAL_CONCEPT_ONLY",
-      "status": "VERIFIED_QUANT_EDGE",
-      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with proven edge (Top 15 CHẤT)",
+      "evidence_tier": "SOURCE_CLAIM_ONLY",
+      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with stated rules (Top 15 CHẤT)",
       "verified_live_links": [],
       "performance_metrics": {
         "is_2004_2018": {
@@ -681,9 +763,16 @@
       "timeframe": "H1",
       "direction": "Both",
       "rule_description": "NFP làm vàng giảm mạnh thứ Sáu → mua hồi thứ Hai",
+      "source_verdict": "CHẤT",
+      "passes_all_5": false,
+      "data_quality_flags": [
+        "COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD",
+        "MISSING_PF_AND_DD_IN_PUBLIC_JSON",
+        "FAILED_FEASIBILITY_UNDER_100_TRADES"
+      ],
       "replicability": "PARTIAL_CONCEPT_ONLY",
-      "status": "VERIFIED_QUANT_EDGE",
-      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with proven edge (Top 15 CHẤT)",
+      "evidence_tier": "SOURCE_CLAIM_ONLY",
+      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with stated rules (Top 15 CHẤT)",
       "verified_live_links": [],
       "performance_metrics": {
         "is_2004_2018": {
@@ -731,9 +820,15 @@
       "timeframe": "H4",
       "direction": "Both",
       "rule_description": "Vai-đầu-vai phá neckline — vào theo, SL trên vai phải",
+      "source_verdict": "CHẤT",
+      "passes_all_5": true,
+      "data_quality_flags": [
+        "COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD",
+        "MISSING_PF_AND_DD_IN_PUBLIC_JSON"
+      ],
       "replicability": "PARTIAL_CONCEPT_ONLY",
-      "status": "VERIFIED_QUANT_EDGE",
-      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with proven edge (Top 15 CHẤT)",
+      "evidence_tier": "SOURCE_CLAIM_ONLY",
+      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with stated rules (Top 15 CHẤT)",
       "verified_live_links": [],
       "performance_metrics": {
         "is_2004_2018": {

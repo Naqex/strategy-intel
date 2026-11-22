@@ -74,6 +74,13 @@ Thoát lệnh:
 
 Đây là hòn đá tảng trong phương pháp luận của Strategy Audit: **Đường vốn tăng trưởng không chứng minh được hệ thống có lợi thế thực.**
 
+> [!WARNING] AUDIT_WARNING: MẢNG 300 LẦN MÔ PHỎNG MONTE CARLO LÀ DỮ LIỆU TĨNH NHÚNG SẴN (STATIC CACHED SIMULATION)
+> Giao diện "Phòng Mô Phỏng" giới thiệu tính năng "300 lần vào lệnh ngẫu nhiên (Monte Carlo Bootstrap) trên nến H1 XAUUSD thật 15 năm (2004–2018)".
+> **Phát hiện kiểm toán độc lập trong bundle `HomeStitch-DfsUMINs.js`:**
+> - Phía client KHÔNG thực thi thuật toán Bootstrap tái tạo ngẫu nhiên hay sinh phân phối Monte Carlo thời gian thực khi người dùng tương tác.
+> - Toàn bộ 300 kết quả mô phỏng (tỷ lệ thắng, EV/R, chuỗi lỗ liên tiếp) đã được tính toán từ trước và nhúng cứng vào mã nguồn dưới dạng mảng hằng số tĩnh (`display_cached_simulation`).
+> - Giao diện chỉ hiển thị lại mảng dữ liệu mẫu đã lưu trữ sẵn của Phiếu Hệ Thống Mẫu Số 1, không đại diện cho một cỗ máy mô phỏng động tính toán theo tham số người dùng nhập vào.
+
 ### 4.1. Quy Trình Giả Lập Vô Hiệu ($H_0$ Simulation)
 1. Giữ nguyên toàn bộ cấu trúc thị trường XAUUSD H1 trong cùng kỳ 2004–2018.
 2. Giữ nguyên số lượng lệnh ($N = 133$) và toàn bộ quy tắc quản trị rủi ro / thoát lệnh (SL 2 ATR, TP 3 R, time-stop 200 nến).

@@ -4,8 +4,17 @@
   "tong_so_muc_thieu": 58,
   "phan_loai_thieu": {
     "gop_bien_the_doi_xung": 40,
-    "chua_kiem_dinh_chu_quan": 18,
-    "khac": 0
+    "chua_kiem_dinh": 18,
+    "phan_loai_chua_kiem_dinh": {
+      "MISSING_AUXILIARY_DATA": 9,
+      "NOT_A_STANDALONE_STRATEGY": 4,
+      "DISCRETIONARY_NOT_FORMALIZED": 5
+    },
+    "phan_loai_gop": {
+      "DUPLICATE_EXACT": 6,
+      "RELATED_VARIANT": 27,
+      "UNTESTED_VARIANT": 7
+    }
   },
   "danh_sach_chi_tiet_58_muc": [
     {
@@ -17,6 +26,9 @@
       "verdict_goc": "CHÁT",
       "xep_hang": 243,
       "goc_tham_chieu": "NEN035",
+      "merge_relation": "RELATED_VARIANT",
+      "unverified_category": null,
+      "data_quality_flags": [],
       "ly_do_thieu_file_json": "Cùng quy tắc/bản đối xứng của NEN035 (Ba đáy nến bằng nhau (triple bottom nến)) — xem báo cáo gốc."
     },
     {
@@ -28,6 +40,9 @@
       "verdict_goc": "TÌNH HUỐNG",
       "xep_hang": 244,
       "goc_tham_chieu": "NEN029",
+      "merge_relation": "DUPLICATE_EXACT",
+      "unverified_category": null,
+      "data_quality_flags": [],
       "ly_do_thieu_file_json": "Cùng quy tắc/bản đối xứng của NEN029 (Gap sáng thứ Hai — theo) — xem báo cáo gốc."
     },
     {
@@ -36,10 +51,13 @@
       "ho": "Breakout & phiên",
       "khung_thoi_gian": "H4",
       "trang_thai": "chua_kiem_dinh",
-      "verdict_goc": "CHƯA KIỂM ĐỊNH",
+      "verdict_goc": "CHUA_KIEM_DINH",
       "xep_hang": 245,
       "goc_tham_chieu": null,
-      "ly_do_thieu_file_json": "Trendline vẽ tay — mỗi người kẻ một kiểu, không quy tắc hoá khách quan được. Kiểm định máy sẽ không trung thực với cách con người dùng nó."
+      "merge_relation": null,
+      "unverified_category": "DISCRETIONARY_NOT_FORMALIZED",
+      "data_quality_flags": [],
+      "ly_do_thieu_file_json": "Vẽ trendline nội bộ chủ quan, điểm vẽ thay đổi tùy người giao dịch."
     },
     {
       "id": "BRK027",
@@ -47,10 +65,13 @@
       "ho": "Breakout & phiên",
       "khung_thoi_gian": "H4",
       "trang_thai": "chua_kiem_dinh",
-      "verdict_goc": "CHƯA KIỂM ĐỊNH",
+      "verdict_goc": "CHUA_KIEM_DINH",
       "xep_hang": 246,
       "goc_tham_chieu": null,
-      "ly_do_thieu_file_json": "Mẫu hình vòng cung (rounding) khó quy tắc hoá khách quan — như BRK025."
+      "merge_relation": null,
+      "unverified_category": "DISCRETIONARY_NOT_FORMALIZED",
+      "data_quality_flags": [],
+      "ly_do_thieu_file_json": "Mô hình rounding/cổ chén vẽ tay cảm tính, không có quy tắc toán học xác định độ cong."
     },
     {
       "id": "BRK028",
@@ -58,10 +79,13 @@
       "ho": "Breakout & phiên",
       "khung_thoi_gian": "M15",
       "trang_thai": "chua_kiem_dinh",
-      "verdict_goc": "CHƯA KIỂM ĐỊNH",
+      "verdict_goc": "CHUA_KIEM_DINH",
       "xep_hang": 247,
       "goc_tham_chieu": null,
-      "ly_do_thieu_file_json": "Cần lịch tin tức chính xác từng phút — chưa có nguồn dữ liệu."
+      "merge_relation": null,
+      "unverified_category": "MISSING_AUXILIARY_DATA",
+      "data_quality_flags": [],
+      "ly_do_thieu_file_json": "Thiếu dữ liệu lịch kinh tế & dấu thời gian công bố tin tức chính xác."
     },
     {
       "id": "BRK029",
@@ -72,6 +96,9 @@
       "verdict_goc": "CHÁT",
       "xep_hang": 248,
       "goc_tham_chieu": "NEN044",
+      "merge_relation": "RELATED_VARIANT",
+      "unverified_category": null,
+      "data_quality_flags": [],
       "ly_do_thieu_file_json": "Cùng quy tắc/bản đối xứng của NEN044 (Nến thân lớn phá tích luỹ 20 nến) — xem báo cáo gốc."
     },
     {
@@ -83,6 +110,9 @@
       "verdict_goc": "CHÁT",
       "xep_hang": 249,
       "goc_tham_chieu": "SEA016",
+      "merge_relation": "DUPLICATE_EXACT",
+      "unverified_category": null,
+      "data_quality_flags": [],
       "ly_do_thieu_file_json": "Cùng quy tắc/bản đối xứng của SEA016 (London fix 15h London — drift) — xem báo cáo gốc."
     },
     {
@@ -91,10 +121,13 @@
       "ho": "Breakout & phiên",
       "khung_thoi_gian": "H4",
       "trang_thai": "chua_kiem_dinh",
-      "verdict_goc": "CHƯA KIỂM ĐỊNH",
+      "verdict_goc": "CHUA_KIEM_DINH",
       "xep_hang": 250,
       "goc_tham_chieu": null,
-      "ly_do_thieu_file_json": "Kênh giá song song vẽ tay — không quy tắc hoá khách quan được."
+      "merge_relation": null,
+      "unverified_category": "DISCRETIONARY_NOT_FORMALIZED",
+      "data_quality_flags": [],
+      "ly_do_thieu_file_json": "Kênh song song vẽ tay chủ quan theo đỉnh đáy cảm tính."
     },
     {
       "id": "BRK039",
@@ -105,6 +138,9 @@
       "verdict_goc": "CHÁT",
       "xep_hang": 251,
       "goc_tham_chieu": "VIR014",
+      "merge_relation": "UNTESTED_VARIANT",
+      "unverified_category": null,
+      "data_quality_flags": [],
       "ly_do_thieu_file_json": "Cùng quy tắc/bản đối xứng của VIR014 (ICT Judas Swing) — xem báo cáo gốc."
     },
     {
@@ -116,6 +152,9 @@
       "verdict_goc": "CHÁT",
       "xep_hang": 252,
       "goc_tham_chieu": "NEN001",
+      "merge_relation": "RELATED_VARIANT",
+      "unverified_category": null,
+      "data_quality_flags": [],
       "ly_do_thieu_file_json": "Cùng quy tắc/bản đối xứng của NEN001 (Pin bar đảo chiều tại đáy/đỉnh) — xem báo cáo gốc."
     },
     {
@@ -127,6 +166,9 @@
       "verdict_goc": "CHÁT",
       "xep_hang": 253,
       "goc_tham_chieu": "NEN003",
+      "merge_relation": "RELATED_VARIANT",
+      "unverified_category": null,
+      "data_quality_flags": [],
       "ly_do_thieu_file_json": "Cùng quy tắc/bản đối xứng của NEN003 (Bullish engulfing sau ≥3 nến giảm) — xem báo cáo gốc."
     },
     {
@@ -138,6 +180,9 @@
       "verdict_goc": "CHÁT",
       "xep_hang": 254,
       "goc_tham_chieu": "NEN009",
+      "merge_relation": "RELATED_VARIANT",
+      "unverified_category": null,
+      "data_quality_flags": [],
       "ly_do_thieu_file_json": "Cùng quy tắc/bản đối xứng của NEN009 (Morning star (sao mai)) — xem báo cáo gốc."
     },
     {
@@ -149,6 +194,9 @@
       "verdict_goc": "CHÁT",
       "xep_hang": 255,
       "goc_tham_chieu": "NEN011",
+      "merge_relation": "RELATED_VARIANT",
+      "unverified_category": null,
+      "data_quality_flags": [],
       "ly_do_thieu_file_json": "Cùng quy tắc/bản đối xứng của NEN011 (Hammer tại đáy tuần) — xem báo cáo gốc."
     },
     {
@@ -160,6 +208,9 @@
       "verdict_goc": "TÌNH HUỐNG",
       "xep_hang": 256,
       "goc_tham_chieu": "NEN013",
+      "merge_relation": "RELATED_VARIANT",
+      "unverified_category": null,
+      "data_quality_flags": [],
       "ly_do_thieu_file_json": "Cùng quy tắc/bản đối xứng của NEN013 (Three white soldiers) — xem báo cáo gốc."
     },
     {
@@ -171,6 +222,9 @@
       "verdict_goc": "CHÁT",
       "xep_hang": 257,
       "goc_tham_chieu": "NEN016",
+      "merge_relation": "RELATED_VARIANT",
+      "unverified_category": null,
+      "data_quality_flags": [],
       "ly_do_thieu_file_json": "Cùng quy tắc/bản đối xứng của NEN016 (Tweezer bottom (đáy nhíp)) — xem báo cáo gốc."
     },
     {
@@ -182,6 +236,9 @@
       "verdict_goc": "TÌNH HUỐNG",
       "xep_hang": 258,
       "goc_tham_chieu": "NEN024",
+      "merge_relation": "RELATED_VARIANT",
+      "unverified_category": null,
+      "data_quality_flags": [],
       "ly_do_thieu_file_json": "Cùng quy tắc/bản đối xứng của NEN024 (Đáy nhọn V-bottom) — xem báo cáo gốc."
     },
     {
@@ -193,6 +250,9 @@
       "verdict_goc": "CHÁT",
       "xep_hang": 259,
       "goc_tham_chieu": "REV001",
+      "merge_relation": "RELATED_VARIANT",
+      "unverified_category": null,
+      "data_quality_flags": [],
       "ly_do_thieu_file_json": "Cùng quy tắc/bản đối xứng của REV001 (Fade gap mở tuần) — xem báo cáo gốc."
     },
     {
@@ -204,6 +264,9 @@
       "verdict_goc": "CHÁT",
       "xep_hang": 260,
       "goc_tham_chieu": "NEN031",
+      "merge_relation": "RELATED_VARIANT",
+      "unverified_category": null,
+      "data_quality_flags": [],
       "ly_do_thieu_file_json": "Cùng quy tắc/bản đối xứng của NEN031 (IBS thấp — mua (Internal Bar Strength)) — xem báo cáo gốc."
     },
     {
@@ -215,6 +278,9 @@
       "verdict_goc": "CHÁT",
       "xep_hang": 261,
       "goc_tham_chieu": "NEN035",
+      "merge_relation": "RELATED_VARIANT",
+      "unverified_category": null,
+      "data_quality_flags": [],
       "ly_do_thieu_file_json": "Cùng quy tắc/bản đối xứng của NEN035 (Ba đáy nến bằng nhau (triple bottom nến)) — xem báo cáo gốc."
     },
     {
@@ -226,6 +292,9 @@
       "verdict_goc": "TÌNH HUỐNG",
       "xep_hang": 262,
       "goc_tham_chieu": "NEN037",
+      "merge_relation": "RELATED_VARIANT",
+      "unverified_category": null,
+      "data_quality_flags": [],
       "ly_do_thieu_file_json": "Cùng quy tắc/bản đối xứng của NEN037 (Nến xuyên thủng (piercing line)) — xem báo cáo gốc."
     },
     {
@@ -237,6 +306,9 @@
       "verdict_goc": "CHÁT",
       "xep_hang": 263,
       "goc_tham_chieu": "VIR015",
+      "merge_relation": "RELATED_VARIANT",
+      "unverified_category": null,
+      "data_quality_flags": [],
       "ly_do_thieu_file_json": "Cùng quy tắc/bản đối xứng của VIR015 (ICT Turtle Soup) — xem báo cáo gốc."
     },
     {
@@ -248,6 +320,9 @@
       "verdict_goc": "CHÁT",
       "xep_hang": 264,
       "goc_tham_chieu": "VIR015",
+      "merge_relation": "RELATED_VARIANT",
+      "unverified_category": null,
+      "data_quality_flags": [],
       "ly_do_thieu_file_json": "Cùng quy tắc/bản đối xứng của VIR015 (ICT Turtle Soup) — xem báo cáo gốc."
     },
     {
@@ -259,6 +334,9 @@
       "verdict_goc": "TÌNH HUỐNG",
       "xep_hang": 265,
       "goc_tham_chieu": "NEN046",
+      "merge_relation": "RELATED_VARIANT",
+      "unverified_category": null,
+      "data_quality_flags": [],
       "ly_do_thieu_file_json": "Cùng quy tắc/bản đối xứng của NEN046 (Nến doji chuồn (dragonfly) tại EMA200) — xem báo cáo gốc."
     },
     {
@@ -270,6 +348,9 @@
       "verdict_goc": "CHÁT",
       "xep_hang": 266,
       "goc_tham_chieu": "NEN027",
+      "merge_relation": "RELATED_VARIANT",
+      "unverified_category": null,
+      "data_quality_flags": [],
       "ly_do_thieu_file_json": "Cùng quy tắc/bản đối xứng của NEN027 (Nến khối lượng đột biến (climax bar)) — xem báo cáo gốc."
     },
     {
@@ -281,6 +362,9 @@
       "verdict_goc": "CHÁT",
       "xep_hang": 267,
       "goc_tham_chieu": "IND010",
+      "merge_relation": "RELATED_VARIANT",
+      "unverified_category": null,
+      "data_quality_flags": [],
       "ly_do_thieu_file_json": "Cùng quy tắc/bản đối xứng của IND010 (Bollinger tag & revert) — xem báo cáo gốc."
     },
     {
@@ -292,6 +376,9 @@
       "verdict_goc": "CHÁT",
       "xep_hang": 268,
       "goc_tham_chieu": "IND040",
+      "merge_relation": "RELATED_VARIANT",
+      "unverified_category": null,
+      "data_quality_flags": [],
       "ly_do_thieu_file_json": "Cùng quy tắc/bản đối xứng của IND040 (VWAP revert (kéo giãn)) — xem báo cáo gốc."
     },
     {
@@ -300,10 +387,13 @@
       "ho": "Hồi quy trung bình",
       "khung_thoi_gian": "M15",
       "trang_thai": "chua_kiem_dinh",
-      "verdict_goc": "CHƯA KIỂM ĐỊNH",
+      "verdict_goc": "CHUA_KIEM_DINH",
       "xep_hang": 269,
       "goc_tham_chieu": null,
-      "ly_do_thieu_file_json": "Cần lịch tin tức chính xác — chưa có nguồn."
+      "merge_relation": null,
+      "unverified_category": "MISSING_AUXILIARY_DATA",
+      "data_quality_flags": [],
+      "ly_do_thieu_file_json": "Thiếu bảng dữ liệu thời điểm công bố tin tức vĩ mô để đo độ giật nến."
     },
     {
       "id": "REV018",
@@ -314,6 +404,9 @@
       "verdict_goc": "CHÁT",
       "xep_hang": 270,
       "goc_tham_chieu": "BRK030",
+      "merge_relation": "UNTESTED_VARIANT",
+      "unverified_category": null,
+      "data_quality_flags": [],
       "ly_do_thieu_file_json": "Cùng quy tắc/bản đối xứng của BRK030 (Breakout thất bại — fade (failed break)) — xem báo cáo gốc."
     },
     {
@@ -325,6 +418,9 @@
       "verdict_goc": "CHÁT",
       "xep_hang": 271,
       "goc_tham_chieu": "VIR030",
+      "merge_relation": "RELATED_VARIANT",
+      "unverified_category": null,
+      "data_quality_flags": [],
       "ly_do_thieu_file_json": "Cùng quy tắc/bản đối xứng của VIR030 (W-pattern / M-pattern TikTok) — xem báo cáo gốc."
     },
     {
@@ -336,6 +432,9 @@
       "verdict_goc": "CHÁT",
       "xep_hang": 272,
       "goc_tham_chieu": "SEA002",
+      "merge_relation": "UNTESTED_VARIANT",
+      "unverified_category": null,
+      "data_quality_flags": [],
       "ly_do_thieu_file_json": "Cùng quy tắc/bản đối xứng của SEA002 (Fade chiều thứ Sáu) — xem báo cáo gốc."
     },
     {
@@ -347,6 +446,9 @@
       "verdict_goc": "CHÁT",
       "xep_hang": 273,
       "goc_tham_chieu": "NEN027",
+      "merge_relation": "UNTESTED_VARIANT",
+      "unverified_category": null,
+      "data_quality_flags": [],
       "ly_do_thieu_file_json": "Cùng quy tắc/bản đối xứng của NEN027 (Nến khối lượng đột biến (climax bar)) — xem báo cáo gốc."
     },
     {
@@ -358,6 +460,9 @@
       "verdict_goc": "CHÁT",
       "xep_hang": 274,
       "goc_tham_chieu": "IND035",
+      "merge_relation": "UNTESTED_VARIANT",
+      "unverified_category": null,
+      "data_quality_flags": [],
       "ly_do_thieu_file_json": "Cùng quy tắc/bản đối xứng của IND035 (Keltner revert) — xem báo cáo gốc."
     },
     {
@@ -366,10 +471,15 @@
       "ho": "Hồi quy trung bình",
       "khung_thoi_gian": "D1",
       "trang_thai": "gop",
-      "verdict_goc": "CHẤT",
+      "verdict_goc": "CHUA_KIEM_DINH_BIEN_THE_NGUOC",
       "xep_hang": 275,
       "goc_tham_chieu": "SEA003",
-      "ly_do_thieu_file_json": "Cùng quy tắc/bản đối xứng của SEA003 (Turn-of-month vàng) — xem báo cáo gốc."
+      "merge_relation": "UNTESTED_VARIANT",
+      "unverified_category": null,
+      "data_quality_flags": [
+        "UNTESTED_REVERSE_VARIANT_CANNOT_INHERIT_CHAT"
+      ],
+      "ly_do_thieu_file_json": "Biến thể bán ngược chiều (Fade) không được thừa kế phán quyết CHẤT của SEA003. Bản thân chưa được kiểm định độc lập."
     },
     {
       "id": "REV032",
@@ -377,10 +487,13 @@
       "ho": "Hồi quy trung bình",
       "khung_thoi_gian": "M15",
       "trang_thai": "chua_kiem_dinh",
-      "verdict_goc": "CHƯA KIỂM ĐỊNH",
+      "verdict_goc": "CHUA_KIEM_DINH",
       "xep_hang": 276,
       "goc_tham_chieu": null,
-      "ly_do_thieu_file_json": "Cần lịch tin tức chính xác — chưa có nguồn."
+      "merge_relation": null,
+      "unverified_category": "MISSING_AUXILIARY_DATA",
+      "data_quality_flags": [],
+      "ly_do_thieu_file_json": "Thiếu nguồn cấp dữ liệu lịch sự kiện kinh tế lớn trước 2 giờ."
     },
     {
       "id": "REV036",
@@ -391,6 +504,9 @@
       "verdict_goc": "CHÁT",
       "xep_hang": 277,
       "goc_tham_chieu": "REV035",
+      "merge_relation": "UNTESTED_VARIANT",
+      "unverified_category": null,
+      "data_quality_flags": [],
       "ly_do_thieu_file_json": "Cùng quy tắc/bản đối xứng của REV035 (Buy the dip trong uptrend D1) — xem báo cáo gốc."
     },
     {
@@ -399,10 +515,13 @@
       "ho": "Hồi quy trung bình",
       "khung_thoi_gian": "M15",
       "trang_thai": "chua_kiem_dinh",
-      "verdict_goc": "CHƯA KIỂM ĐỊNH",
+      "verdict_goc": "CHUA_KIEM_DINH",
       "xep_hang": 278,
       "goc_tham_chieu": null,
-      "ly_do_thieu_file_json": "Đếm \"cú đẩy thứ 3 trong ngày\" phụ thuộc cách chia sóng chủ quan — chưa máy hoá trung thực được."
+      "merge_relation": null,
+      "unverified_category": "DISCRETIONARY_NOT_FORMALIZED",
+      "data_quality_flags": [],
+      "ly_do_thieu_file_json": "Quy tắc đếm 3 cú đẩy trong ngày mang tính diễn giải chủ quan."
     },
     {
       "id": "SEA008",
@@ -410,10 +529,13 @@
       "ho": "Giờ giấc & mùa vụ",
       "khung_thoi_gian": "M15",
       "trang_thai": "chua_kiem_dinh",
-      "verdict_goc": "CHƯA KIỂM ĐỊNH",
+      "verdict_goc": "CHUA_KIEM_DINH",
       "xep_hang": 279,
       "goc_tham_chieu": null,
-      "ly_do_thieu_file_json": "Đây là BỘ LỌC giờ (tránh trưa Á), không phải chiến lược vào lệnh độc lập — dùng kèm hệ khác."
+      "merge_relation": null,
+      "unverified_category": "NOT_A_STANDALONE_STRATEGY",
+      "data_quality_flags": [],
+      "ly_do_thieu_file_json": "Bộ lọc thời gian phiên (tránh 11-14h VN), không phải quy tắc vào/thoát lệnh độc lập."
     },
     {
       "id": "SEA010",
@@ -421,10 +543,13 @@
       "ho": "Giờ giấc & mùa vụ",
       "khung_thoi_gian": "H1",
       "trang_thai": "chua_kiem_dinh",
-      "verdict_goc": "CHƯA KIỂM ĐỊNH",
+      "verdict_goc": "CHUA_KIEM_DINH",
       "xep_hang": 280,
       "goc_tham_chieu": null,
-      "ly_do_thieu_file_json": "Cần lịch ngày họp FOMC chính xác 20 năm — không suy được từ quy tắc lịch, đoán bừa sẽ làm sai kết quả. Sẽ bổ sung khi có lịch chuẩn."
+      "merge_relation": null,
+      "unverified_category": "MISSING_AUXILIARY_DATA",
+      "data_quality_flags": [],
+      "ly_do_thieu_file_json": "Thiếu dữ liệu chu kỳ các kỳ họp FOMC của Fed."
     },
     {
       "id": "SEA018",
@@ -432,10 +557,13 @@
       "ho": "Giờ giấc & mùa vụ",
       "khung_thoi_gian": "D1",
       "trang_thai": "chua_kiem_dinh",
-      "verdict_goc": "CHƯA KIỂM ĐỊNH",
+      "verdict_goc": "CHUA_KIEM_DINH",
       "xep_hang": 281,
       "goc_tham_chieu": null,
-      "ly_do_thieu_file_json": "Cửa sổ rollover là BỘ LỌC tránh nhiễu, không phải chiến lược vào lệnh độc lập."
+      "merge_relation": null,
+      "unverified_category": "MISSING_AUXILIARY_DATA",
+      "data_quality_flags": [],
+      "ly_do_thieu_file_json": "Thiếu dữ liệu lịch đáo hạn và chuyển kỳ hợp đồng tương lai vàng (Gold Futures Rollover)."
     },
     {
       "id": "SEA019",
@@ -446,6 +574,9 @@
       "verdict_goc": "CHÁT",
       "xep_hang": 282,
       "goc_tham_chieu": "SEA006",
+      "merge_relation": "DUPLICATE_EXACT",
+      "unverified_category": null,
+      "data_quality_flags": [],
       "ly_do_thieu_file_json": "Cùng quy tắc/bản đối xứng của SEA006 (Giờ vàng London mở (14-16h VN hè)) — xem báo cáo gốc."
     },
     {
@@ -454,10 +585,13 @@
       "ho": "Giờ giấc & mùa vụ",
       "khung_thoi_gian": "H4",
       "trang_thai": "chua_kiem_dinh",
-      "verdict_goc": "CHƯA KIỂM ĐỊNH",
+      "verdict_goc": "CHUA_KIEM_DINH",
       "xep_hang": 283,
       "goc_tham_chieu": null,
-      "ly_do_thieu_file_json": "Cần lịch FOMC chính xác — như SEA010."
+      "merge_relation": null,
+      "unverified_category": "MISSING_AUXILIARY_DATA",
+      "data_quality_flags": [],
+      "ly_do_thieu_file_json": "Thiếu lịch kinh tế Fed rate decision và họp báo FOMC."
     },
     {
       "id": "SEA026",
@@ -465,10 +599,13 @@
       "ho": "Giờ giấc & mùa vụ",
       "khung_thoi_gian": "M15",
       "trang_thai": "chua_kiem_dinh",
-      "verdict_goc": "CHƯA KIỂM ĐỊNH",
+      "verdict_goc": "CHUA_KIEM_DINH",
       "xep_hang": 284,
       "goc_tham_chieu": null,
-      "ly_do_thieu_file_json": "Cần lịch ngày công bố CPI chính xác — không suy được từ quy tắc lịch."
+      "merge_relation": null,
+      "unverified_category": "MISSING_AUXILIARY_DATA",
+      "data_quality_flags": [],
+      "ly_do_thieu_file_json": "Thiếu dữ liệu lịch công bố chỉ số CPI Hoa Kỳ."
     },
     {
       "id": "SEA027",
@@ -476,10 +613,13 @@
       "ho": "Giờ giấc & mùa vụ",
       "khung_thoi_gian": "M15",
       "trang_thai": "chua_kiem_dinh",
-      "verdict_goc": "CHƯA KIỂM ĐỊNH",
+      "verdict_goc": "CHUA_KIEM_DINH",
       "xep_hang": 285,
       "goc_tham_chieu": null,
-      "ly_do_thieu_file_json": "Đây là BỘ LỌC giờ (0-5h VN thanh khoản mỏng), không phải chiến lược độc lập."
+      "merge_relation": null,
+      "unverified_category": "NOT_A_STANDALONE_STRATEGY",
+      "data_quality_flags": [],
+      "ly_do_thieu_file_json": "Bộ lọc phiên nghỉ giao dịch ban đêm (0-5h sáng VN), không phải chiến lược độc lập."
     },
     {
       "id": "SEA030",
@@ -487,10 +627,13 @@
       "ho": "Giờ giấc & mùa vụ",
       "khung_thoi_gian": "H1",
       "trang_thai": "chua_kiem_dinh",
-      "verdict_goc": "CHƯA KIỂM ĐỊNH",
+      "verdict_goc": "CHUA_KIEM_DINH",
       "xep_hang": 286,
       "goc_tham_chieu": null,
-      "ly_do_thieu_file_json": "Cần lịch sự kiện cuối tuần (bầu cử, địa chính trị) — không máy hoá được."
+      "merge_relation": null,
+      "unverified_category": "MISSING_AUXILIARY_DATA",
+      "data_quality_flags": [],
+      "ly_do_thieu_file_json": "Thiếu dữ liệu tin tức cuối tuần (địa chính trị, sự kiện vĩ mô)."
     },
     {
       "id": "VIR006",
@@ -501,6 +644,9 @@
       "verdict_goc": "CHÁT",
       "xep_hang": 287,
       "goc_tham_chieu": "VIR005",
+      "merge_relation": "RELATED_VARIANT",
+      "unverified_category": null,
+      "data_quality_flags": [],
       "ly_do_thieu_file_json": "Cùng quy tắc/bản đối xứng của VIR005 (Order block bullish) — xem báo cáo gốc."
     },
     {
@@ -512,6 +658,9 @@
       "verdict_goc": "CHÁT",
       "xep_hang": 288,
       "goc_tham_chieu": "VIR008",
+      "merge_relation": "RELATED_VARIANT",
+      "unverified_category": null,
+      "data_quality_flags": [],
       "ly_do_thieu_file_json": "Cùng quy tắc/bản đối xứng của VIR008 (Liquidity sweep đáy cũ rồi đảo) — xem báo cáo gốc."
     },
     {
@@ -520,10 +669,13 @@
       "ho": "Viral & SMC/ICT",
       "khung_thoi_gian": "M15",
       "trang_thai": "chua_kiem_dinh",
-      "verdict_goc": "CHƯA KIỂM ĐỊNH",
+      "verdict_goc": "CHUA_KIEM_DINH",
       "xep_hang": 289,
       "goc_tham_chieu": null,
-      "ly_do_thieu_file_json": "Kill zone là BỘ LỌC giờ, không phải chiến lược vào lệnh độc lập — đã dùng làm thành phần trong VIR001/002."
+      "merge_relation": null,
+      "unverified_category": "NOT_A_STANDALONE_STRATEGY",
+      "data_quality_flags": [],
+      "ly_do_thieu_file_json": "Quy tắc lọc khung giờ ICT Kill Zones, là bộ lọc phiên cần kết hợp mô hình kích hoạt."
     },
     {
       "id": "VIR020",
@@ -534,6 +686,9 @@
       "verdict_goc": "CHÁT",
       "xep_hang": 290,
       "goc_tham_chieu": "VIR019",
+      "merge_relation": "RELATED_VARIANT",
+      "unverified_category": null,
+      "data_quality_flags": [],
       "ly_do_thieu_file_json": "Cùng quy tắc/bản đối xứng của VIR019 (CRT — Candle Range Theory) — xem báo cáo gốc."
     },
     {
@@ -542,10 +697,13 @@
       "ho": "Viral & SMC/ICT",
       "khung_thoi_gian": "H1",
       "trang_thai": "chua_kiem_dinh",
-      "verdict_goc": "CHƯA KIỂM ĐỊNH",
+      "verdict_goc": "CHUA_KIEM_DINH",
       "xep_hang": 291,
       "goc_tham_chieu": null,
-      "ly_do_thieu_file_json": "Cần dữ liệu DXY/bạc đồng bộ để đo phân kỳ liên thị trường — data lake hiện chỉ có XAUUSD."
+      "merge_relation": null,
+      "unverified_category": "MISSING_AUXILIARY_DATA",
+      "data_quality_flags": [],
+      "ly_do_thieu_file_json": "Thiếu dữ liệu chuỗi giá liên thị trường (Chỉ số DXY và Bạc XAGUSD)."
     },
     {
       "id": "VIR023",
@@ -553,10 +711,13 @@
       "ho": "Viral & SMC/ICT",
       "khung_thoi_gian": "H1",
       "trang_thai": "chua_kiem_dinh",
-      "verdict_goc": "CHƯA KIỂM ĐỊNH",
+      "verdict_goc": "CHUA_KIEM_DINH",
       "xep_hang": 292,
       "goc_tham_chieu": null,
-      "ly_do_thieu_file_json": "5-3-1 là framework luyện tập (5 cặp, 3 chiến lược, 1 giờ) — không phải quy tắc vào lệnh cụ thể để kiểm định."
+      "merge_relation": null,
+      "unverified_category": "NOT_A_STANDALONE_STRATEGY",
+      "data_quality_flags": [],
+      "ly_do_thieu_file_json": "Framework quản trị thói quen giao dịch 5-3-1, không phải thuật toán định lượng."
     },
     {
       "id": "VIR025",
@@ -567,6 +728,9 @@
       "verdict_goc": "TÌNH HUỐNG",
       "xep_hang": 293,
       "goc_tham_chieu": "VIR024",
+      "merge_relation": "RELATED_VARIANT",
+      "unverified_category": null,
+      "data_quality_flags": [],
       "ly_do_thieu_file_json": "Cùng quy tắc/bản đối xứng của VIR024 (3 Line Strike (bull)) — xem báo cáo gốc."
     },
     {
@@ -575,10 +739,13 @@
       "ho": "Viral & SMC/ICT",
       "khung_thoi_gian": "H1",
       "trang_thai": "chua_kiem_dinh",
-      "verdict_goc": "CHƯA KIỂM ĐỊNH",
+      "verdict_goc": "CHUA_KIEM_DINH",
       "xep_hang": 294,
       "goc_tham_chieu": null,
-      "ly_do_thieu_file_json": "Chỉ báo KAMA đặc thù của chiến lược Bali chưa được triển khai — bổ sung sau."
+      "merge_relation": null,
+      "unverified_category": "DISCRETIONARY_NOT_FORMALIZED",
+      "data_quality_flags": [],
+      "ly_do_thieu_file_json": "Chiến lược kết hợp KAMA + Bollinger Bands cảm tính, chưa được tối ưu hóa tham số."
     },
     {
       "id": "VIR032",
@@ -589,6 +756,9 @@
       "verdict_goc": "TÌNH HUỐNG",
       "xep_hang": 295,
       "goc_tham_chieu": "SEA023",
+      "merge_relation": "DUPLICATE_EXACT",
+      "unverified_category": null,
+      "data_quality_flags": [],
       "ly_do_thieu_file_json": "Cùng quy tắc/bản đối xứng của SEA023 (Chuỗi 3 ngày cùng hướng — ngày 4 đảo) — xem báo cáo gốc."
     },
     {
@@ -600,6 +770,9 @@
       "verdict_goc": "CHÁT",
       "xep_hang": 296,
       "goc_tham_chieu": "VIR033",
+      "merge_relation": "RELATED_VARIANT",
+      "unverified_category": null,
+      "data_quality_flags": [],
       "ly_do_thieu_file_json": "Cùng quy tắc/bản đối xứng của VIR033 (Wyckoff Spring viral) — xem báo cáo gốc."
     },
     {
@@ -611,6 +784,9 @@
       "verdict_goc": "CHÁT",
       "xep_hang": 297,
       "goc_tham_chieu": "VIR038",
+      "merge_relation": "RELATED_VARIANT",
+      "unverified_category": null,
+      "data_quality_flags": [],
       "ly_do_thieu_file_json": "Cùng quy tắc/bản đối xứng của VIR038 (Fib extension 1.272 chốt — vào 0.786) — xem báo cáo gốc."
     },
     {
@@ -622,6 +798,9 @@
       "verdict_goc": "CHÁT",
       "xep_hang": 298,
       "goc_tham_chieu": "BRK032",
+      "merge_relation": "RELATED_VARIANT",
+      "unverified_category": null,
+      "data_quality_flags": [],
       "ly_do_thieu_file_json": "Cùng quy tắc/bản đối xứng của BRK032 (Mốc số tròn (00) breakout) — xem báo cáo gốc."
     },
     {
@@ -633,6 +812,9 @@
       "verdict_goc": "CHÁT",
       "xep_hang": 299,
       "goc_tham_chieu": "VIR014",
+      "merge_relation": "DUPLICATE_EXACT",
+      "unverified_category": null,
+      "data_quality_flags": [],
       "ly_do_thieu_file_json": "Cùng quy tắc/bản đối xứng của VIR014 (ICT Judas Swing) — xem báo cáo gốc."
     },
     {
@@ -644,6 +826,9 @@
       "verdict_goc": "CHÁT",
       "xep_hang": 300,
       "goc_tham_chieu": "VIR007",
+      "merge_relation": "DUPLICATE_EXACT",
+      "unverified_category": null,
+      "data_quality_flags": [],
       "ly_do_thieu_file_json": "Cùng quy tắc/bản đối xứng của VIR007 (Breaker block) — xem báo cáo gốc."
     }
   ]

@@ -21,7 +21,7 @@
 | 9 | **NEN006** | Inside bar thuận trend D1 | Mẫu nến | `D1` | Both | `PARTIAL_CONCEPT_ONLY` | 102 / 30.4% (`9/15`) | 30 / 33.3% (`3/5`) | 15 / 60% (`3/3`) | **giữ vững** |
 | 10 | **NEN022** | Nến phá vỡ giả (fakey) | Mẫu nến | `H4` | Both (Hai chiều) | `PARTIAL_CONCEPT_ONLY` | 290 / 29.3% (`8/15`) | 127 / 29.9% (`3/5`) | 58 / 31% (`2/3`) | **giữ vững** |
 | 11 | **SEA003** | Turn-of-month vàng | Giờ giấc & mùa vụ | `D1` | Long | `REPLICABLE_FROM_PUBLIC` | 99 / 36.4% (`11/15`) | 36 / 33.3% (`4/5`) | 13 / 53.8% (`2/3`) | **giữ vững** |
-| 12 | **SEA004** | Hiệu ứng đầu quý | Giờ giấc & mùa vụ | `D1` | Both (Mua/Bán theo quý) | `REPLICABLE_FROM_PUBLIC` | 53 / 35.8% (`7/15`) | 15 / 46.7% (`4/5`) | 9 / 66.7% (`3/3`) | **giữ vững** |
+| 12 | **SEA004** | Hiệu ứng đầu quý | Giờ giấc & mùa vụ | `D1` | Both (Thiếu quy tắc chọn chiều) | `PARTIAL_RULE_SPEC` | 53 / 35.8% (`7/15`) | 15 / 46.7% (`4/5`) | 9 / 66.7% (`3/3`) | **giữ vững** |
 | 13 | **SEA011** | Thứ Ba đảo chiều (turnaround Tuesday) | Giờ giấc & mùa vụ | `D1` | Long | `PARTIAL_CONCEPT_ONLY` | 116 / 34.5% (`9/15`) | 42 / 33.3% (`3/5`) | 10 / 70% (`2/3`) | **giữ vững** |
 | 14 | **SEA021** | Thứ Hai sau NFP xấu — hồi | Giờ giấc & mùa vụ | `H1` | Long | `PARTIAL_CONCEPT_ONLY` | 74 / 37.8% (`10/14`) | 24 / 41.7% (`3/5`) | 14 / 57.1% (`2/3`) | **giữ vững** |
 | 15 | **VIR040** | Head & Shoulders phá neckline | Viral & SMC/ICT | `H4` | Both (Theo breakout) | `PARTIAL_CONCEPT_ONLY` | 221 / 35.7% (`14/15`) | 100 / 32% (`4/5`) | 37 / 29.7% (`2/3`) | **giữ vững** |
@@ -488,7 +488,7 @@
 
 #### Đánh Giá Khả Năng Tái Dựng (Replicability Verdict):
 - **Phân loại:** `REPLICABLE_FROM_PUBLIC`
-- **Nhận định kỹ thuật:** Quy tắc mở/đóng vị thế dựa trên lịch cố định (calendar drift) hoàn toàn xác định, không cần chỉ báo hay tham số ẩn.
+- **Nhận định kỹ thuật:** Quy tắc mở/đóng vị thế dựa trên lịch cố định (Turn-of-month mua ngày cuối tháng trước, giữ 4 ngày đầu tháng sau) hoàn toàn xác định.
 - **Yếu tố còn thiếu để code 100%:** Có thể code và backtest độc lập ngay lập tức dựa trên lịch nến D1 của sàn giao dịch.
 
 ---
@@ -496,8 +496,8 @@
 - **Họ chiến lược:** Giờ giấc & mùa vụ
 - **Nguồn gốc:** Seasonality
 - **Khung thời gian (Timeframe):** `D1`
-- **Chiều giao dịch:** Both (Mua/Bán theo quý)
-- **Thời gian giữ lệnh ước tính:** 3 phiên D1 (3 ngày)
+- **Chiều giao dịch:** Both (Thiếu quy tắc chọn chiều)
+- **Thời gian giữ lệnh ước tính:** 3 phiên D1 (3 ngày đầu quý)
 - **Xếp hạng tổng thể trong thư viện:** #6
 - **Độ tin cậy mẫu:** thấp (n mỏng)
 
@@ -529,9 +529,9 @@
    - Chi tiết từng năm: {"2024":true,"2025":true,"2026":true}
 
 #### Đánh Giá Khả Năng Tái Dựng (Replicability Verdict):
-- **Phân loại:** `REPLICABLE_FROM_PUBLIC`
-- **Nhận định kỹ thuật:** Quy tắc mở/đóng vị thế dựa trên lịch cố định (calendar drift) hoàn toàn xác định, không cần chỉ báo hay tham số ẩn.
-- **Yếu tố còn thiếu để code 100%:** Có thể code và backtest độc lập ngay lập tức dựa trên lịch nến D1 của sàn giao dịch.
+- **Phân loại:** `PARTIAL_RULE_SPEC`
+- **Nhận định kỹ thuật:** Quy tắc thời điểm cố định (3 ngày đầu quý), nhưng thiếu đặc tả quy tắc thuật toán chọn chiều Mua hay Bán trong dữ liệu công khai.
+- **Yếu tố còn thiếu để code 100%:** Cần xác định chính xác công thức cắt lỗ (ATR multiplier hay swing high/low), tỷ lệ R:R chốt lời cố định và điều kiện thoát lệnh khẩn cấp (time stop).
 
 ---
 ### 13. [SEA011] Thứ Ba đảo chiều (turnaround Tuesday)

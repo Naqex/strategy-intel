@@ -49,6 +49,15 @@ Mọi kết quả kiểm chứng **bắt buộc phải trừ chi phí ma sát th
 3. **Trượt giá thực thi (Slippage):** Mô phỏng trượt giá thực tế dựa trên độ sâu sổ lệnh giới hạn (Limit Order Book) và mất cân bằng dòng lệnh (OFI), đặc biệt trong các khung giờ thanh khoản mỏng hoặc tin tức mạnh.
 4. **Phí qua đêm (Swap / Overnight Financing):** Hệ thống kiểm định KHÔNG tính phí swap qua đêm thả nổi (không áp dụng bảng swap thả nổi hay triple-swap thứ Tư); chi phí ma sát được chuẩn hóa qua hoa hồng cố định 0,02%/chiều và spread tối thiểu 30 points.
 
+> [!WARNING] AUDIT_WARNING: MÂU THUẪN TOÁN HỌC TRONG MÔ HÌNH PHÍ HOA HỒNG (COMMISSION MATH CONTRADICTION)
+> Báo cáo của tác giả ghi: *"Phí hoa hồng (Commission): Mặc định tính 0,02% mỗi chiều (tương đương $7 / standard lot hai chiều vào-ra)"*.
+> **Phát hiện kiểm toán độc lập:**
+> - Hợp đồng tiêu chuẩn (Standard Lot) của Vàng giao ngay (XAUUSD) có quy mô 100 troy ounces.
+> - Tại mức giá vàng thời điểm hiện tại (~$2.650/oz), giá trị danh nghĩa 1 lot = 100 oz × $2.650 = $265.000.
+> - Mức phí 0,02%/chiều tương ứng: $265.000 × 0,0002 = **$53/chiều**, tức **$106/lot hai chiều khứ hồi** (Roundturn).
+> - Con số $106/lot chênh lệch gấp **15,1 lần** so với con số "$7 / standard lot" được tác giả công bố kèm theo. Mức phí $7/lot thực tế chỉ tương đương **0,00132%/chiều** (hoặc chỉ đạt 0,02% nếu giá vàng ở mức $175/oz cách đây 30 năm).
+> - Toàn bộ kết quả kiểm định cần được đọc với lưu ý về sự không nhất quán giữa công thức phần trăm danh nghĩa và chi phí đô-la thực tế này.
+
 ### 1.3. Phân Đoạn Dữ Liệu Huấn Luyện & Chấm Thi Độc Lập (In-Sample / Out-of-Sample Split)
 Toàn bộ 22 năm dữ liệu được phân chia nghiêm ngặt thành 3 giai đoạn độc lập:
 - **Giai đoạn In-Sample (Ôn bài / Tối ưu tham số):** Từ **2004 đến 2018 (15 năm)**. Đây là khoảng dữ liệu duy nhất mà người thiết kế được phép nhìn để tối ưu bộ quy tắc và tham số.

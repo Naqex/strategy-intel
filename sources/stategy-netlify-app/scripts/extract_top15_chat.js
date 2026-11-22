@@ -61,12 +61,21 @@ function evaluateReplicability(item) {
   const id = item.spec.id;
   const moTa = item.spec.mo_ta || '';
   
-  if (id === 'SEA003' || id === 'SEA004') {
+  if (id === 'SEA003') {
     return {
       status: 'REPLICABLE_FROM_PUBLIC',
-      direction: id === 'SEA003' ? 'Long' : 'Both (Mua/Bán theo quý)',
-      holdTime: id === 'SEA003' ? '5 phiên D1 (~1 tuần)' : '3 phiên D1 (3 ngày)',
-      reason: 'Quy tắc mở/đóng vị thế dựa trên lịch cố định (calendar drift) hoàn toàn xác định, không cần chỉ báo hay tham số ẩn.'
+      direction: 'Long',
+      holdTime: '5 phiên D1 (~1 tuần)',
+      reason: 'Quy tắc mở/đóng vị thế dựa trên lịch cố định (Turn-of-month mua ngày cuối tháng trước, giữ 4 ngày đầu tháng sau) hoàn toàn xác định.'
+    };
+  }
+
+  if (id === 'SEA004') {
+    return {
+      status: 'PARTIAL_RULE_SPEC',
+      direction: 'Both (Thiếu quy tắc chọn chiều)',
+      holdTime: '3 phiên D1 (3 ngày đầu quý)',
+      reason: 'Quy tắc thời điểm cố định (3 ngày đầu quý), nhưng thiếu đặc tả quy tắc thuật toán chọn chiều Mua hay Bán trong dữ liệu công khai.'
     };
   }
   
