@@ -28,6 +28,8 @@ def check_hygiene():
             continue
         if rel_dir == 'node_modules' or rel_dir.startswith('node_modules/'):
             continue
+        if '__pycache__' in rel_dir or rel_dir.startswith('__pycache__'):
+            continue
 
         for f in filenames:
             ext = os.path.splitext(f)[1].lower()

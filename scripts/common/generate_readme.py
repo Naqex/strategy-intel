@@ -41,6 +41,10 @@ def generate_readme():
     with open(anomalies_path, "r", encoding="utf-8") as f:
         anomalies_data = json.load(f)
 
+    missing_58_path = os.path.join(repo_root, "sources", "stategy-netlify-app", "extracted", "07_missing_58_items.json")
+    with open(missing_58_path, "r", encoding="utf-8") as f:
+        missing_58_data = json.load(f)
+
     # Compute statistics
     total_leads = len(leads)
     leads_passes_all_5_true = sum(1 for l in leads if l.get("passes_all_5") is True)
@@ -59,11 +63,24 @@ def generate_readme():
     total_rejected = len(rejected_items)
 
     total_indicator_ref = len(indicators)
-    num_year_mismatches = anomalies_data.get("summary", {}).get("total_year_mismatches", 0)
-    num_missing_year_sets = anomalies_data.get("summary", {}).get("total_missing_year_sets", 0)
+
+    # Read exactly root keys from source_anomalies.json
+    num_year_mismatches = anomalies_data.get("mismatches_years_pos_count", 0)
+    num_missing_year_sets = anomalies_data.get("missing_years_in_nam_duong_count", 0)
+
+    # Breakdown for 40 merged items
+    phan_loai_gop = missing_58_data.get("phan_loai_thieu", {}).get("phan_loai_gop", {})
+    count_dup = phan_loai_gop.get("DUPLICATE_EXACT", 0)
+    count_rel = phan_loai_gop.get("RELATED_VARIANT", 0)
+    count_unt = phan_loai_gop.get("UNTESTED_VARIANT", 0)
+
+    # Dynamic lookup of REV029 parent reference
+    rev029_item = next((i for i in missing_58_data.get("danh_sach_chi_tiet_58_muc", []) if i.get("id") == "REV029"), {})
+    rev029_parent = rev029_item.get("goc_tham_chieu", "SEA003")
 
     # Files to hash
     files_to_hash = [
+        ("Nguồn 1", "sources/stategy-netlify-app/raw_manifest.sha256.json"),
         ("Nguồn 1", "sources/stategy-netlify-app/extracted/01_methodology_and_reports.md"),
         ("Nguồn 1", "sources/stategy-netlify-app/extracted/02_library_242_summary.csv"),
         ("Nguồn 1", "sources/stategy-netlify-app/extracted/02_library_242_summary.json"),
@@ -73,6 +90,7 @@ def generate_readme():
         ("Nguồn 1", "sources/stategy-netlify-app/extracted/06_technical_methods_and_code.md"),
         ("Nguồn 1", "sources/stategy-netlify-app/extracted/07_missing_58_items.json"),
         ("Nguồn 1", "sources/stategy-netlify-app/extracted/source_anomalies.json"),
+        ("Nguồn 2", "sources/ea-directory-2026/raw_manifest.sha256.json"),
         ("Nguồn 2", "sources/ea-directory-2026/extracted/01_ea_catalog.csv"),
         ("Nguồn 2", "sources/ea-directory-2026/extracted/01_ea_catalog.json"),
         ("Catalog", "catalog/indicator_reference.json"),
@@ -154,6 +172,7 @@ d:/ANNAM/strategy-intel/
 ├── sources/
 │   ├── stategy-netlify-app/               # NGUỒN 1: Báo cáo kiểm định 242 chiến lược Vàng 22 năm
 │   │   ├── raw/                           # JSON reports (242 file), vault_data.json, index, assets JS
+│   │   ├── raw_manifest.sha256.json       # SHA-256 bất biến của 283 tệp raw nguồn 1
 │   │   ├── extracted/                     # Báo cáo & bảng biểu chuẩn hóa
 │   │   │   ├── 01_methodology_and_reports.md
 │   │   │   ├── 02_library_242_summary.csv / .json
@@ -166,6 +185,7 @@ d:/ANNAM/strategy-intel/
 │   │   └── scripts/                       # Script Node.js tái lập quy trình 100%
 │   └── ea-directory-2026/                 # NGUỒN 2: Thư mục xếp hạng EA quốc tế (eafree.net - 45 tệp mẫu)
 │       ├── raw/                           # HTML ranking pages, sitemap.xml, 45 detail pages
+│       ├── raw_manifest.sha256.json       # SHA-256 bất biến của 48 tệp raw nguồn 2
 │       ├── extracted/                     # Danh mục trích xuất ({ea_count} EAs, {indicator_count} Indicators, {utility_count} Utilities)
 │       │   ├── 01_ea_catalog.csv
 │       │   └── 01_ea_catalog.json
@@ -192,7 +212,7 @@ Mọi tệp tin trong `extracted/`, `catalog/` và `handoff/` được kiểm ch
 ### Nguồn 1: `stategy.netlify.app` (242 Báo Cáo Kiểm Định Vàng 22 Năm)
 1. **Chênh lệch 300 vs 242:**
    - **242 chiến lược** kiểm định tự động đầy đủ bằng máy (`reports_json/`).
-   - **40 hồ sơ gộp** biến thể đối xứng (`trang_thai: "gop"`): 6 bản sao hoàn toàn (`DUPLICATE_EXACT`), 27 biến thể liên quan (`RELATED_VARIANT`), 7 biến thể chưa kiểm tra (`UNTESTED_VARIANT`). Riêng `REV029` là biến thể ngược chiều mua của `REV028` (CHẤT) nhưng không được kiểm định độc lập, gắn cờ `CHUA_KIEM_DINH_BIEN_THE_NGUOC`.
+   - **40 hồ sơ gộp** biến thể đối xứng (`trang_thai: "gop"`): {count_dup} bản sao hoàn toàn (`DUPLICATE_EXACT`), {count_rel} biến thể liên quan (`RELATED_VARIANT`), {count_unt} biến thể chưa kiểm tra (`UNTESTED_VARIANT`). Riêng `REV029` là biến thể bán ngược chiều của `{rev029_parent}` (Turn-of-month vàng) nhưng bản thân chưa được kiểm định độc lập, gắn cờ `UNTESTED_REVERSE_VARIANT_CANNOT_INHERIT_CHAT`.
    - **18 hồ sơ chưa kiểm định** (`trang_thai: "chua_kiem_dinh"`): 9 mục thiếu dữ liệu ngoại vi (`MISSING_AUXILIARY_DATA` - FOMC, CPI, DXY, Bạc), 4 mục không phải chiến lược độc lập (`NOT_A_STANDALONE_STRATEGY` - bộ lọc phiên, 5-3-1), 5 mục quy tắc cảm tính vẽ tay (`DISCRETIONARY_NOT_FORMALIZED`).
 2. **Khả năng tái dựng 15 chiến lược "CHẤT" (`master_leads.json`):**
    - **Mức bằng chứng:** `evidence_tier: "SOURCE_CLAIM_ONLY"` (tác giả tự công bố, chưa có kiểm định độc lập nội bộ).
@@ -224,7 +244,7 @@ Mọi tệp tin trong `extracted/`, `catalog/` và `handoff/` được kiểm ch
 2. **Minh bạch tài khoản Live Real:**
    - 44/45 hồ sơ hoàn toàn KHÔNG có link theo dõi tài khoản thật của bên thứ ba.
    - Duy nhất 1 hồ sơ cung cấp link Myfxbook nhưng là tài khoản **Demo**, không phải tài khoản Real có nạp tiền thực tế.
-   - Toàn bộ kết quả backtest trên trang là MT5 zero-slippage do nhà bán lẻ tự quảng cáo.
+   - Backtest vendor trên mẫu 45 EAFree gồm cả MetaTrader 4 và MetaTrader 5 (ví dụ Sunan Giri chạy MT4 Strategy Tester lịch sử demo 90%), chưa chứng minh đủ chi phí spread biến động/slippage/swap và không được dùng làm bằng chứng hiệu suất.
 3. **Kiểm chứng hồi quy 3 Fixture đại diện:**
 
 | EA Fixture Slug | Vendor Risk Label | Pricing / Points | Grid/Martingale | Live Real Verified | Kết Luận Kiểm Toán |

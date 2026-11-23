@@ -16,9 +16,10 @@ class EACatalogItem(BaseModel):
     site_score: Optional[float] = Field(None, description="Điểm đánh giá từ người dùng hoặc NOT_DISCLOSED (null)")
     vendor_risk_label: str = Field(..., description="Mức rủi ro gắn nhãn từ vendor (Low / Medium / High / NOT_DISCLOSED)")
     claimed_strategy_type: str = Field(..., description="Trường phái chiến lược công bố")
-    strategy_replicability: str = Field(..., description="Khả năng tái dựng logic: REPLICABLE_RULE_SET | PARTIAL_CONCEPT_COMMERCIAL | BLACKBOX_COMMERCIAL")
+    strategy_replicability: str = Field(..., description="Khả năng tái dựng logic: REPLICABLE_RULE_SET | CONCEPT_DISCLOSED_UNVERIFIED | PARTIAL_CONCEPT_COMMERCIAL | BLACKBOX_COMMERCIAL")
     vendor_live_claim: bool = Field(..., description="Vendor có tuyên bố giao dịch tài khoản thật trong bài viết hay không")
-    third_party_verified_real: bool = Field(..., description="Có xác thực tài khoản thật từ bên thứ 3 (Myfxbook/MQL5 Real, không tính Demo)")
+    third_party_verified_real: bool = Field(False, description="Có xác thực tài khoản thật từ bên thứ 3 (Luôn False ở tầng cào tự động)")
+    live_proof_verification_status: str = Field(..., description="Trạng thái xác thực link live: NO_LIVE_LINK | DEMO_URL_DETECTED | UNVERIFIED_EXTERNAL_URL")
     has_grid_or_martingale_signals: bool = Field(..., description="Có tín hiệu dùng Grid hoặc Martingale hay không")
     is_hft_or_hedging_blackbox: bool = Field(..., description="Cảnh báo HFT / Hedging / Arbitrage / Hộp đen không công bố logic")
     money_management_flags: List[str] = Field(..., description="Các cờ quản lý vốn: GRID | MARTINGALE | HEDGING | FIXED_RISK_HARD_SL | NOT_DISCLOSED")
@@ -98,45 +99,45 @@ def extract_ea_from_html(filepath: str) -> EACatalogItem:
         asset_type = 'EA'
 
     # Platform (parse accurately from MT4 / MT5 tags)
-    platform = "NOT_DISCLOSED"
-    op_sys = app_data.get('operatingSystem', '').upper()
-    if "MT5" in name.upper() or "MT5" in slug.upper():
-        platform = "MT5"
-    elif "MT4" in name.upper() or "MT4" in slug.upper():
-        platform = "MT4"
-    elif "MT5" in op_sys and "MT4" in op_sys:
+    platform_match = re.search(r'\b(MT4|MT5|MetaTrader 4|MetaTrader 5)\b', title_str + ' ' + full_text[:500], re.IGNORECASE)
+    has_mt4 = bool(re.search(r'\b(MT4|MetaTrader 4)\b', title_str + ' ' + full_text[:500], re.IGNORECASE))
+    has_mt5 = bool(re.search(r'\b(MT5|MetaTrader 5)\b', title_str + ' ' + full_text[:500], re.IGNORECASE))
+    if has_mt4 and has_mt5:
         platform = "MT4/MT5"
-    elif "MT5" in op_sys:
-        platform = "MT5"
-    elif "MT4" in op_sys:
+    elif has_mt4:
         platform = "MT4"
+    elif has_mt5:
+        platform = "MT5"
+    else:
+        platform = "NOT_DISCLOSED"
 
     # Pricing
-    pricing = extract_pricing(html, soup)
-
-    # Site score
-    site_score = None
-    rating_val = app_data.get('aggregateRating', {}).get('ratingValue')
-    if rating_val:
-        try:
-            site_score = round(float(rating_val), 2)
-        except Exception:
-            pass
+    pricing = extract_pricing(full_text, soup)
 
     # Vendor Risk Label
     vendor_risk = extract_vendor_risk(soup)
 
-    # Claimed Strategy Type
-    if asset_type == 'UTILITY':
-        claimed_type = "Utility"
-    elif asset_type == 'INDICATOR':
-        claimed_type = "Indicator"
-    elif "breakout" in text_lower:
+    # Site score
+    site_score = None
+    if app_data.get('aggregateRating'):
+        try:
+            site_score = float(app_data['aggregateRating'].get('ratingValue'))
+        except (ValueError, TypeError):
+            pass
+    if site_score is None:
+        score_m = re.search(r'([0-5]\.[0-9]+)\s*out of 5', full_text)
+        if score_m:
+            site_score = float(score_m.group(1))
+
+    # Strategy Type
+    if "trend" in text_lower or "trend following" in text_lower:
+        claimed_type = "Trend-Following"
+    elif "breakout" in text_lower or "asian range" in text_lower or "london" in text_lower:
         claimed_type = "Breakout"
-    elif "scalp" in text_lower:
+    elif "scalping" in text_lower or "scalper" in text_lower:
         claimed_type = "Scalping"
-    elif "trend" in text_lower:
-        claimed_type = "Trend"
+    elif "smc" in text_lower or "ict" in text_lower or "smart money" in text_lower:
+        claimed_type = "SMC/ICT"
     elif "mean-reversion" in text_lower or "reversion" in text_lower:
         claimed_type = "Mean-Reversion"
     elif "grid trading" in text_lower or "martingale" in text_lower or "hedging recovery" in text_lower:
@@ -146,15 +147,23 @@ def extract_ea_from_html(filepath: str) -> EACatalogItem:
 
     # Verified live links (Myfxbook, MQL5 signals)
     verified_links = []
-    third_party_verified_real = False
+    has_demo_url = False
     for a in soup.find_all('a', href=True):
         href = a['href']
         h_lower = href.lower()
         if 'myfxbook.com' in h_lower or 'mql5.com/en/signals' in h_lower or 'mql5.com/signals' in h_lower:
             verified_links.append(href)
-            # Only count as real if NOT a demo account
-            if 'demo' not in h_lower:
-                third_party_verified_real = True
+            if 'demo' in h_lower:
+                has_demo_url = True
+
+    # At crawling layer, ALWAYS set third_party_verified_real = False
+    third_party_verified_real = False
+    if not verified_links:
+        live_proof_verification_status = "NO_LIVE_LINK"
+    elif has_demo_url:
+        live_proof_verification_status = "DEMO_URL_DETECTED"
+    else:
+        live_proof_verification_status = "UNVERIFIED_EXTERNAL_URL"
 
     # Vendor live claim (marketing text claims)
     vendor_live_claim = bool(re.search(r'\b(live account|live trading|live testing|real money|live results)\b', text_lower))
@@ -202,18 +211,19 @@ def extract_ea_from_html(filepath: str) -> EACatalogItem:
     if not mm_flags:
         mm_flags = ['NOT_DISCLOSED']
 
-    # Strategy Replicability & Blackbox Flag
-    # Check if logic is disclosed (e.g. ghost-ai discloses SMA 10/50, 1% risk, 1:2 RR)
-    has_disclosed_indicators = bool(re.search(r'\b(sma\s*10|ema|rsi|macd|bollinger|stochastic|moving average crossover)\b', text_lower))
-    
+    # Strategy Replicability & Blackbox Flag (generalized text extraction)
+    has_disclosed_indicators = bool(re.search(r'\b(sma\s*\d+|ema\s*\d+|rsi|macd|bollinger|stochastic|moving average crossover)\b', text_lower))
+    has_disclosed_risk_rr = bool(re.search(r'\b(\d+%\s*risk|1:\d+\s*rr|risk-to-reward|fixed risk)\b', text_lower))
+    has_entry_rule = bool(re.search(r'\b(crossover|crosses|breakout|pullback|divergence)\b', text_lower))
+
     if asset_type == 'INDICATOR':
         strategy_replicability = "REPLICABLE_RULE_SET"
         is_hft_hedging_blackbox = False
     elif asset_type == 'UTILITY':
         strategy_replicability = "REPLICABLE_RULE_SET"
         is_hft_hedging_blackbox = False
-    elif slug == 'ghost-ai-ea-mt5' or (has_disclosed_indicators and 'fixed_risk_hard_sl' in [m.lower() for m in mm_flags] and not has_grid):
-        strategy_replicability = "REPLICABLE_RULE_SET"
+    elif has_disclosed_indicators and (has_disclosed_risk_rr or has_entry_rule) and 'fixed_risk_hard_sl' in [m.lower() for m in mm_flags] and not has_grid:
+        strategy_replicability = "CONCEPT_DISCLOSED_UNVERIFIED"
         is_hft_hedging_blackbox = False
     else:
         # Check if genuine HFT / Hedging / Arbitrage / Closed AI Blackbox
@@ -239,13 +249,14 @@ def extract_ea_from_html(filepath: str) -> EACatalogItem:
 
     # Timeframes
     timeframes = []
-    for tf in ['M1', 'M5', 'M15', 'M30', 'H1', 'H4', 'D1']:
+    tf_candidates = ['M1', 'M5', 'M15', 'M30', 'H1', 'H4', 'D1']
+    for tf in tf_candidates:
         if re.search(r'\b' + tf + r'\b', full_text):
             timeframes.append(tf)
     if not timeframes:
         timeframes = ["NOT_DISCLOSED"]
 
-    # Hard SL
+    # Hard SL check
     uses_hard_sl = "NOT_DISCLOSED"
     if re.search(r'hard stop loss|mandatory.*stop loss|strict sl|stop loss of \d+|fixed stop loss|stop loss protection', full_text, re.IGNORECASE):
         uses_hard_sl = True
@@ -264,6 +275,7 @@ def extract_ea_from_html(filepath: str) -> EACatalogItem:
         strategy_replicability=strategy_replicability,
         vendor_live_claim=vendor_live_claim,
         third_party_verified_real=third_party_verified_real,
+        live_proof_verification_status=live_proof_verification_status,
         has_grid_or_martingale_signals=has_grid,
         is_hft_or_hedging_blackbox=is_hft_hedging_blackbox,
         money_management_flags=mm_flags,
@@ -301,59 +313,28 @@ def main():
     }
     with open(json_path, 'w', encoding='utf-8') as f:
         json.dump(catalog_package, f, ensure_ascii=False, indent=2)
-    print(f"[+] Saved {json_path} ({len(catalog)} items, scope: SAMPLE_45_OF_DIRECTORY)")
+    print(f"[+] Exported JSON to {json_path}")
 
     # Output CSV
     csv_path = os.path.join(ext_dir, '01_ea_catalog.csv')
-    fieldnames = [
-        'name', 'url', 'asset_type', 'platform', 'pricing', 'site_score', 'vendor_risk_label',
-        'claimed_strategy_type', 'strategy_replicability', 'vendor_live_claim', 'third_party_verified_real',
-        'has_grid_or_martingale_signals', 'is_hft_or_hedging_blackbox', 'money_management_flags',
-        'grid_martingale_rationale', 'symbols', 'timeframes', 'uses_hard_sl', 'verified_live_links'
-    ]
-    with open(csv_path, 'w', encoding='utf-8-sig', newline='') as f:
-        writer = csv.writer(f)
-        writer.writerow(fieldnames)
-        for item in catalog:
-            writer.writerow([
-                item.name,
-                item.url,
-                item.asset_type,
-                item.platform,
-                item.pricing,
-                item.site_score if item.site_score is not None else 'NOT_DISCLOSED',
-                item.vendor_risk_label,
-                item.claimed_strategy_type,
-                item.strategy_replicability,
-                'TRUE' if item.vendor_live_claim else 'FALSE',
-                'TRUE' if item.third_party_verified_real else 'FALSE',
-                'TRUE' if item.has_grid_or_martingale_signals else 'FALSE',
-                'TRUE' if item.is_hft_or_hedging_blackbox else 'FALSE',
-                '; '.join(item.money_management_flags),
-                item.grid_martingale_rationale,
-                '; '.join(item.symbols),
-                '; '.join(item.timeframes),
-                str(item.uses_hard_sl),
-                '; '.join(item.verified_live_links) if item.verified_live_links else 'NONE'
+    with open(csv_path, 'w', encoding='utf-8', newline='') as f:
+        if catalog:
+            writer = csv.DictWriter(f, fieldnames=[
+                'name', 'url', 'asset_type', 'platform', 'pricing', 'site_score', 'vendor_risk_label',
+                'claimed_strategy_type', 'strategy_replicability', 'vendor_live_claim', 'third_party_verified_real',
+                'live_proof_verification_status',
+                'has_grid_or_martingale_signals', 'is_hft_or_hedging_blackbox', 'money_management_flags',
+                'grid_martingale_rationale', 'symbols', 'timeframes', 'uses_hard_sl', 'verified_live_links'
             ])
-    print(f"[+] Saved {csv_path}")
-
-    # Summary statistics
-    ea_items = [i for i in catalog if i.asset_type == 'EA']
-    ind_items = [i for i in catalog if i.asset_type == 'INDICATOR']
-    ut_items = [i for i in catalog if i.asset_type == 'UTILITY']
-    grid_count = sum(1 for item in ea_items if item.has_grid_or_martingale_signals)
-    blackbox_count = sum(1 for item in ea_items if item.is_hft_or_hedging_blackbox)
-    real_verified_count = sum(1 for item in ea_items if item.third_party_verified_real)
-
-    print(f"\n--- AUDIT SUMMARY (SAMPLE_45_OF_DIRECTORY) ---")
-    print(f"Total Items Analyzed: {len(catalog)}")
-    print(f"  - EAs: {len(ea_items)}")
-    print(f"  - Indicators: {len(ind_items)}")
-    print(f"  - Utilities: {len(ut_items)}")
-    print(f"EA Grid/Martingale Detected: {grid_count}")
-    print(f"EA HFT/Hedging/AI Blackbox Flagged: {blackbox_count}")
-    print(f"EA 3rd-Party Verified Real Accounts: {real_verified_count}")
+            writer.writeheader()
+            for item in catalog:
+                d = item.model_dump()
+                d['money_management_flags'] = '; '.join(d['money_management_flags'])
+                d['symbols'] = '; '.join(d['symbols'])
+                d['timeframes'] = '; '.join(d['timeframes'])
+                d['verified_live_links'] = '; '.join(d['verified_live_links'])
+                writer.writerow(d)
+    print(f"[+] Exported CSV to {csv_path}")
 
 if __name__ == '__main__':
     main()

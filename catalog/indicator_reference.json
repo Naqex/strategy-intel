@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-23T02:11:48.415492",
+  "generated_at": "2026-11-23T12:32:48.900589",
   "source": "ea-directory-2026",
   "coverage_scope": "SAMPLE_45_OF_DIRECTORY",
   "total_items": 27,
@@ -15,7 +15,7 @@
       "pricing": "FREE",
       "site_score": 5.0,
       "vendor_risk_label": "Medium",
-      "claimed_strategy_type": "Indicator",
+      "claimed_strategy_type": "Trend-Following",
       "symbols": [
         "XAUUSD",
         "GOLD"
@@ -27,7 +27,7 @@
         "H1",
         "H4"
       ],
-      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Indicator."
+      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Trend-Following."
     },
     {
       "id": "divergence-scanner-indicator-mt5",
@@ -38,7 +38,7 @@
       "pricing": "FREE",
       "site_score": null,
       "vendor_risk_label": "Low",
-      "claimed_strategy_type": "Indicator",
+      "claimed_strategy_type": "Trend-Following",
       "symbols": [
         "XAUUSD",
         "GOLD"
@@ -48,18 +48,18 @@
         "H1",
         "H4"
       ],
-      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Indicator."
+      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Trend-Following."
     },
     {
       "id": "eafree-dashboard-v13",
       "name": "EAFree Dashboard Version 1.3",
       "asset_type": "UTILITY",
       "url": "https://www.eafree.net/ea/eafree-dashboard-v13",
-      "platform": "MT4/MT5",
+      "platform": "MT5",
       "pricing": "FREE",
       "site_score": null,
       "vendor_risk_label": "Low",
-      "claimed_strategy_type": "Utility",
+      "claimed_strategy_type": "Trend-Following",
       "symbols": [
         "XAUUSD",
         "GOLD",
@@ -69,7 +69,7 @@
         "M15",
         "H1"
       ],
-      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (UTILITY) dựa trên Utility."
+      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (UTILITY) dựa trên Trend-Following."
     },
     {
       "id": "eafree-tradepad-v216",
@@ -80,7 +80,7 @@
       "pricing": "FREE",
       "site_score": 5.0,
       "vendor_risk_label": "Low",
-      "claimed_strategy_type": "Utility",
+      "claimed_strategy_type": "Breakout",
       "symbols": [
         "XAUUSD",
         "GOLD"
@@ -88,7 +88,7 @@
       "timeframes": [
         "NOT_DISCLOSED"
       ],
-      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (UTILITY) dựa trên Utility."
+      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (UTILITY) dựa trên Breakout."
     },
     {
       "id": "ehlers-dsp-indicator-mt5",
@@ -99,7 +99,7 @@
       "pricing": "FREE",
       "site_score": null,
       "vendor_risk_label": "Medium",
-      "claimed_strategy_type": "Indicator",
+      "claimed_strategy_type": "Trend-Following",
       "symbols": [
         "XAUUSD",
         "GOLD"
@@ -109,7 +109,7 @@
         "H1",
         "H4"
       ],
-      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Indicator."
+      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Trend-Following."
     },
     {
       "id": "elliott-full-suite",
@@ -120,7 +120,7 @@
       "pricing": "FREE",
       "site_score": null,
       "vendor_risk_label": "Low",
-      "claimed_strategy_type": "Indicator",
+      "claimed_strategy_type": "Trend-Following",
       "symbols": [
         "XAUUSD",
         "GOLD",
@@ -134,7 +134,7 @@
         "H1",
         "H4"
       ],
-      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Indicator."
+      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Trend-Following."
     },
     {
       "id": "fib-cluster-indicator-mt5",
@@ -145,7 +145,7 @@
       "pricing": "POINTS (60 points)",
       "site_score": null,
       "vendor_risk_label": "Low",
-      "claimed_strategy_type": "Indicator",
+      "claimed_strategy_type": "Trend-Following",
       "symbols": [
         "XAUUSD",
         "GOLD"
@@ -156,7 +156,7 @@
         "H4",
         "D1"
       ],
-      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Indicator."
+      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Trend-Following."
     },
     {
       "id": "footprint-alpha-indicator-mt5",
@@ -167,7 +167,7 @@
       "pricing": "FREE",
       "site_score": null,
       "vendor_risk_label": "Low",
-      "claimed_strategy_type": "Indicator",
+      "claimed_strategy_type": "Trend-Following",
       "symbols": [
         "XAUUSD",
         "GOLD"
@@ -177,18 +177,18 @@
         "M5",
         "M15"
       ],
-      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Indicator."
+      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Trend-Following."
     },
     {
       "id": "fractal-ipda-suite",
       "name": "FRACTAL / IPDA SUITE V1.0 | Free Download",
       "asset_type": "INDICATOR",
       "url": "https://www.eafree.net/ea/fractal-ipda-suite",
-      "platform": "MT4",
+      "platform": "MT5",
       "pricing": "FREE",
       "site_score": null,
       "vendor_risk_label": "NOT_DISCLOSED",
-      "claimed_strategy_type": "Indicator",
+      "claimed_strategy_type": "Trend-Following",
       "symbols": [
         "XAUUSD",
         "GOLD"
@@ -198,7 +198,7 @@
         "M15",
         "D1"
       ],
-      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Indicator."
+      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Trend-Following."
     },
     {
       "id": "gann-full-suite",
@@ -209,7 +209,7 @@
       "pricing": "FREE",
       "site_score": null,
       "vendor_risk_label": "Low",
-      "claimed_strategy_type": "Indicator",
+      "claimed_strategy_type": "Trend-Following",
       "symbols": [
         "XAUUSD",
         "GOLD"
@@ -218,7 +218,7 @@
         "H4",
         "D1"
       ],
-      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Indicator."
+      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Trend-Following."
     },
     {
       "id": "harmonic-full-suite",
@@ -229,7 +229,7 @@
       "pricing": "FREE",
       "site_score": null,
       "vendor_risk_label": "Low",
-      "claimed_strategy_type": "Indicator",
+      "claimed_strategy_type": "Trend-Following",
       "symbols": [
         "XAUUSD",
         "GOLD",
@@ -241,18 +241,18 @@
         "H1",
         "H4"
       ],
-      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Indicator."
+      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Trend-Following."
     },
     {
       "id": "ict-full-suite",
       "name": "ICT FULL SUITE V1.12 | Free Download",
       "asset_type": "INDICATOR",
       "url": "https://www.eafree.net/ea/ict-full-suite",
-      "platform": "MT4",
+      "platform": "MT5",
       "pricing": "FREE",
       "site_score": null,
       "vendor_risk_label": "NOT_DISCLOSED",
-      "claimed_strategy_type": "Indicator",
+      "claimed_strategy_type": "Trend-Following",
       "symbols": [
         "XAUUSD",
         "GOLD",
@@ -267,7 +267,7 @@
         "H4",
         "D1"
       ],
-      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Indicator."
+      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Trend-Following."
     },
     {
       "id": "liquidity-full-suite",
@@ -278,7 +278,7 @@
       "pricing": "FREE",
       "site_score": null,
       "vendor_risk_label": "Low",
-      "claimed_strategy_type": "Indicator",
+      "claimed_strategy_type": "Trend-Following",
       "symbols": [
         "XAUUSD",
         "GOLD",
@@ -291,7 +291,7 @@
         "M15",
         "H1"
       ],
-      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Indicator."
+      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Trend-Following."
     },
     {
       "id": "market-profile-full-suite",
@@ -302,7 +302,7 @@
       "pricing": "FREE",
       "site_score": null,
       "vendor_risk_label": "Low",
-      "claimed_strategy_type": "Indicator",
+      "claimed_strategy_type": "Trend-Following",
       "symbols": [
         "XAUUSD",
         "GOLD",
@@ -316,7 +316,7 @@
         "H1",
         "D1"
       ],
-      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Indicator."
+      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Trend-Following."
     },
     {
       "id": "ml-lorentzian-indicator-mt5",
@@ -327,7 +327,7 @@
       "pricing": "FREE",
       "site_score": 3.0,
       "vendor_risk_label": "Low",
-      "claimed_strategy_type": "Indicator",
+      "claimed_strategy_type": "Trend-Following",
       "symbols": [
         "XAUUSD",
         "GOLD"
@@ -338,7 +338,7 @@
         "H1",
         "D1"
       ],
-      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Indicator."
+      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Trend-Following."
     },
     {
       "id": "order-flow-full-suite",
@@ -349,7 +349,7 @@
       "pricing": "FREE",
       "site_score": 5.0,
       "vendor_risk_label": "Low",
-      "claimed_strategy_type": "Indicator",
+      "claimed_strategy_type": "Trend-Following",
       "symbols": [
         "XAUUSD",
         "GOLD"
@@ -359,7 +359,7 @@
         "M5",
         "M15"
       ],
-      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Indicator."
+      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Trend-Following."
     },
     {
       "id": "price-action-full-suite",
@@ -370,7 +370,7 @@
       "pricing": "FREE",
       "site_score": null,
       "vendor_risk_label": "Low",
-      "claimed_strategy_type": "Indicator",
+      "claimed_strategy_type": "Trend-Following",
       "symbols": [
         "XAUUSD",
         "GOLD"
@@ -381,7 +381,7 @@
         "H1",
         "H4"
       ],
-      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Indicator."
+      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Trend-Following."
     },
     {
       "id": "quant-full-suite",
@@ -392,7 +392,7 @@
       "pricing": "FREE",
       "site_score": null,
       "vendor_risk_label": "Low",
-      "claimed_strategy_type": "Indicator",
+      "claimed_strategy_type": "Trend-Following",
       "symbols": [
         "XAUUSD",
         "GOLD"
@@ -400,7 +400,7 @@
       "timeframes": [
         "H1"
       ],
-      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Indicator."
+      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Trend-Following."
     },
     {
       "id": "session-news-indicator-mt5",
@@ -411,7 +411,7 @@
       "pricing": "FREE",
       "site_score": null,
       "vendor_risk_label": "Medium",
-      "claimed_strategy_type": "Indicator",
+      "claimed_strategy_type": "Breakout",
       "symbols": [
         "XAUUSD",
         "GOLD"
@@ -421,7 +421,7 @@
         "M5",
         "M15"
       ],
-      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Indicator."
+      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Breakout."
     },
     {
       "id": "smc-toolkit-indicator-mt5",
@@ -432,7 +432,7 @@
       "pricing": "POINTS (100 Points)",
       "site_score": null,
       "vendor_risk_label": "Low",
-      "claimed_strategy_type": "Indicator",
+      "claimed_strategy_type": "Trend-Following",
       "symbols": [
         "XAUUSD",
         "GOLD"
@@ -443,7 +443,7 @@
         "H1",
         "H4"
       ],
-      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Indicator."
+      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Trend-Following."
     },
     {
       "id": "spline-qr-indicator-mt5",
@@ -454,7 +454,7 @@
       "pricing": "FREE",
       "site_score": null,
       "vendor_risk_label": "Low",
-      "claimed_strategy_type": "Indicator",
+      "claimed_strategy_type": "Trend-Following",
       "symbols": [
         "XAUUSD",
         "GOLD",
@@ -465,7 +465,7 @@
         "H1",
         "H4"
       ],
-      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Indicator."
+      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Trend-Following."
     },
     {
       "id": "statarb-full-suite",
@@ -476,7 +476,7 @@
       "pricing": "POINTS (50 points)",
       "site_score": null,
       "vendor_risk_label": "Low",
-      "claimed_strategy_type": "Indicator",
+      "claimed_strategy_type": "Trend-Following",
       "symbols": [
         "XAUUSD",
         "GOLD",
@@ -490,7 +490,7 @@
         "H1",
         "H4"
       ],
-      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Indicator."
+      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Trend-Following."
     },
     {
       "id": "supply-demand-indicator-mt5",
@@ -501,7 +501,7 @@
       "pricing": "POINTS (15 points)",
       "site_score": null,
       "vendor_risk_label": "Low",
-      "claimed_strategy_type": "Indicator",
+      "claimed_strategy_type": "Trend-Following",
       "symbols": [
         "XAUUSD",
         "GOLD"
@@ -514,7 +514,7 @@
         "H4",
         "D1"
       ],
-      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Indicator."
+      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Trend-Following."
     },
     {
       "id": "volatility-pro-indicator-mt5",
@@ -525,7 +525,7 @@
       "pricing": "FREE",
       "site_score": 5.0,
       "vendor_risk_label": "Low",
-      "claimed_strategy_type": "Indicator",
+      "claimed_strategy_type": "Trend-Following",
       "symbols": [
         "XAUUSD",
         "GOLD"
@@ -539,7 +539,7 @@
         "H4",
         "D1"
       ],
-      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Indicator."
+      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Trend-Following."
     },
     {
       "id": "vsa-full-suite",
@@ -550,7 +550,7 @@
       "pricing": "FREE",
       "site_score": null,
       "vendor_risk_label": "Low",
-      "claimed_strategy_type": "Indicator",
+      "claimed_strategy_type": "Trend-Following",
       "symbols": [
         "XAUUSD",
         "GOLD"
@@ -563,7 +563,7 @@
         "H4",
         "D1"
       ],
-      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Indicator."
+      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Trend-Following."
     },
     {
       "id": "vwap-pro-indicator-mt5",
@@ -574,7 +574,7 @@
       "pricing": "FREE",
       "site_score": null,
       "vendor_risk_label": "Low",
-      "claimed_strategy_type": "Indicator",
+      "claimed_strategy_type": "Trend-Following",
       "symbols": [
         "XAUUSD",
         "GOLD"
@@ -585,7 +585,7 @@
         "H1",
         "H4"
       ],
-      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Indicator."
+      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Trend-Following."
     },
     {
       "id": "wyckoff-full-suite",
@@ -596,7 +596,7 @@
       "pricing": "FREE",
       "site_score": 5.0,
       "vendor_risk_label": "Low",
-      "claimed_strategy_type": "Indicator",
+      "claimed_strategy_type": "Trend-Following",
       "symbols": [
         "XAUUSD",
         "GOLD"
@@ -606,7 +606,7 @@
         "H1",
         "H4"
       ],
-      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Indicator."
+      "description": "Công cụ phân tích/hỗ trợ kỹ thuật (INDICATOR) dựa trên Trend-Following."
     }
   ]
 }

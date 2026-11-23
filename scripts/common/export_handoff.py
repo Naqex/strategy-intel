@@ -12,9 +12,12 @@ ALLOWED_LEAD_KEYS = {
 }
 
 ALLOWED_METRIC_PERIODS = {'is_2004_2018', 'oos1_2019_2023'}
+ALLOWED_PERIOD_KEYS = {'n', 'wr', 'years_pos', 'nam_duong'}
+ALLOWED_IS_YEARS = {str(y) for y in range(2004, 2019)}
+ALLOWED_OOS1_YEARS = {str(y) for y in range(2019, 2024)}
 
 def export_handoff():
-    print("[*] Exporting sanitized cleanroom handoff package with strict allowlist schema...")
+    print("[*] Exporting sanitized cleanroom handoff package with strict recursive allowlist schema...")
     master_leads_path = os.path.join(ROOT_DIR, 'catalog/master_leads.json')
     handoff_output_path = os.path.join(ROOT_DIR, 'handoff/sanitized_master_leads.json')
 
@@ -23,27 +26,31 @@ def export_handoff():
 
     clean_leads = []
     for lead in data.get('leads', []):
-        # 1. Strict allowlist filter
+        # 1. Strict allowlist filter for lead keys
         clean_lead = {}
         for k in ALLOWED_LEAD_KEYS:
             if k in lead:
                 clean_lead[k] = lead[k]
                 
-        # 2. Strict metric periods allowlist
+        # 2. Strict metric periods allowlist and recursive leaf pruning
         if 'performance_metrics' in clean_lead:
-            raw_pm = clean_lead['performance_metrics']
+            raw_pm = clean_lead.get('performance_metrics', {})
             clean_pm = {}
             for period in ALLOWED_METRIC_PERIODS:
-                if period in raw_pm and raw_pm[period] is not None:
-                    # Clean nam_duong to ensure no holdout year leakage
-                    period_data = dict(raw_pm[period])
-                    if 'nam_duong' in period_data:
-                        clean_nd = {
-                            yr: val for yr, val in period_data['nam_duong'].items()
-                            if yr not in ['2024', '2025', '2026'] and int(yr) <= 2023
+                if period in raw_pm and isinstance(raw_pm[period], dict):
+                    raw_period = raw_pm[period]
+                    clean_period = {}
+                    for pk in ALLOWED_PERIOD_KEYS:
+                        if pk in raw_period:
+                            clean_period[pk] = raw_period[pk]
+                    # Enforce strict years range inside nam_duong
+                    if 'nam_duong' in clean_period and isinstance(clean_period['nam_duong'], dict):
+                        allowed_years = ALLOWED_IS_YEARS if period == 'is_2004_2018' else ALLOWED_OOS1_YEARS
+                        clean_period['nam_duong'] = {
+                            str(yr): val for yr, val in clean_period['nam_duong'].items()
+                            if str(yr) in allowed_years
                         }
-                        period_data['nam_duong'] = clean_nd
-                    clean_pm[period] = period_data
+                    clean_pm[period] = clean_period
             clean_lead['performance_metrics'] = clean_pm
 
         clean_leads.append(clean_lead)

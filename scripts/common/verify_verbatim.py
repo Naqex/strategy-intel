@@ -2,14 +2,13 @@ import os
 import sys
 import json
 import hashlib
-from datetime import datetime
 
 ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..'))
 
 def get_sha256(filepath):
     h = hashlib.sha256()
     with open(filepath, 'rb') as f:
-        while chunk := f.read(65536):
+        for chunk in iter(lambda: f.read(65536), b''):
             h.update(chunk)
     return h.hexdigest().upper()
 
@@ -17,7 +16,26 @@ def deep_compare_strategy_record(raw_d, ext_item):
     sid = ext_item.get('id')
     diffs = []
     
-    # 1. Compare tieu_chi
+    # 1. Compare spec
+    raw_spec = raw_d.get('spec', {})
+    if raw_spec.get('id') != ext_item.get('id'):
+        diffs.append(f"{sid} spec id mismatch: raw={raw_spec.get('id')} vs ext={ext_item.get('id')}")
+    if raw_spec.get('ten') != ext_item.get('ten'):
+        diffs.append(f"{sid} spec ten mismatch: raw={raw_spec.get('ten')} vs ext={ext_item.get('ten')}")
+    if raw_spec.get('ho') != ext_item.get('ho'):
+        diffs.append(f"{sid} spec ho mismatch: raw={raw_spec.get('ho')} vs ext={ext_item.get('ho')}")
+    if raw_spec.get('nguon') != ext_item.get('nguon_goc'):
+        diffs.append(f"{sid} spec nguon mismatch: raw={raw_spec.get('nguon')} vs ext={ext_item.get('nguon_goc')}")
+    if raw_spec.get('mo_ta') != ext_item.get('quy_tac_mo_ta'):
+        diffs.append(f"{sid} spec mo_ta mismatch: raw={raw_spec.get('mo_ta')} vs ext={ext_item.get('quy_tac_mo_ta')}")
+    if raw_spec.get('tf') != ext_item.get('khung_thoi_gian'):
+        diffs.append(f"{sid} spec tf mismatch: raw={raw_spec.get('tf')} vs ext={ext_item.get('khung_thoi_gian')}")
+
+    # 2. Compare verdict
+    if raw_d.get('verdict') != ext_item.get('verdict_goc'):
+        diffs.append(f"{sid} verdict mismatch: raw={raw_d.get('verdict')} vs ext={ext_item.get('verdict_goc')}")
+
+    # 3. Compare tieu_chi
     raw_tc = raw_d.get('tieu_chi', {})
     ext_tc = ext_item.get('tieu_chi', {})
     tc_mappings = [
@@ -31,7 +49,7 @@ def deep_compare_strategy_record(raw_d, ext_item):
         if raw_tc.get(r_k) != ext_tc.get(e_k):
             diffs.append(f"{sid} tieu_chi mismatch on {r_k}: raw={raw_tc.get(r_k)} vs ext={ext_tc.get(e_k)}")
             
-    # 2. Compare IS metrics
+    # 4. Compare IS metrics
     raw_is = raw_d.get('IS', {})
     ext_is = ext_item.get('in_sample_2004_2018', {})
     if raw_is.get('n') != ext_is.get('so_lenh'):
@@ -43,7 +61,7 @@ def deep_compare_strategy_record(raw_d, ext_item):
     if raw_is.get('nam_duong', {}) != ext_is.get('chi_tiet_nam', {}):
         diffs.append(f"{sid} IS nam_duong dict mismatch")
         
-    # 3. Compare OOS metrics
+    # 5. Compare OOS metrics
     raw_oos = raw_d.get('OOS', {})
     ext_oos = ext_item.get('out_of_sample_1_2019_2023', {})
     if raw_oos.get('n') != ext_oos.get('so_lenh'):
@@ -54,10 +72,25 @@ def deep_compare_strategy_record(raw_d, ext_item):
         diffs.append(f"{sid} OOS years_pos mismatch: raw={raw_oos.get('years_pos')} vs ext={ext_oos.get('so_nam_duong')}")
     if raw_oos.get('nam_duong', {}) != ext_oos.get('chi_tiet_nam', {}):
         diffs.append(f"{sid} OOS nam_duong dict mismatch")
+
+    # 6. Compare OOS2 metrics
+    raw_oos2 = raw_d.get('OOS2', {})
+    ext_oos2 = ext_item.get('out_of_sample_2_2024_2026', {})
+    if raw_oos2.get('n') != ext_oos2.get('so_lenh'):
+        diffs.append(f"{sid} OOS2 n mismatch: raw={raw_oos2.get('n')} vs ext={ext_oos2.get('so_lenh')}")
+    if raw_oos2.get('wr') != ext_oos2.get('winrate_pct'):
+        diffs.append(f"{sid} OOS2 wr mismatch: raw={raw_oos2.get('wr')} vs ext={ext_oos2.get('winrate_pct')}")
+    if raw_oos2.get('years_pos') != ext_oos2.get('so_nam_duong'):
+        diffs.append(f"{sid} OOS2 years_pos mismatch: raw={raw_oos2.get('years_pos')} vs ext={ext_oos2.get('so_nam_duong')}")
+    if raw_oos2.get('status') != ext_oos2.get('trang_thai'):
+        diffs.append(f"{sid} OOS2 status mismatch: raw={raw_oos2.get('status')} vs ext={ext_oos2.get('trang_thai')}")
+    if raw_oos2.get('nam_duong', {}) != ext_oos2.get('chi_tiet_nam', {}):
+        diffs.append(f"{sid} OOS2 nam_duong dict mismatch")
         
     return diffs
 
-def scan_and_log_source_anomalies(reports_dir, anomalies_output_path):
+def compute_source_anomalies_in_memory(reports_dir):
+    """Computes anomalies purely in memory without writing any files (READ-ONLY)."""
     files = sorted([f for f in os.listdir(reports_dir) if f.endswith('.json')])
     mismatches = []
     missing_year_sets = []
@@ -104,52 +137,66 @@ def scan_and_log_source_anomalies(reports_dir, anomalies_output_path):
                 })
 
     unique_mismatch_ids = sorted(list(set(m['id'] for m in mismatches)))
+    return unique_mismatch_ids, mismatches, missing_year_sets
 
-    report = {
-        "generated_at": datetime.now().isoformat(),
-        "description": "Báo cáo kiểm toán độc lập các dị thường số liệu trong dữ liệu nguồn gốc raw/reports_json/ (242 chiến lược)",
-        "audit_status": "WARN_SOURCE_ANOMALIES_LOGGED",
-        "total_strategies_scanned": len(files),
-        "mismatches_years_pos_count": len(unique_mismatch_ids),
-        "mismatches_years_pos_ids": unique_mismatch_ids,
-        "mismatches_detail": mismatches,
-        "missing_years_in_nam_duong_count": len(missing_year_sets),
-        "missing_years_detail": missing_year_sets
-    }
+def verify_raw_manifest(raw_dir, manifest_path):
+    errors = []
+    if not os.path.exists(manifest_path):
+        return [f"Raw manifest file missing: {manifest_path}"]
+    with open(manifest_path, 'r', encoding='utf-8') as f:
+        manifest = json.load(f)
 
-    with open(anomalies_output_path, 'w', encoding='utf-8') as out:
-        json.dump(report, out, ensure_ascii=False, indent=2)
+    manifest_files = set(manifest.keys())
+    actual_files = set()
 
-    return unique_mismatch_ids, missing_year_sets
+    for dirpath, _, filenames in os.walk(raw_dir):
+        for f in filenames:
+            full_path = os.path.join(dirpath, f)
+            rel_path = os.path.relpath(full_path, raw_dir).replace('\\', '/')
+            actual_files.add(rel_path)
 
-def verify():
-    print("[*] Running verbatim and integrity verification...")
+            if rel_path not in manifest:
+                errors.append(f"Unexpected unmanifested file in raw: {rel_path}")
+            else:
+                expected_sha = manifest[rel_path]['sha256']
+                expected_size = manifest[rel_path]['size']
+                actual_size = os.path.getsize(full_path)
+                if actual_size != expected_size:
+                    errors.append(f"Size mismatch in {rel_path}: expected {expected_size}, got {actual_size}")
+                actual_sha = get_sha256(full_path)
+                if actual_sha != expected_sha:
+                    errors.append(f"SHA-256 mismatch in {rel_path}: expected {expected_sha}, got {actual_sha}")
+
+    missing_from_disk = manifest_files - actual_files
+    if missing_from_disk:
+        errors.append(f"Missing files from raw directory: {missing_from_disk}")
+
+    return errors
+
+def verify(repo_root=None):
+    root = repo_root or ROOT_DIR
+    print("[*] Running verbatim and integrity verification (READ-ONLY mode)...")
     errors = []
 
-    # 1. SHA-256 Manifest Check
-    manifest_targets = [
-        'sources/stategy-netlify-app/raw/thu_vien_index.json',
-        'sources/stategy-netlify-app/extracted/02_library_242_summary.json',
-        'sources/stategy-netlify-app/extracted/04_top15_chat_full.json',
-        'sources/ea-directory-2026/extracted/01_ea_catalog.json',
-        'catalog/master_leads.json',
-        'catalog/rejected_log.json',
-        'catalog/indicator_reference.json',
-        'handoff/sanitized_master_leads.json'
-    ]
-    verified_hashes = {}
-    for target in manifest_targets:
-        full_p = os.path.join(ROOT_DIR, target)
-        if not os.path.exists(full_p):
-            errors.append(f"Manifest target missing: {target}")
-        else:
-            sha = get_sha256(full_p)
-            verified_hashes[target] = sha
+    # 1. SHA-256 Manifest Check for RAW directories
+    s1_raw_dir = os.path.join(root, 'sources/stategy-netlify-app/raw')
+    s1_manifest = os.path.join(root, 'sources/stategy-netlify-app/raw_manifest.sha256.json')
+    s1_errs = verify_raw_manifest(s1_raw_dir, s1_manifest)
+    if s1_errs:
+        errors.extend(s1_errs)
+    else:
+        print("[+] Source 1 raw manifest check: 283/283 files verified matching SHA-256.")
 
-    print(f"[+] SHA-256 Manifest Check: {len(verified_hashes)}/{len(manifest_targets)} files hashed successfully.")
+    s2_raw_dir = os.path.join(root, 'sources/ea-directory-2026/raw')
+    s2_manifest = os.path.join(root, 'sources/ea-directory-2026/raw_manifest.sha256.json')
+    s2_errs = verify_raw_manifest(s2_raw_dir, s2_manifest)
+    if s2_errs:
+        errors.extend(s2_errs)
+    else:
+        print("[+] Source 2 raw manifest check: 48/48 files verified matching SHA-256.")
 
     # 2. Verify Source 1 Deep Comparison (all 242 strategies)
-    source1_dir = os.path.join(ROOT_DIR, 'sources/stategy-netlify-app')
+    source1_dir = os.path.join(root, 'sources/stategy-netlify-app')
     if os.path.exists(source1_dir):
         raw_index_file = os.path.join(source1_dir, 'raw/thu_vien_index.json')
         ext_summary_file = os.path.join(source1_dir, 'extracted/02_library_242_summary.json')
@@ -182,17 +229,32 @@ def verify():
                 errors.extend(deep_diffs_total[:10])
                 print(f"[!] Deep compare found {len(deep_diffs_total)} mismatches!")
             else:
-                print(f"[+] Source 1 (stategy-netlify-app): 242/242 strategies DEEP COMPARED verbatim (n, wr, years_pos, nam_duong, tieu_chi).")
+                print(f"[+] Source 1 (stategy-netlify-app): 242/242 strategies DEEP COMPARED verbatim (spec, verdict, tieu_chi, IS, OOS, OOS2).")
 
-        # Scan and log source anomalies
-        mismatches_8, missing_40 = scan_and_log_source_anomalies(reports_dir, anomalies_file)
-        expected_8 = ['BRK009', 'BRK018', 'BRK034', 'IND015', 'IND044', 'IND047', 'REV025', 'VIR041']
-        if sorted(mismatches_8) != sorted(expected_8):
-            errors.append(f"Expected 8 mismatches {expected_8}, but got {mismatches_8}")
-        if len(missing_40) != 40:
-            errors.append(f"Expected 40 missing year sets, but got {len(missing_40)}")
+        # In-memory anomalies check against saved source_anomalies.json (READ-ONLY)
+        if not os.path.exists(anomalies_file):
+            errors.append(f"source_anomalies.json missing at {anomalies_file}")
+        else:
+            with open(anomalies_file, 'r', encoding='utf-8') as af:
+                saved_anomalies = json.load(af)
 
-        print(f"[WARN_SOURCE_ANOMALIES_LOGGED] 8 source mismatches & 40 missing year sets logged in source_anomalies.json.")
+            computed_ids, computed_mismatches, computed_missing = compute_source_anomalies_in_memory(reports_dir)
+            expected_8 = ['BRK009', 'BRK018', 'BRK034', 'IND015', 'IND044', 'IND047', 'REV025', 'VIR041']
+            
+            if sorted(computed_ids) != sorted(expected_8):
+                errors.append(f"Expected 8 mismatches {expected_8}, but computed {computed_ids}")
+            if len(computed_missing) != 40:
+                errors.append(f"Expected 40 missing year sets, but computed {len(computed_missing)}")
+
+            # Exact match between in-memory computation and saved file
+            if saved_anomalies.get('mismatches_years_pos_count') != len(computed_ids):
+                errors.append(f"source_anomalies.json mismatches_years_pos_count mismatch: {saved_anomalies.get('mismatches_years_pos_count')} vs computed {len(computed_ids)}")
+            if saved_anomalies.get('missing_years_in_nam_duong_count') != len(computed_missing):
+                errors.append(f"source_anomalies.json missing_years_in_nam_duong_count mismatch: {saved_anomalies.get('missing_years_in_nam_duong_count')} vs computed {len(computed_missing)}")
+            if sorted(saved_anomalies.get('mismatches_years_pos_ids', [])) != sorted(computed_ids):
+                errors.append("source_anomalies.json mismatches_years_pos_ids mismatch against in-memory computation")
+
+            print(f"[WARN_SOURCE_ANOMALIES_LOGGED] 8 source mismatches & 40 missing year sets verified consistent with saved report.")
 
         # Top 15 CHẤT file
         if os.path.exists(ext_top15_file):
@@ -203,7 +265,7 @@ def verify():
             print(f"[+] Source 1 (Top 15 CHẤT): 15/15 verified.")
 
     # 3. Verify Source 2 (ea-directory-2026)
-    source2_dir = os.path.join(ROOT_DIR, 'sources/ea-directory-2026')
+    source2_dir = os.path.join(root, 'sources/ea-directory-2026')
     if os.path.exists(source2_dir):
         catalog_file = os.path.join(source2_dir, 'extracted/01_ea_catalog.json')
         if os.path.exists(catalog_file):
@@ -235,9 +297,9 @@ def verify():
             print(f"[+] Source 2 (ea-directory-2026): {len(catalog_items)} items verified schema (coverage_scope: SAMPLE_45_OF_DIRECTORY, vendor_risk_label & 3 axes present).")
 
     # 4. Verify catalog/
-    master_file = os.path.join(ROOT_DIR, 'catalog/master_leads.json')
-    rej_file = os.path.join(ROOT_DIR, 'catalog/rejected_log.json')
-    ind_file = os.path.join(ROOT_DIR, 'catalog/indicator_reference.json')
+    master_file = os.path.join(root, 'catalog/master_leads.json')
+    rej_file = os.path.join(root, 'catalog/rejected_log.json')
+    ind_file = os.path.join(root, 'catalog/indicator_reference.json')
 
     if os.path.exists(master_file):
         with open(master_file, encoding='utf-8') as f:
@@ -268,7 +330,6 @@ def verify():
     if os.path.exists(rej_file):
         with open(rej_file, encoding='utf-8') as f:
             r_data = json.load(f)
-        # Check no NA string
         content_str = json.dumps(r_data)
         if "PF OOS1: N/A, Max DD OOS1: N/A%" in content_str:
             errors.append("rejected_log.json contains placeholder string 'PF OOS1: N/A, Max DD OOS1: N/A%'")

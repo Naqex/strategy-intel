@@ -174,8 +174,10 @@ chatList.forEach((c, idx) => {
 - **Nhận định kỹ thuật:** ${rep.reason}
 - **Yếu tố còn thiếu để code 100%:** ${
     rep.status === 'REPLICABLE_FROM_PUBLIC'
-      ? 'Có thể code và backtest độc lập ngay lập tức dựa trên lịch nến D1 của sàn giao dịch.'
-      : 'Cần xác định chính xác công thức cắt lỗ (ATR multiplier hay swing high/low), tỷ lệ R:R chốt lời cố định và điều kiện thoát lệnh khẩn cấp (time stop).'
+      ? 'Có thể code và backtest độc lập theo quy tắc lịch nến D1 (lưu ý: cần thiết lập mức SL/TP bảo toàn vốn độc lập do tác giả ẩn thông số quản lý vốn chi tiết trong bản VIP).'
+      : (rep.status === 'PARTIAL_RULE_SPEC'
+          ? 'Cần xác định chính xác quy tắc định lượng chọn chiều Buy/Sell đầu quý và mức SL/TP quản lý lệnh.'
+          : 'Cần xác định chính xác công thức cắt lỗ (ATR multiplier hay swing high/low), tỷ lệ R:R chốt lời cố định và điều kiện thoát lệnh khẩn cấp (time stop).')
   }
 
 ---
@@ -203,7 +205,8 @@ md += `
 ## 4. TỔNG KẾT BÀI HỌC KIỂM ĐỊNH TÍNH TÁI DỰNG
 
 1. **Tỉ lệ có thể tự tái tạo độc lập từ public:**
-   - **2 / 15 chiến lược (13.3%)** đạt mức \`REPLICABLE_FROM_PUBLIC\` (\`SEA003\` và \`SEA004\`). Đây là các chiến lược chu kỳ mùa vụ thuần túy dựa vào lịch phiên giao dịch, không phụ thuộc vào chỉ báo kỹ thuật hay tham số tối ưu hóa ẩn.
+   - **1 / 15 chiến lược (6.7%)** đạt mức \`REPLICABLE_FROM_PUBLIC\` (\`SEA003\` - Turn-of-month vàng). Đây là chiến lược chu kỳ mùa vụ dựa vào lịch phiên giao dịch (mua 2 ngày cuối tháng, giữ 3-4 ngày đầu tháng), tuy nhiên vẫn có phần SL/TP quản lý rủi ro ẩn của tác giả trong bản VIP.
+   - **1 / 15 chiến lược (6.7%)** ở mức \`PARTIAL_RULE_SPEC\` (\`SEA004\` - Hiệu ứng đầu quý). Nêu rõ khung thời gian 3 ngày đầu quý nhưng thiếu đặc tả quy tắc thuật toán chọn chiều Mua hay Bán trong dữ liệu công khai.
    - **13 / 15 chiến lược (86.7%)** ở mức \`PARTIAL_CONCEPT_ONLY\`. Người dùng công khai chỉ nhận được logic kích hoạt vào lệnh tổng quát; các thông số định lượng quyết định kết quả thực tế (SL, TP, trailing, ngưỡng lọc nhiễu) được giữ trong Báo Cáo Phân Tích Chuyên Sâu dành cho thành viên VIP có Passkey.
 2. **Hiện tượng đặc trưng của nhóm "CHẤT":**
    - Đa số chiến lược "CHẤT" có tỉ lệ thắng (Winrate) chỉ dao động trong khoảng **28% – 36%**, nhưng bù lại tỷ lệ Lời:Lỗ (Risk:Reward) thường đạt từ **1:2 đến 1:3**. Điều này khẳng định triết lý của Strategy Audit: *Tỉ lệ thắng cao không đảm bảo an toàn, mấu chốt là bảo vệ vốn khi sai và để lãi chạy khi đúng*.

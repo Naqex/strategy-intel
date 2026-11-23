@@ -91,7 +91,6 @@ def sync_catalog():
     print(f"[*] Source 2 EA Evaluation: {len(verified_real_eas)} Verified Real, {len(rejected_grid_eas)} Toxic Grid, {len(rejected_blackbox_eas)} Blackbox No Real Proof")
 
     # 6. Build catalog/master_leads.json
-    under_100_ids = {'IND026', 'SEA003', 'SEA004', 'SEA021'}
     master_leads_list = []
 
     for strat in top15_data:
@@ -99,7 +98,9 @@ def sync_catalog():
         strat_id = spec.get('id')
         tc = strat.get('tieu_chi', {})
         
-        passes_all_5 = (strat_id not in under_100_ids) and all(tc.values()) if tc else False
+        # Calculate passes_all_5 and feasibility flag purely dynamically from tieu_chi
+        is_kha_thi = tc.get('kha_thi', True) if tc else False
+        passes_all_5 = bool(all(tc.values())) if tc else False
         
         # Replicability classification
         if strat_id == 'SEA003':
@@ -114,7 +115,7 @@ def sync_catalog():
             "COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD",
             "MISSING_PF_AND_DD_IN_PUBLIC_JSON"
         ]
-        if strat_id in under_100_ids:
+        if not is_kha_thi:
             dq_flags.append("FAILED_FEASIBILITY_UNDER_100_TRADES")
         if strat_id == 'SEA004':
             dq_flags.append("MISSING_DIRECTION_RULE_SPEC")
@@ -135,7 +136,7 @@ def sync_catalog():
             "data_quality_flags": dq_flags,
             "replicability": replicability,
             "evidence_tier": "SOURCE_CLAIM_ONLY",
-            "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with stated rules (Top 15 CHẤT)",
+            "gate_condition_met": "SOURCE_CONCEPT_CANDIDATE_QUARANTINED: source claim only, pending independent reproduction in Naqex/workspace",
             "verified_live_links": [],
             "performance_metrics": {
                 "is_2004_2018": strat.get('IS'),

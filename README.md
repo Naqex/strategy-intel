@@ -43,6 +43,7 @@ d:/ANNAM/strategy-intel/
 ├── sources/
 │   ├── stategy-netlify-app/               # NGUỒN 1: Báo cáo kiểm định 242 chiến lược Vàng 22 năm
 │   │   ├── raw/                           # JSON reports (242 file), vault_data.json, index, assets JS
+│   │   ├── raw_manifest.sha256.json       # SHA-256 bất biến của 283 tệp raw nguồn 1
 │   │   ├── extracted/                     # Báo cáo & bảng biểu chuẩn hóa
 │   │   │   ├── 01_methodology_and_reports.md
 │   │   │   ├── 02_library_242_summary.csv / .json
@@ -51,10 +52,11 @@ d:/ANNAM/strategy-intel/
 │   │   │   ├── 05_replicability_audit.md
 │   │   │   ├── 06_technical_methods_and_code.md
 │   │   │   ├── 07_missing_58_items.json
-│   │   │   └── source_anomalies.json      # 0 lỗi lệch năm & 0 chu kỳ thiếu năm zero-trade
+│   │   │   └── source_anomalies.json      # 8 lỗi lệch năm & 40 chu kỳ thiếu năm zero-trade
 │   │   └── scripts/                       # Script Node.js tái lập quy trình 100%
 │   └── ea-directory-2026/                 # NGUỒN 2: Thư mục xếp hạng EA quốc tế (eafree.net - 45 tệp mẫu)
 │       ├── raw/                           # HTML ranking pages, sitemap.xml, 45 detail pages
+│       ├── raw_manifest.sha256.json       # SHA-256 bất biến của 48 tệp raw nguồn 2
 │       ├── extracted/                     # Danh mục trích xuất (18 EAs, 25 Indicators, 2 Utilities)
 │       │   ├── 01_ea_catalog.csv
 │       │   └── 01_ea_catalog.json
@@ -72,21 +74,23 @@ Mọi tệp tin trong `extracted/`, `catalog/` và `handoff/` được kiểm ch
 
 | Phân Vùng | Tên Tệp Tin | Kích Thước (Bytes) | Mã Băm SHA-256 Checksum |
 | :--- | :--- | :---: | :--- |
+| **Nguồn 1** | `sources/stategy-netlify-app/raw_manifest.sha256.json` | 39,802 | `CA4BDEA760281DFCCBCBB70FCD5680C200492B444CB863D0142C6ABD4E425DAE` |
 | **Nguồn 1** | `sources/stategy-netlify-app/extracted/01_methodology_and_reports.md` | 43,988 | `994840FC2EDFD401D9A2C1ACCE4A7D47F0A93AD54F8A16DFEC366DBAFC85C08E` |
 | **Nguồn 1** | `sources/stategy-netlify-app/extracted/02_library_242_summary.csv` | 65,470 | `EDE83026C7C9DB8D3E2EED402BB1FD92A5CAC175333F85F06CC1B48F3DBEF3F6` |
 | **Nguồn 1** | `sources/stategy-netlify-app/extracted/02_library_242_summary.json` | 431,524 | `1AFD2716C6ACDCFA584EC699D39D9C88EE0B978E71FF64D941F879F9C32F18B8` |
 | **Nguồn 1** | `sources/stategy-netlify-app/extracted/03_simulator_logic.md` | 13,275 | `17B38617D92DEC699FF2EFF35B6D6B8E7596E042B2ADD41D4C74EC5285495795` |
 | **Nguồn 1** | `sources/stategy-netlify-app/extracted/04_top15_chat_full.json` | 22,603 | `3BCB023154FE20BF127B4673D342DB3B6214E69E2E283A673B0DF59D92CEBC53` |
-| **Nguồn 1** | `sources/stategy-netlify-app/extracted/05_replicability_audit.md` | 42,413 | `533F28297A2DA15420FB62ED5EE288188CC897757C938DFD30FC5D77D010ECD6` |
+| **Nguồn 1** | `sources/stategy-netlify-app/extracted/05_replicability_audit.md` | 42,784 | `4C48F8CA2CD667BA1F5359E2BC2DB40403E7D0FE2912A4124A78256A2EBFBFC6` |
 | **Nguồn 1** | `sources/stategy-netlify-app/extracted/06_technical_methods_and_code.md` | 33,817 | `DBC775275EA8976782B9B0BC8CCEA02EBFF31AB23304EB0C58BE9EE6D8C02A80` |
-| **Nguồn 1** | `sources/stategy-netlify-app/extracted/07_missing_58_items.json` | 30,502 | `E1C4448AE9950DD954E02E5730061A6B14CD4E14744258312D4C9E0D1ECEA377` |
-| **Nguồn 1** | `sources/stategy-netlify-app/extracted/source_anomalies.json` | 16,441 | `DEC5A6AB81426D5B9AD18621FF1210D430855A1A34EE5957A20EA0DB5E732F41` |
-| **Nguồn 2** | `sources/ea-directory-2026/extracted/01_ea_catalog.csv` | 14,708 | `8E374625EA3662E5F72D605B89CC955D267AF5E6251D7A9335FDBF5B0673420F` |
-| **Nguồn 2** | `sources/ea-directory-2026/extracted/01_ea_catalog.json` | 44,040 | `B5831901385FC9A3240CCB8D32384059FB87F11A64FC1959EDE0612185315D5B` |
-| **Catalog** | `catalog/indicator_reference.json` | 17,654 | `45F9B65D9B2397F046D01C0ECF5F8E438F77BB264F47DFDBAD953CDEA7AB6776` |
-| **Catalog** | `catalog/master_leads.json` | 26,704 | `58EAA052EE0BE9E77140E2F200623F3CED1848BE7B0DB81971E0A43DBB7FA6FC` |
-| **Catalog** | `catalog/rejected_log.json` | 169,343 | `5F7293337D814C86AAA7B65712787BB5C178BD1B271C66819607076B5D089038` |
-| **Handoff** | `handoff/sanitized_master_leads.json` | 26,750 | `DB47DA2FD0464D25C6BE88F935E7A0939DC2855F1C95FDEF5A67502DCC10DD1B` |
+| **Nguồn 1** | `sources/stategy-netlify-app/extracted/07_missing_58_items.json` | 38,983 | `845BB7E808972FADF9CF8653114E69ACB59675E20177C7D9484578770FB41DE5` |
+| **Nguồn 1** | `sources/stategy-netlify-app/extracted/source_anomalies.json` | 16,441 | `FCEA8BA6D35EFF30CD9ABD315BABFAECC36FBCA0ACA1EA7B799A41F62C7AF344` |
+| **Nguồn 2** | `sources/ea-directory-2026/raw_manifest.sha256.json` | 7,280 | `F34BDA4AC1F1C2FE010FBFBF9BAA598F6FDEA45AFA2220DF152219035FFF8989` |
+| **Nguồn 2** | `sources/ea-directory-2026/extracted/01_ea_catalog.csv` | 14,965 | `DC51942B3EEA0385B6C259ED04D4851025F83F87F29A1B242A4779D257A08A8E` |
+| **Nguồn 2** | `sources/ea-directory-2026/extracted/01_ea_catalog.json` | 46,854 | `F3408F018CB8F8D628606F956105FC0ECD3DB766A15F1D3E119D254C67F596B8` |
+| **Catalog** | `catalog/indicator_reference.json` | 17,954 | `FEB6D49E89BEF1EA63815287169B3E667664E6C9BD05D6FCDF85738A39C57E9D` |
+| **Catalog** | `catalog/master_leads.json` | 26,884 | `E3EE2EC94DEEA6BB264FB083BF38AA1E302BE9ACB26B16A47A9D93C57C98A881` |
+| **Catalog** | `catalog/rejected_log.json` | 169,343 | `19DC2D30863D1C1DCDDBFCCFF4EF016B31159598F32D54890D961A1881497763` |
+| **Handoff** | `handoff/sanitized_master_leads.json` | 26,930 | `B5BCFFC6AFD44D73145C73D0334863DD06E923F3F54787E9A90179E9562A6690` |
 
 ---
 
@@ -95,7 +99,7 @@ Mọi tệp tin trong `extracted/`, `catalog/` và `handoff/` được kiểm ch
 ### Nguồn 1: `stategy.netlify.app` (242 Báo Cáo Kiểm Định Vàng 22 Năm)
 1. **Chênh lệch 300 vs 242:**
    - **242 chiến lược** kiểm định tự động đầy đủ bằng máy (`reports_json/`).
-   - **40 hồ sơ gộp** biến thể đối xứng (`trang_thai: "gop"`): 6 bản sao hoàn toàn (`DUPLICATE_EXACT`), 27 biến thể liên quan (`RELATED_VARIANT`), 7 biến thể chưa kiểm tra (`UNTESTED_VARIANT`). Riêng `REV029` là biến thể ngược chiều mua của `REV028` (CHẤT) nhưng không được kiểm định độc lập, gắn cờ `CHUA_KIEM_DINH_BIEN_THE_NGUOC`.
+   - **40 hồ sơ gộp** biến thể đối xứng (`trang_thai: "gop"`): 5 bản sao hoàn toàn (`DUPLICATE_EXACT`), 27 biến thể liên quan (`RELATED_VARIANT`), 8 biến thể chưa kiểm tra (`UNTESTED_VARIANT`). Riêng `REV029` là biến thể bán ngược chiều của `SEA003` (Turn-of-month vàng) nhưng bản thân chưa được kiểm định độc lập, gắn cờ `UNTESTED_REVERSE_VARIANT_CANNOT_INHERIT_CHAT`.
    - **18 hồ sơ chưa kiểm định** (`trang_thai: "chua_kiem_dinh"`): 9 mục thiếu dữ liệu ngoại vi (`MISSING_AUXILIARY_DATA` - FOMC, CPI, DXY, Bạc), 4 mục không phải chiến lược độc lập (`NOT_A_STANDALONE_STRATEGY` - bộ lọc phiên, 5-3-1), 5 mục quy tắc cảm tính vẽ tay (`DISCRETIONARY_NOT_FORMALIZED`).
 2. **Khả năng tái dựng 15 chiến lược "CHẤT" (`master_leads.json`):**
    - **Mức bằng chứng:** `evidence_tier: "SOURCE_CLAIM_ONLY"` (tác giả tự công bố, chưa có kiểm định độc lập nội bộ).
@@ -124,8 +128,8 @@ Mọi tệp tin trong `extracted/`, `catalog/` và `handoff/` được kiểm ch
 | `VIR040` | Head & Shoulders phá neckline | Viral & SMC/ICT | `PARTIAL_CONCEPT_ONLY` | **PASS** | `COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD, MISSING_PF_AND_DD_IN_PUBLIC_JSON` |
 
 3. **Bất thường dữ liệu gốc ghi nhận tại `source_anomalies.json`:**
-   - **0 chiến lược** có số năm dương (`years_pos`) ghi nhận trong JSON không khớp với số năm `True` trong từ điển `nam_duong` (`BRK009`, `BRK018`, `BRK034`, `IND015`, `IND044`, `IND047`, `REV025`, `VIR041`).
-   - **0 chu kỳ kiểm định** thiếu các năm không phát sinh giao dịch trong từ điển `nam_duong` thay vì ghi nhận giá trị `False`.
+   - **8 chiến lược** có số năm dương (`years_pos`) ghi nhận trong JSON không khớp với số năm `True` trong từ điển `nam_duong` (`BRK009`, `BRK018`, `BRK034`, `IND015`, `IND044`, `IND047`, `REV025`, `VIR041`).
+   - **40 chu kỳ kiểm định** thiếu các năm không phát sinh giao dịch trong từ điển `nam_duong` thay vì ghi nhận giá trị `False`.
 4. **Cảnh báo mô hình chi phí & Mô phỏng:**
    - **Mâu thuẫn toán học phí giao dịch:** Tác giả công bố `0.02%/chiều` tương đương `~$7/lot 2 chiều`. Tuy nhiên, với XAUUSD quy cách 1 lot = 100 oz, tại giá $2,650/oz (notional $265,000), phí `0.02%/chiều` = $53/chiều = **$106/lot 2 chiều**. Mức $7/lot thực tế chỉ tương đương 0.00132%/chiều (chênh lệch 15.1 lần).
    - **Mô phỏng Monte Carlo tĩnh:** File `HomeStitch-DfsUMINs.js` chứa mảng tĩnh 300 giá trị phao mô phỏng sẵn (`display_cached_simulation`), không thực hiện tính toán Monte Carlo hoán vị động tại client.
@@ -141,7 +145,7 @@ Mọi tệp tin trong `extracted/`, `catalog/` và `handoff/` được kiểm ch
 2. **Minh bạch tài khoản Live Real:**
    - 44/45 hồ sơ hoàn toàn KHÔNG có link theo dõi tài khoản thật của bên thứ ba.
    - Duy nhất 1 hồ sơ cung cấp link Myfxbook nhưng là tài khoản **Demo**, không phải tài khoản Real có nạp tiền thực tế.
-   - Toàn bộ kết quả backtest trên trang là MT5 zero-slippage do nhà bán lẻ tự quảng cáo.
+   - Backtest vendor trên mẫu 45 EAFree gồm cả MetaTrader 4 và MetaTrader 5 (ví dụ Sunan Giri chạy MT4 Strategy Tester lịch sử demo 90%), chưa chứng minh đủ chi phí spread biến động/slippage/swap và không được dùng làm bằng chứng hiệu suất.
 3. **Kiểm chứng hồi quy 3 Fixture đại diện:**
 
 | EA Fixture Slug | Vendor Risk Label | Pricing / Points | Grid/Martingale | Live Real Verified | Kết Luận Kiểm Toán |

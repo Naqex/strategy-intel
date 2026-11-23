@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-23T02:16:51.824635",
+  "generated_at": "2026-11-23T02:17:23.961527",
   "description": "Báo cáo kiểm toán độc lập các dị thường số liệu trong dữ liệu nguồn gốc raw/reports_json/ (242 chiến lược)",
   "audit_status": "WARN_SOURCE_ANOMALIES_LOGGED",
   "total_strategies_scanned": 242,

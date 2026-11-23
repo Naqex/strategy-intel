@@ -35,19 +35,24 @@ const unverifiedClassification = {
   'VIR028': { category: 'DISCRETIONARY_NOT_FORMALIZED', reason: 'Chiến lược kết hợp KAMA + Bollinger Bands cảm tính, chưa được tối ưu hóa tham số.' }
 };
 
-// Specific mapping for 40 merged items
-const duplicateExactIds = new Set(['BRK020', 'BRK033', 'SEA019', 'VIR032', 'VIR046', 'VIR047']);
-const untestedVariantIds = new Set(['REV029', 'REV018', 'REV021', 'REV023', 'REV024', 'REV036', 'BRK039']);
+// Specific mapping for 40 merged items:
+// VIR032 is BTMM (not duplicate of SEA023), moved to UNTESTED_VARIANT.
+const duplicateExactIds = new Set(['BRK020', 'BRK033', 'SEA019', 'VIR046', 'VIR047']);
+const untestedVariantIds = new Set(['REV029', 'REV018', 'REV021', 'REV023', 'REV024', 'REV036', 'BRK039', 'VIR032']);
 
 for (const item of danhSach) {
   if (!files.has(item.id)) {
     let lyDo = '';
     let mergeRelation = null;
     let unverifiedCat = null;
-    let verdictClean = item.verdict;
+    let verifiedVerdict = null;
+    let inheritsParent = false;
     let qualityFlags = [];
 
     if (item.trang_thai === 'gop') {
+      verifiedVerdict = 'UNVERIFIED_VARIANT';
+      inheritsParent = false;
+
       if (duplicateExactIds.has(item.id)) {
         mergeRelation = 'DUPLICATE_EXACT';
       } else if (untestedVariantIds.has(item.id)) {
@@ -56,20 +61,25 @@ for (const item of danhSach) {
         mergeRelation = 'RELATED_VARIANT';
       }
 
-      // Check special case REV029: DO NOT inherit CHẤT
+      // Check special case REV029: DO NOT inherit CHẤT from SEA003
       if (item.id === 'REV029') {
-        verdictClean = 'CHUA_KIEM_DINH_BIEN_THE_NGUOC';
         qualityFlags.push('UNTESTED_REVERSE_VARIANT_CANNOT_INHERIT_CHAT');
         lyDo = 'Biến thể bán ngược chiều (Fade) không được thừa kế phán quyết CHẤT của SEA003. Bản thân chưa được kiểm định độc lập.';
+      } else if (item.id === 'VIR032') {
+        qualityFlags.push('UNTESTED_BTMM_NO_TRADING_EQUIVALENCE');
+        lyDo = 'BTMM (Beat The Market Maker) là phương pháp tạo lập thị trường, không có bằng chứng tương đương giao dịch với SEA023.';
       } else {
         lyDo = item.ghi_chu || `Bản đối xứng / gộp biến thể của chiến lược gốc ${item.goc}. Không chạy file backtest riêng rẽ.`;
       }
     } else if (item.trang_thai === 'chua_kiem_dinh') {
+      verifiedVerdict = 'UNVERIFIED_DISCRETIONARY_OR_MISSING_DATA';
+      inheritsParent = false;
       const mapping = unverifiedClassification[item.id] || { category: 'DISCRETIONARY_NOT_FORMALIZED', reason: 'Chưa kiểm định: dựa trên quy tắc vẽ tay/cảm tính chủ quan.' };
       unverifiedCat = mapping.category;
       lyDo = mapping.reason;
-      verdictClean = 'CHUA_KIEM_DINH';
     } else {
+      verifiedVerdict = 'NOT_IN_STATIC_JSON';
+      inheritsParent = false;
       lyDo = 'Không có file report JSON trên server Netlify tĩnh.';
     }
 
@@ -79,7 +89,10 @@ for (const item of danhSach) {
       ho: item.ho,
       khung_thoi_gian: item.tf,
       trang_thai: item.trang_thai,
-      verdict_goc: verdictClean,
+      source_inherited_verdict: item.verdict,
+      verified_verdict: verifiedVerdict,
+      inherits_parent_verdict: inheritsParent,
+      verdict_goc: item.verdict,
       xep_hang: item.xep_hang ?? null,
       goc_tham_chieu: item.goc || null,
       merge_relation: mergeRelation,

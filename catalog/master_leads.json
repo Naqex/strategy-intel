@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-23T02:11:48.416722",
+  "generated_at": "2026-11-23T12:32:48.901588",
   "gate_criteria": {
     "condition_a": "EA with Live Real Verified link (strictly excluding demo, grid, HFT, hedging)",
     "condition_b": "Independently verifiable trading mechanism with stated rules (Top 15 CHẤT from Source 1)"
@@ -27,7 +27,7 @@
       ],
       "replicability": "PARTIAL_CONCEPT_ONLY",
       "evidence_tier": "SOURCE_CLAIM_ONLY",
-      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with stated rules (Top 15 CHẤT)",
+      "gate_condition_met": "SOURCE_CONCEPT_CANDIDATE_QUARANTINED: source claim only, pending independent reproduction in Naqex/workspace",
       "verified_live_links": [],
       "performance_metrics": {
         "is_2004_2018": {
@@ -84,7 +84,7 @@
       ],
       "replicability": "PARTIAL_CONCEPT_ONLY",
       "evidence_tier": "SOURCE_CLAIM_ONLY",
-      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with stated rules (Top 15 CHẤT)",
+      "gate_condition_met": "SOURCE_CONCEPT_CANDIDATE_QUARANTINED: source claim only, pending independent reproduction in Naqex/workspace",
       "verified_live_links": [],
       "performance_metrics": {
         "is_2004_2018": {
@@ -142,7 +142,7 @@
       ],
       "replicability": "PARTIAL_CONCEPT_ONLY",
       "evidence_tier": "SOURCE_CLAIM_ONLY",
-      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with stated rules (Top 15 CHẤT)",
+      "gate_condition_met": "SOURCE_CONCEPT_CANDIDATE_QUARANTINED: source claim only, pending independent reproduction in Naqex/workspace",
       "verified_live_links": [],
       "performance_metrics": {
         "is_2004_2018": {
@@ -199,7 +199,7 @@
       ],
       "replicability": "PARTIAL_CONCEPT_ONLY",
       "evidence_tier": "SOURCE_CLAIM_ONLY",
-      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with stated rules (Top 15 CHẤT)",
+      "gate_condition_met": "SOURCE_CONCEPT_CANDIDATE_QUARANTINED: source claim only, pending independent reproduction in Naqex/workspace",
       "verified_live_links": [],
       "performance_metrics": {
         "is_2004_2018": {
@@ -256,7 +256,7 @@
       ],
       "replicability": "PARTIAL_CONCEPT_ONLY",
       "evidence_tier": "SOURCE_CLAIM_ONLY",
-      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with stated rules (Top 15 CHẤT)",
+      "gate_condition_met": "SOURCE_CONCEPT_CANDIDATE_QUARANTINED: source claim only, pending independent reproduction in Naqex/workspace",
       "verified_live_links": [],
       "performance_metrics": {
         "is_2004_2018": {
@@ -313,7 +313,7 @@
       ],
       "replicability": "PARTIAL_CONCEPT_ONLY",
       "evidence_tier": "SOURCE_CLAIM_ONLY",
-      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with stated rules (Top 15 CHẤT)",
+      "gate_condition_met": "SOURCE_CONCEPT_CANDIDATE_QUARANTINED: source claim only, pending independent reproduction in Naqex/workspace",
       "verified_live_links": [],
       "performance_metrics": {
         "is_2004_2018": {
@@ -370,7 +370,7 @@
       ],
       "replicability": "PARTIAL_CONCEPT_ONLY",
       "evidence_tier": "SOURCE_CLAIM_ONLY",
-      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with stated rules (Top 15 CHẤT)",
+      "gate_condition_met": "SOURCE_CONCEPT_CANDIDATE_QUARANTINED: source claim only, pending independent reproduction in Naqex/workspace",
       "verified_live_links": [],
       "performance_metrics": {
         "is_2004_2018": {
@@ -427,7 +427,7 @@
       ],
       "replicability": "PARTIAL_CONCEPT_ONLY",
       "evidence_tier": "SOURCE_CLAIM_ONLY",
-      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with stated rules (Top 15 CHẤT)",
+      "gate_condition_met": "SOURCE_CONCEPT_CANDIDATE_QUARANTINED: source claim only, pending independent reproduction in Naqex/workspace",
       "verified_live_links": [],
       "performance_metrics": {
         "is_2004_2018": {
@@ -483,7 +483,7 @@
       ],
       "replicability": "PARTIAL_CONCEPT_ONLY",
       "evidence_tier": "SOURCE_CLAIM_ONLY",
-      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with stated rules (Top 15 CHẤT)",
+      "gate_condition_met": "SOURCE_CONCEPT_CANDIDATE_QUARANTINED: source claim only, pending independent reproduction in Naqex/workspace",
       "verified_live_links": [],
       "performance_metrics": {
         "is_2004_2018": {
@@ -540,7 +540,7 @@
       ],
       "replicability": "PARTIAL_CONCEPT_ONLY",
       "evidence_tier": "SOURCE_CLAIM_ONLY",
-      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with stated rules (Top 15 CHẤT)",
+      "gate_condition_met": "SOURCE_CONCEPT_CANDIDATE_QUARANTINED: source claim only, pending independent reproduction in Naqex/workspace",
       "verified_live_links": [],
       "performance_metrics": {
         "is_2004_2018": {
@@ -598,7 +598,7 @@
       ],
       "replicability": "REPLICABLE_FROM_PUBLIC",
       "evidence_tier": "SOURCE_CLAIM_ONLY",
-      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with stated rules (Top 15 CHẤT)",
+      "gate_condition_met": "SOURCE_CONCEPT_CANDIDATE_QUARANTINED: source claim only, pending independent reproduction in Naqex/workspace",
       "verified_live_links": [],
       "performance_metrics": {
         "is_2004_2018": {
@@ -657,7 +657,7 @@
       ],
       "replicability": "PARTIAL_RULE_SPEC",
       "evidence_tier": "SOURCE_CLAIM_ONLY",
-      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with stated rules (Top 15 CHẤT)",
+      "gate_condition_met": "SOURCE_CONCEPT_CANDIDATE_QUARANTINED: source claim only, pending independent reproduction in Naqex/workspace",
       "verified_live_links": [],
       "performance_metrics": {
         "is_2004_2018": {
@@ -714,7 +714,7 @@
       ],
       "replicability": "PARTIAL_CONCEPT_ONLY",
       "evidence_tier": "SOURCE_CLAIM_ONLY",
-      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with stated rules (Top 15 CHẤT)",
+      "gate_condition_met": "SOURCE_CONCEPT_CANDIDATE_QUARANTINED: source claim only, pending independent reproduction in Naqex/workspace",
       "verified_live_links": [],
       "performance_metrics": {
         "is_2004_2018": {
@@ -772,7 +772,7 @@
       ],
       "replicability": "PARTIAL_CONCEPT_ONLY",
       "evidence_tier": "SOURCE_CLAIM_ONLY",
-      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with stated rules (Top 15 CHẤT)",
+      "gate_condition_met": "SOURCE_CONCEPT_CANDIDATE_QUARANTINED: source claim only, pending independent reproduction in Naqex/workspace",
       "verified_live_links": [],
       "performance_metrics": {
         "is_2004_2018": {
@@ -828,7 +828,7 @@
       ],
       "replicability": "PARTIAL_CONCEPT_ONLY",
       "evidence_tier": "SOURCE_CLAIM_ONLY",
-      "gate_condition_met": "Condition (b): Independently verifiable quantitative mechanism with stated rules (Top 15 CHẤT)",
+      "gate_condition_met": "SOURCE_CONCEPT_CANDIDATE_QUARANTINED: source claim only, pending independent reproduction in Naqex/workspace",
       "verified_live_links": [],
       "performance_metrics": {
         "is_2004_2018": {
