@@ -17,3 +17,18 @@ desktop.ini
 .vscode/
 .idea/
 
+# External intake drops (keep GitHub clean, zero binary/archive/third-party leaks)
+inbox/**
+!inbox/
+!inbox/README.md
+!inbox/01-open-source-code/
+!inbox/01-open-source-code/.gitkeep
+!inbox/02-trade-logs-csv/
+!inbox/02-trade-logs-csv/.gitkeep
+!inbox/03-papers-and-notes/
+!inbox/03-papers-and-notes/.gitkeep
+!inbox/04-quarantine-setfiles/
+!inbox/04-quarantine-setfiles/.gitkeep
+inbox-triage-report.*
+
+
