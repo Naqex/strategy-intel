@@ -165,6 +165,19 @@ class TestCleanroomGuards(unittest.TestCase):
         table_rep_rows = [line for line in audit_text.splitlines() if line.startswith('|') and '`REPLICABLE_FROM_PUBLIC`' in line]
         self.assertEqual(len(table_rep_rows), rep_leads_count, "Audit table REPLICABLE_FROM_PUBLIC count must match master_leads.json")
         self.assertIn('1 / 15 chiến lược (6.7%)', audit_text, "Audit summary must state 1/15 (6.7%) REPLICABLE_FROM_PUBLIC")
+        self.assertNotIn('1:2 đến 1:3', audit_text, "Audit summary must not contain hallucinated R:R claims")
+
+        # 3. Verify 5 Long-only leads have direction == 'Long' and 0 unproven DUPLICATE_EXACT
+        long_only_ids = {'IND026', 'MTF020', 'SEA003', 'SEA011', 'SEA021'}
+        for lead in leads:
+            if lead.get('original_id') in long_only_ids:
+                self.assertEqual(lead.get('direction'), 'Long', f"{lead.get('original_id')} must be Long-only")
+        with open(os.path.join(ROOT_DIR, 'sources/stategy-netlify-app/extracted/07_missing_58_items.json'), 'r', encoding='utf-8') as f:
+            m58 = json.load(f)
+        self.assertEqual(m58['phan_loai_thieu']['phan_loai_gop']['DUPLICATE_EXACT'], 0, "No unproven DUPLICATE_EXACT allowed")
+        with open(os.path.join(ROOT_DIR, 'handoff/sanitized_master_leads.json'), 'r', encoding='utf-8') as f:
+            handoff = json.load(f)
+        self.assertNotIn('Independently verifiable', handoff['gate_criteria']['condition_b'])
         print("[TEST PASS] Document consistency assertions all verified.")
 
     def test_eafree_fixtures_regression(self):

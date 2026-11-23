@@ -3,25 +3,35 @@
   "description": "Cleanroom Handoff Package for Internal Quant Research (Holdout Sanitized)",
   "gate_criteria": {
     "condition_a": "EA with Live Real Verified link (strictly excluding demo, grid, HFT, hedging)",
-    "condition_b": "Independently verifiable trading mechanism with stated rules (Top 15 CHẤT from Source 1)"
+    "condition_b": "Public source concept lead (SOURCE_CLAIM_ONLY; quarantined pending independent white-box formalization & M1 Bid/Ask verification in Naqex/workspace)"
   },
   "total_leads": 15,
   "leads": [
     {
-      "timeframe": "D1",
-      "verified_live_links": [],
+      "lead_id": "LEAD-NETLIFY-BRK012",
+      "source": "stategy-netlify-app",
+      "original_id": "BRK012",
+      "name": "Inside day breakout",
+      "family": "Breakout & phiên",
       "symbol": "XAUUSD",
-      "evidence_tier": "SOURCE_CLAIM_ONLY",
+      "timeframe": "D1",
+      "direction": "Both",
+      "rule_description": "Hôm nay nằm trọn trong hôm qua → mai phá biên nào theo biên đó",
+      "source_verdict": "CHẤT",
+      "passes_all_5": true,
       "data_quality_flags": [
         "COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD",
         "MISSING_PF_AND_DD_IN_PUBLIC_JSON"
       ],
       "replicability": "PARTIAL_CONCEPT_ONLY",
-      "name": "Inside day breakout",
-      "direction": "Both",
-      "rule_description": "Hôm nay nằm trọn trong hôm qua → mai phá biên nào theo biên đó",
+      "evidence_tier": "SOURCE_CLAIM_ONLY",
+      "gate_condition_met": "SOURCE_CONCEPT_CANDIDATE_QUARANTINED: source claim only, pending independent reproduction in Naqex/workspace",
+      "verified_live_links": [],
       "performance_metrics": {
         "is_2004_2018": {
+          "n": 113,
+          "wr": 29.2,
+          "years_pos": "8/15",
           "nam_duong": {
             "2004": false,
             "2005": false,
@@ -38,47 +48,47 @@
             "2016": true,
             "2017": true,
             "2018": false
-          },
-          "n": 113,
-          "wr": 29.2,
-          "years_pos": "8/15"
+          }
         },
         "oos1_2019_2023": {
+          "n": 36,
+          "wr": 30.6,
+          "years_pos": "3/5",
           "nam_duong": {
             "2019": true,
             "2020": false,
             "2021": true,
             "2022": false,
             "2023": true
-          },
-          "n": 36,
-          "wr": 30.6,
-          "years_pos": "3/5"
+          }
         }
-      },
-      "gate_condition_met": "SOURCE_CONCEPT_CANDIDATE_QUARANTINED: source claim only, pending independent reproduction in Naqex/workspace",
-      "family": "Breakout & phiên",
-      "source_verdict": "CHẤT",
-      "source": "stategy-netlify-app",
-      "original_id": "BRK012",
-      "lead_id": "LEAD-NETLIFY-BRK012",
-      "passes_all_5": true
+      }
     },
     {
-      "timeframe": "H1",
-      "verified_live_links": [],
+      "lead_id": "LEAD-NETLIFY-BRK035",
+      "source": "stategy-netlify-app",
+      "original_id": "BRK035",
+      "name": "Hộp 4h đầu tuần",
+      "family": "Breakout & phiên",
       "symbol": "XAUUSD",
-      "evidence_tier": "SOURCE_CLAIM_ONLY",
+      "timeframe": "H1",
+      "direction": "Both",
+      "rule_description": "Range 4 giờ đầu tuần, phá biên trong ngày thứ Hai",
+      "source_verdict": "CHẤT",
+      "passes_all_5": true,
       "data_quality_flags": [
         "COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD",
         "MISSING_PF_AND_DD_IN_PUBLIC_JSON"
       ],
       "replicability": "PARTIAL_CONCEPT_ONLY",
-      "name": "Hộp 4h đầu tuần",
-      "direction": "Both",
-      "rule_description": "Range 4 giờ đầu tuần, phá biên trong ngày thứ Hai",
+      "evidence_tier": "SOURCE_CLAIM_ONLY",
+      "gate_condition_met": "SOURCE_CONCEPT_CANDIDATE_QUARANTINED: source claim only, pending independent reproduction in Naqex/workspace",
+      "verified_live_links": [],
       "performance_metrics": {
         "is_2004_2018": {
+          "n": 945,
+          "wr": 29.6,
+          "years_pos": "9/15",
           "nam_duong": {
             "2004": false,
             "2005": false,
@@ -95,48 +105,48 @@
             "2016": true,
             "2017": true,
             "2018": false
-          },
-          "n": 945,
-          "wr": 29.6,
-          "years_pos": "9/15"
+          }
         },
         "oos1_2019_2023": {
+          "n": 337,
+          "wr": 29.1,
+          "years_pos": "4/5",
           "nam_duong": {
             "2019": true,
             "2020": true,
             "2021": false,
             "2022": true,
             "2023": true
-          },
-          "n": 337,
-          "wr": 29.1,
-          "years_pos": "4/5"
+          }
         }
-      },
-      "gate_condition_met": "SOURCE_CONCEPT_CANDIDATE_QUARANTINED: source claim only, pending independent reproduction in Naqex/workspace",
-      "family": "Breakout & phiên",
-      "source_verdict": "CHẤT",
-      "source": "stategy-netlify-app",
-      "original_id": "BRK035",
-      "lead_id": "LEAD-NETLIFY-BRK035",
-      "passes_all_5": true
+      }
     },
     {
-      "timeframe": "D1",
-      "verified_live_links": [],
+      "lead_id": "LEAD-NETLIFY-IND026",
+      "source": "stategy-netlify-app",
+      "original_id": "IND026",
+      "name": "Ichimoku Chikou xác nhận",
+      "family": "Indicator kinh điển",
       "symbol": "XAUUSD",
-      "evidence_tier": "SOURCE_CLAIM_ONLY",
+      "timeframe": "D1",
+      "direction": "Long",
+      "rule_description": "Chikou vượt giá 26 nến trước + giá trên mây → mua",
+      "source_verdict": "CHẤT",
+      "passes_all_5": false,
       "data_quality_flags": [
         "COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD",
         "MISSING_PF_AND_DD_IN_PUBLIC_JSON",
         "FAILED_FEASIBILITY_UNDER_100_TRADES"
       ],
       "replicability": "PARTIAL_CONCEPT_ONLY",
-      "name": "Ichimoku Chikou xác nhận",
-      "direction": "Both",
-      "rule_description": "Chikou vượt giá 26 nến trước + giá trên mây → mua",
+      "evidence_tier": "SOURCE_CLAIM_ONLY",
+      "gate_condition_met": "SOURCE_CONCEPT_CANDIDATE_QUARANTINED: source claim only, pending independent reproduction in Naqex/workspace",
+      "verified_live_links": [],
       "performance_metrics": {
         "is_2004_2018": {
+          "n": 63,
+          "wr": 33.3,
+          "years_pos": "9/15",
           "nam_duong": {
             "2004": true,
             "2005": true,
@@ -153,47 +163,47 @@
             "2016": false,
             "2017": false,
             "2018": true
-          },
-          "n": 63,
-          "wr": 33.3,
-          "years_pos": "9/15"
+          }
         },
         "oos1_2019_2023": {
+          "n": 23,
+          "wr": 34.8,
+          "years_pos": "3/5",
           "nam_duong": {
             "2019": false,
             "2020": true,
             "2021": false,
             "2022": true,
             "2023": true
-          },
-          "n": 23,
-          "wr": 34.8,
-          "years_pos": "3/5"
+          }
         }
-      },
-      "gate_condition_met": "SOURCE_CONCEPT_CANDIDATE_QUARANTINED: source claim only, pending independent reproduction in Naqex/workspace",
-      "family": "Indicator kinh điển",
-      "source_verdict": "CHẤT",
-      "source": "stategy-netlify-app",
-      "original_id": "IND026",
-      "lead_id": "LEAD-NETLIFY-IND026",
-      "passes_all_5": false
+      }
     },
     {
-      "timeframe": "H4",
-      "verified_live_links": [],
+      "lead_id": "LEAD-NETLIFY-IND041",
+      "source": "stategy-netlify-app",
+      "original_id": "IND041",
+      "name": "ROC momentum 10",
+      "family": "Indicator kinh điển",
       "symbol": "XAUUSD",
-      "evidence_tier": "SOURCE_CLAIM_ONLY",
+      "timeframe": "H4",
+      "direction": "Both",
+      "rule_description": "Rate of Change vượt ngưỡng ±X%, vào theo momentum",
+      "source_verdict": "CHẤT",
+      "passes_all_5": true,
       "data_quality_flags": [
         "COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD",
         "MISSING_PF_AND_DD_IN_PUBLIC_JSON"
       ],
       "replicability": "PARTIAL_CONCEPT_ONLY",
-      "name": "ROC momentum 10",
-      "direction": "Both",
-      "rule_description": "Rate of Change vượt ngưỡng ±X%, vào theo momentum",
+      "evidence_tier": "SOURCE_CLAIM_ONLY",
+      "gate_condition_met": "SOURCE_CONCEPT_CANDIDATE_QUARANTINED: source claim only, pending independent reproduction in Naqex/workspace",
+      "verified_live_links": [],
       "performance_metrics": {
         "is_2004_2018": {
+          "n": 496,
+          "wr": 30,
+          "years_pos": "12/15",
           "nam_duong": {
             "2004": false,
             "2005": true,
@@ -210,47 +220,47 @@
             "2016": false,
             "2017": true,
             "2018": true
-          },
-          "n": 496,
-          "wr": 30,
-          "years_pos": "12/15"
+          }
         },
         "oos1_2019_2023": {
+          "n": 188,
+          "wr": 29.8,
+          "years_pos": "3/5",
           "nam_duong": {
             "2019": true,
             "2020": true,
             "2021": false,
             "2022": false,
             "2023": true
-          },
-          "n": 188,
-          "wr": 29.8,
-          "years_pos": "3/5"
+          }
         }
-      },
-      "gate_condition_met": "SOURCE_CONCEPT_CANDIDATE_QUARANTINED: source claim only, pending independent reproduction in Naqex/workspace",
-      "family": "Indicator kinh điển",
-      "source_verdict": "CHẤT",
-      "source": "stategy-netlify-app",
-      "original_id": "IND041",
-      "lead_id": "LEAD-NETLIFY-IND041",
-      "passes_all_5": true
+      }
     },
     {
-      "timeframe": "H4",
-      "verified_live_links": [],
+      "lead_id": "LEAD-NETLIFY-IND049",
+      "source": "stategy-netlify-app",
+      "original_id": "IND049",
+      "name": "Alligator mở miệng",
+      "family": "Indicator kinh điển",
       "symbol": "XAUUSD",
-      "evidence_tier": "SOURCE_CLAIM_ONLY",
+      "timeframe": "H4",
+      "direction": "Both",
+      "rule_description": "3 đường alligator tách nhau sau khi cuộn, vào theo hướng mở",
+      "source_verdict": "CHẤT",
+      "passes_all_5": true,
       "data_quality_flags": [
         "COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD",
         "MISSING_PF_AND_DD_IN_PUBLIC_JSON"
       ],
       "replicability": "PARTIAL_CONCEPT_ONLY",
-      "name": "Alligator mở miệng",
-      "direction": "Both",
-      "rule_description": "3 đường alligator tách nhau sau khi cuộn, vào theo hướng mở",
+      "evidence_tier": "SOURCE_CLAIM_ONLY",
+      "gate_condition_met": "SOURCE_CONCEPT_CANDIDATE_QUARANTINED: source claim only, pending independent reproduction in Naqex/workspace",
+      "verified_live_links": [],
       "performance_metrics": {
         "is_2004_2018": {
+          "n": 537,
+          "wr": 31.1,
+          "years_pos": "12/15",
           "nam_duong": {
             "2004": true,
             "2005": true,
@@ -267,47 +277,47 @@
             "2016": false,
             "2017": true,
             "2018": true
-          },
-          "n": 537,
-          "wr": 31.1,
-          "years_pos": "12/15"
+          }
         },
         "oos1_2019_2023": {
+          "n": 174,
+          "wr": 31.6,
+          "years_pos": "4/5",
           "nam_duong": {
             "2019": true,
             "2020": true,
             "2021": true,
             "2022": true,
             "2023": false
-          },
-          "n": 174,
-          "wr": 31.6,
-          "years_pos": "4/5"
+          }
         }
-      },
-      "gate_condition_met": "SOURCE_CONCEPT_CANDIDATE_QUARANTINED: source claim only, pending independent reproduction in Naqex/workspace",
-      "family": "Indicator kinh điển",
-      "source_verdict": "CHẤT",
-      "source": "stategy-netlify-app",
-      "original_id": "IND049",
-      "lead_id": "LEAD-NETLIFY-IND049",
-      "passes_all_5": true
+      }
     },
     {
-      "timeframe": "H4",
-      "verified_live_links": [],
+      "lead_id": "LEAD-NETLIFY-IND053",
+      "source": "stategy-netlify-app",
+      "original_id": "IND053",
+      "name": "Momentum 10 vượt 100",
+      "family": "Indicator kinh điển",
       "symbol": "XAUUSD",
-      "evidence_tier": "SOURCE_CLAIM_ONLY",
+      "timeframe": "H4",
+      "direction": "Both",
+      "rule_description": "Momentum vượt ngưỡng — mua; thủng — bán",
+      "source_verdict": "CHẤT",
+      "passes_all_5": true,
       "data_quality_flags": [
         "COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD",
         "MISSING_PF_AND_DD_IN_PUBLIC_JSON"
       ],
       "replicability": "PARTIAL_CONCEPT_ONLY",
-      "name": "Momentum 10 vượt 100",
-      "direction": "Both",
-      "rule_description": "Momentum vượt ngưỡng — mua; thủng — bán",
+      "evidence_tier": "SOURCE_CLAIM_ONLY",
+      "gate_condition_met": "SOURCE_CONCEPT_CANDIDATE_QUARANTINED: source claim only, pending independent reproduction in Naqex/workspace",
+      "verified_live_links": [],
       "performance_metrics": {
         "is_2004_2018": {
+          "n": 566,
+          "wr": 29.2,
+          "years_pos": "10/15",
           "nam_duong": {
             "2004": false,
             "2005": true,
@@ -324,47 +334,47 @@
             "2016": true,
             "2017": false,
             "2018": true
-          },
-          "n": 566,
-          "wr": 29.2,
-          "years_pos": "10/15"
+          }
         },
         "oos1_2019_2023": {
+          "n": 176,
+          "wr": 27.8,
+          "years_pos": "4/5",
           "nam_duong": {
             "2019": true,
             "2020": true,
             "2021": false,
             "2022": true,
             "2023": true
-          },
-          "n": 176,
-          "wr": 27.8,
-          "years_pos": "4/5"
+          }
         }
-      },
-      "gate_condition_met": "SOURCE_CONCEPT_CANDIDATE_QUARANTINED: source claim only, pending independent reproduction in Naqex/workspace",
-      "family": "Indicator kinh điển",
-      "source_verdict": "CHẤT",
-      "source": "stategy-netlify-app",
-      "original_id": "IND053",
-      "lead_id": "LEAD-NETLIFY-IND053",
-      "passes_all_5": true
+      }
     },
     {
-      "timeframe": "H1",
-      "verified_live_links": [],
+      "lead_id": "LEAD-NETLIFY-MTF016",
+      "source": "stategy-netlify-app",
+      "original_id": "MTF016",
+      "name": "Mùa vụ D1 + tín hiệu H1",
+      "family": "Đa khung & lai",
       "symbol": "XAUUSD",
-      "evidence_tier": "SOURCE_CLAIM_ONLY",
+      "timeframe": "H1",
+      "direction": "Both",
+      "rule_description": "Chỉ nhận tín hiệu H1 thuận hướng mùa vụ tháng đó",
+      "source_verdict": "CHẤT",
+      "passes_all_5": true,
       "data_quality_flags": [
         "COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD",
         "MISSING_PF_AND_DD_IN_PUBLIC_JSON"
       ],
       "replicability": "PARTIAL_CONCEPT_ONLY",
-      "name": "Mùa vụ D1 + tín hiệu H1",
-      "direction": "Both",
-      "rule_description": "Chỉ nhận tín hiệu H1 thuận hướng mùa vụ tháng đó",
+      "evidence_tier": "SOURCE_CLAIM_ONLY",
+      "gate_condition_met": "SOURCE_CONCEPT_CANDIDATE_QUARANTINED: source claim only, pending independent reproduction in Naqex/workspace",
+      "verified_live_links": [],
       "performance_metrics": {
         "is_2004_2018": {
+          "n": 311,
+          "wr": 31.5,
+          "years_pos": "11/15",
           "nam_duong": {
             "2004": true,
             "2005": true,
@@ -381,47 +391,47 @@
             "2016": false,
             "2017": true,
             "2018": true
-          },
-          "n": 311,
-          "wr": 31.5,
-          "years_pos": "11/15"
+          }
         },
         "oos1_2019_2023": {
+          "n": 101,
+          "wr": 35.6,
+          "years_pos": "3/5",
           "nam_duong": {
             "2019": true,
             "2020": false,
             "2021": false,
             "2022": true,
             "2023": true
-          },
-          "n": 101,
-          "wr": 35.6,
-          "years_pos": "3/5"
+          }
         }
-      },
-      "gate_condition_met": "SOURCE_CONCEPT_CANDIDATE_QUARANTINED: source claim only, pending independent reproduction in Naqex/workspace",
-      "family": "Đa khung & lai",
-      "source_verdict": "CHẤT",
-      "source": "stategy-netlify-app",
-      "original_id": "MTF016",
-      "lead_id": "LEAD-NETLIFY-MTF016",
-      "passes_all_5": true
+      }
     },
     {
-      "timeframe": "H4",
-      "verified_live_links": [],
+      "lead_id": "LEAD-NETLIFY-MTF020",
+      "source": "stategy-netlify-app",
+      "original_id": "MTF020",
+      "name": "Golden cross D1 nền + mua mọi hồi H4",
+      "family": "Đa khung & lai",
       "symbol": "XAUUSD",
-      "evidence_tier": "SOURCE_CLAIM_ONLY",
+      "timeframe": "H4",
+      "direction": "Long",
+      "rule_description": "Sau golden cross D1, mua mỗi lần H4 hồi về EMA20",
+      "source_verdict": "CHẤT",
+      "passes_all_5": true,
       "data_quality_flags": [
         "COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD",
         "MISSING_PF_AND_DD_IN_PUBLIC_JSON"
       ],
       "replicability": "PARTIAL_CONCEPT_ONLY",
-      "name": "Golden cross D1 nền + mua mọi hồi H4",
-      "direction": "Both",
-      "rule_description": "Sau golden cross D1, mua mỗi lần H4 hồi về EMA20",
+      "evidence_tier": "SOURCE_CLAIM_ONLY",
+      "gate_condition_met": "SOURCE_CONCEPT_CANDIDATE_QUARANTINED: source claim only, pending independent reproduction in Naqex/workspace",
+      "verified_live_links": [],
       "performance_metrics": {
         "is_2004_2018": {
+          "n": 482,
+          "wr": 30.3,
+          "years_pos": "11/14",
           "nam_duong": {
             "2005": true,
             "2006": true,
@@ -437,47 +447,47 @@
             "2016": true,
             "2017": true,
             "2018": false
-          },
-          "n": 482,
-          "wr": 30.3,
-          "years_pos": "11/14"
+          }
         },
         "oos1_2019_2023": {
+          "n": 143,
+          "wr": 30.8,
+          "years_pos": "4/5",
           "nam_duong": {
             "2019": true,
             "2020": true,
             "2021": false,
             "2022": true,
             "2023": true
-          },
-          "n": 143,
-          "wr": 30.8,
-          "years_pos": "4/5"
+          }
         }
-      },
-      "gate_condition_met": "SOURCE_CONCEPT_CANDIDATE_QUARANTINED: source claim only, pending independent reproduction in Naqex/workspace",
-      "family": "Đa khung & lai",
-      "source_verdict": "CHẤT",
-      "source": "stategy-netlify-app",
-      "original_id": "MTF020",
-      "lead_id": "LEAD-NETLIFY-MTF020",
-      "passes_all_5": true
+      }
     },
     {
-      "timeframe": "D1",
-      "verified_live_links": [],
+      "lead_id": "LEAD-NETLIFY-NEN006",
+      "source": "stategy-netlify-app",
+      "original_id": "NEN006",
+      "name": "Inside bar thuận trend D1",
+      "family": "Mẫu nến",
       "symbol": "XAUUSD",
-      "evidence_tier": "SOURCE_CLAIM_ONLY",
+      "timeframe": "D1",
+      "direction": "Both",
+      "rule_description": "Chỉ trade inside bar khi D1 đang trend (giá trên/dưới EMA200)",
+      "source_verdict": "CHẤT",
+      "passes_all_5": true,
       "data_quality_flags": [
         "COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD",
         "MISSING_PF_AND_DD_IN_PUBLIC_JSON"
       ],
       "replicability": "PARTIAL_CONCEPT_ONLY",
-      "name": "Inside bar thuận trend D1",
-      "direction": "Both",
-      "rule_description": "Chỉ trade inside bar khi D1 đang trend (giá trên/dưới EMA200)",
+      "evidence_tier": "SOURCE_CLAIM_ONLY",
+      "gate_condition_met": "SOURCE_CONCEPT_CANDIDATE_QUARANTINED: source claim only, pending independent reproduction in Naqex/workspace",
+      "verified_live_links": [],
       "performance_metrics": {
         "is_2004_2018": {
+          "n": 102,
+          "wr": 30.4,
+          "years_pos": "9/15",
           "nam_duong": {
             "2004": false,
             "2005": true,
@@ -494,47 +504,47 @@
             "2016": true,
             "2017": true,
             "2018": false
-          },
-          "n": 102,
-          "wr": 30.4,
-          "years_pos": "9/15"
+          }
         },
         "oos1_2019_2023": {
+          "n": 30,
+          "wr": 33.3,
+          "years_pos": "3/5",
           "nam_duong": {
             "2019": true,
             "2020": true,
             "2021": false,
             "2022": true,
             "2023": false
-          },
-          "n": 30,
-          "wr": 33.3,
-          "years_pos": "3/5"
+          }
         }
-      },
-      "gate_condition_met": "SOURCE_CONCEPT_CANDIDATE_QUARANTINED: source claim only, pending independent reproduction in Naqex/workspace",
-      "family": "Mẫu nến",
-      "source_verdict": "CHẤT",
-      "source": "stategy-netlify-app",
-      "original_id": "NEN006",
-      "lead_id": "LEAD-NETLIFY-NEN006",
-      "passes_all_5": true
+      }
     },
     {
-      "timeframe": "H4",
-      "verified_live_links": [],
+      "lead_id": "LEAD-NETLIFY-NEN022",
+      "source": "stategy-netlify-app",
+      "original_id": "NEN022",
+      "name": "Nến phá vỡ giả (fakey)",
+      "family": "Mẫu nến",
       "symbol": "XAUUSD",
-      "evidence_tier": "SOURCE_CLAIM_ONLY",
+      "timeframe": "H4",
+      "direction": "Both",
+      "rule_description": "Inside bar bị phá một đầu rồi đóng ngược lại — vào theo hướng đóng",
+      "source_verdict": "CHẤT",
+      "passes_all_5": true,
       "data_quality_flags": [
         "COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD",
         "MISSING_PF_AND_DD_IN_PUBLIC_JSON"
       ],
       "replicability": "PARTIAL_CONCEPT_ONLY",
-      "name": "Nến phá vỡ giả (fakey)",
-      "direction": "Both",
-      "rule_description": "Inside bar bị phá một đầu rồi đóng ngược lại — vào theo hướng đóng",
+      "evidence_tier": "SOURCE_CLAIM_ONLY",
+      "gate_condition_met": "SOURCE_CONCEPT_CANDIDATE_QUARANTINED: source claim only, pending independent reproduction in Naqex/workspace",
+      "verified_live_links": [],
       "performance_metrics": {
         "is_2004_2018": {
+          "n": 290,
+          "wr": 29.3,
+          "years_pos": "8/15",
           "nam_duong": {
             "2004": false,
             "2005": true,
@@ -551,48 +561,48 @@
             "2016": true,
             "2017": false,
             "2018": false
-          },
-          "n": 290,
-          "wr": 29.3,
-          "years_pos": "8/15"
+          }
         },
         "oos1_2019_2023": {
+          "n": 127,
+          "wr": 29.9,
+          "years_pos": "3/5",
           "nam_duong": {
             "2019": true,
             "2020": true,
             "2021": false,
             "2022": false,
             "2023": true
-          },
-          "n": 127,
-          "wr": 29.9,
-          "years_pos": "3/5"
+          }
         }
-      },
-      "gate_condition_met": "SOURCE_CONCEPT_CANDIDATE_QUARANTINED: source claim only, pending independent reproduction in Naqex/workspace",
-      "family": "Mẫu nến",
-      "source_verdict": "CHẤT",
-      "source": "stategy-netlify-app",
-      "original_id": "NEN022",
-      "lead_id": "LEAD-NETLIFY-NEN022",
-      "passes_all_5": true
+      }
     },
     {
-      "timeframe": "D1",
-      "verified_live_links": [],
+      "lead_id": "LEAD-NETLIFY-SEA003",
+      "source": "stategy-netlify-app",
+      "original_id": "SEA003",
+      "name": "Turn-of-month vàng",
+      "family": "Giờ giấc & mùa vụ",
       "symbol": "XAUUSD",
-      "evidence_tier": "SOURCE_CLAIM_ONLY",
+      "timeframe": "D1",
+      "direction": "Long",
+      "rule_description": "Mua 2 phiên cuối tháng, đóng phiên 3 tháng mới",
+      "source_verdict": "CHẤT",
+      "passes_all_5": false,
       "data_quality_flags": [
         "COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD",
         "MISSING_PF_AND_DD_IN_PUBLIC_JSON",
         "FAILED_FEASIBILITY_UNDER_100_TRADES"
       ],
       "replicability": "REPLICABLE_FROM_PUBLIC",
-      "name": "Turn-of-month vàng",
-      "direction": "Long",
-      "rule_description": "Mua 2 phiên cuối tháng, đóng phiên 3 tháng mới",
+      "evidence_tier": "SOURCE_CLAIM_ONLY",
+      "gate_condition_met": "SOURCE_CONCEPT_CANDIDATE_QUARANTINED: source claim only, pending independent reproduction in Naqex/workspace",
+      "verified_live_links": [],
       "performance_metrics": {
         "is_2004_2018": {
+          "n": 99,
+          "wr": 36.4,
+          "years_pos": "11/15",
           "nam_duong": {
             "2004": false,
             "2005": true,
@@ -609,37 +619,34 @@
             "2016": true,
             "2017": true,
             "2018": false
-          },
-          "n": 99,
-          "wr": 36.4,
-          "years_pos": "11/15"
+          }
         },
         "oos1_2019_2023": {
+          "n": 36,
+          "wr": 33.3,
+          "years_pos": "4/5",
           "nam_duong": {
             "2019": true,
             "2020": true,
             "2021": true,
             "2022": true,
             "2023": false
-          },
-          "n": 36,
-          "wr": 33.3,
-          "years_pos": "4/5"
+          }
         }
-      },
-      "gate_condition_met": "SOURCE_CONCEPT_CANDIDATE_QUARANTINED: source claim only, pending independent reproduction in Naqex/workspace",
-      "family": "Giờ giấc & mùa vụ",
-      "source_verdict": "CHẤT",
-      "source": "stategy-netlify-app",
-      "original_id": "SEA003",
-      "lead_id": "LEAD-NETLIFY-SEA003",
-      "passes_all_5": false
+      }
     },
     {
-      "timeframe": "D1",
-      "verified_live_links": [],
+      "lead_id": "LEAD-NETLIFY-SEA004",
+      "source": "stategy-netlify-app",
+      "original_id": "SEA004",
+      "name": "Hiệu ứng đầu quý",
+      "family": "Giờ giấc & mùa vụ",
       "symbol": "XAUUSD",
-      "evidence_tier": "SOURCE_CLAIM_ONLY",
+      "timeframe": "D1",
+      "direction": "Both",
+      "rule_description": "Mua/bán theo drift 3 ngày đầu quý",
+      "source_verdict": "CHẤT",
+      "passes_all_5": false,
       "data_quality_flags": [
         "COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD",
         "MISSING_PF_AND_DD_IN_PUBLIC_JSON",
@@ -647,11 +654,14 @@
         "MISSING_DIRECTION_RULE_SPEC"
       ],
       "replicability": "PARTIAL_RULE_SPEC",
-      "name": "Hiệu ứng đầu quý",
-      "direction": "Both",
-      "rule_description": "Mua/bán theo drift 3 ngày đầu quý",
+      "evidence_tier": "SOURCE_CLAIM_ONLY",
+      "gate_condition_met": "SOURCE_CONCEPT_CANDIDATE_QUARANTINED: source claim only, pending independent reproduction in Naqex/workspace",
+      "verified_live_links": [],
       "performance_metrics": {
         "is_2004_2018": {
+          "n": 53,
+          "wr": 35.8,
+          "years_pos": "7/15",
           "nam_duong": {
             "2004": false,
             "2005": false,
@@ -668,47 +678,47 @@
             "2016": true,
             "2017": false,
             "2018": true
-          },
-          "n": 53,
-          "wr": 35.8,
-          "years_pos": "7/15"
+          }
         },
         "oos1_2019_2023": {
+          "n": 15,
+          "wr": 46.7,
+          "years_pos": "4/5",
           "nam_duong": {
             "2019": true,
             "2020": true,
             "2021": true,
             "2022": true,
             "2023": false
-          },
-          "n": 15,
-          "wr": 46.7,
-          "years_pos": "4/5"
+          }
         }
-      },
-      "gate_condition_met": "SOURCE_CONCEPT_CANDIDATE_QUARANTINED: source claim only, pending independent reproduction in Naqex/workspace",
-      "family": "Giờ giấc & mùa vụ",
-      "source_verdict": "CHẤT",
-      "source": "stategy-netlify-app",
-      "original_id": "SEA004",
-      "lead_id": "LEAD-NETLIFY-SEA004",
-      "passes_all_5": false
+      }
     },
     {
-      "timeframe": "D1",
-      "verified_live_links": [],
+      "lead_id": "LEAD-NETLIFY-SEA011",
+      "source": "stategy-netlify-app",
+      "original_id": "SEA011",
+      "name": "Thứ Ba đảo chiều (turnaround Tuesday)",
+      "family": "Giờ giấc & mùa vụ",
       "symbol": "XAUUSD",
-      "evidence_tier": "SOURCE_CLAIM_ONLY",
+      "timeframe": "D1",
+      "direction": "Long",
+      "rule_description": "Sau thứ Hai giảm mạnh, mua thứ Ba",
+      "source_verdict": "CHẤT",
+      "passes_all_5": true,
       "data_quality_flags": [
         "COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD",
         "MISSING_PF_AND_DD_IN_PUBLIC_JSON"
       ],
       "replicability": "PARTIAL_CONCEPT_ONLY",
-      "name": "Thứ Ba đảo chiều (turnaround Tuesday)",
-      "direction": "Both",
-      "rule_description": "Sau thứ Hai giảm mạnh, mua thứ Ba",
+      "evidence_tier": "SOURCE_CLAIM_ONLY",
+      "gate_condition_met": "SOURCE_CONCEPT_CANDIDATE_QUARANTINED: source claim only, pending independent reproduction in Naqex/workspace",
+      "verified_live_links": [],
       "performance_metrics": {
         "is_2004_2018": {
+          "n": 116,
+          "wr": 34.5,
+          "years_pos": "9/15",
           "nam_duong": {
             "2004": false,
             "2005": true,
@@ -725,48 +735,48 @@
             "2016": true,
             "2017": true,
             "2018": false
-          },
-          "n": 116,
-          "wr": 34.5,
-          "years_pos": "9/15"
+          }
         },
         "oos1_2019_2023": {
+          "n": 42,
+          "wr": 33.3,
+          "years_pos": "3/5",
           "nam_duong": {
             "2019": true,
             "2020": true,
             "2021": true,
             "2022": false,
             "2023": false
-          },
-          "n": 42,
-          "wr": 33.3,
-          "years_pos": "3/5"
+          }
         }
-      },
-      "gate_condition_met": "SOURCE_CONCEPT_CANDIDATE_QUARANTINED: source claim only, pending independent reproduction in Naqex/workspace",
-      "family": "Giờ giấc & mùa vụ",
-      "source_verdict": "CHẤT",
-      "source": "stategy-netlify-app",
-      "original_id": "SEA011",
-      "lead_id": "LEAD-NETLIFY-SEA011",
-      "passes_all_5": true
+      }
     },
     {
-      "timeframe": "H1",
-      "verified_live_links": [],
+      "lead_id": "LEAD-NETLIFY-SEA021",
+      "source": "stategy-netlify-app",
+      "original_id": "SEA021",
+      "name": "Thứ Hai sau NFP xấu — hồi",
+      "family": "Giờ giấc & mùa vụ",
       "symbol": "XAUUSD",
-      "evidence_tier": "SOURCE_CLAIM_ONLY",
+      "timeframe": "H1",
+      "direction": "Long",
+      "rule_description": "NFP làm vàng giảm mạnh thứ Sáu → mua hồi thứ Hai",
+      "source_verdict": "CHẤT",
+      "passes_all_5": false,
       "data_quality_flags": [
         "COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD",
         "MISSING_PF_AND_DD_IN_PUBLIC_JSON",
         "FAILED_FEASIBILITY_UNDER_100_TRADES"
       ],
       "replicability": "PARTIAL_CONCEPT_ONLY",
-      "name": "Thứ Hai sau NFP xấu — hồi",
-      "direction": "Both",
-      "rule_description": "NFP làm vàng giảm mạnh thứ Sáu → mua hồi thứ Hai",
+      "evidence_tier": "SOURCE_CLAIM_ONLY",
+      "gate_condition_met": "SOURCE_CONCEPT_CANDIDATE_QUARANTINED: source claim only, pending independent reproduction in Naqex/workspace",
+      "verified_live_links": [],
       "performance_metrics": {
         "is_2004_2018": {
+          "n": 74,
+          "wr": 37.8,
+          "years_pos": "10/14",
           "nam_duong": {
             "2005": true,
             "2006": false,
@@ -782,47 +792,47 @@
             "2016": true,
             "2017": true,
             "2018": false
-          },
-          "n": 74,
-          "wr": 37.8,
-          "years_pos": "10/14"
+          }
         },
         "oos1_2019_2023": {
+          "n": 24,
+          "wr": 41.7,
+          "years_pos": "3/5",
           "nam_duong": {
             "2019": true,
             "2020": false,
             "2021": true,
             "2022": true,
             "2023": false
-          },
-          "n": 24,
-          "wr": 41.7,
-          "years_pos": "3/5"
+          }
         }
-      },
-      "gate_condition_met": "SOURCE_CONCEPT_CANDIDATE_QUARANTINED: source claim only, pending independent reproduction in Naqex/workspace",
-      "family": "Giờ giấc & mùa vụ",
-      "source_verdict": "CHẤT",
-      "source": "stategy-netlify-app",
-      "original_id": "SEA021",
-      "lead_id": "LEAD-NETLIFY-SEA021",
-      "passes_all_5": false
+      }
     },
     {
-      "timeframe": "H4",
-      "verified_live_links": [],
+      "lead_id": "LEAD-NETLIFY-VIR040",
+      "source": "stategy-netlify-app",
+      "original_id": "VIR040",
+      "name": "Head & Shoulders phá neckline",
+      "family": "Viral & SMC/ICT",
       "symbol": "XAUUSD",
-      "evidence_tier": "SOURCE_CLAIM_ONLY",
+      "timeframe": "H4",
+      "direction": "Both",
+      "rule_description": "Vai-đầu-vai phá neckline — vào theo, SL trên vai phải",
+      "source_verdict": "CHẤT",
+      "passes_all_5": true,
       "data_quality_flags": [
         "COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD",
         "MISSING_PF_AND_DD_IN_PUBLIC_JSON"
       ],
       "replicability": "PARTIAL_CONCEPT_ONLY",
-      "name": "Head & Shoulders phá neckline",
-      "direction": "Both",
-      "rule_description": "Vai-đầu-vai phá neckline — vào theo, SL trên vai phải",
+      "evidence_tier": "SOURCE_CLAIM_ONLY",
+      "gate_condition_met": "SOURCE_CONCEPT_CANDIDATE_QUARANTINED: source claim only, pending independent reproduction in Naqex/workspace",
+      "verified_live_links": [],
       "performance_metrics": {
         "is_2004_2018": {
+          "n": 221,
+          "wr": 35.7,
+          "years_pos": "14/15",
           "nam_duong": {
             "2004": true,
             "2005": true,
@@ -839,31 +849,21 @@
             "2016": true,
             "2017": true,
             "2018": true
-          },
-          "n": 221,
-          "wr": 35.7,
-          "years_pos": "14/15"
+          }
         },
         "oos1_2019_2023": {
+          "n": 100,
+          "wr": 32,
+          "years_pos": "4/5",
           "nam_duong": {
             "2019": false,
             "2020": true,
             "2021": true,
             "2022": true,
             "2023": true
-          },
-          "n": 100,
-          "wr": 32,
-          "years_pos": "4/5"
+          }
         }
-      },
-      "gate_condition_met": "SOURCE_CONCEPT_CANDIDATE_QUARANTINED: source claim only, pending independent reproduction in Naqex/workspace",
-      "family": "Viral & SMC/ICT",
-      "source_verdict": "CHẤT",
-      "source": "stategy-netlify-app",
-      "original_id": "VIR040",
-      "lead_id": "LEAD-NETLIFY-VIR040",
-      "passes_all_5": true
+      }
     }
   ]
 }

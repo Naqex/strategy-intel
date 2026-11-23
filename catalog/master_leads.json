@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-11-23T12:32:48.901588",
+  "generated_at": "2026-11-23T14:39:03.749448",
   "gate_criteria": {
     "condition_a": "EA with Live Real Verified link (strictly excluding demo, grid, HFT, hedging)",
-    "condition_b": "Independently verifiable trading mechanism with stated rules (Top 15 CHẤT from Source 1)"
+    "condition_b": "Public source concept lead (SOURCE_CLAIM_ONLY; quarantined pending independent white-box formalization & M1 Bid/Ask verification in Naqex/workspace)"
   },
   "sources": [
     "stategy-netlify-app"
@@ -131,7 +131,7 @@
       "family": "Indicator kinh điển",
       "symbol": "XAUUSD",
       "timeframe": "D1",
-      "direction": "Both",
+      "direction": "Long",
       "rule_description": "Chikou vượt giá 26 nến trước + giá trên mây → mua",
       "source_verdict": "CHẤT",
       "passes_all_5": false,
@@ -417,7 +417,7 @@
       "family": "Đa khung & lai",
       "symbol": "XAUUSD",
       "timeframe": "H4",
-      "direction": "Both",
+      "direction": "Long",
       "rule_description": "Sau golden cross D1, mua mỗi lần H4 hồi về EMA20",
       "source_verdict": "CHẤT",
       "passes_all_5": true,
@@ -704,7 +704,7 @@
       "family": "Giờ giấc & mùa vụ",
       "symbol": "XAUUSD",
       "timeframe": "D1",
-      "direction": "Both",
+      "direction": "Long",
       "rule_description": "Sau thứ Hai giảm mạnh, mua thứ Ba",
       "source_verdict": "CHẤT",
       "passes_all_5": true,
@@ -761,7 +761,7 @@
       "family": "Giờ giấc & mùa vụ",
       "symbol": "XAUUSD",
       "timeframe": "H1",
-      "direction": "Both",
+      "direction": "Long",
       "rule_description": "NFP làm vàng giảm mạnh thứ Sáu → mua hồi thứ Hai",
       "source_verdict": "CHẤT",
       "passes_all_5": false,

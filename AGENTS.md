@@ -1,7 +1,7 @@
 # AGENTS INSTRUCTION & WORKFLOW SPECIFICATION
 
 > **Kho lưu trữ:** `strategy-intel` (Kho thu thập & kiểm toán thông tin chiến lược định lượng từ các nguồn bên ngoài)  
-> **Nguyên tắc an toàn tối thượng:** Tuân thủ tuyệt đối [.agents/rules/intel-airgap-guardrails.md](file:///.agents/rules/intel-airgap-guardrails.md).
+> **Nguyên tắc an toàn tối thượng:** Tuân thủ tuyệt đối [.agents/rules/intel-airgap-guardrails.md](.agents/rules/intel-airgap-guardrails.md).
 
 ---
 

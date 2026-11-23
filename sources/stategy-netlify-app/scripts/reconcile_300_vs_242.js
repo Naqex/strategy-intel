@@ -36,8 +36,9 @@ const unverifiedClassification = {
 };
 
 // Specific mapping for 40 merged items:
+// Policy: NEVER assign DUPLICATE_EXACT without trade-level equivalence proof.
 // VIR032 is BTMM (not duplicate of SEA023), moved to UNTESTED_VARIANT.
-const duplicateExactIds = new Set(['BRK020', 'BRK033', 'SEA019', 'VIR046', 'VIR047']);
+const duplicateExactIds = new Set([]);
 const untestedVariantIds = new Set(['REV029', 'REV018', 'REV021', 'REV023', 'REV024', 'REV036', 'BRK039', 'VIR032']);
 
 for (const item of danhSach) {

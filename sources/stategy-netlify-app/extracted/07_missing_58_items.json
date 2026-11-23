@@ -11,8 +11,8 @@
       "DISCRETIONARY_NOT_FORMALIZED": 5
     },
     "phan_loai_gop": {
-      "DUPLICATE_EXACT": 5,
-      "RELATED_VARIANT": 27,
+      "DUPLICATE_EXACT": 0,
+      "RELATED_VARIANT": 32,
       "UNTESTED_VARIANT": 8
     }
   },
@@ -46,7 +46,7 @@
       "verdict_goc": "TÌNH HUỐNG",
       "xep_hang": 244,
       "goc_tham_chieu": "NEN029",
-      "merge_relation": "DUPLICATE_EXACT",
+      "merge_relation": "RELATED_VARIANT",
       "unverified_category": null,
       "data_quality_flags": [],
       "ly_do_thieu_file_json": "Cùng quy tắc/bản đối xứng của NEN029 (Gap sáng thứ Hai — theo) — xem báo cáo gốc."
@@ -131,7 +131,7 @@
       "verdict_goc": "CHÁT",
       "xep_hang": 249,
       "goc_tham_chieu": "SEA016",
-      "merge_relation": "DUPLICATE_EXACT",
+      "merge_relation": "RELATED_VARIANT",
       "unverified_category": null,
       "data_quality_flags": [],
       "ly_do_thieu_file_json": "Cùng quy tắc/bản đối xứng của SEA016 (London fix 15h London — drift) — xem báo cáo gốc."
@@ -694,7 +694,7 @@
       "verdict_goc": "CHÁT",
       "xep_hang": 282,
       "goc_tham_chieu": "SEA006",
-      "merge_relation": "DUPLICATE_EXACT",
+      "merge_relation": "RELATED_VARIANT",
       "unverified_category": null,
       "data_quality_flags": [],
       "ly_do_thieu_file_json": "Cùng quy tắc/bản đối xứng của SEA006 (Giờ vàng London mở (14-16h VN hè)) — xem báo cáo gốc."
@@ -985,7 +985,7 @@
       "verdict_goc": "CHÁT",
       "xep_hang": 299,
       "goc_tham_chieu": "VIR014",
-      "merge_relation": "DUPLICATE_EXACT",
+      "merge_relation": "RELATED_VARIANT",
       "unverified_category": null,
       "data_quality_flags": [],
       "ly_do_thieu_file_json": "Cùng quy tắc/bản đối xứng của VIR014 (ICT Judas Swing) — xem báo cáo gốc."
@@ -1002,7 +1002,7 @@
       "verdict_goc": "CHÁT",
       "xep_hang": 300,
       "goc_tham_chieu": "VIR007",
-      "merge_relation": "DUPLICATE_EXACT",
+      "merge_relation": "RELATED_VARIANT",
       "unverified_category": null,
       "data_quality_flags": [],
       "ly_do_thieu_file_json": "Cùng quy tắc/bản đối xứng của VIR007 (Breaker block) — xem báo cáo gốc."

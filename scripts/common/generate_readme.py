@@ -112,10 +112,11 @@ def generate_readme():
         orig_id = l.get("original_id", "")
         name = l.get("name", "")
         family = l.get("family", "")
+        direction = l.get("direction", "NOT_DISCLOSED")
         p5 = "PASS" if l.get("passes_all_5") is True else "FAIL"
         rep = l.get("replicability", "")
         flags = ", ".join(l.get("data_quality_flags", [])) or "None"
-        leads_rows.append(f"| `{orig_id}` | {name} | {family} | `{rep}` | **{p5}** | `{flags}` |")
+        leads_rows.append(f"| `{orig_id}` | {name} | {family} | `{direction}` | `{rep}` | **{p5}** | `{flags}` |")
 
     # Fixtures
     fixtures = [
@@ -130,7 +131,7 @@ def generate_readme():
     readme_content = f"""# STRATEGY-INTEL: KHO THU THẬP & KIỂM TOÁN THÔNG TIN CHIẾN LƯỢC ĐỊNH LƯỢNG
 
 > **Mục tiêu hệ thống:** Vùng đệm phòng sạch (Clean-room Intelligence Buffer) thu thập, kiểm toán phương pháp luận, tách bạch sự thật (Fact) khỏi chiêu trò tiếp thị (Marketing/Overfitting) từ các nguồn web, kho EA, báo cáo định lượng bên ngoài.  
-> **Nguyên tắc an toàn tối thượng:** Tuân thủ tuyệt đối [intel-airgap-guardrails.md](file:///.agents/rules/intel-airgap-guardrails.md) và [AGENTS.md](file:///AGENTS.md).  
+> **Nguyên tắc an toàn tối thượng:** Tuân thủ tuyệt đối [intel-airgap-guardrails.md](.agents/rules/intel-airgap-guardrails.md) và [AGENTS.md](AGENTS.md).  
 > **Repository Owner / Target Org:** `naqex` (`https://github.com/Naqex/strategy-intel.git`)
 
 ---
@@ -222,8 +223,8 @@ Mọi tệp tin trong `extracted/`, `catalog/` và `handoff/` được kiểm ch
      * `SEA004` (Hiệu ứng đầu quý): `PARTIAL_RULE_SPEC` (quy tắc lịch cố định nhưng thiếu quy tắc định lượng chọn chiều Buy/Sell).
      * 13 chiến lược còn lại: `PARTIAL_CONCEPT_ONLY` (ý tưởng rõ ràng nhưng SL/TP/Exit chi tiết nằm sau passkey thành viên).
 
-| Mã ID | Tên Chiến Lược | Phân Loại | Khả Năng Tái Dựng | Đạt 5 Tiêu Chí (`passes_all_5`) | Data Quality Flags |
-| :--- | :--- | :--- | :--- | :---: | :--- |
+| Mã ID | Tên Chiến Lược | Phân Loại | Chiều | Khả Năng Tái Dựng | Đạt 5 Tiêu Chí (`passes_all_5`) | Data Quality Flags |
+| :--- | :--- | :--- | :---: | :--- | :---: | :--- |
 {chr(10).join(leads_rows)}
 
 3. **Bất thường dữ liệu gốc ghi nhận tại `source_anomalies.json`:**

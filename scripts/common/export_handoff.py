@@ -4,15 +4,15 @@ import re
 
 ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..'))
 
-ALLOWED_LEAD_KEYS = {
+ALLOWED_LEAD_KEYS = (
     'lead_id', 'source', 'original_id', 'name', 'family', 'symbol',
     'timeframe', 'direction', 'rule_description', 'source_verdict',
     'passes_all_5', 'data_quality_flags', 'replicability', 'evidence_tier',
     'gate_condition_met', 'verified_live_links', 'performance_metrics'
-}
+)
 
-ALLOWED_METRIC_PERIODS = {'is_2004_2018', 'oos1_2019_2023'}
-ALLOWED_PERIOD_KEYS = {'n', 'wr', 'years_pos', 'nam_duong'}
+ALLOWED_METRIC_PERIODS = ('is_2004_2018', 'oos1_2019_2023')
+ALLOWED_PERIOD_KEYS = ('n', 'wr', 'years_pos', 'nam_duong')
 ALLOWED_IS_YEARS = {str(y) for y in range(2004, 2019)}
 ALLOWED_OOS1_YEARS = {str(y) for y in range(2019, 2024)}
 

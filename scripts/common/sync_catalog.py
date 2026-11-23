@@ -120,6 +120,17 @@ def sync_catalog():
         if strat_id == 'SEA004':
             dq_flags.append("MISSING_DIRECTION_RULE_SPEC")
 
+        # Dynamically derive direction from verbatim rule description
+        mo_ta_lower = (spec.get('mo_ta') or '').lower()
+        has_buy = bool(re.search(r'\bmua\b', mo_ta_lower))
+        has_sell = bool(re.search(r'\bbán\b', mo_ta_lower))
+        if has_buy and not has_sell:
+            direction = "Long"
+        elif has_sell and not has_buy:
+            direction = "Short"
+        else:
+            direction = "Both"
+
         lead_id = f"LEAD-NETLIFY-{strat_id}"
         master_leads_list.append({
             "lead_id": lead_id,
@@ -129,7 +140,7 @@ def sync_catalog():
             "family": spec.get('ho'),
             "symbol": "XAUUSD",
             "timeframe": spec.get('tf'),
-            "direction": "Both" if strat_id != 'SEA003' else "Long",
+            "direction": direction,
             "rule_description": spec.get('mo_ta'),
             "source_verdict": "CHẤT",
             "passes_all_5": passes_all_5,
@@ -171,7 +182,7 @@ def sync_catalog():
         "generated_at": datetime.now().isoformat(),
         "gate_criteria": {
             "condition_a": "EA with Live Real Verified link (strictly excluding demo, grid, HFT, hedging)",
-            "condition_b": "Independently verifiable trading mechanism with stated rules (Top 15 CHẤT from Source 1)"
+            "condition_b": "Public source concept lead (SOURCE_CLAIM_ONLY; quarantined pending independent white-box formalization & M1 Bid/Ask verification in Naqex/workspace)"
         },
         "sources": ["stategy-netlify-app"] + (["ea-directory-2026"] if verified_real_eas else []),
         "total_leads": len(master_leads_list),

@@ -264,6 +264,38 @@ def verify(repo_root=None):
                 errors.append(f"Top 15 CHẤT file has {len(top15)} items instead of 15!")
             print(f"[+] Source 1 (Top 15 CHẤT): 15/15 verified.")
 
+        # Verify 06_technical_methods_and_code.md Python snippets verbatim against raw/vault_data.json
+        vault_raw_path = os.path.join(source1_dir, 'raw/vault_data.json')
+        tech_md_path = os.path.join(source1_dir, 'extracted/06_technical_methods_and_code.md')
+        if os.path.exists(vault_raw_path) and os.path.exists(tech_md_path):
+            with open(vault_raw_path, encoding='utf-8') as f:
+                vault_raw = json.load(f)
+            with open(tech_md_path, encoding='utf-8') as f:
+                tech_md = f.read()
+            for hs in vault_raw.get('dossiers_hs', []):
+                snip = hs.get('codeSnippet', '')
+                if snip and snip not in tech_md:
+                    errors.append(f"06_technical_methods_and_code.md missing verbatim snippet for {hs.get('docCode')}")
+            if 'AUDIT_WARNING' not in tech_md or '$106/lot' not in tech_md:
+                errors.append("06_technical_methods_and_code.md missing commission AUDIT_WARNING ($106/lot)")
+
+        # Verify 05_replicability_audit.md contains no hallucinated R:R claims
+        rep_audit_path = os.path.join(source1_dir, 'extracted/05_replicability_audit.md')
+        if os.path.exists(rep_audit_path):
+            with open(rep_audit_path, encoding='utf-8') as f:
+                rep_md = f.read()
+            if '1:2 đến 1:3' in rep_md:
+                errors.append("05_replicability_audit.md contains hallucinated R:R claim ('1:2 đến 1:3')")
+
+        # Verify 07_missing_58_items.json has 0 unproven DUPLICATE_EXACT claims
+        missing58_path = os.path.join(source1_dir, 'extracted/07_missing_58_items.json')
+        if os.path.exists(missing58_path):
+            with open(missing58_path, encoding='utf-8') as f:
+                m58 = json.load(f)
+            dup_count = m58.get('phan_loai_thieu', {}).get('phan_loai_gop', {}).get('DUPLICATE_EXACT', 0)
+            if dup_count != 0:
+                errors.append(f"07_missing_58_items.json has unproven DUPLICATE_EXACT={dup_count} (expected 0)")
+
     # 3. Verify Source 2 (ea-directory-2026)
     source2_dir = os.path.join(root, 'sources/ea-directory-2026')
     if os.path.exists(source2_dir):
@@ -310,9 +342,15 @@ def verify(repo_root=None):
 
         passes_all_5_false_count = 0
         under_100_expected = {'IND026', 'SEA003', 'SEA004', 'SEA021'}
+        long_only_expected = {'IND026', 'MTF020', 'SEA003', 'SEA011', 'SEA021'}
+        cond_b = m_data.get('gate_criteria', {}).get('condition_b', '')
+        if 'Independently verifiable' in cond_b:
+            errors.append(f"master_leads.json gate_criteria.condition_b contains misleading 'Independently verifiable'")
         for lead in leads:
             if lead.get('evidence_tier') != "SOURCE_CLAIM_ONLY":
                 errors.append(f"Lead {lead.get('lead_id')} has evidence_tier '{lead.get('evidence_tier')}' instead of 'SOURCE_CLAIM_ONLY'")
+            if lead.get('original_id') in long_only_expected and lead.get('direction') != 'Long':
+                errors.append(f"Lead {lead.get('original_id')} should have direction 'Long', found '{lead.get('direction')}'")
             if lead.get('passes_all_5') is False:
                 passes_all_5_false_count += 1
                 if lead.get('original_id') not in under_100_expected:

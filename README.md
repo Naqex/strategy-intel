@@ -1,7 +1,7 @@
 # STRATEGY-INTEL: KHO THU THẬP & KIỂM TOÁN THÔNG TIN CHIẾN LƯỢC ĐỊNH LƯỢNG
 
 > **Mục tiêu hệ thống:** Vùng đệm phòng sạch (Clean-room Intelligence Buffer) thu thập, kiểm toán phương pháp luận, tách bạch sự thật (Fact) khỏi chiêu trò tiếp thị (Marketing/Overfitting) từ các nguồn web, kho EA, báo cáo định lượng bên ngoài.  
-> **Nguyên tắc an toàn tối thượng:** Tuân thủ tuyệt đối [intel-airgap-guardrails.md](file:///.agents/rules/intel-airgap-guardrails.md) và [AGENTS.md](file:///AGENTS.md).  
+> **Nguyên tắc an toàn tối thượng:** Tuân thủ tuyệt đối [intel-airgap-guardrails.md](.agents/rules/intel-airgap-guardrails.md) và [AGENTS.md](AGENTS.md).  
 > **Repository Owner / Target Org:** `naqex` (`https://github.com/Naqex/strategy-intel.git`)
 
 ---
@@ -80,17 +80,17 @@ Mọi tệp tin trong `extracted/`, `catalog/` và `handoff/` được kiểm ch
 | **Nguồn 1** | `sources/stategy-netlify-app/extracted/02_library_242_summary.json` | 431,524 | `1AFD2716C6ACDCFA584EC699D39D9C88EE0B978E71FF64D941F879F9C32F18B8` |
 | **Nguồn 1** | `sources/stategy-netlify-app/extracted/03_simulator_logic.md` | 13,275 | `17B38617D92DEC699FF2EFF35B6D6B8E7596E042B2ADD41D4C74EC5285495795` |
 | **Nguồn 1** | `sources/stategy-netlify-app/extracted/04_top15_chat_full.json` | 22,603 | `3BCB023154FE20BF127B4673D342DB3B6214E69E2E283A673B0DF59D92CEBC53` |
-| **Nguồn 1** | `sources/stategy-netlify-app/extracted/05_replicability_audit.md` | 42,784 | `4C48F8CA2CD667BA1F5359E2BC2DB40403E7D0FE2912A4124A78256A2EBFBFC6` |
-| **Nguồn 1** | `sources/stategy-netlify-app/extracted/06_technical_methods_and_code.md` | 33,817 | `DBC775275EA8976782B9B0BC8CCEA02EBFF31AB23304EB0C58BE9EE6D8C02A80` |
-| **Nguồn 1** | `sources/stategy-netlify-app/extracted/07_missing_58_items.json` | 38,983 | `845BB7E808972FADF9CF8653114E69ACB59675E20177C7D9484578770FB41DE5` |
+| **Nguồn 1** | `sources/stategy-netlify-app/extracted/05_replicability_audit.md` | 43,597 | `B0C57E44F8FCEA4E5B954B165A2C29E76A0582E1A4E38DC53C62D80D9F2B0A82` |
+| **Nguồn 1** | `sources/stategy-netlify-app/extracted/06_technical_methods_and_code.md` | 34,434 | `1CF26973D9329A17026B8057E98E1882CF2C434EC90FF1A7A1285C6FBE6D129D` |
+| **Nguồn 1** | `sources/stategy-netlify-app/extracted/07_missing_58_items.json` | 38,983 | `F58DC3F3E7F1A5AFEA4FA91BADBBC67DEC7D9507A2D6256634DCF0181773077E` |
 | **Nguồn 1** | `sources/stategy-netlify-app/extracted/source_anomalies.json` | 16,441 | `FCEA8BA6D35EFF30CD9ABD315BABFAECC36FBCA0ACA1EA7B799A41F62C7AF344` |
 | **Nguồn 2** | `sources/ea-directory-2026/raw_manifest.sha256.json` | 7,280 | `F34BDA4AC1F1C2FE010FBFBF9BAA598F6FDEA45AFA2220DF152219035FFF8989` |
-| **Nguồn 2** | `sources/ea-directory-2026/extracted/01_ea_catalog.csv` | 14,965 | `DC51942B3EEA0385B6C259ED04D4851025F83F87F29A1B242A4779D257A08A8E` |
-| **Nguồn 2** | `sources/ea-directory-2026/extracted/01_ea_catalog.json` | 46,854 | `F3408F018CB8F8D628606F956105FC0ECD3DB766A15F1D3E119D254C67F596B8` |
-| **Catalog** | `catalog/indicator_reference.json` | 17,954 | `FEB6D49E89BEF1EA63815287169B3E667664E6C9BD05D6FCDF85738A39C57E9D` |
-| **Catalog** | `catalog/master_leads.json` | 26,884 | `E3EE2EC94DEEA6BB264FB083BF38AA1E302BE9ACB26B16A47A9D93C57C98A881` |
-| **Catalog** | `catalog/rejected_log.json` | 169,343 | `19DC2D30863D1C1DCDDBFCCFF4EF016B31159598F32D54890D961A1881497763` |
-| **Handoff** | `handoff/sanitized_master_leads.json` | 26,930 | `B5BCFFC6AFD44D73145C73D0334863DD06E923F3F54787E9A90179E9562A6690` |
+| **Nguồn 2** | `sources/ea-directory-2026/extracted/01_ea_catalog.csv` | 14,974 | `B44EDF8B13104DFF3DCE29C0DE6F8C3A116165484812CF54CAE99675733A0283` |
+| **Nguồn 2** | `sources/ea-directory-2026/extracted/01_ea_catalog.json` | 46,863 | `22655C99CB0330846100671AD43F5D77F5B56FE72AB7229887AB2E20E785D50D` |
+| **Catalog** | `catalog/indicator_reference.json` | 17,954 | `7F2053CD7CBA87416E1196A664BE5FB3E54ECC9FD79F2A1981BA086C874C39C0` |
+| **Catalog** | `catalog/master_leads.json` | 26,942 | `344D47EBFEE5830DBFD363D2083D9CE1F629B160685A9E30B0C3E629DB2BE348` |
+| **Catalog** | `catalog/rejected_log.json` | 169,343 | `AC9594A7B912CE99369A7913AA1CFD316A3C10571D50CB44DBEC4F7AE8030CE3` |
+| **Handoff** | `handoff/sanitized_master_leads.json` | 26,988 | `6F61CAED99C75B19E5171B9D08839767D9B583AA103E3A80729F5D201B28DA68` |
 
 ---
 
@@ -99,7 +99,7 @@ Mọi tệp tin trong `extracted/`, `catalog/` và `handoff/` được kiểm ch
 ### Nguồn 1: `stategy.netlify.app` (242 Báo Cáo Kiểm Định Vàng 22 Năm)
 1. **Chênh lệch 300 vs 242:**
    - **242 chiến lược** kiểm định tự động đầy đủ bằng máy (`reports_json/`).
-   - **40 hồ sơ gộp** biến thể đối xứng (`trang_thai: "gop"`): 5 bản sao hoàn toàn (`DUPLICATE_EXACT`), 27 biến thể liên quan (`RELATED_VARIANT`), 8 biến thể chưa kiểm tra (`UNTESTED_VARIANT`). Riêng `REV029` là biến thể bán ngược chiều của `SEA003` (Turn-of-month vàng) nhưng bản thân chưa được kiểm định độc lập, gắn cờ `UNTESTED_REVERSE_VARIANT_CANNOT_INHERIT_CHAT`.
+   - **40 hồ sơ gộp** biến thể đối xứng (`trang_thai: "gop"`): 0 bản sao hoàn toàn (`DUPLICATE_EXACT`), 32 biến thể liên quan (`RELATED_VARIANT`), 8 biến thể chưa kiểm tra (`UNTESTED_VARIANT`). Riêng `REV029` là biến thể bán ngược chiều của `SEA003` (Turn-of-month vàng) nhưng bản thân chưa được kiểm định độc lập, gắn cờ `UNTESTED_REVERSE_VARIANT_CANNOT_INHERIT_CHAT`.
    - **18 hồ sơ chưa kiểm định** (`trang_thai: "chua_kiem_dinh"`): 9 mục thiếu dữ liệu ngoại vi (`MISSING_AUXILIARY_DATA` - FOMC, CPI, DXY, Bạc), 4 mục không phải chiến lược độc lập (`NOT_A_STANDALONE_STRATEGY` - bộ lọc phiên, 5-3-1), 5 mục quy tắc cảm tính vẽ tay (`DISCRETIONARY_NOT_FORMALIZED`).
 2. **Khả năng tái dựng 15 chiến lược "CHẤT" (`master_leads.json`):**
    - **Mức bằng chứng:** `evidence_tier: "SOURCE_CLAIM_ONLY"` (tác giả tự công bố, chưa có kiểm định độc lập nội bộ).
@@ -109,23 +109,23 @@ Mọi tệp tin trong `extracted/`, `catalog/` và `handoff/` được kiểm ch
      * `SEA004` (Hiệu ứng đầu quý): `PARTIAL_RULE_SPEC` (quy tắc lịch cố định nhưng thiếu quy tắc định lượng chọn chiều Buy/Sell).
      * 13 chiến lược còn lại: `PARTIAL_CONCEPT_ONLY` (ý tưởng rõ ràng nhưng SL/TP/Exit chi tiết nằm sau passkey thành viên).
 
-| Mã ID | Tên Chiến Lược | Phân Loại | Khả Năng Tái Dựng | Đạt 5 Tiêu Chí (`passes_all_5`) | Data Quality Flags |
-| :--- | :--- | :--- | :--- | :---: | :--- |
-| `BRK012` | Inside day breakout | Breakout & phiên | `PARTIAL_CONCEPT_ONLY` | **PASS** | `COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD, MISSING_PF_AND_DD_IN_PUBLIC_JSON` |
-| `BRK035` | Hộp 4h đầu tuần | Breakout & phiên | `PARTIAL_CONCEPT_ONLY` | **PASS** | `COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD, MISSING_PF_AND_DD_IN_PUBLIC_JSON` |
-| `IND026` | Ichimoku Chikou xác nhận | Indicator kinh điển | `PARTIAL_CONCEPT_ONLY` | **FAIL** | `COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD, MISSING_PF_AND_DD_IN_PUBLIC_JSON, FAILED_FEASIBILITY_UNDER_100_TRADES` |
-| `IND041` | ROC momentum 10 | Indicator kinh điển | `PARTIAL_CONCEPT_ONLY` | **PASS** | `COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD, MISSING_PF_AND_DD_IN_PUBLIC_JSON` |
-| `IND049` | Alligator mở miệng | Indicator kinh điển | `PARTIAL_CONCEPT_ONLY` | **PASS** | `COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD, MISSING_PF_AND_DD_IN_PUBLIC_JSON` |
-| `IND053` | Momentum 10 vượt 100 | Indicator kinh điển | `PARTIAL_CONCEPT_ONLY` | **PASS** | `COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD, MISSING_PF_AND_DD_IN_PUBLIC_JSON` |
-| `MTF016` | Mùa vụ D1 + tín hiệu H1 | Đa khung & lai | `PARTIAL_CONCEPT_ONLY` | **PASS** | `COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD, MISSING_PF_AND_DD_IN_PUBLIC_JSON` |
-| `MTF020` | Golden cross D1 nền + mua mọi hồi H4 | Đa khung & lai | `PARTIAL_CONCEPT_ONLY` | **PASS** | `COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD, MISSING_PF_AND_DD_IN_PUBLIC_JSON` |
-| `NEN006` | Inside bar thuận trend D1 | Mẫu nến | `PARTIAL_CONCEPT_ONLY` | **PASS** | `COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD, MISSING_PF_AND_DD_IN_PUBLIC_JSON` |
-| `NEN022` | Nến phá vỡ giả (fakey) | Mẫu nến | `PARTIAL_CONCEPT_ONLY` | **PASS** | `COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD, MISSING_PF_AND_DD_IN_PUBLIC_JSON` |
-| `SEA003` | Turn-of-month vàng | Giờ giấc & mùa vụ | `REPLICABLE_FROM_PUBLIC` | **FAIL** | `COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD, MISSING_PF_AND_DD_IN_PUBLIC_JSON, FAILED_FEASIBILITY_UNDER_100_TRADES` |
-| `SEA004` | Hiệu ứng đầu quý | Giờ giấc & mùa vụ | `PARTIAL_RULE_SPEC` | **FAIL** | `COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD, MISSING_PF_AND_DD_IN_PUBLIC_JSON, FAILED_FEASIBILITY_UNDER_100_TRADES, MISSING_DIRECTION_RULE_SPEC` |
-| `SEA011` | Thứ Ba đảo chiều (turnaround Tuesday) | Giờ giấc & mùa vụ | `PARTIAL_CONCEPT_ONLY` | **PASS** | `COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD, MISSING_PF_AND_DD_IN_PUBLIC_JSON` |
-| `SEA021` | Thứ Hai sau NFP xấu — hồi | Giờ giấc & mùa vụ | `PARTIAL_CONCEPT_ONLY` | **FAIL** | `COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD, MISSING_PF_AND_DD_IN_PUBLIC_JSON, FAILED_FEASIBILITY_UNDER_100_TRADES` |
-| `VIR040` | Head & Shoulders phá neckline | Viral & SMC/ICT | `PARTIAL_CONCEPT_ONLY` | **PASS** | `COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD, MISSING_PF_AND_DD_IN_PUBLIC_JSON` |
+| Mã ID | Tên Chiến Lược | Phân Loại | Chiều | Khả Năng Tái Dựng | Đạt 5 Tiêu Chí (`passes_all_5`) | Data Quality Flags |
+| :--- | :--- | :--- | :---: | :--- | :---: | :--- |
+| `BRK012` | Inside day breakout | Breakout & phiên | `Both` | `PARTIAL_CONCEPT_ONLY` | **PASS** | `COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD, MISSING_PF_AND_DD_IN_PUBLIC_JSON` |
+| `BRK035` | Hộp 4h đầu tuần | Breakout & phiên | `Both` | `PARTIAL_CONCEPT_ONLY` | **PASS** | `COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD, MISSING_PF_AND_DD_IN_PUBLIC_JSON` |
+| `IND026` | Ichimoku Chikou xác nhận | Indicator kinh điển | `Long` | `PARTIAL_CONCEPT_ONLY` | **FAIL** | `COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD, MISSING_PF_AND_DD_IN_PUBLIC_JSON, FAILED_FEASIBILITY_UNDER_100_TRADES` |
+| `IND041` | ROC momentum 10 | Indicator kinh điển | `Both` | `PARTIAL_CONCEPT_ONLY` | **PASS** | `COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD, MISSING_PF_AND_DD_IN_PUBLIC_JSON` |
+| `IND049` | Alligator mở miệng | Indicator kinh điển | `Both` | `PARTIAL_CONCEPT_ONLY` | **PASS** | `COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD, MISSING_PF_AND_DD_IN_PUBLIC_JSON` |
+| `IND053` | Momentum 10 vượt 100 | Indicator kinh điển | `Both` | `PARTIAL_CONCEPT_ONLY` | **PASS** | `COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD, MISSING_PF_AND_DD_IN_PUBLIC_JSON` |
+| `MTF016` | Mùa vụ D1 + tín hiệu H1 | Đa khung & lai | `Both` | `PARTIAL_CONCEPT_ONLY` | **PASS** | `COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD, MISSING_PF_AND_DD_IN_PUBLIC_JSON` |
+| `MTF020` | Golden cross D1 nền + mua mọi hồi H4 | Đa khung & lai | `Long` | `PARTIAL_CONCEPT_ONLY` | **PASS** | `COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD, MISSING_PF_AND_DD_IN_PUBLIC_JSON` |
+| `NEN006` | Inside bar thuận trend D1 | Mẫu nến | `Both` | `PARTIAL_CONCEPT_ONLY` | **PASS** | `COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD, MISSING_PF_AND_DD_IN_PUBLIC_JSON` |
+| `NEN022` | Nến phá vỡ giả (fakey) | Mẫu nến | `Both` | `PARTIAL_CONCEPT_ONLY` | **PASS** | `COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD, MISSING_PF_AND_DD_IN_PUBLIC_JSON` |
+| `SEA003` | Turn-of-month vàng | Giờ giấc & mùa vụ | `Long` | `REPLICABLE_FROM_PUBLIC` | **FAIL** | `COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD, MISSING_PF_AND_DD_IN_PUBLIC_JSON, FAILED_FEASIBILITY_UNDER_100_TRADES` |
+| `SEA004` | Hiệu ứng đầu quý | Giờ giấc & mùa vụ | `Both` | `PARTIAL_RULE_SPEC` | **FAIL** | `COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD, MISSING_PF_AND_DD_IN_PUBLIC_JSON, FAILED_FEASIBILITY_UNDER_100_TRADES, MISSING_DIRECTION_RULE_SPEC` |
+| `SEA011` | Thứ Ba đảo chiều (turnaround Tuesday) | Giờ giấc & mùa vụ | `Long` | `PARTIAL_CONCEPT_ONLY` | **PASS** | `COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD, MISSING_PF_AND_DD_IN_PUBLIC_JSON` |
+| `SEA021` | Thứ Hai sau NFP xấu — hồi | Giờ giấc & mùa vụ | `Long` | `PARTIAL_CONCEPT_ONLY` | **FAIL** | `COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD, MISSING_PF_AND_DD_IN_PUBLIC_JSON, FAILED_FEASIBILITY_UNDER_100_TRADES` |
+| `VIR040` | Head & Shoulders phá neckline | Viral & SMC/ICT | `Both` | `PARTIAL_CONCEPT_ONLY` | **PASS** | `COMMISSION_MATH_CONTRADICTION_002PCT_VS_7USD, MISSING_PF_AND_DD_IN_PUBLIC_JSON` |
 
 3. **Bất thường dữ liệu gốc ghi nhận tại `source_anomalies.json`:**
    - **8 chiến lược** có số năm dương (`years_pos`) ghi nhận trong JSON không khớp với số năm `True` trong từ điển `nam_duong` (`BRK009`, `BRK018`, `BRK034`, `IND015`, `IND044`, `IND047`, `REV025`, `VIR041`).

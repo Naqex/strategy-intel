@@ -488,7 +488,7 @@
 
 #### Đánh Giá Khả Năng Tái Dựng (Replicability Verdict):
 - **Phân loại:** `REPLICABLE_FROM_PUBLIC`
-- **Nhận định kỹ thuật:** Quy tắc mở/đóng vị thế dựa trên lịch cố định (Turn-of-month mua ngày cuối tháng trước, giữ 4 ngày đầu tháng sau) hoàn toàn xác định.
+- **Nhận định kỹ thuật:** Quy tắc mở/đóng vị thế dựa trên lịch cố định ("Mua 2 phiên cuối tháng, đóng phiên 3 tháng mới") hoàn toàn xác định về thời điểm, nhưng SL/TP nội bộ vẫn bị ẩn sau passkey.
 - **Yếu tố còn thiếu để code 100%:** Có thể code và backtest độc lập theo quy tắc lịch nến D1 (lưu ý: cần thiết lập mức SL/TP bảo toàn vốn độc lập do tác giả ẩn thông số quản lý vốn chi tiết trong bản VIP).
 
 ---
@@ -683,11 +683,13 @@
 ## 4. TỔNG KẾT BÀI HỌC KIỂM ĐỊNH TÍNH TÁI DỰNG
 
 1. **Tỉ lệ có thể tự tái tạo độc lập từ public:**
-   - **1 / 15 chiến lược (6.7%)** đạt mức `REPLICABLE_FROM_PUBLIC` (`SEA003` - Turn-of-month vàng). Đây là chiến lược chu kỳ mùa vụ dựa vào lịch phiên giao dịch (mua 2 ngày cuối tháng, giữ 3-4 ngày đầu tháng), tuy nhiên vẫn có phần SL/TP quản lý rủi ro ẩn của tác giả trong bản VIP.
+   - **1 / 15 chiến lược (6.7%)** đạt mức `REPLICABLE_FROM_PUBLIC` (`SEA003` - Turn-of-month vàng). Quy tắc lịch công khai là "Mua 2 phiên cuối tháng, đóng phiên 3 tháng mới"; tuy nhiên mức SL/TP quản lý rủi ro nội bộ của tác giả vẫn nằm sau passkey VIP (và số lệnh IS = 99 cho thấy có thể tồn tại điều kiện lọc/thoát ẩn).
    - **1 / 15 chiến lược (6.7%)** ở mức `PARTIAL_RULE_SPEC` (`SEA004` - Hiệu ứng đầu quý). Nêu rõ khung thời gian 3 ngày đầu quý nhưng thiếu đặc tả quy tắc thuật toán chọn chiều Mua hay Bán trong dữ liệu công khai.
    - **13 / 15 chiến lược (86.7%)** ở mức `PARTIAL_CONCEPT_ONLY`. Người dùng công khai chỉ nhận được logic kích hoạt vào lệnh tổng quát; các thông số định lượng quyết định kết quả thực tế (SL, TP, trailing, ngưỡng lọc nhiễu) được giữ trong Báo Cáo Phân Tích Chuyên Sâu dành cho thành viên VIP có Passkey.
-2. **Hiện tượng đặc trưng của nhóm "CHẤT":**
-   - Đa số chiến lược "CHẤT" có tỉ lệ thắng (Winrate) chỉ dao động trong khoảng **28% – 36%**, nhưng bù lại tỷ lệ Lời:Lỗ (Risk:Reward) thường đạt từ **1:2 đến 1:3**. Điều này khẳng định triết lý của Strategy Audit: *Tỉ lệ thắng cao không đảm bảo an toàn, mấu chốt là bảo vệ vốn khi sai và để lãi chạy khi đúng*.
+2. **Hiện tượng đặc trưng & Dữ liệu thiếu trong nhóm "CHẤT" (Zero-Hallucination Audit):**
+   - Toàn bộ 15 chiến lược "CHẤT" có tỉ lệ thắng (Winrate IS) nằm trong khung hẹp **29.2% – 37.8%** (bao gồm cả chiến lược lịch như `SEA003` ở mức 36.4%), gợi ý tác giả áp cùng một khuôn thoát lệnh SL/TP hoặc trailing chung trên toàn bộ thư viện.
+   - **Cảnh báo minh bạch (`NOT_DISCLOSED`):** Dữ liệu JSON công khai **KHÔNG công bố** Risk:Reward (R:R), Expected Value (EV/R), Profit Factor, Max Drawdown hay chuỗi thua dài nhất. Tuyệt đối **KHÔNG suy diễn** tỷ lệ R:R từ Winrate. Mọi nhận định về khả năng sống sót trên FTMO chỉ có thể kết luận sau khi tự lập trình hộp trắng và kiểm định trên M1 Bid/Ask + Swap thật tại `Naqex/workspace`.
+   - **Phân bố chiều giao dịch:** 5/15 chiến lược CHẤT (`IND026`, `MTF020`, `SEA003`, `SEA011`, `SEA021`) là chiến lược **chỉ mua (Long-only)** trên Vàng — rất dễ hưởng lợi từ siêu chu kỳ tăng giá 22 năm của Vàng (Beta) thay vì Alpha thuần.
 3. **Mối nguy rò rỉ dữ liệu (Holdout Leakage Warning):**
    - Nhóm kiểm toán **tuyệt đối không được gộp dữ liệu OOS2 (2024–2026)** vào tập huấn luyện của dự án trading nội bộ. Giai đoạn 2024–2026 là đợt sóng tăng một chiều lịch sử của Vàng (Beta khổng lồ), khiến 82 chiến lược từng trượt bài thi (CHÁT) cũng có lãi trở lại. Sử dụng dữ liệu này để tối ưu tham số sẽ lập tức đẩy hệ thống vào bẫy Curve-Fitting.
 

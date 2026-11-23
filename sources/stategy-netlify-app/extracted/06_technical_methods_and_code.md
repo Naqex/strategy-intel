@@ -49,12 +49,12 @@ Qua đối chiếu toàn diện mã nguồn client và các gói dữ liệu ki�
   - `0.30 giá` = **30 points** = **3 pips** = **$0.30 / ounce**.
   - Đây là mức chênh lệch tiêu chuẩn của tài khoản ECN/Standard của các sàn giao dịch quốc tế trong phiên thanh khoản tốt.
 
-### 1.3. Phí Hoa Hồng (Commission)
-- Mặc định tính **0,02% giá trị danh nghĩa mỗi chiều** (vào và ra), tương đương mức phí bình quân thị trường khoảng **$7.00 / 1 standard lot (100 oz)** hai chiều.
+### 1.3. Phí Hoa Hồng (Commission) — Tuyên Bố Nguồn & Cảnh Báo Mâu Thuẫn
+- **Tuyên bố tác giả (`SOURCE_CLAIM_ONLY`):** Mặc định tính **0,02% giá trị danh nghĩa mỗi chiều** (vào và ra), đồng thời ghi chú tương đương khoảng **$7.00 / 1 standard lot (100 oz)** hai chiều.
+- **`AUDIT_WARNING` (Mâu thuẫn toán học 15,1×):** Với XAUUSD (1 standard lot = 100 oz), tại vùng giá tham chiếu $2,650/oz (notional = $265,000), mức phí `0,02%/chiều` tương đương **$53/chiều = $106/lot khứ hồi**, cao gấp **15,1 lần** con số $7/lot (mức $7/lot thực tế chỉ tương đương ~0,00132%/chiều). Do mã nguồn backtest engine không được công khai, không thể xác minh tác giả đã trừ $7/lot hay 0,02%/chiều trong thực tế.
 
-### 1.4. Trượt Giá Thực Thi (Slippage)
-- Không giả định khớp lệnh hoàn hảo tại giá màn hình.
-- Mô phỏng độ trượt giá dựa trên hàm mất cân bằng dòng lệnh $OFI_t$ và chiều sâu sổ lệnh giới hạn (Limit Order Book). Khi thị trường biến động nhanh (giờ tin tức mạnh NFP, CPI), lệnh quét qua các tầng giá sâu hơn khiến giá khớp thực tế luôn bất lợi hơn giá kích hoạt.
+### 1.4. Trượt Giá Thực Thi (Slippage) — Tuyên Bố Nguồn
+- Tác giả mô tả (`SOURCE_CLAIM_ONLY`) mô phỏng độ trượt giá dựa trên hàm mất cân bằng dòng lệnh $OFI_t$ và chiều sâu sổ lệnh giới hạn (Limit Order Book). Tuy nhiên, dữ liệu đầu vào là nến lịch sử không kèm sổ lệnh L2/L3 công khai và mã nguồn engine bị đóng nên cơ chế OFI thực tế khi chạy 242 chiến lược là `UNVERIFIED_EXTERNAL_CLAIM`.
 
 ### 1.5. Chi Phí Qua Đêm (Swap / Overnight Financing)
 - **Xác nhận kiểm toán:** Trong mô hình backtest client-side của 242 chiến lược, hệ thống sử dụng **chi phí ma sát cố định theo lệnh** (`phí 0,02% mỗi chiều` và trừ spread trực tiếp). Hệ thống **KHÔNG tích hợp bảng lãi suất swap biến thiên hàng ngày** (không tính phí swap gấp 3 vào đêm thứ Tư hoặc chênh lệch lãi suất Fed/vàng thả nổi). Với các chiến lược giao dịch trong ngày (Intraday) hoặc đóng lệnh trước cuối tuần, giả định này không gây sai lệch lớn; tuy nhiên với các chiến lược nắm giữ dài ngày (Swing) cần lưu ý thêm chi phí này khi triển khai thực tế.

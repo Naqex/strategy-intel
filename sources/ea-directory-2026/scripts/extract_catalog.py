@@ -47,12 +47,12 @@ def extract_pricing(html_text: str, soup: BeautifulSoup) -> str:
     point_match = re.search(r'(\d+)\s*(P-Points|Points)', html_text, re.I)
     if point_match:
         return f"POINTS ({point_match.group(1)} {point_match.group(2)})"
-    if re.search(r'download\s*—\s*free', html_text, re.I):
+    if re.search(r'download\s*[—\-:]\s*free|\bfree\s+download\b', html_text, re.I):
         return "FREE"
     dl_box = soup.find('div', class_=re.compile(r'download|sidebar', re.I))
     if dl_box and re.search(r'premium', dl_box.get_text(), re.I):
         return "PREMIUM_MEMBERSHIP"
-    return "FREE"
+    return "NOT_DISCLOSED"
 
 def extract_ea_from_html(filepath: str) -> EACatalogItem:
     filename = os.path.basename(filepath)
