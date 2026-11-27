@@ -1,0 +1,26 @@
+{
+  "quantpedia-tsmom-etf-daily.json": {
+    "sha256": "9B65E2D4D44B72810A4E259D322E69B9CDA6172206A2E806B20E96EB7AD8CF8D",
+    "size": 1297
+  },
+  "quantpedia-dual-momentum-etf.json": {
+    "sha256": "E351EDD5FA89462D53411FAA38DD5E459F2546040B7B48F887378842D8FBA454",
+    "size": 1148
+  },
+  "github-crypto-spot-donchian-d1.json": {
+    "sha256": "F1E700DAC82EBA41305A8C0377C0927154B61B9FB09DAD3EDA36D36A4162FFCF",
+    "size": 1052
+  },
+  "public-spec-vol-target-carry-etf.json": {
+    "sha256": "F5229B41DD2625C139DA666326F79F2CD1D3D2E6F83019A835C31BE1443F3AEF",
+    "size": 917
+  },
+  "forum-toxic-gold-martingale-grid.json": {
+    "sha256": "6295CAB9DF01E9669F78765D56554EEBAFE20F1D3E879342249F175B12CAD510",
+    "size": 722
+  },
+  "forum-toxic-nosl-scalper.json": {
+    "sha256": "E2F94AFB02A0766BC4629B40AE43A7F9AE66FAF01DB6BE8C02921F25E24E80F3",
+    "size": 617
+  }
+}

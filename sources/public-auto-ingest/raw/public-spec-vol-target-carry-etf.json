@@ -1,0 +1,16 @@
+{
+  "slug": "public-spec-vol-target-carry-etf",
+  "original_id": "AUTO-PUB-VOLCARRY-04",
+  "source_name": "public-research-spec",
+  "url": "https://quantpedia.com/strategies/volatility-risk-premium-effect/",
+  "name": "Cross-Asset Volatility-Scaled Defensive Trend (Partial Spec)",
+  "family": "Multi-Asset Defensive",
+  "asset_class": "ETF_SPOT_ZERO_SWAP",
+  "symbol": "TLT/GLD/SHY",
+  "timeframe": null,
+  "direction": "Long",
+  "stop_loss_rule": null,
+  "rule_description": "Allocate across defensive Treasury and Gold ETFs inversely proportional to 20-day realized volatility when regime stress rises; exact stop threshold is omitted in the public abstract.",
+  "raw_text": "Public abstract describing inverse-volatility allocation across TLT, GLD, and SHY spot ETFs. Explicitly non-martingale and without grid. Exact bar timeframe and stop-loss multiplier are omitted.",
+  "replicability": "PARTIAL_RULE_SPEC"
+}

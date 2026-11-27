@@ -1,0 +1,16 @@
+{
+  "slug": "quantpedia-dual-momentum-etf",
+  "original_id": "AUTO-QP-DUALMOM-02",
+  "source_name": "quantpedia-public-spec",
+  "url": "https://quantpedia.com/strategies/dual-momentum-model/",
+  "name": "Global Equities Dual Momentum Rotation (ETF)",
+  "family": "Macro ETF Rotation",
+  "asset_class": "ETF_SPOT_ZERO_SWAP",
+  "symbol": "SPY/EFA/AGG",
+  "timeframe": "W1",
+  "direction": "Long",
+  "stop_loss_rule": "Absolute momentum cash-bond switch plus hard portfolio drawdown stop",
+  "rule_description": "Compare 12-month trailing return of US equities (SPY) vs international equities (EFA) against short-term Treasury bills; hold the stronger equity ETF only when excess return is positive, otherwise rotate to aggregate bonds (AGG) with a hard defensive stop, zero grid, zero martingale.",
+  "raw_text": "Public rule specification (Gary Antonacci Dual Momentum). Liquid spot ETFs SPY, EFA, AGG on W1/monthly cadence with zero CFD swap exposure. Combines relative strength and absolute trend filter; uses hard stop and defensive bond rotation. Non-grid, non-martingale, no leverage multiplier.",
+  "replicability": "REPLICABLE_FROM_PUBLIC"
+}

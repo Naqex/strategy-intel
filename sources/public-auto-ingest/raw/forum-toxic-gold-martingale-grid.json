@@ -1,0 +1,16 @@
+{
+  "slug": "forum-toxic-gold-martingale-grid",
+  "original_id": "AUTO-TOXIC-01",
+  "source_name": "public-forum-spec",
+  "url": "https://example.org/forum/gold-recovery-ea-overview.html",
+  "name": "Turbo Gold Recovery Grid Bot",
+  "family": "Toxic Grid/Martingale",
+  "asset_class": "CFD_FX",
+  "symbol": "XAUUSD",
+  "timeframe": "M5",
+  "direction": "Both",
+  "stop_loss_rule": "None (SL=0)",
+  "rule_description": "Opens grid trading layers every 50 points with 1.8x lot multiplier martingale.",
+  "raw_text": "This EA uses grid trading and martingale recovery with a 1.8x lot multiplier, averaging down into drawdowns with no stop loss (SL=0) until basket profit closes.",
+  "replicability": "PARTIAL_CONCEPT_ONLY"
+}

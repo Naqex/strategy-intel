@@ -1,0 +1,16 @@
+{
+  "slug": "quantpedia-tsmom-etf-daily",
+  "original_id": "AUTO-QP-TSMOM-01",
+  "source_name": "quantpedia-public-spec",
+  "url": "https://quantpedia.com/strategies/time-series-momentum-effect/",
+  "name": "Time-Series Momentum Cross-Asset ETF (Volatility Scaled)",
+  "family": "Macro ETF Trend",
+  "asset_class": "ETF_SPOT_ZERO_SWAP",
+  "symbol": "SPY/TLT/GLD",
+  "timeframe": "D1",
+  "direction": "Both",
+  "stop_loss_rule": "Explicit hard 2.0x ATR protective stop and monthly volatility-target rebalance",
+  "rule_description": "Go long liquid ETFs with positive 12-month trailing excess return and reduce to T-Bill/cash or short defensive hedge when trailing return turns negative; position sized inversely to realized volatility with a hard 2.0x ATR protective stop, zero martingale, zero grid.",
+  "raw_text": "Public academic literature summary (Moskowitz, Ooi, Pedersen). Universe: broad liquid ETFs (SPY, TLT, GLD) with zero overnight CFD swap. Signal: sign of trailing 12-month return evaluated on D1/monthly rebalance. Risk control: volatility scaling with explicit hard 2.0x ATR protective stop; strictly avoids grid and never uses martingale. Sample vendor blog commentary mentions strong OOS2 rally during 2025 and 2026 bull markets.",
+  "replicability": "REPLICABLE_FROM_PUBLIC"
+}

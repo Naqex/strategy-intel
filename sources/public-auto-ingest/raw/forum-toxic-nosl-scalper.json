@@ -1,0 +1,16 @@
+{
+  "slug": "forum-toxic-nosl-scalper",
+  "original_id": "AUTO-TOXIC-02",
+  "source_name": "public-forum-spec",
+  "url": "https://example.org/forum/night-scalper-notes.html",
+  "name": "Night Feed Latency Scalper",
+  "family": "Toxic No-SL / HFT",
+  "asset_class": "CFD_FX",
+  "symbol": "EURUSD",
+  "timeframe": "M1",
+  "direction": "Both",
+  "stop_loss_rule": "Mental stop only",
+  "rule_description": "Exploits broker feed latency arbitrage without stop loss.",
+  "raw_text": "Runs latency arbitrage during rollover and trades without stop loss using mental stop only.",
+  "replicability": "PARTIAL_CONCEPT_ONLY"
+}

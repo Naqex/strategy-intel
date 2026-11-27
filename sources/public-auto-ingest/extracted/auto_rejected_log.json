@@ -1,0 +1,29 @@
+{
+  "generated_at_utc": "2026-11-27T06:59:28.620081+00:00",
+  "total_rejected": 2,
+  "rejected_items": [
+    {
+      "id": "AUTO-TOXIC-01",
+      "name": "Turbo Gold Recovery Grid Bot",
+      "source_url": "https://example.org/forum/gold-recovery-ea-overview.html",
+      "toxic_flags": [
+        "TOXIC_MARTINGALE",
+        "TOXIC_GRID",
+        "TOXIC_NO_STOP_LOSS"
+      ],
+      "toxic_rationale": "TOXIC_MARTINGALE: \"This EA uses grid trading and martingale recovery with a 1.8x lot multiplier, averaging down into drawdowns with no stop loss (SL=0) until basket profit closes\" | TOXIC_GRID: \"This EA uses grid trading and martingale recovery with a 1.8x lot multiplier, averaging down into drawdowns with no stop loss (SL=0) until basket profit closes\" | TOXIC_NO_STOP_LOSS: \"This EA uses grid trading and martingale recovery with a 1.8x lot multiplier, averaging down into drawdowns with no stop loss (SL=0) until basket profit closes\"",
+      "verbatim_excerpt": "This EA uses grid trading and martingale recovery with a 1.8x lot multiplier, averaging down into drawdowns with no stop loss (SL=0) until basket profit closes."
+    },
+    {
+      "id": "AUTO-TOXIC-02",
+      "name": "Night Feed Latency Scalper",
+      "source_url": "https://example.org/forum/night-scalper-notes.html",
+      "toxic_flags": [
+        "TOXIC_NO_STOP_LOSS",
+        "TOXIC_HFT_ARBITRAGE"
+      ],
+      "toxic_rationale": "TOXIC_NO_STOP_LOSS: \"Runs latency arbitrage during rollover and trades without stop loss using mental stop only\" | TOXIC_HFT_ARBITRAGE: \"Runs latency arbitrage during rollover and trades without stop loss using mental stop only\"",
+      "verbatim_excerpt": "Runs latency arbitrage during rollover and trades without stop loss using mental stop only."
+    }
+  ]
+}
