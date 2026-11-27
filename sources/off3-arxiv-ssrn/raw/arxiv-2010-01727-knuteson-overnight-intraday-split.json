@@ -1,0 +1,22 @@
+{
+  "slug": "arxiv-2010-01727-knuteson-overnight-intraday-split",
+  "original_id": "OFF3-ARXIV-08",
+  "paper_id": "arXiv:2010.01727",
+  "source_origin": "arxiv-q-fin-TR",
+  "canonical_url": "https://arxiv.org/abs/2010.01727",
+  "metadata_fetch_url": "https://export.arxiv.org/api/query?id_list=1501.07778,2301.13204,2010.01727,1907.08397,2108.01886,1507.01610,2308.11294&max_results=12",
+  "http_status": 200,
+  "content_type": "application/atom+xml",
+  "title": "Strikingly Suspicious Overnight and Intraday Returns",
+  "authors": [
+    "Bruce Knuteson"
+  ],
+  "raw_text": "The world's stock markets display a strikingly suspicious pattern of overnight and intraday returns. Overnight returns to major stock market indices over the past few decades have been wildly positive, while intraday returns have been disturbingly negative. The cause of these astonishingly consistent return patterns is unknown. We highlight the features of these extraordinary patterns that have hindered the construction of any plausible innocuous explanation. We then use those same features to deduce the only plausible explanation so far advanced for these strikingly suspicious returns.",
+  "categories": [
+    "q-fin.GN",
+    "econ.GN",
+    "q-fin.TR"
+  ],
+  "doi": null,
+  "ssrn_locations": []
+}

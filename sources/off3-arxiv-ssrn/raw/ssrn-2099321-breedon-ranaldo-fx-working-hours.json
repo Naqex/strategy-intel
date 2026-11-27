@@ -1,0 +1,19 @@
+{
+  "slug": "ssrn-2099321-breedon-ranaldo-fx-working-hours",
+  "original_id": "OFF3-SSRN-04",
+  "paper_id": "SSRN:2099321",
+  "source_origin": "ssrn-public-research",
+  "canonical_url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2099321",
+  "metadata_fetch_url": "https://api.openalex.org/works/W3121237256",
+  "http_status": 200,
+  "content_type": "application/json",
+  "title": "Intraday Patterns in FX Returns and Order Flow",
+  "authors": [
+    "Francis Breedon",
+    "Angelo Ranaldo"
+  ],
+  "raw_text": "Using 10 years of high-frequency foreign exchange data, we present evidence of time-of-day effects in foreign exchange returns through a significant tendency for currencies to depreciate during local trading hours. We confirm this pattern across a range of currencies and find that, in the case of EUR/USD, it can form a simple, profitable trading strategy. We also find that this pattern is present in order flow and suggest that both patterns relate to the tendency of market participants to be net purchasers of foreign exchange in their own trading hours. Data from alternative sources appear to corroborate that interpretation.",
+  "categories": [],
+  "doi": null,
+  "ssrn_locations": []
+}

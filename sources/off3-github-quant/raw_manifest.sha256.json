@@ -1,0 +1,90 @@
+{
+  "gh-01-davysnou-pairs-ou-zscore-hard-sl.json": {
+    "sha256": "EA27B9809B5CD6BF860E30F18AD75C2CB877F0522ADA1B9CD311E0C6F0B31998",
+    "size": 5685
+  },
+  "gh-02-adichauhan10-kalman-hmm-pairs-audnzd-wtibrent.json": {
+    "sha256": "1E9BE5FBAF69A01412BE418E507EA59D3DCD8FE2FAF98BE79DBC268E46E6C2A0",
+    "size": 13504
+  },
+  "gh-03-quantlandi-fx7-engle-granger-pairs.json": {
+    "sha256": "6DAEF77D8ACCEFA1DED02903C22FC0184140BAA317024441F3DBC016232F23BA",
+    "size": 25440
+  },
+  "gh-04-sharathstack-kalman-hurst-fx-statarb.json": {
+    "sha256": "865EDD4AFD32427E75584FB62AAEC54DFAA2789EAD527D9C3943F1ACAA80CA5B",
+    "size": 9351
+  },
+  "gh-05-sbaijal-ou-mle-kbe-optimal-stopping-pairs.json": {
+    "sha256": "BEC436320290EE8228C1A4689F322F626AF30FC361C5B8F329ACF5D3884D4B16",
+    "size": 37877
+  },
+  "gh-06-shubham-kalman-gold-silver-rotation.json": {
+    "sha256": "1A1BC19968043CE73BEBEE35E0C6EB6C3DB85B1DFCC18209A33A5EBE68E80328",
+    "size": 8642
+  },
+  "gh-07-pysystemtrade-ewmac-carry-vol-target.json": {
+    "sha256": "C183DE3F6B536EB67B65F4FBC25914F96186694ACACA4F176FA1357CE1297BF4",
+    "size": 8380
+  },
+  "gh-08-albanbreart-g10-fx-xsmom-carry-fm.json": {
+    "sha256": "28FA46E82631EB49BD0AA94A137583CCFF6D247B62DC871DD201C9E274D4854F",
+    "size": 55650
+  },
+  "gh-09-gabsmm18-fx-carry-3m-tsmom-crash-filter.json": {
+    "sha256": "E8414362EF2EB21D3BE3BE6BA06A036A37298F05B4045BC7C4E654E4A09DFCA8",
+    "size": 24802
+  },
+  "gh-10-gehlotmanthan-tsmom-garch11-vol-target.json": {
+    "sha256": "F570D4A39D3F353DFD84DC05AC85AD981400023B7DE1BA6E44C870E730B2E009",
+    "size": 29277
+  },
+  "gh-11-billnye67-usdjpy-gotobi-tokyo-fix-short.json": {
+    "sha256": "247046EEC45630B19C021E8175595F47964688DD952412D54A91576418E4A603",
+    "size": 12470
+  },
+  "gh-12-ichir0roie-month-end-london-1600-fix-usd.json": {
+    "sha256": "0D1C9968CAF3294D99F3C9F4CD87882C035462D5EA9C4CA68C41BE149EEBB622",
+    "size": 12688
+  },
+  "gh-13-dukotah-apex-causal-turn-of-month-index.json": {
+    "sha256": "C8A81384924378065738FA76512CE1712079EB199B1EEB0586E61DA8F1B5B80B",
+    "size": 12603
+  },
+  "gh-14-uchenna-hmm-vix-regime-rotation.json": {
+    "sha256": "CF547841C3BD08400312C1C7951336F22F506E5042300911AC0C3BB5A539E14F",
+    "size": 60509
+  },
+  "gh-15-dantsai-moreira-muir-vol-managed-index.json": {
+    "sha256": "693644C12F3542009049AA74C9D6D16CAE4FABCA65DA52D6172E52D358FB1062",
+    "size": 22621
+  },
+  "gh-16-markbogorad-tarch11-fx-carry-switch.json": {
+    "sha256": "C9C2D3D0E5D2CA2175F815CA65A5A003A815897518A6F0D94C9FD6E76E339165",
+    "size": 5838
+  },
+  "gh-17-vrd07-midweek-tuesday-index-overnight-drift.json": {
+    "sha256": "5AEF869E6104253C32943B42DBEC2735AF667D23AC63AF4DACD2643355826637",
+    "size": 7863
+  },
+  "gh-18-quantconnect-lean-global-equity-ibs-reversion.json": {
+    "sha256": "237DF2E141B07BC9D4F054F856C5872F2CBAE4ADC25888FD2FF66F1C0F6B99D0",
+    "size": 6339
+  },
+  "gh-19-handiko-connors-rsi2-sma200-pullback.json": {
+    "sha256": "ED9B8B18CB06A688EB319D1A36E5747D4EB69F28A64B4EBC59988CC9A679306C",
+    "size": 9026
+  },
+  "gh-20-open-alpha-lab-turnaround-tuesday-index.json": {
+    "sha256": "E77139D7D904E5482B42F5D249ECED6B16C592D984372D4EC44BFA5449D6C539",
+    "size": 16915
+  },
+  "gh-21-mustafa-high-vix-pre-fomc-drift.json": {
+    "sha256": "7DAF238C044C97814A2AD806482ECB468443DE9E776DDBF1B1C208F6E5DA1A1F",
+    "size": 8900
+  },
+  "gh-22-natecode880-wti-sarimax-dxy-vix-atr.json": {
+    "sha256": "B2B12362AEF93D1C8D6584AE8C7DBFD010B10031D1B73744921365160E4F20B1",
+    "size": 19855
+  }
+}

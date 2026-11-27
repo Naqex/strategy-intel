@@ -1,0 +1,21 @@
+{
+  "slug": "ssrn-2440866-gao-market-intraday-momentum",
+  "original_id": "OFF3-SSRN-05",
+  "paper_id": "SSRN:2440866",
+  "source_origin": "ssrn-public-research",
+  "canonical_url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2440866",
+  "metadata_fetch_url": "https://ideas.repec.org/a/eee/jfinec/v129y2018i2p394-414.html",
+  "http_status": 200,
+  "content_type": "text/html",
+  "title": "Market intraday momentum",
+  "authors": [
+    "Lei Gao",
+    "Yufeng Han",
+    "Sophia Zhengzi Li",
+    "Guofu Zhou"
+  ],
+  "raw_text": "Based on high frequency S & P 500 exchange-traded fund (ETF) data from 1993–2013, we show an intraday momentum pattern: the first half-hour return on the market as measured from the previous day’s market close predicts the last half-hour return. This predictability, which is both statistically and economically significant, is stronger on more volatile days, on higher volume days, on recession days, and on major macroeconomic news release days. Intraday momentum also exists for ten other most actively traded domestic and international ETFs. Theoretically, the intraday momentum is consistent not only with Bogousslavsky’s (2016) model of infrequent portfolio rebalancing but also with a model of late-informed trading near the market close.",
+  "categories": [],
+  "doi": null,
+  "ssrn_locations": []
+}

@@ -1,0 +1,23 @@
+{
+  "slug": "arxiv-2108-01886-he-crude-oil-bivariate-ou-kalman",
+  "original_id": "OFF3-ARXIV-11",
+  "paper_id": "arXiv:2108.01886",
+  "source_origin": "arxiv-q-fin-ST",
+  "canonical_url": "https://arxiv.org/abs/2108.01886",
+  "metadata_fetch_url": "https://export.arxiv.org/api/query?id_list=1501.07778,2301.13204,2010.01727,1907.08397,2108.01886,1507.01610,2308.11294&max_results=12",
+  "http_status": 200,
+  "content_type": "application/atom+xml",
+  "title": "On Modelling of Crude Oil Futures in a Bivariate State-Space Framework",
+  "authors": [
+    "Peilun He",
+    "Karol Binkowski",
+    "Nino Kordzakhia",
+    "Pavel Shevchenko"
+  ],
+  "raw_text": "We study a bivariate latent factor model for the pricing of commodity fu- tures. The two unobservable state variables representing the short and long term fac- tors are modelled as Ornstein-Uhlenbeck (OU) processes. The Kalman Filter (KF) algorithm has been implemented to estimate the unobservable factors as well as unknown model parameters. The estimates of model parameters were obtained by maximising a Gaussian likelihood function. The algorithm has been applied to WTI Crude Oil NYMEX futures data.",
+  "categories": [
+    "q-fin.ST"
+  ],
+  "doi": null,
+  "ssrn_locations": []
+}

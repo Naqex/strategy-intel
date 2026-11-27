@@ -1,0 +1,23 @@
+{
+  "slug": "ssrn-2637528-kurov-pre-macro-news-drift",
+  "original_id": "OFF3-SSRN-16",
+  "paper_id": "SSRN:2637528",
+  "source_origin": "ssrn-public-research",
+  "canonical_url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2637528",
+  "metadata_fetch_url": "https://api.openalex.org/works/W3123373742",
+  "http_status": 200,
+  "content_type": "application/json",
+  "title": "Price Drift Before U.S. Macroeconomic News: Private Information about Public Announcements?",
+  "authors": [
+    "Alexander Kurov",
+    "Alessio Sancetta",
+    "Georg H. Strasser",
+    "Marketa Halova Wolfe"
+  ],
+  "raw_text": "We examine stock index futures and Treasury futures around the release time of 30 U.S. macroeconomic announcements. Nine of the 20 announcements that move markets show evidence of substantial informed trading before the official release time. Prices begin to move in the “correct” direction approximately 30 minutes before the release time. The preannouncement price drift accounts on average for approximately 40% of the total price adjustment. This implies that some traders have private information about macroeconomic fundamentals. Preannouncement drift might originate from a combination of information leakage and superior forecasting that incorporates proprietary data.",
+  "categories": [],
+  "doi": "https://doi.org/10.1017/s0022109018000625",
+  "ssrn_locations": [
+    "https://doi.org/10.2139/ssrn.2637528"
+  ]
+}

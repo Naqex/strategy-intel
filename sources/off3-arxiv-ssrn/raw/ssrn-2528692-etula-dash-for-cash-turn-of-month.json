@@ -1,0 +1,23 @@
+{
+  "slug": "ssrn-2528692-etula-dash-for-cash-turn-of-month",
+  "original_id": "OFF3-SSRN-17",
+  "paper_id": "SSRN:2528692",
+  "source_origin": "ssrn-public-research",
+  "canonical_url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2528692",
+  "metadata_fetch_url": "https://api.openalex.org/works/https://doi.org/10.2139/ssrn.2528692",
+  "http_status": 200,
+  "content_type": "application/json",
+  "title": "Dash for Cash: Monthly Market Impact of Institutional Liquidity Needs",
+  "authors": [
+    "Erkko M. Etula",
+    "Kalle Rinne",
+    "Matti Suominen",
+    "Lauri Vaittinen"
+  ],
+  "raw_text": "We present broad-based evidence that the monthly payment cycle induces systematic patterns in liquid markets around the globe. First, we document temporary increases in the costs of debt and equity capital that coincide with key dates associated with month-end cash needs. Second, we present direct and indirect evidence on the role of institutions in the genesis of these patterns and derive estimates of the associated costs borne by market participants. Third, and finally, we investigate the limits to arbitrage that prevent markets from functioning efficiently. Our results indicate that many investors and their agents, including mutual funds, suffer from liquidity-related trading. Received January 16, 2018; editorial decision January 2, 2019 by Editor Robin Greenwood. Authors have furnished an Internet Appendix, which is available on the Oxford University Press Web site next to the link to the final published paper online.",
+  "categories": [],
+  "doi": "https://doi.org/10.1093/rfs/hhz054",
+  "ssrn_locations": [
+    "https://doi.org/10.2139/ssrn.2528692"
+  ]
+}

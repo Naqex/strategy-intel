@@ -1,0 +1,118 @@
+{
+  "mql5-art-22783-mr-swing-value-charts-svapo.json": {
+    "sha256": "8E7AF89601AC0A28975503B9B5E6AC172797842C077E3E1A1886B43CE803A12D",
+    "size": 11153
+  },
+  "mql5-art-17273-kalman-filter-fx-mean-reversion.json": {
+    "sha256": "F1BB64015C62295930D2FDD2FCD1D1740305F50EDAAB03A332BD0734C9BD1E9C",
+    "size": 10856
+  },
+  "mql5-art-17636-connors-rsi2-us500-m30.json": {
+    "sha256": "C6D500EC5AB50996C3B5D42F6D550792AD5014DD4604E090738700207A69F5C1",
+    "size": 11052
+  },
+  "mql5-art-20167-statistical-ci-jarque-bera-mr.json": {
+    "sha256": "EE6AA64AEF1032E75B8E796C47FEA7F901B14C27AFE0E5B2465AFD867365B5D2",
+    "size": 11741
+  },
+  "mql5-cb-78687-fxcraft-bb-rsi-session-mr.json": {
+    "sha256": "E4E2726BD5FA7B62D250E18914DC1EDCFE0D46CDB59FBEE7A2793A8260DD4DEF",
+    "size": 6075
+  },
+  "mql5-cb-77738-rsi-exhaustion-eurusd-atr.json": {
+    "sha256": "F730CD835BCE9879BD5D0E9B90AE2EA1A5F2063029664FC22B51C3D02AE5EB73",
+    "size": 8194
+  },
+  "mql5-cb-78343-monday-dip-index-d1-mr.json": {
+    "sha256": "3FDBF5D7B466D03A9249FB1930B3E2F94CEB7D1E7C2F609813A933A73047CE8D",
+    "size": 8390
+  },
+  "mql5-art-24280-raschke-310-anti-holy-grail.json": {
+    "sha256": "F868628509F519E2C6B6A3A90F81A4BCBD0BE2F9CDC53A082E2561ABEF386153",
+    "size": 11505
+  },
+  "mql5-art-22807-dynamic-pullback-depth-atr-regime.json": {
+    "sha256": "12EAB65288891B028F0FC5ADC016B66658F7F5F51B3632BE0F7D3BEEFA310381",
+    "size": 11362
+  },
+  "mql5-art-21228-williams-smash-day-supertrend.json": {
+    "sha256": "A9C3E9A36C62E6B4096B59DBC869DA92C9C810F669C209ACA936D599F6AACC95",
+    "size": 11637
+  },
+  "mql5-art-12809-dual-stochastic-ma-fibonacci.json": {
+    "sha256": "6014D905198B3BB69FE75D4218FE9ABA366588FD44565F70BF172176B57FBBB7",
+    "size": 10797
+  },
+  "mql5-cb-73958-adx-ema-atr-trend-pullback.json": {
+    "sha256": "E116C8CAD003F006B0FA41CD9CCB130F3F6E3755EF64DE6072F4DE5C89A658BB",
+    "size": 7930
+  },
+  "mql5-cb-63916-wpr-bb-midline-atr-pullback.json": {
+    "sha256": "817AF31E24F3F40C97C1598341DBE481199A72E2446DDBA67A971EADAB7A1496",
+    "size": 5940
+  },
+  "mql5-art-23763-network-momentum-lead-lag-fx.json": {
+    "sha256": "4B558F985975239FA7EE10B3C70090DCBF16515EA8218C61B589D01E55CEC4BE",
+    "size": 11249
+  },
+  "mql5-art-22175-carry-trade-swap-aware-fx.json": {
+    "sha256": "41D56B0C6EF722D9F7D11D51A2A287C545AEA084A24363A89D694AF7BE2BBA39",
+    "size": 11001
+  },
+  "mql5-art-23597-multipair-volatility-signature-asymmetric-sl.json": {
+    "sha256": "9A2B4D84ABB0E6CADE9AF5F94203FC5691673CB53D667F8B7D66DDBB6AF95043",
+    "size": 11573
+  },
+  "mql5-art-3339-currency-basket-wpr-mean-reversion.json": {
+    "sha256": "8B4E745FDE652E95FFC7A8D4A8B13940F7EC3AED5DA393E4109813A7373B7FA6",
+    "size": 11262
+  },
+  "mql5-art-17781-adaptive-market-regime-detector-ea.json": {
+    "sha256": "7DBAC7BB25E10EA439BE4EC84FB7E526742743233D47A9F350C26DFC4AB17C4A",
+    "size": 11510
+  },
+  "mql5-cb-73622-quantum-xauusd-silver-atr-factor.json": {
+    "sha256": "78A10906AC61DE008D11D30B863D2933D8C6DD1DBB2CB0C07D97844CD4A74FF8",
+    "size": 10348
+  },
+  "mql5-art-14855-brent-wti-crude-oil-spread-regression.json": {
+    "sha256": "1E8738F29542658F351F77E294706630959111C76902B796C1A2A678EB79E959",
+    "size": 11257
+  },
+  "mql5-art-17735-statarb-pairs-mean-reversion.json": {
+    "sha256": "392761BBECE25A68E454D6B47AEEA91B0F26E14FAD49866EDB03A49F29CB039D",
+    "size": 11103
+  },
+  "mql5-art-13338-correlated-fx-pair-trading-atr.json": {
+    "sha256": "286A769629F8DF6877B70E7F1E88F91E85CD7E0B321551B13A8165A1B9681087",
+    "size": 10797
+  },
+  "reject-mql5-cb-78206-gridpro-panel.json": {
+    "sha256": "90F7FC47F309BC0D748065B75B4C56F77AB25115D774AB08DEBCE0AB33D12C80",
+    "size": 6612
+  },
+  "reject-mql5-cb-32521-basic-martingale-v3.json": {
+    "sha256": "ACA0B6583BB99BFFC7C17E35559098B1E622A6029B060D5DAEE41B6B3C528097",
+    "size": 4565
+  },
+  "reject-mql5-cb-22854-ma-macd-position-averaging-v2.json": {
+    "sha256": "B7B8846BDD5A2C915EA8CA241B27A03EAC101326B2A0783A9DB0369F85BACF4C",
+    "size": 5089
+  },
+  "reject-mql5-cb-79021-xander-grid-rsi-gold.json": {
+    "sha256": "E8DDE3BA56980440DAAA97F2DAB0E15070C02ABFA68F3F3FC2BBA165B3F8F172",
+    "size": 8389
+  },
+  "reject-mql5-art-15067-zone-recovery-martingale.json": {
+    "sha256": "7987F18FCD08954956981F736B717412C14BF65F95E67924C54C0911B566B421",
+    "size": 10036
+  },
+  "reject-mql5-cb-20815-night-flat-rollover-scalper.json": {
+    "sha256": "CA2A6DEBC7EA27A84931684CAFCB654545588927CF290953D17E408AD0190F13",
+    "size": 3369
+  },
+  "reject-mql5-art-23527-wininet-dll-import-ea.json": {
+    "sha256": "EFFD74AB675C68DF69E166C2369EB6FC2CCC01121EC43AF227FC2848B21D9E19",
+    "size": 10078
+  }
+}

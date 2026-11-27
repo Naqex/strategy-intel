@@ -1,0 +1,34 @@
+{
+  "lead_id": "LEAD-OFF3-TV-03",
+  "original_id": "TV-pQSrIqR2",
+  "image_url_id": "pQSrIqR2",
+  "script_id_part": "PUB;tjhzg6711IOkRFKnYvSZekFva2BQ32Xl",
+  "script_version": "2",
+  "canonical_url": "https://www.tradingview.com/script/pQSrIqR2-Turtle-soup-plus-one/",
+  "pine_facade_url": "https://pine-facade.tradingview.com/pine-facade/get/PUB%3Btjhzg6711IOkRFKnYvSZekFva2BQ32Xl/2",
+  "script_name": "Turtle soup plus one",
+  "pine_internal_title": "Turtle soup plus one",
+  "suggest_title": "Turtle soup plus one",
+  "author_username": "Tr0sT",
+  "agree_count": 420,
+  "script_access": "open_no_auth",
+  "script_kind": "strategy",
+  "page_metadata": {
+    "page_title": "Turtle soup plus one — Strategy by Tr0sT",
+    "meta_description": "Linda Raschke's strategy from her book about swing trade technics.",
+    "raw_chart_interval": "1D",
+    "mapped_timeframe": "D1"
+  },
+  "static_pine_audit": {
+    "passed": true,
+    "failures": [],
+    "script_access": "open_no_auth",
+    "pine_version": "v3",
+    "pyramiding": 1,
+    "security_call_count": 0,
+    "security_calls": [],
+    "source_line_count": 72,
+    "source_char_count": 3851
+  },
+  "pine_source_verbatim": "//@version=3\r\nstrategy(title = \"Turtle soup plus one\", shorttitle = \"Turtle soup plus one\", overlay=true, default_qty_type = strategy.percent_of_equity, default_qty_value = 100.0, pyramiding = 1, commission_type = strategy.commission.percent, commission_value = 0.1)\r\n\r\nbigPeriod = input(20)\r\nsmallPeriod = input(4)\r\ntakeProfitBars = input(0)\r\ntrailingStop = input(5, title = \"Trailing stop percentages\")\r\nif (strategy.position_size == 0)\r\n    strategy.cancel(\"Long\")\r\n    strategy.cancel(\"Short\")\r\n    strategy.cancel(\"Stop\")\r\n\r\n\r\nstopLossPrice = 0.1\r\nstopLossPrice := nz(stopLossPrice[1])\r\ntakeProfitStarted = false\r\ntakeProfitStarted := nz(takeProfitStarted[1])\r\n\r\nprevHigh = highest(high[smallPeriod], bigPeriod - smallPeriod)\r\nsmallPeriodHigh = highest(high[1], smallPeriod - 1)\r\nif (high > prevHigh and prevHigh > smallPeriodHigh and close > prevHigh and strategy.position_size == 0)\r\n    strategy.order(\"Short\", strategy.short, stop = prevHigh)\r\n\r\nif strategy.position_size < 0 and strategy.position_size[1] == 0\r\n    stopLossPrice := high[1]\r\n    strategy.order(\"Stop\", strategy.long, qty = -strategy.position_size, stop = stopLossPrice)\r\n    takeProfitStarted := false\r\n\r\nif (strategy.position_size < 0 and sum(strategy.position_size, takeProfitBars) == strategy.position_size * takeProfitBars and close < strategy.position_avg_price and not takeProfitStarted)\r\n    takeProfitStarted := true\r\n    strategy.cancel(\"Stop\")\r\n    strategy.order(\"ExitHalf\", strategy.long, qty = ceil(-strategy.position_size / 2), stop = close)\r\n    if (strategy.position_size != -1)\r\n        strategy.exit(\"ExitFull\", \"Short\", qty = -strategy.position_size - ceil(-strategy.position_size / 2), loss = stopLossPrice, trail_price  = close, trail_offset = -(close - strategy.position_avg_price) * trailingStop / 100 / syminfo.mintick)\r\n        \r\n\r\nprevLow = lowest(low[smallPeriod], bigPeriod - smallPeriod)\r\nsmallPeriodLow = lowest(low[1], smallPeriod - 1)\r\nif (low < prevLow and prevLow < smallPeriodLow and close < prevLow and strategy.position_size == 0)\r\n    strategy.order(\"Long\", strategy.long, stop = prevLow)\r\n\r\nif strategy.position_size > 0 and strategy.position_size[1] == 0\r\n    stopLossPrice := low[1]\r\n    strategy.order(\"Stop\", strategy.short, qty = strategy.position_size, stop = stopLossPrice)\r\n    takeProfitStarted := false\r\n\r\nif (strategy.position_size > 0 and sum(strategy.position_size, takeProfitBars) == strategy.position_size * takeProfitBars and close > strategy.position_avg_price and not takeProfitStarted)\r\n    takeProfitStarted := true\r\n    strategy.cancel(\"Stop\")\r\n    strategy.order(\"ExitHalf\", strategy.short, qty = ceil(strategy.position_size / 2), stop = close)\r\n    if (strategy.position_size != 1)\r\n        strategy.exit(\"ExitFull\", \"Long\", qty = strategy.position_size - ceil(strategy.position_size / 2),loss = stopLossPrice, trail_price  = close, trail_offset = (close - strategy.position_avg_price) * trailingStop / 100 / syminfo.mintick)\r\n\r\n// === Backtesting Dates ===\r\ntestPeriodSwitch = input(false, \"Custom Backtesting Dates\")\r\ntestStartYear = input(2018, \"Backtest Start Year\")\r\ntestStartMonth = input(3, \"Backtest Start Month\")\r\ntestStartDay = input(6, \"Backtest Start Day\")\r\ntestStartHour = input(08, \"Backtest Start Hour\")\r\ntestPeriodStart = timestamp(testStartYear,testStartMonth,testStartDay,testStartHour,0)\r\ntestStopYear = input(2018, \"Backtest Stop Year\")\r\ntestStopMonth = input(12, \"Backtest Stop Month\")\r\ntestStopDay = input(14, \"Backtest Stop Day\")\r\ntestStopHour = input(14, \"Backtest Stop Hour\")\r\ntestPeriodStop = timestamp(testStopYear,testStopMonth,testStopDay,testStopHour,0)\r\ntestPeriod() =>\r\n    time >= testPeriodStart and time <= testPeriodStop ? true : false\r\nisPeriod = testPeriodSwitch == true ? testPeriod() : true\r\n// === /END\r\nif not isPeriod\r\n    strategy.cancel_all()\r\n    strategy.close_all()"
+}

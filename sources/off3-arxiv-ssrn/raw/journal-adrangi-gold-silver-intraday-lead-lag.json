@@ -1,0 +1,20 @@
+{
+  "slug": "journal-adrangi-gold-silver-intraday-lead-lag",
+  "original_id": "OFF3-SSRN-13",
+  "paper_id": "DOI:10.1080/096031000331644",
+  "source_origin": "journal-public-research",
+  "canonical_url": "https://doi.org/10.1080/096031000331644",
+  "metadata_fetch_url": "https://api.openalex.org/works/https://doi.org/10.1080/096031000331644",
+  "http_status": 200,
+  "content_type": "application/json",
+  "title": "Price discovery in strategically-linked markets: the case of the gold-silver spread",
+  "authors": [
+    "Bahram Adrangi",
+    "Arjun Chatrath",
+    "Rohan Christie David"
+  ],
+  "raw_text": "Using 15 minute intraday data, we analyse the price discovery process among the strategically-linked gold and silver futures contracts and examine the role of the intermarket spread in their price dynamics. The multivariate model employed allows for intermarket volatility spillover and asymmetric-spread effects on the variance and covariance of the two contracts. The data suggest that the silver contract bears the majority of the burden of convergence to the gold-silver spread. This evidence is noteworthy since the silver contract was by far the more volatile of the two contracts over the period studied.",
+  "categories": [],
+  "doi": "https://doi.org/10.1080/096031000331644",
+  "ssrn_locations": []
+}

@@ -1,0 +1,19 @@
+{
+  "slug": "ssrn-2140091-baltas-kosowski-vol-targeted-tsmom",
+  "original_id": "OFF3-SSRN-19",
+  "paper_id": "SSRN:2140091",
+  "source_origin": "ssrn-public-research",
+  "canonical_url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2140091",
+  "metadata_fetch_url": "https://api.openalex.org/works/https://doi.org/10.1002/9781119599364.ch3",
+  "http_status": 200,
+  "content_type": "application/json",
+  "title": "Demystifying Time‐Series Momentum Strategies: Volatility Estimators, Trading Rules and Pairwise Correlations",
+  "authors": [
+    "Nick Baltas",
+    "Robert L. Kosowski"
+  ],
+  "raw_text": "Time-series momentum strategies are constructed using long and short positions based on a simple momentum-based trading rule, which is typically the sign of the past 12-month return. This chapter focuses on the portfolio turnover implications of the two key inputs in time-series momentum strategies, namely the volatility estimator that is used to scale the asset positions and the trading rule that is used to identify the price trends. It explores the turnover reduction benefits from employing more efficient volatility estimates and from identifying more accurately the strength of price trends by means of alternative trading rules. The chapter studies the dependence of the performance of time-series momentum strategies on the level of asset pairwise correlations, with special attention paid to their underperformance following the global financial crisis. Finally, it introduces a new transaction costs model for futures-based investment strategies that separates costs into roll-over costs and rebalancing costs.",
+  "categories": [],
+  "doi": "https://doi.org/10.1002/9781119599364.ch3",
+  "ssrn_locations": []
+}

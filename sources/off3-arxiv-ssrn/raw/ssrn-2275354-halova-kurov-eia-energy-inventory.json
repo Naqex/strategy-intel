@@ -1,0 +1,22 @@
+{
+  "slug": "ssrn-2275354-halova-kurov-eia-energy-inventory",
+  "original_id": "OFF3-SSRN-09",
+  "paper_id": "SSRN:2275354",
+  "source_origin": "ssrn-public-research",
+  "canonical_url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2275354",
+  "metadata_fetch_url": "https://api.openalex.org/works/https://doi.org/10.1002/fut.21633",
+  "http_status": 200,
+  "content_type": "application/json",
+  "title": "Noisy Inventory Announcements and Energy Prices",
+  "authors": [
+    "Marketa Halova Wolfe",
+    "Alexander Kurov",
+    "Oleg Kucher"
+  ],
+  "raw_text": "This study examines the effect of oil and gas inventory announcements on energy prices. Previous estimates of this effect suffer from bias due to measurement error in inventory surprises. We utilize intraday futures data for three petroleum commodities and natural gas to estimate the price response coefficients using traditional event study regressions and the identification‐through‐censoring (ITC) technique proposed by Rigobon and Sack [Rigobon and Sack (2008). Asset prices and monetary policy (pp. 335–370). Chicago: University of Chicago Press]. The results show that the bias in OLS estimates of the price impact of inventory surprises is quite large. The ITC coefficient estimates are about twice as large as OLS estimates for petroleum commodities and about four times as large as OLS estimates for natural gas. These results imply that energy prices are more strongly influenced by unexpected changes in inventory than shown in previous research. © 2013 Wiley Periodicals, Inc. Jrl Fut Mark 34:911–933, 2014",
+  "categories": [],
+  "doi": "https://doi.org/10.1002/fut.21633",
+  "ssrn_locations": [
+    "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2275354"
+  ]
+}

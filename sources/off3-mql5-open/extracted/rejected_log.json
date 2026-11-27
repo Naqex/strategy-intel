@@ -1,0 +1,107 @@
+{
+  "schema_version": "off3_rejected_log_v1",
+  "source": "off3-mql5-open",
+  "total_rejected": 7,
+  "rejected_items": [
+    {
+      "id": "MQL5-CB-78206",
+      "lead_id": "REJECT-OFF3-MQL5-01",
+      "name": "GridPro Panel — open-source grid trading EA",
+      "source_origin": "mql5-codebase",
+      "source_url": "https://www.mql5.com/en/code/78206",
+      "raw_file": "sources/off3-mql5-open/raw/reject-mql5-cb-78206-gridpro-panel.json",
+      "toxic_flags": [
+        "TOXIC_GRID",
+        "TOXIC_MARTINGALE"
+      ],
+      "toxic_rationale": "TOXIC_GRID: \"GridPro Panel — open-source grid trading EA\" | TOXIC_MARTINGALE: \"adds averaging grid layers with martingale lot multiplier (default 1.5x)\"",
+      "verbatim_excerpt": "GridPro Panel is an open-source grid trading Expert Advisor for MetaTrader 5 with a built-in on-chart control panel. Requirements: - MetaTrader 5, hedging account (the EA checks the account margin mode at startup and refuses to run on netting accounts) - Any symbol; liquid low-spread symbols are recommended Grid engine: - Direction: both / buy only / sell on"
+    },
+    {
+      "id": "MQL5-CB-32521",
+      "lead_id": "REJECT-OFF3-MQL5-02",
+      "name": "Basic Martingale EA v3",
+      "source_origin": "mql5-codebase",
+      "source_url": "https://www.mql5.com/en/code/32521",
+      "raw_file": "sources/off3-mql5-open/raw/reject-mql5-cb-32521-basic-martingale-v3.json",
+      "toxic_flags": [
+        "TOXIC_MARTINGALE",
+        "TOXIC_GRID",
+        "TOXIC_AVERAGING_DOWN"
+      ],
+      "toxic_rationale": "TOXIC_MARTINGALE: \"Basic Martingale EA v3\" | TOXIC_GRID: \"Disqualified: Martingale trading system using averaging down and averaging up with ATR grid steps and TEMA entry signals\" | TOXIC_AVERAGING_DOWN: \"averaging down\"",
+      "verbatim_excerpt": "This EA just showing a sample of Martingale Systems by Averaging Up or Averaging Down. Default using TEMA Indicator as Entry Signals and ATR as Grid Steps for taking orders."
+    },
+    {
+      "id": "MQL5-CB-22854",
+      "lead_id": "REJECT-OFF3-MQL5-03",
+      "name": "MA MACD Position averaging v2",
+      "source_origin": "mql5-codebase",
+      "source_url": "https://www.mql5.com/en/code/22854",
+      "raw_file": "sources/off3-mql5-open/raw/reject-mql5-cb-22854-ma-macd-position-averaging-v2.json",
+      "toxic_flags": [
+        "TOXIC_GRID",
+        "TOXIC_AVERAGING_DOWN"
+      ],
+      "toxic_rationale": "TOXIC_GRID: \"Disqualified: Opens additional same-direction losing layers (averaging down) with an increased lot coefficient whenever floating loss exceeds Step lossing pips\" | TOXIC_AVERAGING_DOWN: \"Position averaging\"",
+      "verbatim_excerpt": "If a position has a loss exceeding Step lossing pips, open yet another position (in the loss-making position direction) with an increased lot ( Lot coefficient is considered)."
+    },
+    {
+      "id": "MQL5-CB-79021",
+      "lead_id": "REJECT-OFF3-MQL5-04",
+      "name": "Xander Grid RSI Gold",
+      "source_origin": "mql5-codebase",
+      "source_url": "https://www.mql5.com/en/code/79021",
+      "raw_file": "sources/off3-mql5-open/raw/reject-mql5-cb-79021-xander-grid-rsi-gold.json",
+      "toxic_flags": [
+        "TOXIC_NO_STOP_LOSS",
+        "TOXIC_MARTINGALE",
+        "TOXIC_AVERAGING_DOWN"
+      ],
+      "toxic_rationale": "TOXIC_NO_STOP_LOSS: \"No stop loss on each position\" | TOXIC_MARTINGALE: \"Disqualified: XAUUSD grid EA with a lot multiplier that adds adverse levels every fixed point step and explicitly runs with no stop loss on each individual posi\" | TOXIC_AVERAGING_DOWN: \"adds a new level every\"",
+      "verbatim_excerpt": "Be clear about what this is: a grid with a lot multiplier and no stop loss on each position. While a basket is open and price moves against it, the EA adds a new level every set distance in points, with a lot multiplier and a maximum number of levels."
+    },
+    {
+      "id": "MQL5-ART-15067",
+      "lead_id": "REJECT-OFF3-MQL5-05",
+      "name": "Developing Zone Recovery Martingale Strategy in MQL5",
+      "source_origin": "mql5-article",
+      "source_url": "https://www.mql5.com/en/articles/15067",
+      "raw_file": "sources/off3-mql5-open/raw/reject-mql5-art-15067-zone-recovery-martingale.json",
+      "toxic_flags": [
+        "TOXIC_MARTINGALE",
+        "TOXIC_AVERAGING_DOWN"
+      ],
+      "toxic_rationale": "TOXIC_MARTINGALE: \"Developing Zone Recovery Martingale Strategy in MQL5\" | TOXIC_AVERAGING_DOWN: \"Zone Recovery\"",
+      "verbatim_excerpt": "The zone recovery martingale strategy is a common strategy that is aimed at countering losing positions by opening opposite positions with a slightly greater trading volume that cancels the losing positions. The trader launches a series of countertrades to build a recovery zone when a trade moves unfavorably and reaches a predetermined loss zone, as opposed"
+    },
+    {
+      "id": "MQL5-CB-20815",
+      "lead_id": "REJECT-OFF3-MQL5-06",
+      "name": "Night Flat Trade (Rollover Session Scalper / No Hard SL)",
+      "source_origin": "mql5-codebase",
+      "source_url": "https://www.mql5.com/en/code/20815",
+      "raw_file": "sources/off3-mql5-open/raw/reject-mql5-cb-20815-night-flat-rollover-scalper.json",
+      "toxic_flags": [
+        "TOXIC_NO_STOP_LOSS",
+        "TOXIC_ROLLOVER_SCALPER"
+      ],
+      "toxic_rationale": "TOXIC_NO_STOP_LOSS: \"Night Flat Trade (Rollover Session Scalper / No Hard SL)\" | TOXIC_ROLLOVER_SCALPER: \"Night Flat Trade\"",
+      "verbatim_excerpt": "The EA is debugged to work with EURUSD and on H1 only in the quietest hours (upon closing the American session and before opening the Asian one). Input parameters Take Profit - Take Profit; Trailing Stop - trailing; Trailing Step - trailing step; Difference Min - the minimum difference between the highest and the lowest price (within the last three bars); Di"
+    },
+    {
+      "id": "MQL5-ART-23527",
+      "lead_id": "REJECT-OFF3-MQL5-07",
+      "name": "MQL5 EA Using Direct WinINet DLL Import (#import wininet.dll)",
+      "source_origin": "mql5-article",
+      "source_url": "https://www.mql5.com/en/articles/23527",
+      "raw_file": "sources/off3-mql5-open/raw/reject-mql5-art-23527-wininet-dll-import-ea.json",
+      "toxic_flags": [
+        "TOXIC_BLACKBOX_OR_DLL",
+        "TOXIC_DLL_IMPORT"
+      ],
+      "toxic_rationale": "TOXIC_BLACKBOX_OR_DLL: \"MQL5 EA Using Direct WinINet DLL Import (#import wininet.dll)\" | TOXIC_DLL_IMPORT: \"Detected ['#import \"wininet.dll\"']\"",
+      "verbatim_excerpt": "This article takes a different approach: it calls Windows Internet (wininet.dll) directly from MQL5 using #import. Calling WinINet directly also means no URL whitelist is required."
+    }
+  ]
+}

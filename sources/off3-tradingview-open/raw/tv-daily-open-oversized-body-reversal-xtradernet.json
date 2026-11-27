@@ -1,0 +1,34 @@
+{
+  "lead_id": "LEAD-OFF3-TV-17",
+  "original_id": "TV-0yqWAi1B",
+  "image_url_id": "0yqWAi1B",
+  "script_id_part": "PUB;VVkw2nUXcn28RKggTZB598vgi3iCxStg",
+  "script_version": "1",
+  "canonical_url": "https://www.tradingview.com/script/0yqWAi1B-Daily-Open-Strategy-DOS/",
+  "pine_facade_url": "https://pine-facade.tradingview.com/pine-facade/get/PUB%3BVVkw2nUXcn28RKggTZB598vgi3iCxStg/1",
+  "script_name": "Daily Open Strategy (DOS)",
+  "pine_internal_title": "Daily Open Strategy",
+  "suggest_title": "Daily Open Strategy",
+  "author_username": "xtradernet",
+  "agree_count": 94,
+  "script_access": "open_no_auth",
+  "script_kind": "strategy",
+  "page_metadata": {
+    "page_title": "Daily Open Strategy (DOS) by xtradernet",
+    "meta_description": "DOS is a mean-reversal strategy that trades against the previous candle direction as long as it has body greater than the PrevRange paremeter. \n\nBest results are obtained in GBP and AUD pairs on daily charts , but of course you can experiment with other assets and timeframes.\n\nStrategy parameters include starting and ending dates, the previous candle range (raw value), the Stop Loss (SL, in pips, 200 = 20 pips) and the Take Profit (TP, in pips too).",
+    "raw_chart_interval": "1D",
+    "mapped_timeframe": "D1"
+  },
+  "static_pine_audit": {
+    "passed": true,
+    "failures": [],
+    "script_access": "open_no_auth",
+    "pine_version": "v2_or_unspecified",
+    "pyramiding": 0,
+    "security_call_count": 0,
+    "security_calls": [],
+    "source_line_count": 39,
+    "source_char_count": 1723
+  },
+  "pine_source_verbatim": "// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/\r\n// @version=4\r\nstrategy(\"Daily Open Strategy\", overlay=true, default_qty_type = strategy.percent_of_equity, default_qty_value = 100, initial_capital = 10000)\r\n\r\nPrevRange = input(0.0100, type=input.float, title=\"Previous Candle Range\")\r\nTP = input(200, title=\"Take Profit in pips\")\r\nSL = input(1000, title=\"Stop Loss in pips\")\r\n\r\nstartDate = input(title=\"Start Date\", type=input.integer,\r\n     defval=1, minval=1, maxval=31)\r\nstartMonth = input(title=\"Start Month\", type=input.integer,\r\n     defval=1, minval=1, maxval=12)\r\nstartYear = input(title=\"Start Year\", type=input.integer,\r\n     defval=2015, minval=1800, maxval=2100)\r\n\r\nendDate = input(title=\"End Date\", type=input.integer,\r\n     defval=31, minval=1, maxval=31)\r\nendMonth = input(title=\"End Month\", type=input.integer,\r\n     defval=12, minval=1, maxval=12)\r\nendYear = input(title=\"End Year\", type=input.integer,\r\n     defval=2020, minval=1800, maxval=2100)\r\n\r\n\r\nisLong = strategy.position_size > 0\r\nisShort = strategy.position_size < 0\r\n\r\nlongTrigger = (open-close) > PrevRange and close<open \r\nshortTrigger = (close-open) > PrevRange and close>open\r\n\r\ninDateRange = (time >= timestamp(syminfo.timezone, startYear,\r\n         startMonth, startDate, 0, 0)) and\r\n     (time < timestamp(syminfo.timezone, endYear, endMonth, endDate, 0, 0))\r\n\r\n\r\nstrategy.entry(id = \"Long\", long = true, when = (longTrigger and not isShort and inDateRange))\r\nstrategy.exit(\"Exit Long\", \"Long\", loss=SL, profit=TP) \r\n\r\nstrategy.entry(id = \"Short\", long = false, when = (shortTrigger and not isLong and inDateRange))\r\nstrategy.exit(\"Exit Short\", \"Short\", loss=SL, profit=TP)\r\n"
+}

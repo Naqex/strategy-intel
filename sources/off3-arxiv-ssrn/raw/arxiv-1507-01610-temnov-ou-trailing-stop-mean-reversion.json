@@ -1,0 +1,21 @@
+{
+  "slug": "arxiv-1507-01610-temnov-ou-trailing-stop-mean-reversion",
+  "original_id": "OFF3-ARXIV-14",
+  "paper_id": "arXiv:1507.01610",
+  "source_origin": "arxiv-q-fin-TR",
+  "canonical_url": "https://arxiv.org/abs/1507.01610",
+  "metadata_fetch_url": "https://export.arxiv.org/api/query?id_list=1501.07778,2301.13204,2010.01727,1907.08397,2108.01886,1507.01610,2308.11294&max_results=12",
+  "http_status": 200,
+  "content_type": "application/atom+xml",
+  "title": "Analysis of Ornstein-Uhlenbeck process stopped at maximum drawdown and application to trading strategies with trailing stops",
+  "authors": [
+    "Grigory Temnov"
+  ],
+  "raw_text": "We propose a strategy for automated trading, outline theoretical justification of the profitability of this strategy and overview the hypothetical results in application to currency pairs trading. The proposed methodology relies on the assumption that processes reflecting the dynamics of currency exchange rates are in a certain sense similar to the class of Ornstein-Uhlenbeck processes and exhibits the mean reverting property. In order to describe the quantitative characteristics of the projected return of the strategy, we derive the explicit expression for the running maximum of the Ornstein-Uhlenbeck process stopped at maximum drawdown and look at the correspondence between derived characteristics and the observed ones.",
+  "categories": [
+    "q-fin.TR",
+    "math.PR"
+  ],
+  "doi": null,
+  "ssrn_locations": []
+}

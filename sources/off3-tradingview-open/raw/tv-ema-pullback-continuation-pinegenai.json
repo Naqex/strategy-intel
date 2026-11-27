@@ -1,0 +1,34 @@
+{
+  "lead_id": "LEAD-OFF3-TV-07",
+  "original_id": "TV-PETyqH3b",
+  "image_url_id": "PETyqH3b",
+  "script_id_part": "PUB;b7be250c0bb64d79985e1680323944cb",
+  "script_version": "1",
+  "canonical_url": "https://www.tradingview.com/script/PETyqH3b-EMA-Pullback-Trend-Continuation-Strategy-with-Volume-and-Momentu/",
+  "pine_facade_url": "https://pine-facade.tradingview.com/pine-facade/get/PUB%3Bb7be250c0bb64d79985e1680323944cb/1",
+  "script_name": "EMA Pullback Trend Continuation Strategy with Volume and Momentu",
+  "pine_internal_title": "EMA Pullback Trend Continuation",
+  "suggest_title": "EMA Pullback Trend Continuation",
+  "author_username": "PinegenAI",
+  "agree_count": 62,
+  "script_access": "open_no_auth",
+  "script_kind": "strategy",
+  "page_metadata": {
+    "page_title": "EMA Pullback Trend Continuation Strategy with Volume and Momentu by PinegenAI",
+    "meta_description": "https://www.tradingview.com/x/dKjYGe8n/\n\nDescription:\n\nMost trend-following strategies share the same flaw: they enter on breakouts. A stock breaks above resistance, the moving average crosses over, the indicator fires — and the entry price is at the top of the move that just happened. The trader is buying strength into a market that has already moved. When the move pauses or retraces, as nearly every trending move does, the position immediately goes underwater. The trader who waited for the …",
+    "raw_chart_interval": "3",
+    "mapped_timeframe": "M3"
+  },
+  "static_pine_audit": {
+    "passed": true,
+    "failures": [],
+    "script_access": "open_no_auth",
+    "pine_version": "v6",
+    "pyramiding": 0,
+    "security_call_count": 0,
+    "security_calls": [],
+    "source_line_count": 89,
+    "source_char_count": 4223
+  },
+  "pine_source_verbatim": "//@version=6\r\nstrategy(\"EMA Pullback Trend Continuation\", overlay=true,\r\n     default_qty_type=strategy.percent_of_equity, default_qty_value=10,\r\n     commission_type=strategy.commission.percent, commission_value=0.05)\r\n\r\n// ── INPUTS ─────────────────────────────────────────────\r\nemaFast   = input.int(50,    \"Fast EMA (Pullback Level)\", group=\"EMAs\")\r\nemaSlow   = input.int(200,   \"Slow EMA (Trend Filter)\",  group=\"EMAs\")\r\nrsiLen    = input.int(14,    \"RSI Length\",               group=\"Momentum\")\r\nrsiBull   = input.int(40,    \"RSI Min for Longs\",        group=\"Momentum\")\r\nrsiBear   = input.int(60,    \"RSI Max for Shorts\",       group=\"Momentum\")\r\nvolLen    = input.int(20,    \"Volume MA Length\",         group=\"Volume\")\r\natrLen    = input.int(14,    \"ATR Length\",               group=\"Risk\")\r\ntpMult    = input.float(2.5, \"TP ATR Multiplier\",        group=\"Risk\", step=0.1)\r\nslBuf     = input.float(0.5, \"SL ATR Buffer\",            group=\"Risk\", step=0.1)\r\n\r\n// ── INDICATORS ──────────────────────────────────────────\r\nemaF     = ta.ema(close, emaFast)\r\nemaS     = ta.ema(close, emaSlow)\r\nrsiVal   = ta.rsi(close, rsiLen)\r\natrVal   = ta.atr(atrLen)\r\nvolAbove = volume > ta.sma(volume, volLen)\r\n\r\n// ── TREND REGIME ────────────────────────────────────────\r\nbullRegime = emaF > emaS\r\nbearRegime = emaF < emaS\r\n\r\n// ── PULLBACK DETECTION ──────────────────────────────────\r\n// Price touched or crossed below fast EMA on previous bar\r\ntouchedEmaFromAbove = low[1] <= emaF[1] or close[1] < emaF[1]\r\ntouchedEmaFromBelow = high[1] >= emaF[1] or close[1] > emaF[1]\r\n\r\n// Confirmation: price closes back on correct side of EMA\r\nbullConfirm = close > emaF and touchedEmaFromAbove\r\nbearConfirm = close < emaF and touchedEmaFromBelow\r\n\r\n// ── SWING LOW/HIGH FOR STOPS ────────────────────────────\r\nswingLow  = ta.lowest(low,  5)\r\nswingHigh = ta.highest(high, 5)\r\n\r\n// ── ENTRY CONDITIONS ────────────────────────────────────\r\nlongCond  = bullRegime and bullConfirm and volAbove and rsiVal > rsiBull and barstate.isconfirmed and strategy.position_size == 0\r\nshortCond = bearRegime and bearConfirm and volAbove and rsiVal < rsiBear and barstate.isconfirmed and strategy.position_size == 0\r\n\r\n// ── EXECUTION ───────────────────────────────────────────\r\nlongSL  = swingLow  - atrVal * slBuf\r\nlongTP  = close     + atrVal * tpMult\r\nshortSL = swingHigh + atrVal * slBuf\r\nshortTP = close     - atrVal * tpMult\r\n\r\nif longCond\r\n    strategy.entry(\"Long\", strategy.long,\r\n         alert_message=\"EMA pullback long confirmed — {{ticker}} @ {{close}}\")\r\n    strategy.exit(\"Long Exit\", \"Long\", stop=longSL, limit=longTP)\r\n\r\nif shortCond\r\n    strategy.entry(\"Short\", strategy.short,\r\n         alert_message=\"EMA pullback short confirmed — {{ticker}} @ {{close}}\")\r\n    strategy.exit(\"Short Exit\", \"Short\", stop=shortSL, limit=shortTP)\r\n\r\n// ── P&L LABELS ──────────────────────────────────────────\r\nvar int lastCount = 0\r\nif strategy.closedtrades > lastCount\r\n    lastCount    := strategy.closedtrades\r\n    pnl          = strategy.closedtrades.profit(lastCount - 1)\r\n    isLong       = strategy.closedtrades.size(lastCount - 1) > 0\r\n    isWin        = pnl > 0\r\n    labelColor   = isWin ? color.new(color.green, 20) : color.new(color.red, 20)\r\n    labelStyle   = isLong ? label.style_label_up : label.style_label_down\r\n    arrow        = isWin ? \"✔ +\" : \"✘ \"\r\n    label.new(\r\n         x         = bar_index,\r\n         y         = isLong ? low - atrVal * 0.8 : high + atrVal * 0.8,\r\n         text      = arrow + str.tostring(math.round(pnl, 2)),\r\n         color     = labelColor,\r\n         textcolor = color.white,\r\n         style     = labelStyle,\r\n         size      = size.small)\r\n\r\n// ── VISUALS ─────────────────────────────────────────────\r\nplot(emaF, \"Fast EMA (50)\",  color=color.orange,              linewidth=2)\r\nplot(emaS, \"Slow EMA (200)\", color=color.new(color.blue, 30), linewidth=1)\r\n\r\nplotshape(longCond,  location=location.belowbar, color=color.green,\r\n     style=shape.triangleup,   size=size.normal, text=\"PB↑\")\r\nplotshape(shortCond, location=location.abovebar, color=color.red,\r\n     style=shape.triangledown, size=size.normal, text=\"PB↓\")\r\n\r\nbgcolor(bullRegime ? color.new(color.green, 97) : color.new(color.red, 97))\r\n"
+}

@@ -1,0 +1,34 @@
+{
+  "lead_id": "LEAD-OFF3-TV-14",
+  "original_id": "TV-9SEB7IHb",
+  "image_url_id": "9SEB7IHb",
+  "script_id_part": "PUB;142cc1a12ca24caa986d790df3d065f6",
+  "script_version": "1",
+  "canonical_url": "https://www.tradingview.com/script/9SEB7IHb-VWAP-Mean-Reversion-Strategy-Range-Bound-Forex-RSI-Volume/",
+  "pine_facade_url": "https://pine-facade.tradingview.com/pine-facade/get/PUB%3B142cc1a12ca24caa986d790df3d065f6/1",
+  "script_name": "VWAP Mean Reversion Strategy   Range Bound Forex  RSI Volume",
+  "pine_internal_title": "VWAP Mean Reversion Strategy v6",
+  "suggest_title": "VWAP Mean Reversion Strategy v6",
+  "author_username": "Forex_Trading_Karnataka",
+  "agree_count": 75,
+  "script_access": "open_no_auth",
+  "script_kind": "strategy",
+  "page_metadata": {
+    "page_title": "VWAP Mean Reversion Strategy   Range Bound Forex  RSI Volume by Forex_Trading_Karnataka",
+    "meta_description": "### 🔷 Overview\n\nVWAP Mean Reversion Strategy v6 is a systematic intraday trading model designed specifically for **range-bound forex markets**, where price oscillates around a fair value rather than trending.\n\nThe strategy leverages a **custom rolling VWAP (volume-weighted mean)** combined with deviation bands to identify statistically stretched price conditions and execute mean-reversion trades.\n\n---\n\n### ⚙️ Core Logic\n\nThis strategy operates on three key principles:\n\n**1. VWAP-Based Mean …",
+    "raw_chart_interval": "240",
+    "mapped_timeframe": "H4"
+  },
+  "static_pine_audit": {
+    "passed": true,
+    "failures": [],
+    "script_access": "open_no_auth",
+    "pine_version": "v6",
+    "pyramiding": 0,
+    "security_call_count": 0,
+    "security_calls": [],
+    "source_line_count": 117,
+    "source_char_count": 4020
+  },
+  "pine_source_verbatim": "// © VWAP Mean Reversion Strategy v6\r\n//@version=6\r\nstrategy(\"VWAP Mean Reversion Strategy v6\", \r\n     overlay = true,\r\n     initial_capital = 10000,\r\n     default_qty_type = strategy.percent_of_equity,\r\n     default_qty_value = 10)\r\n\r\n// =====================================================\r\n// === INPUTS\r\n// =====================================================\r\n\r\n// --- Indicator Settings\r\ngroup_ind = \"Indicator Settings\"\r\nvwapLength     = input.int(60,  \"VWAP Length\", group = group_ind, minval = 1)\r\nrsiLength      = input.int(14,  \"RSI Length\", group = group_ind, minval = 1)\r\nrsiOverbought  = input.int(65,  \"RSI Overbought\", group = group_ind)\r\nrsiOversold    = input.int(25,  \"RSI Oversold\", group = group_ind)\r\nsrc            = input.source(close, \"Source Price\", group = group_ind)\r\n\r\n// --- Risk Management\r\ngroup_risk = \"Risk Management\"\r\nstopLossPct = input.float(0.5, \"Stop Loss %\", step = 0.1, group = group_risk) / 100\r\n\r\n// --- Volume Filter\r\ngroup_filter = \"Volume Filter\"\r\nenableVolFilter = input.bool(true, \"Enable Volume Filter?\", group = group_filter)\r\nvolLookback     = input.int(20, \"Volume MA Length\", group = group_filter, minval = 1)\r\nvolMultiplier   = input.float(3.0, \"Volume Multiplier\", step = 0.5, group = group_filter)\r\n\r\n// =====================================================\r\n// === CUSTOM FUNCTIONS\r\n// =====================================================\r\n\r\nvwMean(x, len) =>\r\n    float weightedSum = 0.0\r\n    float volumeSum   = 0.0\r\n    for i = 0 to len - 1\r\n        weightedSum += volume[i] * x[i]\r\n        volumeSum   += volume[i]\r\n    weightedSum / volumeSum\r\n\r\nvwAbsDev(x, len, mean) =>\r\n    float weightedDev = 0.0\r\n    float volumeSum   = 0.0\r\n    for i = 0 to len - 1\r\n        weightedDev += volume[i] * math.abs(x[i] - mean)\r\n        volumeSum   += volume[i]\r\n    weightedDev / volumeSum\r\n\r\n// =====================================================\r\n// === CALCULATIONS\r\n// =====================================================\r\n\r\nbasis = vwMean(src, vwapLength)\r\ndev   = vwAbsDev(src, vwapLength, basis)\r\n\r\nupper2 = basis + dev * 2.0\r\nupper3 = basis + dev * 3.0\r\nlower2 = basis - dev * 2.0\r\nlower3 = basis - dev * 3.0\r\n\r\nrsiValue = ta.rsi(src, rsiLength)\r\n\r\n// =====================================================\r\n// === VOLUME FILTER\r\n// =====================================================\r\n\r\navgVol      = ta.sma(volume, volLookback)\r\nextremeVol  = volume > avgVol * volMultiplier\r\nvolCondition = not enableVolFilter or not extremeVol\r\n\r\n// =====================================================\r\n// === ENTRY CONDITIONS\r\n// =====================================================\r\n\r\nlongCondition  = ta.crossunder(src, lower2) and rsiValue < rsiOversold and volCondition\r\nshortCondition = ta.crossover(src, upper2)  and rsiValue > rsiOverbought and volCondition\r\n\r\n// =====================================================\r\n// === EXECUTION\r\n// =====================================================\r\n\r\nif longCondition\r\n    strategy.entry(\"Long\", strategy.long)\r\n\r\nif shortCondition\r\n    strategy.entry(\"Short\", strategy.short)\r\n\r\n// --- Exit Logic\r\n\r\nif strategy.position_size > 0\r\n    strategy.exit(\"Long Exit\",\r\n         from_entry = \"Long\",\r\n         stop  = close * (1.0 - stopLossPct),\r\n         limit = basis)\r\n\r\nif strategy.position_size < 0\r\n    strategy.exit(\"Short Exit\",\r\n         from_entry = \"Short\",\r\n         stop  = close * (1.0 + stopLossPct),\r\n         limit = basis)\r\n\r\n// =====================================================\r\n// === PLOTS\r\n// =====================================================\r\n\r\nplot(basis,  color = color.gray, title = \"VWAP Basis\")\r\n\r\nu2 = plot(upper2, color = color.red, title = \"Upper Band 2\")\r\nu3 = plot(upper3, color = color.new(color.red, 60), title = \"Upper Band 3\")\r\n\r\nl2 = plot(lower2, color = color.green, title = \"Lower Band 2\")\r\nl3 = plot(lower3, color = color.new(color.green, 60), title = \"Lower Band 3\")\r\n\r\nfill(u2, u3, color = color.new(color.red, 85))\r\nfill(l3, l2, color = color.new(color.green, 85))"
+}

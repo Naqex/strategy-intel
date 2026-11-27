@@ -1,0 +1,20 @@
+{
+  "slug": "ssrn-3546173-boyarchenko-overnight-drift",
+  "original_id": "OFF3-SSRN-07",
+  "paper_id": "SSRN:3546173",
+  "source_origin": "ssrn-public-research",
+  "canonical_url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3546173",
+  "metadata_fetch_url": "https://www.newyorkfed.org/research/staff_reports/sr917",
+  "http_status": 200,
+  "content_type": "text/html",
+  "title": "The Overnight Drift - FEDERAL RESERVE BANK of NEW YORK",
+  "authors": [
+    "Nina Boyarchenko",
+    "Lars Christian Larsen",
+    "Paul Whelan"
+  ],
+  "raw_text": "Boyarchenko, Larsen, and Whelan study the 24-hour trading returns on U.S. equity futures, documenting an overnight positive drift in returns accruing around the opening hours of global exchanges.",
+  "categories": [],
+  "doi": null,
+  "ssrn_locations": []
+}

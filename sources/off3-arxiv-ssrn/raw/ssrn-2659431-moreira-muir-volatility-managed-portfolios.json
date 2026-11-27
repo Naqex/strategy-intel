@@ -1,0 +1,21 @@
+{
+  "slug": "ssrn-2659431-moreira-muir-volatility-managed-portfolios",
+  "original_id": "OFF3-SSRN-18",
+  "paper_id": "SSRN:2659431",
+  "source_origin": "ssrn-public-research",
+  "canonical_url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2659431",
+  "metadata_fetch_url": "https://api.openalex.org/works/https://doi.org/10.1111/jofi.12513",
+  "http_status": 200,
+  "content_type": "application/json",
+  "title": "Volatility‐Managed Portfolios",
+  "authors": [
+    "Alan Moreira",
+    "Tyler Muir"
+  ],
+  "raw_text": "Managed portfolios that take less risk when volatility is high produce large alphas, increase Sharpe ratios, and produce large utility gains for mean‐variance investors. We document this for the market, value, momentum, profitability, return on equity, investment, and betting‐against‐beta factors, as well as the currency carry trade. Volatility timing increases Sharpe ratios because changes in volatility are not offset by proportional changes in expected returns. Our strategy is contrary to conventional wisdom because it takes relatively less risk in recessions. This rules out typical risk‐based explanations and is a challenge to structural models of time‐varying expected returns.",
+  "categories": [],
+  "doi": "https://doi.org/10.1111/jofi.12513",
+  "ssrn_locations": [
+    "https://doi.org/10.2139/ssrn.2659431"
+  ]
+}

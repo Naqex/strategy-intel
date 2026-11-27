@@ -1,0 +1,39 @@
+{
+  "lead_id": "LEAD-OFF3-TV-18",
+  "original_id": "TV-6ZkpMLDe",
+  "image_url_id": "6ZkpMLDe",
+  "script_id_part": "PUB;dfbda76f896044e19e1edb470c36db1a",
+  "script_version": "1",
+  "canonical_url": "https://www.tradingview.com/script/6ZkpMLDe-Z-Score-Normalized-VIX-Strategy/",
+  "pine_facade_url": "https://pine-facade.tradingview.com/pine-facade/get/PUB%3Bdfbda76f896044e19e1edb470c36db1a/1",
+  "script_name": "Z-Score Normalized VIX Strategy",
+  "pine_internal_title": "Z-Score Normalized VIX Strategy",
+  "suggest_title": "Z-Score Normalized VIX Strategy",
+  "author_username": "EdgeTools",
+  "agree_count": 71,
+  "script_access": "open_no_auth",
+  "script_kind": "strategy",
+  "page_metadata": {
+    "page_title": "Z-Score Normalized VIX Strategy by EdgeTools",
+    "meta_description": "This strategy leverages the concept of the Z-score applied to multiple VIX-based volatility indices, specifically designed to capture market reversals based on the normalization of volatility. The strategy takes advantage of VIX-related indicators to measure extreme levels of market fear or greed and adjusts its position accordingly.\n\n1. Overview of the Z-Score Methodology\n\nThe Z-score is a statistical measure that describes the position of a value relative to the mean of a distribution in …",
+    "raw_chart_interval": "1D",
+    "mapped_timeframe": "D1"
+  },
+  "static_pine_audit": {
+    "passed": true,
+    "failures": [],
+    "script_access": "open_no_auth",
+    "pine_version": "v6",
+    "pyramiding": 0,
+    "security_call_count": 4,
+    "security_calls": [
+      "request.security(\"CBOE:VIX\", \"D\", close, barmerge.gaps_off, barmerge.lookahead_off)",
+      "request.security(\"CBOE:VIX3M\", \"D\", close, barmerge.gaps_off, barmerge.lookahead_off)",
+      "request.security(\"CBOE:VIX9D\", \"D\", close, barmerge.gaps_off, barmerge.lookahead_off)",
+      "request.security(\"CBOE:VVIX\", \"D\", close, barmerge.gaps_off, barmerge.lookahead_off)"
+    ],
+    "source_line_count": 71,
+    "source_char_count": 2754
+  },
+  "pine_source_verbatim": "//@version=6\nstrategy(\"Z-Score Normalized VIX Strategy\", overlay = false, initial_capital=20000, pyramiding=0, commission_type=strategy.commission.cash_per_contract, commission_value=0.05, slippage=1)\n\n// Z-Score function\nzscore(src, length) =>\n    mean = ta.sma(src, length)\n    std = ta.stdev(src, length)\n    std != 0 ? (src - mean) / std : 0\n\n// Inputs\nzscore_length = input.int(6, title = \"Z-Score Lookback Period for VIX\")\nthreshold = input.float(1, title = \"Z-Score Threshold for Entry\", step = 0.1)\n\n// Checkbox Inputs for VIX Indices\nuse_vix = input.bool(true, title = \"Use VIX\")\nuse_vix3m = input.bool(true, title = \"Use VIX3M\")\nuse_vix9d = input.bool(true, title = \"Use VIX9D\")\nuse_vvix = input.bool(true, title = \"Use VVIX\")\n\n// Volatility indices with lookahead bias protection\nvix   = request.security(\"CBOE:VIX\", \"D\", close, barmerge.gaps_off, barmerge.lookahead_off)\nvix3m = request.security(\"CBOE:VIX3M\", \"D\", close, barmerge.gaps_off, barmerge.lookahead_off)\nvix9d = request.security(\"CBOE:VIX9D\", \"D\", close, barmerge.gaps_off, barmerge.lookahead_off)\nvvix  = request.security(\"CBOE:VVIX\", \"D\", close, barmerge.gaps_off, barmerge.lookahead_off)\n\n// Z-Score Normalization for selected indices\nz_vix   = use_vix   ? zscore(vix, zscore_length)   : na\nz_vix3m = use_vix3m ? zscore(vix3m, zscore_length) : na\nz_vix9d = use_vix9d ? zscore(vix9d, zscore_length) : na\nz_vvix  = use_vvix  ? zscore(vvix, zscore_length)  : na\n\n// Calculate combined Z-Score correctly\nfloat zscore_sum = 0\nint count = 0\n\n// Add each z-score to the sum if it's selected and valid\nif use_vix and not na(z_vix)\n    zscore_sum := zscore_sum + z_vix\n    count := count + 1\nif use_vix3m and not na(z_vix3m)\n    zscore_sum := zscore_sum + z_vix3m\n    count := count + 1\nif use_vix9d and not na(z_vix9d)\n    zscore_sum := zscore_sum + z_vix9d\n    count := count + 1\nif use_vvix and not na(z_vvix)\n    zscore_sum := zscore_sum + z_vvix\n    count := count + 1\n\n// Calculate the combined Z-Score if count > 0\nfloat combined_zscore = count > 0 ? zscore_sum / count : na\n\n// Entry Condition: Long when the Z-Score is below the threshold\nlong_condition = not na(combined_zscore) and combined_zscore < -threshold  // Negativ für bearish VIX, bullish Markt\n\n// Exit Condition: Close the position when the Z-Score exceeds the threshold\nexit_condition = not na(combined_zscore) and combined_zscore > -threshold\n\n// Execute the Strategy\nif long_condition\n    strategy.entry(\"Long\", strategy.long)\n\nif exit_condition\n    strategy.close(\"Long\")\n\n// Plotting the combined Z-Score\nplot(combined_zscore, title = \"Combined Z-Score\", color = color.rgb(0, 128, 255), linewidth = 2)\n\n// Line\nhline(threshold, \"Short Threshold\", color = color.rgb(255, 0, 0), linestyle = hline.style_dashed)\n\n"
+}
