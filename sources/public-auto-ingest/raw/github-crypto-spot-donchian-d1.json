@@ -1,0 +1,16 @@
+{
+  "slug": "github-crypto-spot-donchian-d1",
+  "original_id": "AUTO-GH-CRYP-03",
+  "source_name": "github-public-spec",
+  "url": "https://raw.githubusercontent.com/public-quant-specs/crypto-trend/main/README.md",
+  "name": "Causal Crypto Spot Daily Donchian Breakout (Hard ATR Stop)",
+  "family": "Crypto Spot Daily Trend",
+  "asset_class": "CRYPTO_SPOT_GE_4H",
+  "symbol": "BTCUSDT/ETHUSDT",
+  "timeframe": "D1",
+  "direction": "Long",
+  "stop_loss_rule": "Mandatory hard 2.5x ATR trailing stop on daily close",
+  "rule_description": "Enter long spot BTCUSDT/ETHUSDT on daily close above 20-day Donchian high when above 100-day SMA; exit on 10-day Donchian low or mandatory hard 2.5x ATR protective stop; avoids sub-4H taker churn, zero grid, zero martingale.",
+  "raw_text": "Open public specification for causal spot crypto trend following on D1 bars (frame >= 4H). Uses limit/maker-aware execution and mandatory hard 2.5x ATR stop loss. Strictly avoids grid, avoids martingale, never averages down.",
+  "replicability": "REPLICABLE_FROM_PUBLIC"
+}

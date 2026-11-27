@@ -1,0 +1,105 @@
+{
+  "export_tier": "CLEANROOM_HOLDOUT_SANITIZED_AUTO_INGEST",
+  "description": "Cleanroom Auto-Ingested Public Strategy Specs (Pure Text Only, Zero Hallucination, Holdout Sanitized)",
+  "gate_criteria": {
+    "condition_a": "Pure text/HTML/JSON public specification only (zero binary downloads)",
+    "condition_b": "Zero toxic Grid/Martingale/No-SL/HFT signals; missing fields set to NOT_DISCLOSED; SOURCE_CLAIM_ONLY pending independent Dev backtest verification"
+  },
+  "total_leads": 4,
+  "leads": [
+    {
+      "data_quality_flags": [
+        "AUTO_INGESTED_UNTRUSTED_PUBLIC_SPEC",
+        "UNVERIFIED_EXTERNAL_CLAIM",
+        "MISSING_PF_AND_DD_NOT_DISCLOSED"
+      ],
+      "direction": "Both",
+      "evidence_tier": "SOURCE_CLAIM_ONLY",
+      "family": "Macro ETF Trend",
+      "gate_condition_met": "AUTO_INGESTED_PUBLIC_SPEC_QUARANTINED: source claim only, pending independent reproduction",
+      "lead_id": "LEAD-AUTO-QP-TSMOM-01",
+      "name": "Time-Series Momentum Cross-Asset ETF (Volatility Scaled)",
+      "original_id": "AUTO-QP-TSMOM-01",
+      "passes_all_5": false,
+      "performance_metrics": {},
+      "replicability": "REPLICABLE_FROM_PUBLIC",
+      "rule_description": "Go long liquid ETFs with positive 12-month trailing excess return and reduce to T-Bill/cash or short defensive hedge when trailing return turns negative; position sized inversely to realized volatility with a hard 2.0x ATR protective stop, zero martingale, zero grid.",
+      "source": "public-auto-ingest",
+      "source_verdict": "PUBLIC_CONCEPT_ONLY",
+      "symbol": "SPY/TLT/GLD",
+      "timeframe": "D1",
+      "verified_live_links": []
+    },
+    {
+      "data_quality_flags": [
+        "AUTO_INGESTED_UNTRUSTED_PUBLIC_SPEC",
+        "UNVERIFIED_EXTERNAL_CLAIM",
+        "MISSING_PF_AND_DD_NOT_DISCLOSED"
+      ],
+      "direction": "Long",
+      "evidence_tier": "SOURCE_CLAIM_ONLY",
+      "family": "Macro ETF Rotation",
+      "gate_condition_met": "AUTO_INGESTED_PUBLIC_SPEC_QUARANTINED: source claim only, pending independent reproduction",
+      "lead_id": "LEAD-AUTO-QP-DUALMOM-02",
+      "name": "Global Equities Dual Momentum Rotation (ETF)",
+      "original_id": "AUTO-QP-DUALMOM-02",
+      "passes_all_5": false,
+      "performance_metrics": {},
+      "replicability": "REPLICABLE_FROM_PUBLIC",
+      "rule_description": "Compare 12-month trailing return of US equities (SPY) vs international equities (EFA) against short-term Treasury bills; hold the stronger equity ETF only when excess return is positive, otherwise rotate to aggregate bonds (AGG) with a hard defensive stop, zero grid, zero martingale.",
+      "source": "public-auto-ingest",
+      "source_verdict": "PUBLIC_CONCEPT_ONLY",
+      "symbol": "SPY/EFA/AGG",
+      "timeframe": "W1",
+      "verified_live_links": []
+    },
+    {
+      "data_quality_flags": [
+        "AUTO_INGESTED_UNTRUSTED_PUBLIC_SPEC",
+        "UNVERIFIED_EXTERNAL_CLAIM",
+        "MISSING_PF_AND_DD_NOT_DISCLOSED"
+      ],
+      "direction": "Long",
+      "evidence_tier": "SOURCE_CLAIM_ONLY",
+      "family": "Crypto Spot Daily Trend",
+      "gate_condition_met": "AUTO_INGESTED_PUBLIC_SPEC_QUARANTINED: source claim only, pending independent reproduction",
+      "lead_id": "LEAD-AUTO-GH-CRYP-03",
+      "name": "Causal Crypto Spot Daily Donchian Breakout (Hard ATR Stop)",
+      "original_id": "AUTO-GH-CRYP-03",
+      "passes_all_5": false,
+      "performance_metrics": {},
+      "replicability": "REPLICABLE_FROM_PUBLIC",
+      "rule_description": "Enter long spot BTCUSDT/ETHUSDT on daily close above 20-day Donchian high when above 100-day SMA; exit on 10-day Donchian low or mandatory hard 2.5x ATR protective stop; avoids sub-4H taker churn, zero grid, zero martingale.",
+      "source": "public-auto-ingest",
+      "source_verdict": "PUBLIC_CONCEPT_ONLY",
+      "symbol": "BTCUSDT/ETHUSDT",
+      "timeframe": "D1",
+      "verified_live_links": []
+    },
+    {
+      "data_quality_flags": [
+        "AUTO_INGESTED_UNTRUSTED_PUBLIC_SPEC",
+        "UNVERIFIED_EXTERNAL_CLAIM",
+        "MISSING_PF_AND_DD_NOT_DISCLOSED",
+        "STOP_LOSS_RULE_NOT_DISCLOSED",
+        "TIMEFRAME_NOT_DISCLOSED"
+      ],
+      "direction": "Long",
+      "evidence_tier": "SOURCE_CLAIM_ONLY",
+      "family": "Multi-Asset Defensive",
+      "gate_condition_met": "AUTO_INGESTED_PUBLIC_SPEC_QUARANTINED: source claim only, pending independent reproduction",
+      "lead_id": "LEAD-AUTO-PUB-VOLCARRY-04",
+      "name": "Cross-Asset Volatility-Scaled Defensive Trend (Partial Spec)",
+      "original_id": "AUTO-PUB-VOLCARRY-04",
+      "passes_all_5": false,
+      "performance_metrics": {},
+      "replicability": "PARTIAL_RULE_SPEC",
+      "rule_description": "Allocate across defensive Treasury and Gold ETFs inversely proportional to 20-day realized volatility when regime stress rises; exact stop threshold is omitted in the public abstract.",
+      "source": "public-auto-ingest",
+      "source_verdict": "PUBLIC_CONCEPT_ONLY",
+      "symbol": "TLT/GLD/SHY",
+      "timeframe": "NOT_DISCLOSED",
+      "verified_live_links": []
+    }
+  ]
+}
