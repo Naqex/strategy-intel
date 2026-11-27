@@ -12,12 +12,14 @@ sys.path.insert(0, os.path.join(ROOT_DIR, "scripts"))
 sys.path.insert(0, os.path.join(ROOT_DIR, "scripts/common"))
 sys.path.insert(0, os.path.join(ROOT_DIR, "sources/ea-directory-2026/scripts"))
 
-from verify_verbatim import verify, verify_raw_manifest, deep_compare_strategy_record  # noqa: E402, F401
+from verify_verbatim import verify, verify_raw_manifest, deep_compare_strategy_record, get_sha256  # noqa: E402, F401
 from holdout_sanitizer import (  # noqa: E402, F401
     sanitize,
     sanitize_and_validate,
     recursive_check_holdout,
     validate_handoff_schema,
+    build_sanitized_offensive3_handoff,
+    scrub_holdout_tokens,
 )
 from repo_hygiene_check import audit_repo_hygiene, check_hygiene  # noqa: E402
 try:
@@ -418,6 +420,221 @@ class TestCleanroomGuards(unittest.TestCase):
 
             self.assertTrue(check_hygiene(repo_root=td))
         print("[TEST PASS] repo_hygiene_check tracked vs gitignored inbox/ split verified.")
+
+    def test_offensive3_holdout_sanitizer_and_schema_validation(self):
+        """Offensive #3 sanitizer must validate strict allowlist, reject disallowed keys, and scrub 2024..2029/oos2."""
+        dirty_catalog = {
+            "sources_merged": ["off3-arxiv-ssrn", "off3-github-quant"],
+            "dedup_summary": {"raw_crawler_inputs": 2, "total_unique_accepted": 1},
+            "prop_track_breakdown": {"INTRADAY_SWAP0": 1},
+            "family_breakdown": {"FX_FIXING": 1},
+            "leads": [
+                {
+                    "lead_id": "LEAD-OFF3-ARXIV-01",
+                    "source": "off3-arxiv-ssrn",
+                    "source_origin": "arxiv-qfin",
+                    "source_url": "https://arxiv.org/abs/2025.00001",
+                    "original_id": "ARXIV-01",
+                    "name": "WM/Reuters 16:00 Fixing Reversal",
+                    "family": "FX Fixing Flow",
+                    "family_tag": "FX_FIXING",
+                    "asset_class": "FX_MAJOR",
+                    "asset_universe": ["EURUSD", "GBPUSD"],
+                    "symbol": "EURUSD/GBPUSD",
+                    "timeframe": "M15",
+                    "direction": "Both",
+                    "prop_track": "INTRADAY_SWAP0",
+                    "economic_rationale": "Pre-fix drift followed by post-fix inventory mean reversion",
+                    "counterparty_mechanism": "Passive asset-manager benchmark rebalancing at 16:00 London",
+                    "entry_rule": "Fade pre-16:00 drift after 16:00 London close",
+                    "exit_rule": "Close flat by 18:00 London",
+                    "stop_loss_rule": "1.5x ATR hard stop",
+                    "take_profit_rule": "NOT_DISCLOSED",
+                    "rule_description": "Strong OOS2 edge reported in 2025 and 2026 blog post",
+                    "verbatim_excerpt": "Tested through 2024-12-31 with 2025 notes",
+                    "source_verdict": "PUBLIC_CONCEPT_ONLY",
+                    "passes_all_5": False,
+                    "data_quality_flags": ["UNVERIFIED_EXTERNAL_CLAIM"],
+                    "replicability": "REPLICABLE_FROM_PUBLIC",
+                    "evidence_tier": "SOURCE_CLAIM_ONLY",
+                    "gate_condition_met": "OFFENSIVE3_CLEANROOM_SPEC_QUARANTINED",
+                    "verified_live_links": [],
+                    "disqualifiers_checked": ["grid_martingale_checked"],
+                    "dedup_status": "UNIQUE_OFF3",
+                    "overlap_flags": [],
+                    "reported_winrate_pct": "NOT_DISCLOSED",
+                    "reported_profit_factor": "NOT_DISCLOSED",
+                    "reported_max_dd_pct": "NOT_DISCLOSED",
+                    "oos2_pnl_2025": 999.0,
+                    "disallowed_extra_field": "should_be_stripped",
+                    "performance_metrics": {"oos2_2024_2026": {"n": 50}},
+                }
+            ],
+        }
+
+        sanitized = build_sanitized_offensive3_handoff(dirty_catalog)
+        ok, violations = sanitize_and_validate(sanitized, schema_profile="offensive3")
+        self.assertTrue(ok, f"Sanitized Offensive #3 handoff failed validation: {violations}")
+        self.assertEqual(sanitized["total_leads"], 1)
+        self.assertEqual(recursive_check_holdout(sanitized), [])
+        lead0 = sanitized["leads"][0]
+        self.assertNotIn("oos2_pnl_2025", lead0)
+        self.assertNotIn("disallowed_extra_field", lead0)
+        self.assertEqual(lead0["performance_metrics"], {})
+        self.assertIn("URL_YEAR_REDACTED_IN_HANDOFF", lead0["data_quality_flags"])
+
+        # Negative test 1: extra disallowed key in sanitized_offensive3_leads.json must FAIL
+        bad_extra = json.loads(json.dumps(sanitized))
+        bad_extra["leads"][0]["rogue_param"] = "injected"
+        ok_bad1, errs_bad1 = sanitize_and_validate(bad_extra, schema_profile="offensive3")
+        self.assertFalse(ok_bad1, "Offensive #3 validator must reject disallowed lead key")
+        self.assertTrue(any("allowlist" in msg for _, msg in errs_bad1))
+
+        # Negative test 2: 2026 token in sanitized_offensive3_leads.json on disk must FAIL sanitize()
+        scratch_parent = os.path.join(ROOT_DIR, ".scratch")
+        os.makedirs(scratch_parent, exist_ok=True)
+        with tempfile.TemporaryDirectory(dir=scratch_parent) as td:
+            off3_path = Path(td) / "sanitized_offensive3_leads.json"
+            off3_path.write_text(json.dumps(sanitized, indent=2), encoding="utf-8")
+            self.assertTrue(sanitize(handoff_dir=td), "Clean sanitized_offensive3_leads.json must PASS sanitize()")
+
+            leaked = json.loads(json.dumps(sanitized))
+            leaked["leads"][0]["rule_description"] = "Leaked 2026 OOS2 result"
+            off3_path.write_text(json.dumps(leaked, indent=2), encoding="utf-8")
+            self.assertFalse(sanitize(handoff_dir=td), "Leaked 2026/OOS2 in sanitized_offensive3_leads.json MUST FAIL")
+        print("[TEST PASS] Offensive #3 holdout_sanitizer allowlist & scrubbing verified.")
+
+    def test_off3_dedup_index_and_merge_pipeline(self):
+        """Verify off3-dedup-index/index.json (19 leads, 0 fabricated params) and merge_off3_leads filters."""
+        dedup_scripts_dir = os.path.join(ROOT_DIR, "sources", "off3-dedup-index", "scripts")
+        if dedup_scripts_dir not in sys.path:
+            sys.path.insert(0, dedup_scripts_dir)
+        import build_dedup_index  # noqa: E402
+        import merge_off3_leads  # noqa: E402
+
+        index_path = Path(ROOT_DIR) / "sources" / "off3-dedup-index" / "index.json"
+        self.assertTrue(index_path.exists(), "off3-dedup-index/index.json must exist")
+        idx_data = json.loads(index_path.read_text(encoding="utf-8"))
+        self.assertEqual(idx_data["existing_coverage_summary"]["total_existing_leads"], 19)
+        self.assertEqual(idx_data["existing_coverage_summary"]["master_leads_count"], 15)
+        self.assertEqual(idx_data["existing_coverage_summary"]["auto_public_leads_count"], 4)
+        self.assertEqual(len(idx_data["entries"]), 19)
+        self.assertEqual(recursive_check_holdout(idx_data), [])
+
+        # End-to-end synthetic merge test in .scratch tempdir
+        scratch_parent = os.path.join(ROOT_DIR, ".scratch")
+        os.makedirs(scratch_parent, exist_ok=True)
+        with tempfile.TemporaryDirectory(dir=scratch_parent) as td:
+            td_path = Path(td)
+            shutil.copytree(Path(ROOT_DIR) / "catalog", td_path / "catalog")
+            build_dedup_index.build_index(
+                master_path=td_path / "catalog" / "master_leads.json",
+                auto_path=td_path / "catalog" / "auto_public_leads.json",
+                output_path=td_path / "sources" / "off3-dedup-index" / "index.json",
+            )
+
+            # Create two mock crawler outputs testing all filters
+            c1_ext = td_path / "sources" / "off3-arxiv-ssrn" / "extracted"
+            c1_raw = td_path / "sources" / "off3-arxiv-ssrn" / "raw"
+            c1_ext.mkdir(parents=True)
+            c1_raw.mkdir(parents=True)
+            (c1_raw / "stub.json").write_text('{"ok": true}\n', encoding="utf-8")
+            (td_path / "sources" / "off3-arxiv-ssrn" / "raw_manifest.sha256.json").write_text(
+                json.dumps(
+                    {
+                        "stub.json": {
+                            "sha256": get_sha256(str(c1_raw / "stub.json")),
+                            "size": (c1_raw / "stub.json").stat().st_size,
+                        }
+                    }
+                ),
+                encoding="utf-8",
+            )
+            c1_leads = {
+                "leads": [
+                    {
+                        "lead_id": "OFF3-C1-01",
+                        "source_url": "https://arxiv.org/abs/2101.00001",
+                        "title": "Tokyo Gotobi 09:55 USDJPY Fixing Flow",
+                        "asset_universe": ["USDJPY", "EURJPY"],
+                        "prop_track": "INTRADAY_SWAP0",
+                        "family_tag": "FX_FIXING",
+                        "entry_rule": "Long USDJPY before 09:55 JST on Gotobi dates",
+                        "exit_rule": "Close flat at 09:55 JST",
+                        "sl_rule": "1.2x ATR hard stop",
+                        "replicability": "REPLICABLE_FROM_PUBLIC",
+                    },
+                    {
+                        "lead_id": "OFF3-C1-TOXIC",
+                        "source_url": "https://example.org/bad",
+                        "title": "Martingale FX Recovery",
+                        "asset_universe": ["EURUSD"],
+                        "entry_rule": "Double lot martingale recovery without stop loss",
+                        "sl_rule": "SL=0",
+                    },
+                    {
+                        "lead_id": "OFF3-C1-NONFTMO",
+                        "source_url": "https://arxiv.org/abs/2101.00002",
+                        "title": "0DTE Options Iron Condor on Single Stocks",
+                        "asset_universe": ["AAPL", "MSFT"],
+                        "asset_class": "OPTIONS",
+                        "entry_rule": "Sell 0DTE options iron condor on individual equities",
+                        "sl_rule": "2x credit stop",
+                    },
+                    {
+                        "lead_id": "OFF3-C1-PASS14-DUP",
+                        "source_url": "https://example.org/gold-tom",
+                        "title": "Turn-of-Month Gold Long Only",
+                        "asset_universe": ["XAUUSD"],
+                        "entry_rule": "Buy XAUUSD last 2 days of month, exit day 3",
+                        "sl_rule": "2x ATR hard stop",
+                    },
+                    {
+                        "lead_id": "OFF3-C1-WAVE4-DUP",
+                        "source_url": "https://quantpedia.com/strategies/dual-momentum-model/",
+                        "title": "Dual Momentum Rotation ETF",
+                        "asset_universe": ["SPY", "EFA", "AGG", "US500"],
+                        "entry_rule": "Dual momentum rotation",
+                        "sl_rule": "Hard drawdown stop",
+                    },
+                ]
+            }
+            (c1_ext / "leads.json").write_text(json.dumps(c1_leads), encoding="utf-8")
+
+            c2_ext = td_path / "sources" / "off3-github-quant" / "extracted"
+            c2_raw = td_path / "sources" / "off3-github-quant" / "raw"
+            c2_ext.mkdir(parents=True)
+            c2_raw.mkdir(parents=True)
+            (td_path / "sources" / "off3-github-quant" / "raw_manifest.sha256.json").write_text("{}", encoding="utf-8")
+            c2_leads = {
+                "leads": [
+                    {
+                        "lead_id": "OFF3-C5-DUP",
+                        "source_url": "https://arxiv.org/abs/2101.00001",
+                        "title": "Tokyo Gotobi 09:55 USDJPY Fixing Flow",
+                        "asset_universe": ["USDJPY"],
+                        "entry_rule": "Long USDJPY before 09:55 JST on Gotobi dates",
+                        "replicability": "PARTIAL_CONCEPT_ONLY",
+                    },
+                    {
+                        "lead_id": "OFF3-C5-REPAINT",
+                        "source_url": "https://github.com/example/bad-pine",
+                        "title": "MTF Repainting Reversal",
+                        "asset_universe": ["US500"],
+                        "entry_rule": "Uses request.security with barmerge.lookahead_on",
+                        "sl_rule": "1.5x ATR stop",
+                    },
+                ]
+            }
+            (c2_ext / "leads.json").write_text(json.dumps(c2_leads), encoding="utf-8")
+
+            report = merge_off3_leads.merge_and_deduplicate(root_dir=td_path)
+            self.assertEqual(report["dedup_summary"]["total_unique_accepted"], 1)
+            self.assertEqual(report["dedup_summary"]["total_rejected"], 6)
+            cat_v3 = json.loads((td_path / "catalog" / "auto_public_leads_v3.json").read_text(encoding="utf-8"))
+            self.assertEqual(cat_v3["leads"][0]["lead_id"], "OFF3-C1-01")
+            self.assertEqual(cat_v3["leads"][0]["take_profit_rule"], "NOT_DISCLOSED")
+        print("[TEST PASS] off3-dedup-index & merge_off3_leads filters verified.")
 
 
 if __name__ == "__main__":

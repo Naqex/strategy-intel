@@ -1,0 +1,34 @@
+{
+  "lead_id": "LEAD-OFF3-TV-04",
+  "original_id": "TV-frs4y2bm",
+  "image_url_id": "frs4y2bm",
+  "script_id_part": "PUB;130a8fe9275343e2910c06360389cd14",
+  "script_version": "3",
+  "canonical_url": "https://www.tradingview.com/script/frs4y2bm-Swing-Failure-Reversal-Strategy/",
+  "pine_facade_url": "https://pine-facade.tradingview.com/pine-facade/get/PUB%3B130a8fe9275343e2910c06360389cd14/3",
+  "script_name": "Swing Failure Reversal Strategy",
+  "pine_internal_title": "Reversal indicator",
+  "suggest_title": "Reversal indicator",
+  "author_username": "Technicien",
+  "agree_count": 465,
+  "script_access": "open_no_auth",
+  "script_kind": "strategy",
+  "page_metadata": {
+    "page_title": "Swing Failure Reversal Strategy by Technicien",
+    "meta_description": "This strategy is using Swing Failure Patterns as a reversion indicator. \n\nThe strategy automatically adapts itself to the timeframe of the current chart. \n\n\nSwing Failure Pattern occurs when the price trend fails to set new highs in uptrend or meet new lows in a downtrend. This pattern helps traders decide when to enter and exit the market. Usually, traders enter in the downtrend i.e. lower price highs and lower price lows, and exit in the uptrend situation i.e. higher price highs and higher …",
+    "raw_chart_interval": "15",
+    "mapped_timeframe": "M15"
+  },
+  "static_pine_audit": {
+    "passed": true,
+    "failures": [],
+    "script_access": "open_no_auth",
+    "pine_version": "v4",
+    "pyramiding": 0,
+    "security_call_count": 0,
+    "security_calls": [],
+    "source_line_count": 37,
+    "source_char_count": 1418
+  },
+  "pine_source_verbatim": "//@version=4\r\nstrategy(title=\"Reversal indicator\", shorttitle=\"Technician's reversal indicator\", overlay = true)\r\n\r\nlookbackLength = input(40, \"Lookback period\")\r\nmultiplicator = 0.001\r\n\r\nif (timeframe.isminutes and timeframe.multiplier >= 5)\r\n    multiplicator := 0.003    \r\nif (timeframe.isminutes and timeframe.multiplier >= 15)\r\n    multiplicator := 0.007   \r\nif (timeframe.isminutes and timeframe.multiplier >= 60)\r\n    multiplicator := 0.01\r\nif (timeframe.isminutes and timeframe.multiplier >= 240)\r\n    multiplicator := 0.03\r\n\r\nbelowMultiplicator = 1 - multiplicator\r\naboveMultiplicator = 1 + multiplicator\r\n\r\n\r\nhh = highest(high[1], lookbackLength)\r\nll = lowest(low[1], lookbackLength)\r\n\r\nisLocalHigh = high > (hh * aboveMultiplicator)\r\nisLocalLow = low < (ll * belowMultiplicator)\r\n\r\nisSfpUp = isLocalHigh and close < open and not isLocalHigh[1]\r\nisSfpDown = isLocalLow and close > open and not isLocalLow[1]\r\n\r\nplotchar(series = (isSfpUp), char=\"⌛\", location=location.abovebar, size=size.tiny)\r\nplotchar(series = (isSfpDown), char=\"🌹\", location=location.belowbar, size=size.tiny)\r\n\r\n\r\nstrategy.entry(\"Long\", strategy.long, comment = \"ENTER-LONG\", when = isSfpDown)\r\nstrategy.entry(\"Short\", strategy.short, comment = \"ENTER-SHORT\", when = isSfpUp)\r\nstrategy.close(\"Long\", comment = \"EXIT-LONG\", when = high >= ema(close, 75))\r\nstrategy.close(\"Short\", comment = \"EXIT-SHORT\", when = low <= ema(close , 75))\r\n\r\n"
+}

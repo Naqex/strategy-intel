@@ -1,0 +1,290 @@
+{
+  "schema_version": "off3-rejected-log-v1",
+  "total_rejected": 16,
+  "crawler_pre_rejected_toxic_count": 11,
+  "total_rejected_including_crawler_triage": 27,
+  "rejection_breakdown": {
+    "DUPLICATE_CROSS_CRAWLER_AUDITED": 16
+  },
+  "rejected_items": [
+    {
+      "lead_id": "LEAD-OFF3-GH-13",
+      "source": "off3-github-quant",
+      "name": "Causal Calendar-Day Proxy Turn-of-Month Equity Index Strategy (With Hard Stop)",
+      "source_url": "https://github.com/Dukotah/apex-quant/blob/main/apex/strategy/library/turn_of_month.py",
+      "category": "DUPLICATE_CROSS_CRAWLER_AUDITED",
+      "matched_canonical_id": "LEAD-OFF3-SSRN-17",
+      "reason": "Calendar-day proxy variant of the same D1 Long-only Equity Index Turn-of-Month calendar anomaly; LEAD-OFF3-SSRN-17 retained as single canonical Turn-of-Month index spec covering all 6 FTMO indices."
+    },
+    {
+      "lead_id": "LEAD-OFF3-COMM-RU-06",
+      "source": "off3-community-intl",
+      "name": "Cross-Commodity Log-Spread Pairs Arbitrage (Brent/WTI & Gold/Silver) with OU Half-Life & Carry Filter",
+      "source_url": "https://smart-lab.ru/blog/1380218.php",
+      "category": "DUPLICATE_CROSS_CRAWLER_AUDITED",
+      "matched_canonical_id": "LEAD-OFF3-GH-01",
+      "reason": "Same Brent/WTI & Gold/Silver OU cointegration Z-score spread pairs with |Z|>=3.5-4.0 stop (timeframe NOT_DISCLOSED); LEAD-OFF3-GH-01 retained as canonical D1 REPLICABLE_FROM_PUBLIC spec."
+    },
+    {
+      "lead_id": "LEAD-OFF3-COMM-EN-01",
+      "source": "off3-community-intl",
+      "name": "Tokyo Fix & Gotobi Post-09:55 JST Mean-Reversion Fade (USDJPY / EURJPY)",
+      "source_url": "https://1kpips.com/en/blog/tokyo-fix-gotobi",
+      "category": "DUPLICATE_CROSS_CRAWLER_AUDITED",
+      "matched_canonical_id": "LEAD-OFF3-GH-11",
+      "reason": "Same Post-09:55 JST Gotobi settlement-day USDJPY short mean-reversion fade; LEAD-OFF3-GH-11 retained as canonical M1 REPLICABLE_FROM_PUBLIC spec with volatility-adaptive 3.0x ATR(14,1H) hard stop vs fixed 20-pip stop."
+    },
+    {
+      "lead_id": "LEAD-OFF3-QC-09",
+      "source": "off3-quantpedia-qc",
+      "name": "Optimal Stopping Ornstein-Uhlenbeck Pairs Trading (MLE Spread Thresholds)",
+      "source_url": "https://www.quantconnect.com/tutorials/strategy-library/optimal-pairs-trading",
+      "category": "DUPLICATE_CROSS_CRAWLER_AUDITED",
+      "matched_canonical_id": "LEAD-OFF3-GH-05",
+      "reason": "Same Leung & Li continuous-time Ornstein-Uhlenbeck MLE optimal-stopping pairs trading (PARTIAL_RULE_SPEC, SL NOT_DISCLOSED); LEAD-OFF3-GH-05 retained as REPLICABLE_FROM_PUBLIC with explicit +/-3.5 sigma_eq hard stop-loss."
+    },
+    {
+      "lead_id": "LEAD-OFF3-QP-05",
+      "source": "off3-quantpedia-qc",
+      "name": "WTI vs Brent Crude Oil Spread Mean Reversion (SMA-20)",
+      "source_url": "https://quantpedia.com/strategies/trading-wti-brent-spread/",
+      "category": "DUPLICATE_CROSS_CRAWLER_AUDITED",
+      "matched_canonical_id": "LEAD-OFF3-MQL5-20",
+      "reason": "Same WTI-Brent 20-period spread mean reversion without stop-loss (SL NOT_DISCLOSED); LEAD-OFF3-MQL5-20 retained as canonical spec with least-squares regression and explicit ATR/max-loss hard stop."
+    },
+    {
+      "lead_id": "LEAD-OFF3-QC-07",
+      "source": "off3-quantpedia-qc",
+      "name": "Intraday Equity Index Momentum (First 30-Min Return Predicts Last 30-Min)",
+      "source_url": "https://www.quantconnect.com/tutorials/strategy-library/intraday-etf-momentum",
+      "category": "DUPLICATE_CROSS_CRAWLER_AUDITED",
+      "matched_canonical_id": "LEAD-OFF3-SSRN-05",
+      "reason": "Same Gao et al. first-30m predicts last-30m intraday equity index momentum rule; LEAD-OFF3-SSRN-05 is REPLICABLE_FROM_PUBLIC primary SSRN paper covering all 6 FTMO indices vs 3 US indices subset."
+    },
+    {
+      "lead_id": "LEAD-OFF3-COMM-RU-05",
+      "source": "off3-community-intl",
+      "name": "Daily 365-Bar Pearson (|r|>0.8) & Engle-Granger Cointegration FX Stat-Arb Spread",
+      "source_url": "https://www.mql5.com/ru/articles/14846",
+      "category": "DUPLICATE_CROSS_CRAWLER_AUDITED",
+      "matched_canonical_id": "LEAD-OFF3-GH-04",
+      "reason": "Same D1 Pearson + Engle-Granger cointegration FX spread on AUDUSD/NZDUSD & EURUSD/GBPUSD (PARTIAL_RULE_SPEC, SL NOT_DISCLOSED); LEAD-OFF3-GH-04 retained as REPLICABLE_FROM_PUBLIC with Pearson+EG+OU half-life+Kalman+Hurst and explicit Z_STOP=4.0 hard stop."
+    },
+    {
+      "lead_id": "LEAD-OFF3-ARXIV-10",
+      "source": "off3-arxiv-ssrn",
+      "name": "Cointegrated Commodity Stochastic Spread Pairs Trading (WTI-Brent and Gold-Silver)",
+      "source_url": "https://arxiv.org/abs/1907.08397",
+      "category": "DUPLICATE_CROSS_CRAWLER_AUDITED",
+      "matched_canonical_id": "LEAD-OFF3-GH-01",
+      "reason": "Same D1 WTI-Brent and Gold-Silver cointegrated spread mean-reversion pairs trading (CONCEPT_ONLY_NEEDS_SLTP_DESIGN, SL NOT_DISCLOSED); LEAD-OFF3-GH-01 retained as REPLICABLE_FROM_PUBLIC with rolling ADF gate and explicit |Z|>=3.5 hard tail-risk stop."
+    },
+    {
+      "lead_id": "LEAD-OFF3-GH-20",
+      "source": "off3-github-quant",
+      "name": "Causal Down-Monday Conditional Turnaround Tuesday Equity Index Reversal",
+      "source_url": "https://github.com/Guillain-RDCDE/Open-Alpha-Lab/blob/main/studies/642-turnaround-tuesday/turnaround_tuesday/strategy.py",
+      "category": "DUPLICATE_CROSS_CRAWLER_AUDITED",
+      "matched_canonical_id": "LEAD-OFF3-MQL5-07",
+      "reason": "Same D1 down-Monday equity index mean-reversion reversal (CONCEPT_ONLY_NEEDS_SLTP_DESIGN, SL NOT_DISCLOSED); LEAD-OFF3-MQL5-07 retained as REPLICABLE_FROM_PUBLIC with mandatory % hard stop-loss and optional IBS/MA filter."
+    },
+    {
+      "lead_id": "LEAD-OFF3-GH-21",
+      "source": "off3-github-quant",
+      "name": "High-VIX Conditional Pre-FOMC 24-Hour Announcement Drift (16:00 ET to 13:45 ET)",
+      "source_url": "https://github.com/mustafa-waqar98/pre-FOMC-drift/blob/main/docs/PRE_ANALYSIS_PLAN.md",
+      "category": "DUPLICATE_CROSS_CRAWLER_AUDITED",
+      "matched_canonical_id": "LEAD-OFF3-SSRN-15",
+      "reason": "VIX-threshold variant of the same Lucca & Moench 24h Pre-FOMC drift (CONCEPT_ONLY_NEEDS_SLTP_DESIGN, SL NOT_DISCLOSED); LEAD-OFF3-SSRN-15 retained as canonical REPLICABLE_FROM_PUBLIC spec."
+    },
+    {
+      "lead_id": "LEAD-OFF3-GH-19",
+      "source": "off3-github-quant",
+      "name": "Connors 2-Period RSI Short-Term Oversold Pullback Above 200-Day SMA",
+      "source_url": "https://github.com/handiko/RSI-2-Portfolio-Trading-Strategy-Backtester/blob/main/README.md",
+      "category": "DUPLICATE_CROSS_CRAWLER_AUDITED",
+      "matched_canonical_id": "LEAD-OFF3-TV-21",
+      "reason": "Same D1 Larry Connors 2-period RSI < 10 pullback above 200-SMA on US equity indices (CONCEPT_ONLY_NEEDS_SLTP_DESIGN, SL NOT_DISCLOSED); LEAD-OFF3-TV-21 retained as REPLICABLE_FROM_PUBLIC with SMA(RSI2,4) filter, SMA(5) exit, and optional hard % stop across 6 indices + XAUUSD."
+    },
+    {
+      "lead_id": "LEAD-OFF3-QC-05",
+      "source": "off3-quantpedia-qc",
+      "name": "Correlation-Adjusted Commodities TSMOM with Yang-Zhang Volatility (TSMOM-CF)",
+      "source_url": "https://www.quantconnect.com/tutorials/strategy-library/improved-momentum-strategy-on-commodities-futures",
+      "category": "DUPLICATE_CROSS_CRAWLER_AUDITED",
+      "matched_canonical_id": "LEAD-OFF3-SSRN-19",
+      "reason": "QuantConnect replication of Baltas & Kosowski Yang-Zhang range-volatility continuous TSMOM on 4 commodities (CONCEPT_ONLY_NEEDS_SLTP_DESIGN); LEAD-OFF3-SSRN-19 retained as REPLICABLE_FROM_PUBLIC primary paper covering all 27 non-crypto FTMO symbols."
+    },
+    {
+      "lead_id": "LEAD-OFF3-QP-09",
+      "source": "off3-quantpedia-qc",
+      "name": "Pre-FOMC and FOMC Meeting Announcement Drift in Equity Indexes",
+      "source_url": "https://quantpedia.com/strategies/federal-open-market-committee-meeting-effect-in-stocks/",
+      "category": "DUPLICATE_CROSS_CRAWLER_AUDITED",
+      "matched_canonical_id": "LEAD-OFF3-SSRN-15",
+      "reason": "Same Lucca & Moench Pre-FOMC equity index drift; LEAD-OFF3-SSRN-15 is REPLICABLE_FROM_PUBLIC with strict pre-release exit (13:45-13:55 ET, FTMO news-safe) across 6 indices + XAUUSD, whereas QP-09 holds through FOMC close with SL NOT_DISCLOSED."
+    },
+    {
+      "lead_id": "LEAD-OFF3-GH-15",
+      "source": "off3-github-quant",
+      "name": "Moreira-Muir Inverse-Variance Volatility-Managed Equity Index Futures Strategy",
+      "source_url": "https://github.com/DanTsai0903/market-index-future-management-with-risk-forecast/blob/main/Strategy.md",
+      "category": "DUPLICATE_CROSS_CRAWLER_AUDITED",
+      "matched_canonical_id": "LEAD-OFF3-SSRN-18",
+      "reason": "Direct GitHub replication of Moreira & Muir inverse-variance volatility-managed index scaling (CONCEPT_ONLY_NEEDS_SLTP_DESIGN, 3 US indices); LEAD-OFF3-SSRN-18 retained as REPLICABLE_FROM_PUBLIC primary SSRN paper covering Indices + FX."
+    },
+    {
+      "lead_id": "LEAD-OFF3-QP-01",
+      "source": "off3-quantpedia-qc",
+      "name": "Currency Momentum Factor (Cross-Sectional 12M FX Ranking)",
+      "source_url": "https://quantpedia.com/strategies/currency-momentum-factor/",
+      "category": "DUPLICATE_CROSS_CRAWLER_AUDITED",
+      "matched_canonical_id": "LEAD-OFF3-SSRN-20",
+      "reason": "Quantpedia summary of Cross-Sectional G10 FX Momentum (CONCEPT_ONLY_NEEDS_SLTP_DESIGN, 7 majors); LEAD-OFF3-SSRN-20 retained as REPLICABLE_FROM_PUBLIC primary Menkhoff et al. paper covering all 17 FTMO FX pairs."
+    },
+    {
+      "lead_id": "LEAD-OFF3-QP-08",
+      "source": "off3-quantpedia-qc",
+      "name": "Turn of the Month Calendar Liquidity Drift in Equity Indexes",
+      "source_url": "https://quantpedia.com/strategies/turn-of-the-month-in-equity-indexes/",
+      "category": "DUPLICATE_CROSS_CRAWLER_AUDITED",
+      "matched_canonical_id": "LEAD-OFF3-SSRN-17",
+      "reason": "Exact T-1 to T+3 equity index Turn-of-Month calendar drift duplicate (CONCEPT_ONLY_NEEDS_SLTP_DESIGN); LEAD-OFF3-SSRN-17 retained as canonical REPLICABLE_FROM_PUBLIC primary paper covering all 6 FTMO indices."
+    }
+  ],
+  "crawler_pre_rejected_toxic_items": [
+    {
+      "lead_id": "REJECT-OFF3-MQL5-01",
+      "source": "off3-mql5-open",
+      "name": "GridPro Panel — open-source grid trading EA",
+      "source_url": "https://www.mql5.com/en/code/78206",
+      "category": "CRAWLER_PRE_REJECTED_TOXIC",
+      "toxic_flags": [
+        "TOXIC_GRID",
+        "TOXIC_MARTINGALE"
+      ],
+      "reason": "TOXIC_GRID: \"GridPro Panel — open-source grid trading EA\" | TOXIC_MARTINGALE: \"adds averaging grid layers with martingale lot multiplier (default 1.5x)\"",
+      "source_log_file": "sources/off3-mql5-open/extracted/rejected_log.json"
+    },
+    {
+      "lead_id": "REJECT-OFF3-MQL5-02",
+      "source": "off3-mql5-open",
+      "name": "Basic Martingale EA v3",
+      "source_url": "https://www.mql5.com/en/code/32521",
+      "category": "CRAWLER_PRE_REJECTED_TOXIC",
+      "toxic_flags": [
+        "TOXIC_MARTINGALE",
+        "TOXIC_GRID",
+        "TOXIC_AVERAGING_DOWN"
+      ],
+      "reason": "TOXIC_MARTINGALE: \"Basic Martingale EA v3\" | TOXIC_GRID: \"Disqualified: Martingale trading system using averaging down and averaging up with ATR grid steps and TEMA entry signals\" | TOXIC_AVERAGING_DOWN: \"averaging down\"",
+      "source_log_file": "sources/off3-mql5-open/extracted/rejected_log.json"
+    },
+    {
+      "lead_id": "REJECT-OFF3-MQL5-03",
+      "source": "off3-mql5-open",
+      "name": "MA MACD Position averaging v2",
+      "source_url": "https://www.mql5.com/en/code/22854",
+      "category": "CRAWLER_PRE_REJECTED_TOXIC",
+      "toxic_flags": [
+        "TOXIC_GRID",
+        "TOXIC_AVERAGING_DOWN"
+      ],
+      "reason": "TOXIC_GRID: \"Disqualified: Opens additional same-direction losing layers (averaging down) with an increased lot coefficient whenever floating loss exceeds Step lossing pips\" | TOXIC_AVERAGING_DOWN: \"Position averaging\"",
+      "source_log_file": "sources/off3-mql5-open/extracted/rejected_log.json"
+    },
+    {
+      "lead_id": "REJECT-OFF3-MQL5-04",
+      "source": "off3-mql5-open",
+      "name": "Xander Grid RSI Gold",
+      "source_url": "https://www.mql5.com/en/code/79021",
+      "category": "CRAWLER_PRE_REJECTED_TOXIC",
+      "toxic_flags": [
+        "TOXIC_NO_STOP_LOSS",
+        "TOXIC_MARTINGALE",
+        "TOXIC_AVERAGING_DOWN"
+      ],
+      "reason": "TOXIC_NO_STOP_LOSS: \"No stop loss on each position\" | TOXIC_MARTINGALE: \"Disqualified: XAUUSD grid EA with a lot multiplier that adds adverse levels every fixed point step and explicitly runs with no stop loss on each individual posi\" | TOXIC_AVERAGING_DOWN: \"adds a new level every\"",
+      "source_log_file": "sources/off3-mql5-open/extracted/rejected_log.json"
+    },
+    {
+      "lead_id": "REJECT-OFF3-MQL5-05",
+      "source": "off3-mql5-open",
+      "name": "Developing Zone Recovery Martingale Strategy in MQL5",
+      "source_url": "https://www.mql5.com/en/articles/15067",
+      "category": "CRAWLER_PRE_REJECTED_TOXIC",
+      "toxic_flags": [
+        "TOXIC_MARTINGALE",
+        "TOXIC_AVERAGING_DOWN"
+      ],
+      "reason": "TOXIC_MARTINGALE: \"Developing Zone Recovery Martingale Strategy in MQL5\" | TOXIC_AVERAGING_DOWN: \"Zone Recovery\"",
+      "source_log_file": "sources/off3-mql5-open/extracted/rejected_log.json"
+    },
+    {
+      "lead_id": "REJECT-OFF3-MQL5-06",
+      "source": "off3-mql5-open",
+      "name": "Night Flat Trade (Rollover Session Scalper / No Hard SL)",
+      "source_url": "https://www.mql5.com/en/code/20815",
+      "category": "CRAWLER_PRE_REJECTED_TOXIC",
+      "toxic_flags": [
+        "TOXIC_NO_STOP_LOSS",
+        "TOXIC_ROLLOVER_SCALPER"
+      ],
+      "reason": "TOXIC_NO_STOP_LOSS: \"Night Flat Trade (Rollover Session Scalper / No Hard SL)\" | TOXIC_ROLLOVER_SCALPER: \"Night Flat Trade\"",
+      "source_log_file": "sources/off3-mql5-open/extracted/rejected_log.json"
+    },
+    {
+      "lead_id": "REJECT-OFF3-MQL5-07",
+      "source": "off3-mql5-open",
+      "name": "MQL5 EA Using Direct WinINet DLL Import (#import wininet.dll)",
+      "source_url": "https://www.mql5.com/en/articles/23527",
+      "category": "CRAWLER_PRE_REJECTED_TOXIC",
+      "toxic_flags": [
+        "TOXIC_BLACKBOX_OR_DLL",
+        "TOXIC_DLL_IMPORT"
+      ],
+      "reason": "TOXIC_BLACKBOX_OR_DLL: \"MQL5 EA Using Direct WinINet DLL Import (#import wininet.dll)\" | TOXIC_DLL_IMPORT: \"Detected ['#import \"wininet.dll\"']\"",
+      "source_log_file": "sources/off3-mql5-open/extracted/rejected_log.json"
+    },
+    {
+      "lead_id": "NOT_DISCLOSED",
+      "source": "off3-community-intl",
+      "name": "NOT_DISCLOSED",
+      "source_url": "https://www.mql5.com/ru/articles/17800",
+      "category": "CRAWLER_PRE_REJECTED_TOXIC",
+      "toxic_flags": [],
+      "reason": "TOXIC_MARTINGALE_AVERAGING: source code opens counter-averaging layers via `averagingLot = lastLotSize * AveragingLotMultiplier` when correlation drops.",
+      "source_log_file": "sources/off3-community-intl/extracted/disqualified_log.json"
+    },
+    {
+      "lead_id": "NOT_DISCLOSED",
+      "source": "off3-community-intl",
+      "name": "NOT_DISCLOSED",
+      "source_url": "https://www.mql5.com/ru/articles/14035",
+      "category": "CRAWLER_PRE_REJECTED_TOXIC",
+      "toxic_flags": [],
+      "reason": "TOXIC_NO_STOP_LOSS: article explicitly promotes absence of stop losses (`плюсом данного торгового подхода является отсутствие выраженных стоп-лоссов`).",
+      "source_log_file": "sources/off3-community-intl/extracted/disqualified_log.json"
+    },
+    {
+      "lead_id": "NOT_DISCLOSED",
+      "source": "off3-community-intl",
+      "name": "NOT_DISCLOSED",
+      "source_url": "https://smart-lab.ru/blog/674013.php",
+      "category": "CRAWLER_PRE_REJECTED_TOXIC",
+      "toxic_flags": [],
+      "reason": "TOXIC_NO_STOP_LOSS_UNSPECIFIED: blog post delegates rules to external video and discussion explicitly notes trading without protective stops.",
+      "source_log_file": "sources/off3-community-intl/extracted/disqualified_log.json"
+    },
+    {
+      "lead_id": "NOT_DISCLOSED",
+      "source": "off3-community-intl",
+      "name": "NOT_DISCLOSED",
+      "source_url": "https://www.mql5.com/ru/articles/5481",
+      "category": "CRAWLER_PRE_REJECTED_TOXIC",
+      "toxic_flags": [],
+      "reason": "TOXIC_MECHANISM_FLAGGED: raw text tripped cleanroom toxic martingale/grid screening during pre-audit.",
+      "source_log_file": "sources/off3-community-intl/extracted/disqualified_log.json"
+    }
+  ]
+}

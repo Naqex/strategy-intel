@@ -1,0 +1,21 @@
+{
+  "slug": "arxiv-1501-07778-wmr-4pm-london-fix",
+  "original_id": "OFF3-ARXIV-01",
+  "paper_id": "arXiv:1501.07778",
+  "source_origin": "arxiv-q-fin-TR",
+  "canonical_url": "https://arxiv.org/abs/1501.07778",
+  "metadata_fetch_url": "https://export.arxiv.org/api/query?id_list=1501.07778,2301.13204,2010.01727,1907.08397,2108.01886,1507.01610,2308.11294&max_results=12",
+  "http_status": 200,
+  "content_type": "application/atom+xml",
+  "title": "Foreign Exchange Market Microstructure and the WM/Reuters 4pm Fix",
+  "authors": [
+    "Patrick Steffen Michelberger",
+    "Jan Hendrik Witte"
+  ],
+  "raw_text": "A market fix serves as a benchmark for foreign exchange (FX) execution, and is employed by many institutional investors to establish an exact reference at which execution takes place. The currently most popular FX fix is the World Market Reuters (WM/R) 4pm fix. Execution at the WM/R 4pm fix is a service offered by FX brokers (normally banks), who deliver execution at the fix provided they obtain the trade order until a certain time prior to 4pm. In this paper, we study the market microstructure around 4pm. We demonstrate that market dynamics can be distinguished from other times during the day through increased volatility and size of movements. Our findings question the aggregate benefit to the client base of using the 4pm fix in its current form.",
+  "categories": [
+    "q-fin.TR"
+  ],
+  "doi": null,
+  "ssrn_locations": []
+}

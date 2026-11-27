@@ -1,0 +1,21 @@
+{
+  "slug": "ssrn-1809776-menkhoff-currency-momentum",
+  "original_id": "OFF3-SSRN-20",
+  "paper_id": "SSRN:1809776",
+  "source_origin": "ssrn-public-research",
+  "canonical_url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1809776",
+  "metadata_fetch_url": "https://ideas.repec.org/p/bis/biswps/366.html",
+  "http_status": 200,
+  "content_type": "text/html",
+  "title": "Currency Momentum Strategies",
+  "authors": [
+    "Lukas Menkhoff",
+    "Lucio Sarno",
+    "Maik Schmeling",
+    "Andreas Schrimpf"
+  ],
+  "raw_text": "We provide a broad empirical investigation of momentum strategies in the foreign exchange market. We find a signiffcant cross-sectional spread in excess returns of up to 10% p.a. between past winner and loser currencies. This spread in excess returns is not explained by traditional risk factors, it is partially explained by transaction costs and shows behavior consistent with investor under- and over-reaction. Moreover, crosssectional currency momentum has very different properties from the widely studied carry trade and is not highly correlated with returns of benchmark technical trading rules. However, there seem to be very effective limits to arbitrage which prevent momentum returns from being easily exploitable in currency markets.",
+  "categories": [],
+  "doi": null,
+  "ssrn_locations": []
+}

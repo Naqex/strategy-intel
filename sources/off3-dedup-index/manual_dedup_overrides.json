@@ -1,0 +1,102 @@
+{
+  "schema_version": "off3-manual-dedup-overrides-v1",
+  "audit_note": "Forensic cross-crawler semantic deduplication decisions across c1..c6 (131 raw leads -> 115 unique clean leads, 16 cross-crawler semantic duplicates dropped). Canonical winner strictly prefers REPLICABLE_FROM_PUBLIC, explicit hard SL, primary academic/code provenance, and broader FTMO symbol coverage. Zero parameters are ever merged or hallucinated across records.",
+  "drop_as_duplicate": [
+    {
+      "drop_lead_id": "LEAD-OFF3-QC-07",
+      "canonical_lead_id": "LEAD-OFF3-SSRN-05",
+      "cluster": "INTRADAY_30M_INDEX_MOMENTUM",
+      "reason": "Same Gao et al. first-30m predicts last-30m intraday equity index momentum rule; LEAD-OFF3-SSRN-05 is REPLICABLE_FROM_PUBLIC primary SSRN paper covering all 6 FTMO indices vs 3 US indices subset."
+    },
+    {
+      "drop_lead_id": "LEAD-OFF3-QP-09",
+      "canonical_lead_id": "LEAD-OFF3-SSRN-15",
+      "cluster": "PRE_FOMC_ANNOUNCEMENT_DRIFT",
+      "reason": "Same Lucca & Moench Pre-FOMC equity index drift; LEAD-OFF3-SSRN-15 is REPLICABLE_FROM_PUBLIC with strict pre-release exit (13:45-13:55 ET, FTMO news-safe) across 6 indices + XAUUSD, whereas QP-09 holds through FOMC close with SL NOT_DISCLOSED."
+    },
+    {
+      "drop_lead_id": "LEAD-OFF3-GH-21",
+      "canonical_lead_id": "LEAD-OFF3-SSRN-15",
+      "cluster": "PRE_FOMC_ANNOUNCEMENT_DRIFT",
+      "reason": "VIX-threshold variant of the same Lucca & Moench 24h Pre-FOMC drift (CONCEPT_ONLY_NEEDS_SLTP_DESIGN, SL NOT_DISCLOSED); LEAD-OFF3-SSRN-15 retained as canonical REPLICABLE_FROM_PUBLIC spec."
+    },
+    {
+      "drop_lead_id": "LEAD-OFF3-QP-08",
+      "canonical_lead_id": "LEAD-OFF3-SSRN-17",
+      "cluster": "EQUITY_INDEX_TURN_OF_MONTH",
+      "reason": "Exact T-1 to T+3 equity index Turn-of-Month calendar drift duplicate (CONCEPT_ONLY_NEEDS_SLTP_DESIGN); LEAD-OFF3-SSRN-17 retained as canonical REPLICABLE_FROM_PUBLIC primary paper covering all 6 FTMO indices."
+    },
+    {
+      "drop_lead_id": "LEAD-OFF3-GH-13",
+      "canonical_lead_id": "LEAD-OFF3-SSRN-17",
+      "cluster": "EQUITY_INDEX_TURN_OF_MONTH",
+      "reason": "Calendar-day proxy variant of the same D1 Long-only Equity Index Turn-of-Month calendar anomaly; LEAD-OFF3-SSRN-17 retained as single canonical Turn-of-Month index spec covering all 6 FTMO indices."
+    },
+    {
+      "drop_lead_id": "LEAD-OFF3-GH-15",
+      "canonical_lead_id": "LEAD-OFF3-SSRN-18",
+      "cluster": "MOREIRA_MUIR_VOL_MANAGED",
+      "reason": "Direct GitHub replication of Moreira & Muir inverse-variance volatility-managed index scaling (CONCEPT_ONLY_NEEDS_SLTP_DESIGN, 3 US indices); LEAD-OFF3-SSRN-18 retained as REPLICABLE_FROM_PUBLIC primary SSRN paper covering Indices + FX."
+    },
+    {
+      "drop_lead_id": "LEAD-OFF3-QC-05",
+      "canonical_lead_id": "LEAD-OFF3-SSRN-19",
+      "cluster": "BALTAS_KOSOWSKI_YANG_ZHANG_TSMOM",
+      "reason": "QuantConnect replication of Baltas & Kosowski Yang-Zhang range-volatility continuous TSMOM on 4 commodities (CONCEPT_ONLY_NEEDS_SLTP_DESIGN); LEAD-OFF3-SSRN-19 retained as REPLICABLE_FROM_PUBLIC primary paper covering all 27 non-crypto FTMO symbols."
+    },
+    {
+      "drop_lead_id": "LEAD-OFF3-QP-01",
+      "canonical_lead_id": "LEAD-OFF3-SSRN-20",
+      "cluster": "CROSS_SECTIONAL_FX_MOMENTUM",
+      "reason": "Quantpedia summary of Cross-Sectional G10 FX Momentum (CONCEPT_ONLY_NEEDS_SLTP_DESIGN, 7 majors); LEAD-OFF3-SSRN-20 retained as REPLICABLE_FROM_PUBLIC primary Menkhoff et al. paper covering all 17 FTMO FX pairs."
+    },
+    {
+      "drop_lead_id": "LEAD-OFF3-QC-09",
+      "canonical_lead_id": "LEAD-OFF3-GH-05",
+      "cluster": "OU_MLE_OPTIMAL_STOPPING_PAIRS",
+      "reason": "Same Leung & Li continuous-time Ornstein-Uhlenbeck MLE optimal-stopping pairs trading (PARTIAL_RULE_SPEC, SL NOT_DISCLOSED); LEAD-OFF3-GH-05 retained as REPLICABLE_FROM_PUBLIC with explicit +/-3.5 sigma_eq hard stop-loss."
+    },
+    {
+      "drop_lead_id": "LEAD-OFF3-COMM-EN-01",
+      "canonical_lead_id": "LEAD-OFF3-GH-11",
+      "cluster": "TOKYO_GOTOBI_POST_0955_SHORT_FADE",
+      "reason": "Same Post-09:55 JST Gotobi settlement-day USDJPY short mean-reversion fade; LEAD-OFF3-GH-11 retained as canonical M1 REPLICABLE_FROM_PUBLIC spec with volatility-adaptive 3.0x ATR(14,1H) hard stop vs fixed 20-pip stop."
+    },
+    {
+      "drop_lead_id": "LEAD-OFF3-GH-19",
+      "canonical_lead_id": "LEAD-OFF3-TV-21",
+      "cluster": "CONNORS_RSI2_D1_INDEX_PULLBACK",
+      "reason": "Same D1 Larry Connors 2-period RSI < 10 pullback above 200-SMA on US equity indices (CONCEPT_ONLY_NEEDS_SLTP_DESIGN, SL NOT_DISCLOSED); LEAD-OFF3-TV-21 retained as REPLICABLE_FROM_PUBLIC with SMA(RSI2,4) filter, SMA(5) exit, and optional hard % stop across 6 indices + XAUUSD."
+    },
+    {
+      "drop_lead_id": "LEAD-OFF3-GH-20",
+      "canonical_lead_id": "LEAD-OFF3-MQL5-07",
+      "cluster": "DOWN_MONDAY_TURNAROUND_TUESDAY_INDEX",
+      "reason": "Same D1 down-Monday equity index mean-reversion reversal (CONCEPT_ONLY_NEEDS_SLTP_DESIGN, SL NOT_DISCLOSED); LEAD-OFF3-MQL5-07 retained as REPLICABLE_FROM_PUBLIC with mandatory % hard stop-loss and optional IBS/MA filter."
+    },
+    {
+      "drop_lead_id": "LEAD-OFF3-ARXIV-10",
+      "canonical_lead_id": "LEAD-OFF3-GH-01",
+      "cluster": "COMMODITY_COINTEGRATED_SPREAD_PAIRS",
+      "reason": "Same D1 WTI-Brent and Gold-Silver cointegrated spread mean-reversion pairs trading (CONCEPT_ONLY_NEEDS_SLTP_DESIGN, SL NOT_DISCLOSED); LEAD-OFF3-GH-01 retained as REPLICABLE_FROM_PUBLIC with rolling ADF gate and explicit |Z|>=3.5 hard tail-risk stop."
+    },
+    {
+      "drop_lead_id": "LEAD-OFF3-COMM-RU-06",
+      "canonical_lead_id": "LEAD-OFF3-GH-01",
+      "cluster": "COMMODITY_COINTEGRATED_SPREAD_PAIRS",
+      "reason": "Same Brent/WTI & Gold/Silver OU cointegration Z-score spread pairs with |Z|>=3.5-4.0 stop (timeframe NOT_DISCLOSED); LEAD-OFF3-GH-01 retained as canonical D1 REPLICABLE_FROM_PUBLIC spec."
+    },
+    {
+      "drop_lead_id": "LEAD-OFF3-QP-05",
+      "canonical_lead_id": "LEAD-OFF3-MQL5-20",
+      "cluster": "WTI_BRENT_20D_SPREAD_MR",
+      "reason": "Same WTI-Brent 20-period spread mean reversion without stop-loss (SL NOT_DISCLOSED); LEAD-OFF3-MQL5-20 retained as canonical spec with least-squares regression and explicit ATR/max-loss hard stop."
+    },
+    {
+      "drop_lead_id": "LEAD-OFF3-COMM-RU-05",
+      "canonical_lead_id": "LEAD-OFF3-GH-04",
+      "cluster": "FX_COINTEGRATION_STAT_ARB_PAIRS",
+      "reason": "Same D1 Pearson + Engle-Granger cointegration FX spread on AUDUSD/NZDUSD & EURUSD/GBPUSD (PARTIAL_RULE_SPEC, SL NOT_DISCLOSED); LEAD-OFF3-GH-04 retained as REPLICABLE_FROM_PUBLIC with Pearson+EG+OU half-life+Kalman+Hurst and explicit Z_STOP=4.0 hard stop."
+    }
+  ]
+}

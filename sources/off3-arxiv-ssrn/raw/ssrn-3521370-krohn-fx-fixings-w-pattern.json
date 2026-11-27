@@ -1,0 +1,22 @@
+{
+  "slug": "ssrn-3521370-krohn-fx-fixings-w-pattern",
+  "original_id": "OFF3-SSRN-03",
+  "paper_id": "SSRN:3521370",
+  "source_origin": "ssrn-public-research",
+  "canonical_url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3521370",
+  "metadata_fetch_url": "https://api.openalex.org/works/https://doi.org/10.1111/jofi.13306",
+  "http_status": 200,
+  "content_type": "application/json",
+  "title": "Foreign Exchange Fixings and Returns around the Clock",
+  "authors": [
+    "Ingomar Krohn",
+    "Philippe Mueller",
+    "Paul Whelan"
+  ],
+  "raw_text": "The U.S. dollar appreciates in the run‐up to foreign exchange (FX) fixes and depreciates thereafter, tracing a W‐shaped return pattern around the clock. Return reversals for the top nine traded currencies over a 21‐year period are pervasive and highly statistically significant, and they imply daily swings of more than one billion U.S. dollars based on spot volumes. Using natural experiments, we document the existence of a published reference rate determines the timing of intraday return reversals. We present evidence consistent with an inventory risk explanation whereby FX dealers intermediate unconditional demand for U.S. dollars at the fixes.",
+  "categories": [],
+  "doi": "https://doi.org/10.1111/jofi.13306",
+  "ssrn_locations": [
+    "https://doi.org/10.2139/ssrn.3521370"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "gh-01-davysnou-pairs-ou-zscore-hard-sl",
+  "original_id": "OFF3-GH-01",
+  "source_name": "github-public-repo",
+  "github_repo": "davysnou/pairs-trading-simulator",
+  "github_branch": "main",
+  "github_stars": 0,
+  "github_license": "MIT",
+  "repo_description": "Interactive quantitative simulator comparing return correlation vs. statistical cointegration with Z-score pairs trading backtests.",
+  "url": "https://github.com/davysnou/pairs-trading-simulator/blob/main/methodology.md",
+  "fetched_files": [
+    {
+      "path": "methodology.md",
+      "html_url": "https://github.com/davysnou/pairs-trading-simulator/blob/main/methodology.md",
+      "download_url": "https://raw.githubusercontent.com/davysnou/pairs-trading-simulator/main/methodology.md",
+      "chars": 2002,
+      "sha256": "1925B52EAD659A425C028C028912E1543A129D57A0CF36284158BC0AC82EC5CA"
+    },
+    {
+      "path": "README.md",
+      "html_url": "https://github.com/davysnou/pairs-trading-simulator/blob/main/README.md",
+      "download_url": "https://raw.githubusercontent.com/davysnou/pairs-trading-simulator/main/README.md",
+      "chars": 2185,
+      "sha256": "5E594FC75467AF37C391005015D1F1D65216A4D1154CCE222D60E7B3CCC9CC08"
+    }
+  ],
+  "raw_text": "=== FILE: davysnou/pairs-trading-simulator/methodology.md ===\n---\nlayout: default\ntitle: Quantitative Methodology & Model Notes\n---\n\n# Quantitative Methodology & Statistical Arbitrage Notes\n\n[← Launch Interactive Simulator](./)\n\n---\n\n## 1. Return Correlation vs. Cointegration\nA common pitfall in statistical arbitrage is treating high short-term return correlation ($\\rho$) as evidence of a tradable spread:\n\n* **Return Correlation:** Measures linear co-movement of first differences ($\\Delta P_{A,t}, \\Delta P_{B,t}$). Two assets can maintain $\\rho > 0.85$ while drifting infinitely far apart in price levels.\n* **Cointegration ($I(0)$ Spread):** Exists when a linear combination $S_t = P_{B,t} - \\beta P_{A,t}$ is stationary with constant mean and finite variance over time.\n\n---\n\n## 2. Ornstein-Uhlenbeck Mean Reversion & Half-Life\nIn **Practical Mode**, cointegrated spreads follow a discrete-time Ornstein-Uhlenbeck (OU) process:\n\n$$\\Delta S_t = \\theta (\\mu - S_{t-1})\\Delta t + \\sigma \\varepsilon_t$$\n\n* **Mean-Reversion Speed ($\\theta$):** Controlled by the *Cointegration Strength* slider.\n* **Half-Life of Mean Reversion:** Indicates the expected number of bars for a shock to decay halfway back to equilibrium:\n\n$$t_{1/2} = \\frac{\\ln(2)}{\\theta}$$\n\n---\n\n## 3. Signal Generation & Risk Management\n* **Rolling Z-Score Normalization:**\n  $$Z_t = \\frac{S_t - \\bar{S}_w}{s_{S,w}}$$\n* **Entry Triggers:** Long spread when $Z_t \\le -2.0$, short spread when $Z_t \\ge +2.0$.\n* **Mean-Reversion Exit:** Close position when $Z_t$ crosses $0.0$.\n* **Tail-Risk Stop-Loss:** Hard liquidation at $|Z_t| \\ge 3.5$ to protect against structural regime breaks.\n* **Execution Friction:** Deducts round-trip slippage and commissions in basis points (`bps/leg`) across both legs.\n\n---\n\n## 4. Roadmap & Feedback\n* Custom rolling Z-score entry/exit thresholds\n* Institutional risk-adjusted metrics (**Sharpe, Sortino, and Information Ratios**)\n* Rolling hedge ratio ($\\beta$) estimation via OLS / Kalman Filter\n\nHave suggestions? [Open an Issue on GitHub](https://github.com).\n\n\n=== FILE: davysnou/pairs-trading-simulator/README.md ===\n# pairs-trading-simulator\n\n# Pairs Trading & Spread Simulator\n\n[![Live Demo](https://shields.io)](https://github.io)\n[![License: MIT](https://shields.io)](LICENSE)\n\nAn interactive, browser-based quantitative finance simulator illustrating the difference between **short-term return correlation** and **long-run statistical cointegration**, complete with a mean-reversion backtesting engine.\n\n🔗 **Live Web App:** [https://github.io](https://github.io)\n\n---\n\n## Key Features\n\n### 1. Learner Mode (Intuition Builder)\n* **Regime Comparison:** Toggle between *Cointegrated* (mean-reverting equilibrium) and *Concurrent Move* (correlated returns with permanent price drift).\n* **Stochastic Controls:** Adjust **Path Volatility** and **Divergence Drift** in real time or reseed random shocks.\n* **Summary Diagnostics:** Tracks Pearson correlation, maximum spread deviation, and average spread.\n\n### 2. Practical Mode (Strategy Backtester)\n* **Real-World Ticker Presets:** Calibrated dynamics for *Gold vs. Silver*, *WTI vs. Brent Crude*, *Visa vs. Mastercard*, *Bitcoin vs. Ethereum*, and *AAPL vs. MSFT*.\n* **Z-Score Signals & Risk Controls:** Plots rolling **±2σ entry bands** (`▲` Long / `▼` Short) alongside optional **±3.5σ stop-loss protection** (`✕`).\n* **Stationarity Diagnostics:** Compares **Rolling Correlation** against a rolling **Augmented Dickey-Fuller (ADF) p-value** (`p < 0.05` signals stationarity).\n* **Execution Realism & Reporting:** Models per-leg transaction costs/slippage (`bps`), tracks cumulative net equity and drawdown, accepts custom **historical CSV uploads**, and exports complete **trade logs to CSV**.\n\n---\n\n## Methodology Overview\n\n1. **Rolling Spread Z-Score:**\n   $$Z_t = \\frac{S_t - \\mu_{S, w}}{\\sigma_{S, w}}$$\n   where $S_t = P_{B,t} - P_{A,t}$ is the raw spread over a rolling window $w$.\n2. **Stationarity Verification:** Uses an Augmented Dickey-Fuller (ADF) regression ($\\Delta S_t = \\gamma S_{t-1} + \\varepsilon_t$) to distinguish true mean reversion from random-walk divergence.\n\n---\n\n## Feedback & Contributions\nHave an idea for a new preset, risk metric, or chart? Open an issue in the **[Issues](../../issues)** tab or submit a pull request.\n"
+}

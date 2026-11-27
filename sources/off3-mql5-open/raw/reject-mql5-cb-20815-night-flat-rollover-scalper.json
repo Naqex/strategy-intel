@@ -1,0 +1,40 @@
+{
+  "slug": "reject-mql5-cb-20815-night-flat-rollover-scalper",
+  "lead_id": "REJECT-OFF3-MQL5-06",
+  "original_id": "MQL5-CB-20815",
+  "source_name": "mql5-codebase",
+  "url": "https://www.mql5.com/en/code/20815",
+  "http_status": 200,
+  "content_type": "text/html",
+  "fetched_html_sha256": "628B3D66E6225C1C283011F307C92AF238CF70FDAA52E03D95FE8ECC9410DEAA",
+  "page_title_verbatim": "Night Flat Trade - expert for MetaTrader 5",
+  "author": "Русский",
+  "name": "Night Flat Trade (Rollover Session Scalper / No Hard SL)",
+  "family": "Disqualified Toxic Rollover Scalper / No-SL",
+  "family_tag": "TOXIC_ROLLOVER_SCALPER_NO_SL",
+  "asset_class": "CFD_FX",
+  "asset_universe": [
+    "EURUSD"
+  ],
+  "symbol": "EURUSD",
+  "timeframe": "H1",
+  "direction": "Both",
+  "prop_track": "NOT_DISCLOSED",
+  "economic_rationale": "NOT_DISCLOSED",
+  "counterparty_mechanism": "NOT_DISCLOSED",
+  "entry_rule": "NOT_DISCLOSED",
+  "exit_rule": "NOT_DISCLOSED",
+  "stop_loss_rule": "No Stop Loss input parameter disclosed (only Take Profit and Trailing Stop)",
+  "take_profit_rule": "Fixed Take Profit + Trailing Stop",
+  "rule_description": "Disqualified: Rollover-window night flat scalper trading EURUSD solely in the quietest hours after US session close and before Asian open (rollover spread-widening window) with no Stop Loss parameter.",
+  "disclosed_inputs_excerpt": [],
+  "detected_dll_imports_in_page_snippets": [],
+  "verbatim_excerpt": "The EA is debugged to work with EURUSD and on H1 only in the quietest hours (upon closing the American session and before opening the Asian one). Input parameters Take Profit - Take Profit; Trailing Stop - trailing; Trailing Step - trailing step; Difference Min - the minimum difference between the highest and the lowest price (within the last three bars); Di",
+  "raw_text": "Idea by : Leonid Basis . MQL5 code by : Vladimir Karputov . The EA is debugged to work with EURUSD and on H1 only in the quietest hours (upon closing the American session and before opening the Asian one). Input parameters Take Profit - Take Profit; Trailing Stop - trailing; Trailing Step - trailing step; Difference Min - the minimum difference between the highest and the lowest price (within the last three bars); Difference Max - the maximum difference between the highest and the lowest price (within the last three bars); Open Hour - opening hour; Lots - lot size (if you set the lot size above zero, then the Risk parameter must be set to zero); Risk - risk (if you set the risk above zero, then the Lots parameter must be set to zero); magic number - unique identifier for the EA. Translated from Russian by MetaQuotes Ltd. Original code: https://www.mql5.com/ru/code/20815 Go to discussion ASCtrend_NRTR_HTF Indicator ASCtrend_NRTR with the timeframe selection option available in input parameters, alerting and sending e-mails and push-messages when the indicator changes its color. TVI TVI (Trade Volume Index). Executor Candles Trading on several candlestick patterns. The levels of Take Profit, Stop Loss, and Trailing are separate for BUY and SELL. MACD and SAR A trading system based on indicators MACD and SAR. The signal receiving formula is completely optimizable.",
+  "replicability": "PARTIAL_CONCEPT_ONLY",
+  "expected_toxic": true,
+  "expected_reject_reasons": [
+    "TOXIC_ROLLOVER_SCALPER",
+    "TOXIC_NO_STOP_LOSS"
+  ]
+}

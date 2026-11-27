@@ -1,0 +1,41 @@
+{
+  "slug": "reject-mql5-cb-32521-basic-martingale-v3",
+  "lead_id": "REJECT-OFF3-MQL5-02",
+  "original_id": "MQL5-CB-32521",
+  "source_name": "mql5-codebase",
+  "url": "https://www.mql5.com/en/code/32521",
+  "http_status": 200,
+  "content_type": "text/html",
+  "fetched_html_sha256": "49CA9C91035B278CDB923D345391393E57B94A6B8A9C8DADD5B9AE1A76A84CE5",
+  "page_title_verbatim": "Basic Martingale EA v3 - expert for MetaTrader 5",
+  "author": "DADALI ARWALY",
+  "name": "Basic Martingale EA v3",
+  "family": "Disqualified Toxic Martingale / Averaging",
+  "family_tag": "TOXIC_MARTINGALE_AVERAGING",
+  "asset_class": "CFD_FX",
+  "asset_universe": [
+    "FX"
+  ],
+  "symbol": "FX",
+  "timeframe": "NOT_DISCLOSED",
+  "direction": "Both",
+  "prop_track": "NOT_DISCLOSED",
+  "economic_rationale": "NOT_DISCLOSED",
+  "counterparty_mechanism": "NOT_DISCLOSED",
+  "entry_rule": "NOT_DISCLOSED",
+  "exit_rule": "NOT_DISCLOSED",
+  "stop_loss_rule": "NOT_DISCLOSED",
+  "take_profit_rule": "NOT_DISCLOSED",
+  "rule_description": "Disqualified: Martingale trading system using averaging down and averaging up with ATR grid steps and TEMA entry signals.",
+  "disclosed_inputs_excerpt": [],
+  "detected_dll_imports_in_page_snippets": [],
+  "verbatim_excerpt": "This EA just showing a sample of Martingale Systems by Averaging Up or Averaging Down. Default using TEMA Indicator as Entry Signals and ATR as Grid Steps for taking orders.",
+  "raw_text": "This EA just showing a sample of Martingale Systems by Averaging Up or Averaging Down. It is not a ready to use or profitable EA. Default using TEMA Indicator as Entry Signals and ATR as Grid Steps for taking orders. Users can download and modify the source as needed. Regards. Update: - Fix Bug Errors on Trailing Functions. - Add function to Trail on Averaging Up. - Revised Indicator Codes. Last comments | Go to discussion (9) DADALI ARWALY | 27 Feb 2021 at 19:45 Let me explain for buy situation: Average Up, if the price goes up, then add another order. Average Down, if price goes down, then add another order. And vice versa for sell situation. Hope it helps to clear the naming jargon. aellis | 5 Mar 2021 at 15:48 What is \"Distance from Start Price (for Average Up Only)\"? Any idea why the EA is not averaging up with these settings? I'm seeing the first entry at .01 and all others at .02 - - so it multiplies correct on second order, but does not multiply all the others. Thanks for sharing this EA. DADALI ARWALY | 5 Mar 2021 at 18:33 aellis : What is \"Distance from Start Price (for Average Up Only)\"? Any idea why the EA is not averaging up with these settings? I'm seeing the first entry at .01 and all others at .02 - - so it multiplies correct on second order, but does not multiply all the others. Thanks for sharing this EA. It is for the trailing functions in Average Up Mode. I choose the first order (lowest buy price / highest sell price) as pointer. So, for buy when price keeps going up and past over the distance, then the trail starts. To answer why its not averaging up, certain conditions (ATR value on 1 bar back) may varies from time to time. Of course you can change it to point/pips according to your need. Hope this explanations can be understood. shinejoy | 27 Jul 2021 at 14:02 Hi, Thanks for sharing this good EA. I have one doubt. Please clarify In this EA how to change the pips distance from previous order to new order (averaging order or multiplied lot order). Example: Buy 0.01 lot EURUSD at 1.17900 if market goes down so next but order 0.02 lot have to open at minus 100 pips or 200 like 1.17800 or 1.17700 So please clarify about settings. Thank you Gie99 | 4 Aug [REDACTED_PERIOD] at 09:56 Why it doesnt work on gold ? visitor - behavioral design pattern represent an operation to be performed on the elements of an object structure. visitor lets you define a new operation without changing the classes of the elements on which it operates template method - behavioral design pattern define the skeleton of an algorithm in an operation, deferring some steps to subclasses. template method lets subclasses redefine certain steps of an algorithm without changing the algorithm's structure Classic Moving Averages with colors The indicator displays a colored moving average. quick sort - sorting algorithm a highly efficient sorting algorithm, based on partitioning of array of data into smaller arrays",
+  "replicability": "PARTIAL_CONCEPT_ONLY",
+  "expected_toxic": true,
+  "expected_reject_reasons": [
+    "TOXIC_MARTINGALE",
+    "TOXIC_GRID",
+    "TOXIC_AVERAGING_DOWN"
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "lead_id": "LEAD-OFF3-TV-22",
+  "original_id": "TV-yXkWPSlU",
+  "image_url_id": "yXkWPSlU",
+  "script_id_part": "PUB;359afa629ca74712b749235ce8dfa6c2",
+  "script_version": "1",
+  "canonical_url": "https://www.tradingview.com/script/yXkWPSlU/",
+  "pine_facade_url": "https://pine-facade.tradingview.com/pine-facade/get/PUB%3B359afa629ca74712b749235ce8dfa6c2/1",
+  "script_name": "Larry Connors %b Strategy (Bollinger Band)",
+  "pine_internal_title": "Larry Connors %b Strategy (Bollinger Band)",
+  "suggest_title": "Larry Connors %b Strategy (Bollinger Band)",
+  "author_username": "EdgeTools",
+  "agree_count": 110,
+  "script_access": "open_no_auth",
+  "script_kind": "strategy",
+  "page_metadata": {
+    "page_title": "Larry Connors %b Strategy (Bollinger Band) by EdgeTools",
+    "meta_description": "Larry Connors’ %b Strategy is a mean-reversion trading approach that uses Bollinger Bands to identify buy and sell signals based on the %b indicator. This strategy was developed by Larry Connors, a renowned trader and author known for his systematic, data-driven trading methods, particularly those focusing on short-term mean reversion.\n\nThe %b indicator measures the position of the current price relative to the Bollinger Bands, which are volatility bands placed above and below a moving …",
+    "raw_chart_interval": "1D",
+    "mapped_timeframe": "D1"
+  },
+  "static_pine_audit": {
+    "passed": true,
+    "failures": [],
+    "script_access": "open_no_auth",
+    "pine_version": "v5",
+    "pyramiding": 0,
+    "security_call_count": 0,
+    "security_calls": [],
+    "source_line_count": 53,
+    "source_char_count": 2202
+  },
+  "pine_source_verbatim": "// This Pine Script™ code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/\r\n// © EdgeTools\r\n\r\n//@version=5\r\nstrategy(\"Larry Connors %b Strategy (Bollinger Band)\", overlay=false)\r\n\r\n// Parameters for moving averages and Bollinger Bands\r\nsma200 = ta.sma(close, 200)\r\nlength = 20  // Bollinger Band period\r\nsrc = close  // Source for Bollinger Bands\r\nmult = 2.0   // Bollinger Band standard deviation multiplier\r\n\r\n// Calculate Bollinger Bands and %b\r\nbasis = ta.sma(src, length)\r\ndev = ta.stdev(src, length)\r\nupperBand = basis + mult * dev\r\nlowerBand = basis - mult * dev\r\npercentB = (close - lowerBand) / (upperBand - lowerBand)\r\n\r\n// Conditions for the strategy\r\ncondition1 = close > sma200  // Condition 1: Close is above the 200-day moving average\r\n\r\n// %b must be below 0.2 for the last three consecutive days\r\ncondition2 = percentB[2] < 0.2 and percentB[1] < 0.2 and percentB < 0.2\r\n\r\n// Combined buy condition\r\nbuyCondition = condition1 and condition2\r\n\r\n// Sell condition: %b closes above 0.8\r\nsellCondition = percentB > 0.8\r\n\r\n// Execute buy signal when buy condition is met\r\nif buyCondition\r\n    strategy.entry(\"Buy\", strategy.long)\r\n\r\n// Execute sell signal when the sell condition is met\r\nif sellCondition\r\n    strategy.close(\"Buy\")\r\n\r\n// Plotting Bollinger Bands\r\nplot(upperBand, color=color.new(color.rgb(255, 0, 0), 50), title=\"Upper Bollinger Band\")  // Red color with 50% transparency\r\nplot(lowerBand, color=color.new(color.rgb(0, 255, 0), 50), title=\"Lower Bollinger Band\")  // Green color with 50% transparency\r\nplot(basis, color=color.rgb(0, 0, 255), title=\"Middle Bollinger Band\")  // Blue color\r\n\r\n// Plot %b value for visual confirmation\r\nplot(percentB, color=color.rgb(128, 0, 128), linewidth=2, title=\"%b Value\")  // Purple color\r\n\r\n// Additional lines to improve visualization\r\nhline(0.2, \"Oversold (0.2)\", color=color.rgb(255, 165, 0), linestyle=hline.style_dashed)  // Orange dashed line at 0.2\r\nhline(0.8, \"Overbought (0.8)\", color=color.rgb(255, 105, 180), linestyle=hline.style_dashed)  // Pink dashed line at 0.8\r\n\r\n// Set background color when a position is open\r\nbgcolor(strategy.opentrades > 0 ? color.new(color.green, 50) : na)"
+}

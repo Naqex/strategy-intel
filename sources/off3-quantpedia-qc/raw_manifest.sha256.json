@@ -1,0 +1,90 @@
+{
+  "qp-01-currency-momentum-factor.json": {
+    "sha256": "B1FAD25E8684228D012CF229BDB80CE1E348E8CB13773579322990180E9AE688",
+    "size": 23777
+  },
+  "qp-02-fx-carry-trade.json": {
+    "sha256": "5263855D19FBC421C279332277A73DD6A83CE35924173BB008E3E8D26DDA4EEF",
+    "size": 23455
+  },
+  "qp-03-dollar-carry-trade.json": {
+    "sha256": "2BEA34FA99DA42ED4E12C886A46ECE78C2D47B94F93FB1820B7DE5F8482FB8A8",
+    "size": 23379
+  },
+  "qp-04-currency-value-factor-ppp.json": {
+    "sha256": "E1E80A78CA096A76750855C93F4ECE5C05FB388C100FDB23D6145D456DEF2E28",
+    "size": 24122
+  },
+  "qp-05-trading-wti-brent-spread.json": {
+    "sha256": "E61D4DC522EC830F39D36773A451402EFFCAF6A21611A212BB040E1F8F5B0DC5",
+    "size": 23583
+  },
+  "qp-06-crude-oil-predicts-equity-returns.json": {
+    "sha256": "15FEFE651E7E0E3434D19C8456EC032CBE59FBD36F75A880491FE4F6698F1202",
+    "size": 23849
+  },
+  "qp-07-skewness-effect-in-commodities.json": {
+    "sha256": "DCC73C67526F7F9D95F95E9E48A87BC394467F89FFF7422864E644D2F75430C4",
+    "size": 23940
+  },
+  "qp-08-turn-of-the-month-equity-indexes.json": {
+    "sha256": "4008166F9944022C1F5BB58C3D538BEA61964C396DD7AAC7DE0781E6B1980559",
+    "size": 24455
+  },
+  "qp-09-fomc-meeting-effect-in-stocks.json": {
+    "sha256": "F1527F99EED324FD699D8AABBEFBFAF4C8CC690F1349E08967D69E7BCCDC2F93",
+    "size": 22732
+  },
+  "qp-10-market-sentiment-overnight-anomaly.json": {
+    "sha256": "533B1B4E354B7DB8E49612E1073D034FF877A3F94B84E257514E55BD17EDAED3",
+    "size": 19364
+  },
+  "qp-11-pre-holiday-effect.json": {
+    "sha256": "73E26899450BB8A2A941CA66BD4D8955CB753067A8EC5A7CACB3EF8286E45425",
+    "size": 23142
+  },
+  "qp-12-short-term-reversal-with-futures.json": {
+    "sha256": "B5A6FB2787751AC070C6D14E09A9A3AA5F5A0EEA2986AC70C85318778A9B64A0",
+    "size": 24488
+  },
+  "qc-01-forex-mean-reversion-and-momentum.json": {
+    "sha256": "365518772EF71496F9AEBDBDD7C236C009ABE055AE75E894363FBBE414B9BD4E",
+    "size": 27183
+  },
+  "qc-02-forex-low-frequency-hp-momentum.json": {
+    "sha256": "1731D146AECEA566523FB06CFC81DA91E5C108731C8175779E2DBE9EAFD4FE57",
+    "size": 24729
+  },
+  "qc-03-risk-premia-forex-skewness.json": {
+    "sha256": "157782000551F625E07498358FA32DB8379FE820274C28FD3A7CA03D52721BDF",
+    "size": 12526
+  },
+  "qc-04-gold-market-timing-fed-model.json": {
+    "sha256": "A9D6E856901F2984CD7FF4C9141E6F5D4E0E54A6C6612A0CC9AA5178FEE1CA0F",
+    "size": 9287
+  },
+  "qc-05-improved-commodities-tsmom-cf.json": {
+    "sha256": "F24F6840115E1B5AFFB3F2181B62C6A98D36021CACD9669ECCB19BEB68ADE5B2",
+    "size": 27123
+  },
+  "qc-06-commodities-ema-vol-trend-following.json": {
+    "sha256": "F6CCFBA0A6F8774E7B39292A3643C4E9CE8E2B5A1296A12DA3191B1DE01E2285",
+    "size": 23338
+  },
+  "qc-07-intraday-index-etf-momentum.json": {
+    "sha256": "B344420EA7F01C35518B534ECD43DEB8C9C228BC6F13803D3EDBAC5B216E4D20",
+    "size": 21549
+  },
+  "qc-08-vix-percentile-index-regime.json": {
+    "sha256": "3F58B7A219BD53D96570D21A0CF3729AEBD6B5901AC80D5E9FC8BF16EB93DCF5",
+    "size": 8915
+  },
+  "qc-09-optimal-ou-pairs-trading.json": {
+    "sha256": "882430C49D7715889C180E20D2BDDC19E6B9AEF0C581713C6AB0976F0D428F63",
+    "size": 20137
+  },
+  "qc-10-country-equity-index-pairs-trading.json": {
+    "sha256": "DA20E9F985E28E5E8824A34F6852A03071F6DD4E3380A00D088B143C0BF34633",
+    "size": 13897
+  }
+}

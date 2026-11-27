@@ -1,0 +1,24 @@
+{
+  "slug": "ssrn-2726505-batten-lucey-intraday-precious-metals",
+  "original_id": "OFF3-SSRN-12",
+  "paper_id": "SSRN:2726505",
+  "source_origin": "ssrn-public-research",
+  "canonical_url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2726505",
+  "metadata_fetch_url": "https://api.openalex.org/works/https://doi.org/10.1371/journal.pone.0174232",
+  "http_status": 200,
+  "content_type": "application/json",
+  "title": "Stylized Facts of Intraday Precious Metal Returns",
+  "authors": [
+    "Jonathan A. Batten",
+    "Brian M. Lucey",
+    "Frank McGroarty",
+    "Maurice Peat",
+    "Andrew Urquhart"
+  ],
+  "raw_text": "This paper examines the stylized facts, correlation and interaction between volatility and returns at the 5-minute frequency for gold, silver, platinum and palladium from May 2000 to April 2015. We study the full sample period, as well as three subsamples to determine how high-frequency data of precious metals have developed over time. We find that over the full sample, the number of trades has increased substantially over time for each precious metal, while the bid-ask spread has narrowed over time, indicating an increase in liquidity and price efficiency. We also find strong evidence of periodicity in returns, volatility, volume and bid-ask spread. Returns and volume both experience strong intraday periodicity linked to the opening and closing of major markets around the world while the bid-ask spread is at its lowest when European markets are open. We also show a bilateral Granger causality between returns and volatility of each precious metal, which holds for the vast majority subsamples.",
+  "categories": [],
+  "doi": "https://doi.org/10.1371/journal.pone.0174232",
+  "ssrn_locations": [
+    "https://doi.org/10.2139/ssrn.2726505"
+  ]
+}

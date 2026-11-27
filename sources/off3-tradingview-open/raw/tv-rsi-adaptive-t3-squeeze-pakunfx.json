@@ -1,0 +1,34 @@
+{
+  "lead_id": "LEAD-OFF3-TV-12",
+  "original_id": "TV-7UNWrm2O",
+  "image_url_id": "7UNWrm2O",
+  "script_id_part": "PUB;e70ad70d9b8c4f2fa7a84c326f29ad14",
+  "script_version": "1",
+  "canonical_url": "https://www.tradingview.com/script/7UNWrm2O-RSI-Adaptive-T3-Squeeze-Momentum-Strategy/",
+  "pine_facade_url": "https://pine-facade.tradingview.com/pine-facade/get/PUB%3Be70ad70d9b8c4f2fa7a84c326f29ad14/1",
+  "script_name": "RSI-Adaptive T3 + Squeeze Momentum Strategy",
+  "pine_internal_title": "RSI-Adaptive T3 + Squeeze Momentum Strategy",
+  "suggest_title": "RSI-Adaptive T3 + Squeeze Momentum Strategy",
+  "author_username": "PakunFX",
+  "agree_count": 188,
+  "script_access": "open_no_auth",
+  "script_kind": "strategy",
+  "page_metadata": {
+    "page_title": "RSI-Adaptive T3 + Squeeze Momentum Strategy by PakunFX",
+    "meta_description": "✅ Strategy Guide: RSI-Adaptive T3 + Squeeze Momentum Strategy\n\n📌 Overview\nThe RSI-Adaptive T3 + Squeeze Momentum Strategy is a dynamic trend-following strategy based on an RSI-responsive T3 moving average and Squeeze Momentum detection.\nIt adapts in real-time to market volatility to enhance entry precision and optimize risk.\n\n⚠️ This strategy is provided for educational and research purposes only.\nPast performance does not guarantee future results.\n\n🎯 Strategy Objectives\nThe main objective of …",
+    "raw_chart_interval": "30",
+    "mapped_timeframe": "M30"
+  },
+  "static_pine_audit": {
+    "passed": true,
+    "failures": [],
+    "script_access": "open_no_auth",
+    "pine_version": "v6",
+    "pyramiding": 0,
+    "security_call_count": 0,
+    "security_calls": [],
+    "source_line_count": 69,
+    "source_char_count": 2389
+  },
+  "pine_source_verbatim": "// This Pine Script® code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/\r\n// © PakunFX\r\n\r\n//@version=6\r\nstrategy(\"RSI-Adaptive T3 + Squeeze Momentum Strategy\", overlay=true, default_qty_type=strategy.percent_of_equity, default_qty_value=100)\r\n\r\n// ====== User Inputs ======\r\nsrc = close\r\nrsiLen = input.int(14, 'RSI Length', group=\"T3\")\r\nminLen = input.int(5, 'Min T3 Length', group=\"T3\")\r\nmaxLen = input.int(50, 'Max T3 Length', group=\"T3\")\r\nv = input.float(0.7, 'T3 Volume Factor', step=0.01, maxval=2, minval=0.1, group=\"T3\")\r\n\r\nlength = input(27, title=\"BB Length\", group=\"Squeeze\")\r\nmult = input(2.0, title=\"BB MultFactor\", group=\"Squeeze\")\r\nlengthKC = input(20, title=\"KC Length\", group=\"Squeeze\")\r\nmultKC = input(1.5, title=\"KC MultFactor\", group=\"Squeeze\")\r\nuseTrueRange = input(true, title=\"Use TrueRange (KC)\", group=\"Squeeze\")\r\n\r\n// ====== T3 Calculation ======\r\nrsi = ta.rsi(src, rsiLen)\r\nrsi_scale = 1 - rsi / 100\r\nlen = math.round(minLen + (maxLen - minLen) * rsi_scale)\r\n\r\npine_ema(s, l) =>\r\n    alpha = 2 / (l + 1)\r\n    sum = 0.0\r\n    sum := na(sum[1]) ? s : alpha * s + (1 - alpha) * nz(sum[1])\r\n    sum\r\n\r\ne1 = pine_ema(src, len)\r\ne2 = pine_ema(e1, len)\r\ne3 = pine_ema(e2, len)\r\ne4 = pine_ema(e3, len)\r\ne5 = pine_ema(e4, len)\r\ne6 = pine_ema(e5, len)\r\n\r\nc1 = -v * v * v\r\nc2 = 3 * v * v + 3 * v * v * v\r\nc3 = -6 * v * v - 3 * v - 3 * v * v * v\r\nc4 = 1 + 3 * v + v * v * v + 3 * v * v\r\nt3 = c1 * e6 + c2 * e5 + c3 * e4 + c4 * e3\r\n\r\n// ====== Squeeze Momentum Calculation ======\r\nbasis = ta.sma(src, length)\r\ndev = multKC * ta.stdev(src, length)\r\nupperBB = basis + dev\r\nlowerBB = basis - dev\r\n\r\nma = ta.sma(src, lengthKC)\r\nkcrange = useTrueRange ? ta.tr : (high - low)\r\nkcrangema = ta.sma(kcrange, lengthKC)\r\nupperKC = ma + kcrangema * multKC\r\nlowerKC = ma - kcrangema * multKC\r\n\r\nsqzOn = (lowerBB > lowerKC) and (upperBB < upperKC)\r\nsqzOff = (lowerBB < lowerKC) and (upperBB > upperKC)\r\n\r\nmidLine = (ta.highest(high, lengthKC) + ta.lowest(low, lengthKC)) / 2\r\nval = ta.linreg(src - (midLine + ta.sma(close, lengthKC)) / 2, lengthKC, 0)\r\n\r\n// ====== Strategy Logic ======\r\nlongCondition = ta.crossover(t3, t3[1]) and val > 0 and sqzOff\r\nshortCondition = ta.crossunder(t3, t3[1]) and val < 0 and sqzOff\r\n\r\nif (longCondition)\r\n    strategy.entry(\"Long\", strategy.long)\r\nif (shortCondition)\r\n    strategy.entry(\"Short\", strategy.short)"
+}

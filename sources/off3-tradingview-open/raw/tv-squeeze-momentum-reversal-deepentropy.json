@@ -1,0 +1,34 @@
+{
+  "lead_id": "LEAD-OFF3-TV-11",
+  "original_id": "TV-Fckzv8iH",
+  "image_url_id": "Fckzv8iH",
+  "script_id_part": "PUB;X9fXfLsG3xkz5xfQcW5nua3OQXOIfVUk",
+  "script_version": "1",
+  "canonical_url": "https://www.tradingview.com/script/Fckzv8iH-Squeeze-Momentum-on-Reversal-Strategy/",
+  "pine_facade_url": "https://pine-facade.tradingview.com/pine-facade/get/PUB%3BX9fXfLsG3xkz5xfQcW5nua3OQXOIfVUk/1",
+  "script_name": "Squeeze Momentum on Reversal Strategy",
+  "pine_internal_title": "Squeeze Momentum on Reversal Strategy",
+  "suggest_title": "Squeeze Momentum on Reversal Strategy",
+  "author_username": "DeepEntropy",
+  "agree_count": 901,
+  "script_access": "open_no_auth",
+  "script_kind": "strategy",
+  "page_metadata": {
+    "page_title": "Squeeze Momentum on Reversal Strategy by DeepEntropy",
+    "meta_description": "** From the original work of LazyBear ** Thanks for his Squeeze Momentum indicator \n\nThis strategy gives acceptable result on EUR/USD - 1H chart with default parameters",
+    "raw_chart_interval": "60",
+    "mapped_timeframe": "H1"
+  },
+  "static_pine_audit": {
+    "passed": true,
+    "failures": [],
+    "script_access": "open_no_auth",
+    "pine_version": "v2_or_unspecified",
+    "pyramiding": 0,
+    "security_call_count": 0,
+    "security_calls": [],
+    "source_line_count": 50,
+    "source_char_count": 1660
+  },
+  "pine_source_verbatim": "//\r\n// @author Odyssee\r\n// @version=2\r\n//\r\nstrategy(shorttitle = \"Squeeze MOM\", title=\"Squeeze Momentum on Reversal Strategy\", overlay=false)\r\n\r\nlength = input(20, title=\"BB Length\")\r\nmult = input(2.0,title=\"BB MultFactor\")\r\nlengthKC=input(20, title=\"KC Length\")\r\nmultKC = input(1.5, title=\"KC MultFactor\")\r\nstrength = input(0.0018, title=\"Reversal Strength\")\r\n\r\nuseTrueRange = input(true, title=\"Use TrueRange (KC)\", type=bool)\r\n\r\n// Calculate BB\r\nsource = close\r\nbasis = sma(source, length)\r\ndev = multKC * stdev(source, length)\r\nupperBB = basis + dev\r\nlowerBB = basis - dev\r\n\r\n// Calculate KC\r\nma = sma(source, lengthKC)\r\nrange = useTrueRange ? tr : (high - low)\r\nrangema = sma(range, lengthKC)\r\nupperKC = ma + rangema * multKC\r\nlowerKC = ma - rangema * multKC\r\n\r\nsqzOn  = (lowerBB > lowerKC) and (upperBB < upperKC)\r\nsqzOff = (lowerBB < lowerKC) and (upperBB > upperKC)\r\nnoSqz  = (sqzOn == false) and (sqzOff == false)\r\n\r\nhighest = highest(high, lengthKC)\r\nlowest = lowest(low, lengthKC)\r\nlastsma = sma(close,lengthKC)\r\n\r\nvalin = linreg(source  -  avg(avg(highest, lowest), lastsma), lengthKC,0)\r\n\r\nbcolor = iff( valin > 0, iff( valin > nz(valin[1]), lime, green), iff( valin < nz(valin[1]), red, maroon))\r\nscolor = noSqz ? blue : sqzOn ? black : gray \r\nplot(valin, color=bcolor, style=histogram, linewidth=4)\r\nplot(0, color=scolor, style=cross, linewidth=2)\r\n\r\nshortcondition = valin > strength and valin < nz(valin[1]) // line become green\r\nlongcondition = valin < (strength*-1) and valin > nz(valin[1]) // line become maroon\r\n\r\nif(longcondition)\r\n    strategy.entry(\"BUY\", strategy.long)\r\nif(shortcondition)\r\n    strategy.entry(\"SELL\", strategy.short)\r\n"
+}

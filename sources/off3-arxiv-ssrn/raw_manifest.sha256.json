@@ -1,0 +1,90 @@
+{
+  "arxiv-1501-07778-wmr-4pm-london-fix.json": {
+    "sha256": "7BBC1ECA64A23216B9AE3DF78A80EC26AB7418AF7E1C440FC3B69BCF648B0466",
+    "size": 1450
+  },
+  "arxiv-2301-13204-tokyo-gotobi-anomaly.json": {
+    "sha256": "F58A5F49F3314291BE269384B1E7BC0B3401D6C1FDB9B2E062BFBE50930226DE",
+    "size": 1300
+  },
+  "ssrn-3521370-krohn-fx-fixings-w-pattern.json": {
+    "sha256": "D9028A37FDB6B08134218D1588E2A95FBA30B06444B8143041FEE7E66A9E974E",
+    "size": 1361
+  },
+  "ssrn-2099321-breedon-ranaldo-fx-working-hours.json": {
+    "sha256": "AD7487EEC008C67DA3735F3D146BEF8809F978E6D675F28A43D5627700B04065",
+    "size": 1214
+  },
+  "ssrn-2440866-gao-market-intraday-momentum.json": {
+    "sha256": "3AC3928B0F444AE5EB7766ECFAE429EEB3BA4046DE79545818D68BBA6D55992E",
+    "size": 1350
+  },
+  "ssrn-3760365-baltussen-gamma-hedging-intraday-mom.json": {
+    "sha256": "277DC7B698EC77099C14EA41D078D11621D859746C451900790C03388AFBC24E",
+    "size": 1370
+  },
+  "ssrn-3546173-boyarchenko-overnight-drift.json": {
+    "sha256": "D59072299375B9A13B3B010E4992DA0976FDF0D1C925CE13A04FAC5ED91435C5",
+    "size": 813
+  },
+  "arxiv-2010-01727-knuteson-overnight-intraday-split.json": {
+    "sha256": "ED6120F4275FA8AEACC577F207F08EA491DE2D202222F9BFA312232968EDE1A1",
+    "size": 1280
+  },
+  "ssrn-2275354-halova-kurov-eia-energy-inventory.json": {
+    "sha256": "ABBF0C3CE2CB550C942D93FB76AF17A10F53B789DF2BF2A60BC83F76BFA2A052",
+    "size": 1759
+  },
+  "arxiv-1907-08397-mahajan-commodity-stochastic-spread.json": {
+    "sha256": "F95FC1FB7205384E251FB983D2C670DA69ADA0A8018369E7F0A2C5BC1402DDA7",
+    "size": 2043
+  },
+  "arxiv-2108-01886-he-crude-oil-bivariate-ou-kalman.json": {
+    "sha256": "E1F96C9586D03D6D395B5CB9AB4FE2C16AA1A0A80AF89ECEE0585F592D3B3F98",
+    "size": 1243
+  },
+  "ssrn-2726505-batten-lucey-intraday-precious-metals.json": {
+    "sha256": "606E765039B19F1652F3134C74989EE96311CD02269ECD0FEF1C3800690F79D1",
+    "size": 1787
+  },
+  "journal-adrangi-gold-silver-intraday-lead-lag.json": {
+    "sha256": "F3C0A460828F5704E127972B2341079424CAA7152C7E884F0841DF8C834616BD",
+    "size": 1320
+  },
+  "arxiv-1507-01610-temnov-ou-trailing-stop-mean-reversion.json": {
+    "sha256": "206DA8ED731743A5F244C0D23F2AF19DD27355A944B47EC202CF5B6EAEDECE79",
+    "size": 1479
+  },
+  "ssrn-1923197-lucca-moench-pre-fomc-drift.json": {
+    "sha256": "E29770C26892378E07972BB4E6BBAE202D6EF047C70711B4CF55A54D787D49AA",
+    "size": 1963
+  },
+  "ssrn-2637528-kurov-pre-macro-news-drift.json": {
+    "sha256": "A391A3C1733582870CCED29CE81190C82D0C076469BDB52763F05105216ACDF1",
+    "size": 1441
+  },
+  "ssrn-2528692-etula-dash-for-cash-turn-of-month.json": {
+    "sha256": "FE468F0B637F88AB8D0D82008645726F0236AFDD6CB1D6C4C515D46840D28596",
+    "size": 1685
+  },
+  "ssrn-2659431-moreira-muir-volatility-managed-portfolios.json": {
+    "sha256": "0DA1B8B02FF1C324DC511A6AD3510453C53F5A5DF16EF80559D1C556338600B0",
+    "size": 1370
+  },
+  "ssrn-2140091-baltas-kosowski-vol-targeted-tsmom.json": {
+    "sha256": "8EDA0A5D6268CEBDB5853188E6C51575ED829846544EE03757C81F4B955B3B1A",
+    "size": 1740
+  },
+  "ssrn-1809776-menkhoff-currency-momentum.json": {
+    "sha256": "A2EFC5A4B2E8CA14125C6CF6C3E8549111F5E30C4CBC5417E807AC16AD2B966C",
+    "size": 1341
+  },
+  "ssrn-1918987-ferraro-rogoff-rossi-oil-fx-lead-lag.json": {
+    "sha256": "80368C4EA68A3975251C44D122BC7D0F81B43807E46EAECE7B3ACB4B308005FC",
+    "size": 1293
+  },
+  "arxiv-2308-11294-pu-network-momentum-cross-asset.json": {
+    "sha256": "19D1C89627A5571907035E3F96601D0A091AD5AC73A27079C525EB6D95815F22",
+    "size": 2274
+  }
+}

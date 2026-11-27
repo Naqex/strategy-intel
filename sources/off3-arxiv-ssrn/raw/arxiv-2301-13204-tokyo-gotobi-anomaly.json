@@ -1,0 +1,23 @@
+{
+  "slug": "arxiv-2301-13204-tokyo-gotobi-anomaly",
+  "original_id": "OFF3-ARXIV-02",
+  "paper_id": "arXiv:2301.13204",
+  "source_origin": "arxiv-q-fin-TR",
+  "canonical_url": "https://arxiv.org/abs/2301.13204",
+  "metadata_fetch_url": "https://export.arxiv.org/api/query?id_list=1501.07778,2301.13204,2010.01727,1907.08397,2108.01886,1507.01610,2308.11294&max_results=12",
+  "http_status": 200,
+  "content_type": "application/atom+xml",
+  "title": "Forex Trading Strategy That Might Be Executed Due to the Popularity of Gotobi Anomaly",
+  "authors": [
+    "Hiroki Bessho",
+    "Takanari Sugimoto",
+    "Tomoya Suzuki"
+  ],
+  "raw_text": "Our previous research has confirmed that the USD/JPY rate tends to rise toward 9:55 every morning in the Gotobi days, which are divisible by five. This is called the Gotobi anomaly. In the present study, we verify the possible trading strategy and its validity under the condition that investors recognize the existence of the anomaly. Moreover, we illustrate the possibility that the wealth of Japanese companies might leak to FX traders due to the arbitrage opportunity if Japanese companies blindly keep making payments in the Gotobi days as a business custom.",
+  "categories": [
+    "q-fin.CP",
+    "q-fin.TR"
+  ],
+  "doi": null,
+  "ssrn_locations": []
+}

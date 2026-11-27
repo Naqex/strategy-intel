@@ -1,0 +1,86 @@
+{
+  "en-1kpips-tokyo-fix-gotobi-fade.json": {
+    "sha256": "18A16EFCB35B4DB26F3CD9F2B4C217525B402DAFC55A8F68339A7F4545E10AC9",
+    "size": 9323
+  },
+  "en-1kpips-rangerevert-atr-adx-gates.json": {
+    "sha256": "7E36B32A04915566C072439BBD48F722395B7054B19FDEEFEB1D2CBD3B7D3D11",
+    "size": 10345
+  },
+  "en-1kpips-d1-contrarian-fx-fade.json": {
+    "sha256": "789A7A3A15C21F1C5564308514D10FF60CC4B1EF9B3B28E7A1708F66BD2ADD0A",
+    "size": 4923
+  },
+  "en-robotwealth-audusd-nzdusd-cointegration.json": {
+    "sha256": "C8E847852028BA062B5ACF64F6F650BAE5EF24FDB0978969C19F22B63A7A0E8B",
+    "size": 30674
+  },
+  "en-robotwealth-audusd-ar10-intraday.json": {
+    "sha256": "A75FFCFB739447EE044A93B585DD39D3F92A791A520EEC3EC579201282D924F1",
+    "size": 18230
+  },
+  "en-robotwealth-variable-fx-swap-filter.json": {
+    "sha256": "2F8C980D8964C3B7F4D453CB6E2E273212C75FC51301850F7ED81F48B6953CF1",
+    "size": 10876
+  },
+  "en-financial-hacker-market-meanness-index.json": {
+    "sha256": "930E497E5B5ECFBB84D98D95397815B4C92CCAEFD53E390CCD8CE496EC628820",
+    "size": 47195
+  },
+  "en-financial-hacker-moving-average-bands-nas100.json": {
+    "sha256": "6A850E27F9223EF855F5FF9B73602EAA745758B8E4DC0643698875FE1951E66D",
+    "size": 4410
+  },
+  "ru-mql5-4102-asian-session-bollinger-flat.json": {
+    "sha256": "51058EEFA81E8174D3EB3F6ED99D9815B1F2EE62BA90BEAF2DE8AE038DDAB4E3",
+    "size": 51522
+  },
+  "ru-mql5-12830-simple-sma200-mean-reversion.json": {
+    "sha256": "B7954C3145513863D19F2947FF80F17E58DE3E041B920EA9ED6A88B00993D726",
+    "size": 39219
+  },
+  "ru-mql5-21135-htf-bias-ltf-swing-atr-pullback.json": {
+    "sha256": "1382468CCEB06528ABC5F7313B7F179BB9B31A163545CD33B49E1859D808CE42",
+    "size": 58831
+  },
+  "ru-mql5-16457-kmeans-regime-eurgbp-mr.json": {
+    "sha256": "F78A518B54E0E2FBF78930BB833F66E6DE31202B7D236917C28961B59ED5D351",
+    "size": 63905
+  },
+  "ru-mql5-14846-pearson-cointegrated-fx-statarb.json": {
+    "sha256": "4719841EAE4735001FF16F044DBA86BD2F587211C23FFF97012D75BF221C8C92",
+    "size": 54799
+  },
+  "ru-smartlab-1380218-brent-wti-gold-silver-ou-statarb.json": {
+    "sha256": "688A877062A3F2953770793EDEBEEA1D91E733B3BBD333C60A7D7EEB36279B62",
+    "size": 20126
+  },
+  "cn-shinnytech-rbreaker-reversal-legs-crude.json": {
+    "sha256": "6E6A006F474E7C1AF4A576E5FADAE19E799F2F22F2C65D19237823143D3211FD",
+    "size": 10472
+  },
+  "cn-shinnytech-gold-h1-rsi9-boll-ma-reversal.json": {
+    "sha256": "E1B70E5A42F2E1069383FAA94F6BEFC6F020623DC15345BD995A5E74FD76C2D5",
+    "size": 7699
+  },
+  "cn-shinnytech-gold-d1-zscore-mean-reversion.json": {
+    "sha256": "9A93D01D3FAFE99FFE1F5730C72FE69C9CF2FD62AE02CA3EF9CA8821FF3064CC",
+    "size": 10467
+  },
+  "cn-shinnytech-pivot-point-s1r1-reversal.json": {
+    "sha256": "D44418724A2D488F6DED301DFCB3EAB83A46E178A34F9ACEC7A8B0AA0CC5C403",
+    "size": 11463
+  },
+  "cn-shinnytech-gold-cci10-mean-reversion.json": {
+    "sha256": "3B9A71AB43B85EEAE890FAF7F625E0A968650EE1714B85612A6B7537C7220EB9",
+    "size": 9728
+  },
+  "cn-shinnytech-kalman-dynamic-hedge-pairs.json": {
+    "sha256": "31976FC89C04BCB8AE8552A91DF8FADCB0AB32BFC3F62F1359C117A91176F4BB",
+    "size": 9909
+  },
+  "cn-ricequant-gold-silver-60m-ols-bollinger-pair.json": {
+    "sha256": "4762729FDAE408A174100E26C0ED4DB286A096D543296C43F53E681FB4D719C8",
+    "size": 19801
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "tv-liquidity-sweep-reversal-blitz.json": {
+    "sha256": "AC368959FB909668D8945BE5ED9D947F63CDFA82821B7A60133CC0F3CB9A509C",
+    "size": 20016
+  },
+  "tv-turtle-soup-ny-m5-sweep-fran.json": {
+    "sha256": "E71A5EEDD4BAD4ECB3975CA44414C4BFB68BB31808A5CCB4EE80393EB224A903",
+    "size": 13709
+  },
+  "tv-turtle-soup-plus-one-trost.json": {
+    "sha256": "7F512E5D099EFE673D0CE2CD3C86C7E6BCE624F0B61D67B0A36B2020DD96F5AA",
+    "size": 5227
+  },
+  "tv-swing-failure-reversal-technicien.json": {
+    "sha256": "08344EF3CACC6A97CCB108F306B7823368B748075EA17CE563845D3F5DFBA54B",
+    "size": 3169
+  },
+  "tv-reverse-keltner-channel-adx-fenyesk.json": {
+    "sha256": "349915336A728DBD8D9D1DDF22307F2205EBA766D8E6616A443C5074ECF8C3AF",
+    "size": 5948
+  },
+  "tv-coral-trend-pullback-kevinmck100.json": {
+    "sha256": "C730BED408383D39B6CCF0E7B9E0F98036C0FE22908F0C28AFFA03BA400B585D",
+    "size": 31833
+  },
+  "tv-ema-pullback-continuation-pinegenai.json": {
+    "sha256": "485660BBB916B0C631212BBAB5402A54CF2646F6F25D7D9F67CCFB96E74235F6",
+    "size": 6992
+  },
+  "tv-macd-pullback-sniper-adx-blitz.json": {
+    "sha256": "CF3F38F25D49383CAE68F802CD25DACC05854CF3FD789F2B89AB28C58803887B",
+    "size": 7791
+  },
+  "tv-supertrend-advance-pullback-jstech.json": {
+    "sha256": "63399D6E43160D751F95109003641DB548EF438FEE3288230F0E2E91FC96112C",
+    "size": 15906
+  },
+  "tv-adaptive-squeeze-momentum-aaronfallis.json": {
+    "sha256": "2AC97568C1E3D56ABD76192C1BE0476CC849147DBE6D5F7F42D52233CDC329B4",
+    "size": 7771
+  },
+  "tv-squeeze-momentum-reversal-deepentropy.json": {
+    "sha256": "9918B08121E7A772D5A13C3DA241183AEA54723F546CA492A7D1897844F225A0",
+    "size": 3163
+  },
+  "tv-rsi-adaptive-t3-squeeze-pakunfx.json": {
+    "sha256": "A5E5D7D82941A580EAA7D73827D2310449E830ADF2A67B0DAE684C57D178538E",
+    "size": 4303
+  },
+  "tv-avwap-pullback-glow-blitz.json": {
+    "sha256": "42D14CD7A7DF89C54EA73D75FEFC0FF6395DCEE846BAAA1D6D85BCB03FA8F3AD",
+    "size": 20451
+  },
+  "tv-vwap-mean-reversion-forex-rsi-karnataka.json": {
+    "sha256": "07727781AFB0211F6E92C59E716E92C23002F72CFB0B40495FDA1A98C8C49610",
+    "size": 6095
+  },
+  "tv-vwap-stdev-bands-reversal-evileddie.json": {
+    "sha256": "12B32F2ABFA318143EB2845C51CCC6013C51400986E6064F9B1B6B23947E6182",
+    "size": 16939
+  },
+  "tv-high-yield-credit-spread-sma-edgetools.json": {
+    "sha256": "318FFC83B5B9092F9D1F9B9BA89604EDDAF4DDB0836C9C63C02E23F987D8AD3C",
+    "size": 4985
+  },
+  "tv-daily-open-oversized-body-reversal-xtradernet.json": {
+    "sha256": "ABB526A61569FE2BF3D526360456C7B0B4999FE0E0D48A7CFF1638FAB49FA93D",
+    "size": 3426
+  },
+  "tv-zscore-normalized-vix-term-structure-edgetools.json": {
+    "sha256": "A857BBC7DF99F4FAF2C4AA91C3487299D338ED57B473B9490139E578CDBADBCD",
+    "size": 4926
+  },
+  "tv-dual-supertrend-vix-filter-presenttrading.json": {
+    "sha256": "5E47150FEFC28ACED35559DC74E6707464640A8EC307CA80A99A56229BBD1775",
+    "size": 22696
+  },
+  "tv-z-regime-switch-adaptive-zscore-blitz.json": {
+    "sha256": "97247E8A81D23EE14CB7A69696F62A23D17ACAFF2FC6B3E62E0B5C35E6BCB8DC",
+    "size": 9061
+  },
+  "tv-connors-rsi2-sma-filter-tomazetti.json": {
+    "sha256": "9E3058C5DEA94D3915140C4B6D3A79C41F70B985AD305B7E8613D7A10FBEB1FB",
+    "size": 4556
+  },
+  "tv-connors-percent-b-bollinger-edgetools.json": {
+    "sha256": "C81A4DDDB8AF2B22578247B58753A01FB5D295EA1FD1CE810701D5BD92CA9B6D",
+    "size": 4001
+  }
+}

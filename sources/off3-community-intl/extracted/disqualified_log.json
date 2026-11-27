@@ -1,0 +1,26 @@
+{
+  "source": "off3-community-intl",
+  "total_disqualified": 4,
+  "disqualified_items": [
+    {
+      "source_url": "https://www.mql5.com/ru/articles/17800",
+      "language": "RU",
+      "reason": "TOXIC_MARTINGALE_AVERAGING: source code opens counter-averaging layers via `averagingLot = lastLotSize * AveragingLotMultiplier` when correlation drops."
+    },
+    {
+      "source_url": "https://www.mql5.com/ru/articles/14035",
+      "language": "RU",
+      "reason": "TOXIC_NO_STOP_LOSS: article explicitly promotes absence of stop losses (`плюсом данного торгового подхода является отсутствие выраженных стоп-лоссов`)."
+    },
+    {
+      "source_url": "https://smart-lab.ru/blog/674013.php",
+      "language": "RU",
+      "reason": "TOXIC_NO_STOP_LOSS_UNSPECIFIED: blog post delegates rules to external video and discussion explicitly notes trading without protective stops."
+    },
+    {
+      "source_url": "https://www.mql5.com/ru/articles/5481",
+      "language": "RU",
+      "reason": "TOXIC_MECHANISM_FLAGGED: raw text tripped cleanroom toxic martingale/grid screening during pre-audit."
+    }
+  ]
+}

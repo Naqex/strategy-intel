@@ -1,0 +1,34 @@
+{
+  "lead_id": "LEAD-OFF3-TV-21",
+  "original_id": "TV-iHSFQFog",
+  "image_url_id": "iHSFQFog",
+  "script_id_part": "PUB;LCtr4IrXWOniAh49YtqnF6Wlpt8zp7Tz",
+  "script_version": "1",
+  "canonical_url": "https://www.tradingview.com/script/iHSFQFog/",
+  "pine_facade_url": "https://pine-facade.tradingview.com/pine-facade/get/PUB%3BLCtr4IrXWOniAh49YtqnF6Wlpt8zp7Tz/1",
+  "script_name": "2-Period RSI strategy (with filter)",
+  "pine_internal_title": "RSI Strategy",
+  "suggest_title": "RSI Strategy",
+  "author_username": "Tomazetti",
+  "agree_count": 439,
+  "script_access": "open_no_auth",
+  "script_kind": "strategy",
+  "page_metadata": {
+    "page_title": "2-Period RSI strategy (with filter) by Tomazetti",
+    "meta_description": "2-period RSI strategy backtest described in several books of the trader Larry Connors . This strategy uses a 2 periods RSI , one slow arithmetic moving average and one fast arithmetic moving average. \n\nEntry signal: \n- RSI 2 value below oversold level (Larry Connors usually sets oversold to be below 5, but other authors prefer to work below 10 due to the higher number of signals). \n- Closing above the slow average (200 periods). \n- Entry at closing of candle or opening of next candle. \n\nExit …",
+    "raw_chart_interval": "1D",
+    "mapped_timeframe": "D1"
+  },
+  "static_pine_audit": {
+    "passed": true,
+    "failures": [],
+    "script_access": "open_no_auth",
+    "pine_version": "v3",
+    "pyramiding": 0,
+    "security_call_count": 0,
+    "security_calls": [],
+    "source_line_count": 73,
+    "source_char_count": 2751
+  },
+  "pine_source_verbatim": "//@version=3\r\nstrategy(\"RSI Strategy\", overlay=true, default_qty_type = strategy.percent_of_equity, default_qty_value = 100)\r\n\r\n//Starter Parameters\r\n\r\nlength = input(title=\"RSI Lenght\",type=integer, defval=2)\r\noverBoughtRSI = input(title=\"OverBought Level for RSI\", type=integer, defval=10)\r\nshortLength = input(title=\"Short MA Length\", type=integer, defval=5)\r\nlongLength = input(title=\"Long MA Length\", type=integer, defval=200)\r\n\r\nRuleMRSI=input(title=\"RSI Moving Average Filter\", defval= true)\r\nlengthmrsi=input(title=\"RSI Moving Average Length\", type=integer, defval=4)\r\noverBoughtMRSI=input(title=\"OverBought Level for the Moving Average of the RSI\", type=integer, defval=30)\r\n\r\nRulestop=input(title=\"Apply Stop Loss\", defval=false)\r\nstop_percentual=input(title=\"% Stop Loss\", type=integer, defval=10)\r\n\r\n//RSI\r\n\r\nvrsi = rsi(close, length)\r\n\r\n//Moving Averages\r\n\r\nlongma = sma(close,longLength)\r\nshortma = sma(close,shortLength)\r\nmrsi=sma(vrsi,lengthmrsi)\r\n\r\n//Stop Loss\r\n\r\nstop_level = strategy.position_avg_price*((100-stop_percentual)/100)\r\n\r\n//Backtest Period\r\ntestStartYear = input(2009, \"Backtest Start Year\")\r\ntestStartMonth = input(1, \"Backtest Start Month\")\r\ntestStartDay = input(2, \"Backtest Start Day\")\r\ntestPeriodStart = timestamp(testStartYear,testStartMonth,testStartDay,0,0)\r\n\r\ntestStopYear = input(2020, \"Backtest Stop Year\")\r\ntestStopMonth = input(12, \"Backtest Stop Month\")\r\ntestStopDay = input(30, \"Backtest Stop Day\")\r\ntestPeriodStop = timestamp(testStopYear,testStopMonth,testStopDay,0,0)\r\n\r\ntestPeriod() =>\r\n    time >= testPeriodStart and time <= testPeriodStop ? true : false\r\n    \r\n//Strategy\r\n\r\nif testPeriod() and (not na(vrsi))\r\n    if  (RuleMRSI==false) and (Rulestop==false)\r\n        if (vrsi<overBoughtRSI) and (close>longma)\r\n            strategy.entry(\"RsiLE\", strategy.long , comment=\"Open\")\r\n        if (close>shortma)\r\n            strategy.close_all()\r\n\r\n    if (RuleMRSI==true) and (Rulestop==false)\r\n        if (vrsi<overBoughtRSI) and (close>longma) and (mrsi<overBoughtMRSI)\r\n            strategy.entry(\"RsiLE\", strategy.long , comment=\"Open\")\r\n        if (close>shortma)\r\n            strategy.close_all()\r\n\r\n    if (RuleMRSI==false) and (Rulestop==true)\r\n        if (vrsi<overBoughtRSI) and (close>longma)\r\n            strategy.entry(\"RsiLE\", strategy.long , comment=\"Open\")\r\n            strategy.exit(\"RsiLE\", stop = stop_level)\r\n        if (close>shortma)\r\n            strategy.close_all()\r\n\r\n    if (RuleMRSI==true) and (Rulestop==true)\r\n        if (vrsi<overBoughtRSI) and (close>longma) and (mrsi<overBoughtMRSI)\r\n            strategy.entry(\"RsiLE\", strategy.long , comment=\"Open\")\r\n            strategy.exit(\"RsiLE\", stop = stop_level)\r\n        if (close>shortma)\r\n            strategy.close_all()"
+}

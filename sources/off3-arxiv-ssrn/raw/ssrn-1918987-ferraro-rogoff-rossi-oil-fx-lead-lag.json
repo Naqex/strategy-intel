@@ -1,0 +1,20 @@
+{
+  "slug": "ssrn-1918987-ferraro-rogoff-rossi-oil-fx-lead-lag",
+  "original_id": "OFF3-SSRN-21",
+  "paper_id": "SSRN:1918987",
+  "source_origin": "ssrn-public-research",
+  "canonical_url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1918987",
+  "metadata_fetch_url": "https://ideas.repec.org/p/nbr/nberwo/17998.html",
+  "http_status": 200,
+  "content_type": "text/html",
+  "title": "Can Oil Prices Forecast Exchange Rates?",
+  "authors": [
+    "Domenico Ferraro",
+    "Kenneth Rogoff",
+    "Barbara Rossi"
+  ],
+  "raw_text": "This paper investigates whether oil prices have a reliable and stable out-of-sample relationship with the Canadian/U.S dollar nominal exchange rate. Despite state-of-the-art methodologies, we find little systematic relation between oil prices and the exchange rate at the monthly and quarterly frequencies. In contrast, the main contribution is to show the existence of a very short-term relationship at the daily frequency, which is rather robust and holds no matter whether we use contemporaneous (realized) or lagged oil prices in our regression. However, in the latter case the predictive ability is ephemeral, mostly appearing after instabilities have been appropriately taken into account",
+  "categories": [],
+  "doi": null,
+  "ssrn_locations": []
+}
